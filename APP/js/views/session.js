@@ -74,21 +74,12 @@
   /* ---------------- step 1: dialogue ---------------- */
   function dialogueStep(session) {
     var dialogue = session.dialogue ? core.dialogue(session.dialogue) : null;
-    var pcUrl = session.peace_corps_url || 'https://www.livelingua.com/course/peace-corps/malagasy_language_lessons';
-    var audio = '<div class="audio-player">' +
-      '<span class="label">Peace Corps Madagascar Audio</span>' +
-      '<a class="cta-link" href="' + ui.esc(pcUrl) + '" target="_blank" rel="noopener noreferrer">' +
-        'Listen to the Peace Corps Madagascar audio lessons online' +
-        ui.icon('arrow-right', 'icon-sm') +
-      '</a>' +
-      '</div>';
 
     if (!dialogue) {
-      return audio + '<p class="empty">No dialogue is mapped to this session yet.</p>';
+      return '<p class="empty">No dialogue is mapped to this session yet.</p>';
     }
 
-    return audio +
-      '<h2 style="margin-top:0">' + ui.esc(dialogue.title) + '</h2>' +
+    return '<h2 style="margin-top:0">' + ui.esc(dialogue.title) + '</h2>' +
       '<div class="dialogue">' + dialogue.lines.map(function (line, index) {
         return '<div class="turn">' +
           '<span class="who"><span class="line-no">' + (index + 1) + '/' + dialogue.lines.length + '</span> ' + ui.esc(line.speaker || 'A') +
