@@ -142,9 +142,9 @@
       if (line.speaker && speakers.indexOf(line.speaker) === -1) speakers.push(line.speaker);
     });
 
-    var scenarioCard = '<div class="card roleplay-scenario">' +
-      '<div class="eyebrow">Roleplay Scenario \u00b7 New Situation</div>' +
-      '<h3>' + ui.esc(dialogue.title || 'Roleplay Practice') + '</h3>' +
+    var scenarioCard = '<div class="roleplay-scenario">' +
+      '<div class="roleplay-kicker">Roleplay Scenario \u00b7 New Situation</div>' +
+      '<h3 class="roleplay-title">' + ui.esc(dialogue.title || 'Roleplay Practice') + '</h3>' +
       (dialogue.scenario ? '<p class="roleplay-setting">' + ui.esc(dialogue.scenario) + '</p>' : '') +
       (dialogue.task ? '<p class="roleplay-instruction"><strong>How to practice:</strong> ' + ui.esc(dialogue.task) + '</p>' : '') +
     '</div>';
@@ -163,7 +163,7 @@
       if (mine && !run.revealed[i]) {
         return '<div class="turn turn-cue">' +
           '<span class="who">' + ui.esc(line.speaker) + ' \u00b7 your turn to speak</span>' +
-          '<p class="trans" style="margin:6px 0 10px;font-weight:600;color:var(--forest,#123F2B);">Cue: \u201c' + ui.esc(line.en) + '\u201d</p>' +
+          '<p class="trans roleplay-cue">Cue: \u201c' + ui.esc(line.en) + '\u201d</p>' +
           '<button class="icon-btn" type="button" data-reveal="' + i + '">Show Malagasy reply</button>' +
           '</div>';
       }
@@ -180,16 +180,16 @@
 
     var swapSection = '';
     if (dialogue.swapPrompts && dialogue.swapPrompts.length) {
-      swapSection = '<div class="card roleplay-round-two">' +
-        '<div class="eyebrow">Round 2 \u00b7 Improvise & Swap Words</div>' +
-        '<p class="roleplay-guide">Run the roleplay a second time and swap in these expressions from this lesson:</p>' +
+      swapSection = '<div class="roleplay-round">' +
+        '<div class="roleplay-kicker">Round 2 \u00b7 Improvise &amp; Swap Words</div>' +
+        '<p class="roleplay-round-help">Run the roleplay a second time and swap in these expressions from this lesson:</p>' +
         '<div class="stack">' +
           dialogue.swapPrompts.map(function (sp) {
             return '<div class="row-card" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 10px;border:1px solid var(--border,#e6dec8);border-radius:10px;">' +
               '<div>' +
                 '<strong lang="mg">' + ui.esc(sp.mg) + '</strong>' +
                 (sp.pron ? ' <span class="pron">[' + ui.esc(sp.pron) + ']</span>' : '') +
-                '<div class="meta">' + ui.esc(sp.en) + '</div>' +
+                '<div class="roleplay-translation">' + ui.esc(sp.en) + '</div>' +
               '</div>' +
               '<div class="turn-tools">' + ui.speakButtons(sp.mg, { wordId: sp.id }) + '</div>' +
             '</div>';
@@ -198,15 +198,15 @@
       '</div>';
     }
 
-    return scenarioCard +
-      '<p class="roleplay-guide">' +
+    return '<div class="roleplay">' + scenarioCard +
+      '<p class="roleplay-help">' +
         (run.role
           ? 'Playing as <strong>' + ui.esc(run.role) + '</strong> \u2014 say each Malagasy line from the English cue, then click <em>Show Malagasy reply</em> to check and listen.'
           : 'Choose a character below to test yourself from English cues, or read both parts together:') +
       '</p>' +
       chooser +
       '<div class="dialogue">' + lines + '</div>' +
-      swapSection;
+      swapSection + '</div>';
   }
 
   /* ---------------- "you are here" compass ---------------- */
