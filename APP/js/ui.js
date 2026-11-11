@@ -149,7 +149,7 @@ window.Salama = window.Salama || {};
     var extra = (opts.wordId ? ' data-word-id="' + esc(opts.wordId) + '"' : '') +
                 (opts.line ? ' data-line="' + esc(opts.line) + '"' : '');
     var recKey = resolveEditKey(text, opts) || (opts.wordId ? 'word:' + opts.wordId : (opts.line ? 'dlg:' + opts.line : ''));
-    var hasCustom = Boolean(recKey && S.speech && S.speech.hasCustomAudio && S.speech.hasCustomAudio(recKey));
+    var hasCustom = Boolean(S.speech && S.speech.hasCustomAudio && S.speech.hasCustomAudio(recKey, text));
     var label = opts.label || (hasCustom ? 'Hear My Voice' : 'Hear it');
     var showEdit = Boolean(S.core && S.core.state && S.core.state.prefs && S.core.state.prefs.showInlineEdit);
     var editKey = showEdit ? recKey : '';
@@ -166,6 +166,26 @@ window.Salama = window.Salama || {};
         icon('volume') + '<span>Syllables</span></button>' +
       recBtn +
       editBtn;
+  }
+
+  if (typeof document !== 'undefined' && document.addEventListener) {
+    document.addEventListener('salama:voices-loaded', function () {
+      if (!S.speech || !S.speech.hasCustomAudio || !document.querySelectorAll) return;
+      var recButtons = document.querySelectorAll('[data-mic-record]');
+      for (var i = 0; i < recButtons.length; i++) {
+        var rb = recButtons[i];
+        var rk = rb.getAttribute('data-mic-record') || '';
+        var parent = rb.parentElement;
+        var hb = parent ? parent.querySelector('.hear-btn') : null;
+        var txt = hb ? (hb.getAttribute('data-speak') || '') : '';
+        if (S.speech.hasCustomAudio(rk, txt)) {
+          var rSpan = rb.querySelector('span');
+          if (rSpan && rSpan.textContent === 'Record') rSpan.textContent = 'Re-record';
+          var hSpan = hb ? hb.querySelector('span') : null;
+          if (hSpan && hSpan.textContent === 'Hear it') hSpan.textContent = 'Hear My Voice';
+        }
+      }
+    });
   }
 
   /** True when a rendered clip exists, so the toast is not raised needlessly. */
