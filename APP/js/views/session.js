@@ -142,13 +142,11 @@
       if (line.speaker && speakers.indexOf(line.speaker) === -1) speakers.push(line.speaker);
     });
 
-    var scenarioCard = '<div class="card" style="margin-bottom:14px;border-left:4px solid var(--gold,#F2B705);background:var(--surface,#fffdf8);">' +
-      '<div class="eyebrow" style="color:var(--orange,#F26B1D);">Roleplay Scenario \u00b7 New Situation</div>' +
-      '<h3 style="margin:4px 0 6px;font-family:var(--serif,Georgia,serif);font-size:1.2rem;color:var(--forest,#123F2B);">' +
-        ui.esc(dialogue.title || 'Roleplay Practice') +
-      '</h3>' +
-      (dialogue.scenario ? '<p style="margin:0 0 8px;line-height:1.5;">' + ui.esc(dialogue.scenario) + '</p>' : '') +
-      (dialogue.task ? '<p class="meta" style="margin:0;"><strong>How to practice:</strong> ' + ui.esc(dialogue.task) + '</p>' : '') +
+    var scenarioCard = '<div class="card roleplay-scenario">' +
+      '<div class="eyebrow">Roleplay Scenario \u00b7 New Situation</div>' +
+      '<h3>' + ui.esc(dialogue.title || 'Roleplay Practice') + '</h3>' +
+      (dialogue.scenario ? '<p class="roleplay-setting">' + ui.esc(dialogue.scenario) + '</p>' : '') +
+      (dialogue.task ? '<p class="roleplay-instruction"><strong>How to practice:</strong> ' + ui.esc(dialogue.task) + '</p>' : '') +
     '</div>';
 
     var chooser = '<div class="chips" role="group" aria-label="Choose your part" style="margin-bottom:12px;">' +
@@ -182,9 +180,9 @@
 
     var swapSection = '';
     if (dialogue.swapPrompts && dialogue.swapPrompts.length) {
-      swapSection = '<div class="card" style="margin-top:16px;">' +
+      swapSection = '<div class="card roleplay-round-two">' +
         '<div class="eyebrow">Round 2 \u00b7 Improvise & Swap Words</div>' +
-        '<p class="meta" style="margin:4px 0 10px;">Run the roleplay a second time and swap in these expressions from this lesson:</p>' +
+        '<p class="roleplay-guide">Run the roleplay a second time and swap in these expressions from this lesson:</p>' +
         '<div class="stack">' +
           dialogue.swapPrompts.map(function (sp) {
             return '<div class="row-card" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 10px;border:1px solid var(--border,#e6dec8);border-radius:10px;">' +
@@ -201,7 +199,7 @@
     }
 
     return scenarioCard +
-      '<p class="meta" style="margin-bottom:8px;">' +
+      '<p class="roleplay-guide">' +
         (run.role
           ? 'Playing as <strong>' + ui.esc(run.role) + '</strong> \u2014 say each Malagasy line from the English cue, then click <em>Show Malagasy reply</em> to check and listen.'
           : 'Choose a character below to test yourself from English cues, or read both parts together:') +
