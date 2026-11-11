@@ -60,6 +60,9 @@
   function heroBanner(session) {
     var lessonNum = session ? session.number : 1;
     var lessonId = session ? session.id : 'w1s1';
+    var pos = core.lastPosition();
+    var startHref = pos ? core.positionHash(pos) : '#/session/' + lessonId + '/dialogue';
+    var startLabel = pos ? 'Continue: Week ' + session.week + ' \u00b7 Session ' + lessonNum : 'Start Lesson ' + lessonNum;
 
     var tryRows = [
       { id: 'salama', mg: 'Salama.', speak: 'Salama!', pron: 'sah-LAH-mah', en: 'Hello!' },
@@ -77,9 +80,14 @@
           '</div>' +
           '<div class="hero-try-en">\u2014 ' + ui.esc(r.en) + '</div>' +
         '</div>' +
-        '<button class="hero-hear-pill" type="button" data-speak="' + ui.esc(r.speak) + '" data-word-id="' + ui.esc(r.id) + '">' +
-          '&#9654; Hear it' +
-        '</button>' +
+        '<div class="hero-try-actions">' +
+          '<button class="hero-hear-pill" type="button" data-speak="' + ui.esc(r.speak) + '" data-word-id="' + ui.esc(r.id) + '">' +
+            '&#9654; Hear it' +
+          '</button>' +
+          '<button class="hero-rec-pill" type="button" data-mic-record="word:' + ui.esc(r.id) + '" title="Record your own voice for ' + ui.esc(r.mg) + '">' +
+            '\u25CF<span>' + (S.speech && S.speech.hasCustomAudio && S.speech.hasCustomAudio('word:' + r.id) ? 'Re-record' : 'Record') + '</span>' +
+          '</button>' +
+        '</div>' +
       '</div>';
     }).join('');
 
@@ -98,7 +106,7 @@
           '<p class="miteny-hero-sub">Speak like a local in Madagascar.</p>' +
           '<p class="miteny-hero-lead">Real Malagasy words, plain phonetic guides, and warm phrases you can use on day one \u2014 all right here.</p>' +
           '<div class="miteny-hero-ctas">' +
-            '<a class="btn btn-orange-cta btn-lg" href="#/session/' + lessonId + '">Start Lesson ' + lessonNum + ' ' + ui.icon('arrow-right') + '</a>' +
+            '<a class="btn btn-orange-cta btn-lg" href="' + startHref + '">' + startLabel + ' ' + ui.icon('arrow-right') + '</a>' +
             '<button class="btn btn-hero-ghost btn-lg" type="button" data-speak-greetings="true">&#9655; Hear Greetings</button>' +
           '</div>' +
         '</div>' +
@@ -116,9 +124,9 @@
           '</div>' +
 
           '<div class="hero-try-card">' +
-            '<div class="hero-try-eyebrow"><span class="hero-try-dot"></span> LESSON ' + lessonNum + ' \u2022 TRY IT NOW</div>' +
+            '<div class="hero-try-eyebrow"><span class="hero-try-dot"></span> WEEK ' + (session ? session.week : 1) + ' \u2022 LESSON ' + lessonNum + ' \u2022 TRY IT NOW</div>' +
             '<div class="hero-try-list">' + tryRows + '</div>' +
-            '<a class="hero-try-bottom-btn" href="#/session/' + lessonId + '">Open Lesson ' + lessonNum + ' Dialogue &amp; Practice &rarr;</a>' +
+            '<a class="hero-try-bottom-btn" href="' + startHref + '">Open Lesson ' + lessonNum + ' Dialogue &amp; Practice &rarr;</a>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -139,8 +147,28 @@
     '</section>';
   }
 
+  function resumeCard() {
+    var pos = core.lastPosition();
+    var s = pos ? core.session(pos.id) : null;
+    if (!s) return '';
+    var next = core.adjacentSession(s.id, 1);
+    return '<div class="miteny-section" style="padding-bottom:0">' +
+      '<div class="resume-wrap">' +
+        '<a class="resume-card" href="' + core.positionHash(pos) + '">' +
+          '<span class="resume-dot">\u25B6</span>' +
+          '<span class="resume-text"><small>You are here \u2014 continue where you left off</small>' +
+          '<strong>Week ' + s.week + ' \u00b7 ' + ui.esc(s.day) + ' \u00b7 Session ' + s.number + ' \u00b7 ' + core.STEP_NAMES[pos.step] + '</strong>' +
+          '<span>' + ui.esc(s.focus) + '</span></span>' +
+          '<span class="resume-go">Continue \u2192</span>' +
+        '</a>' +
+        (next ? '<a class="resume-side" href="#/session/' + next.id + '/dialogue"><small>Next lesson</small>Week ' + next.week + ' \u00b7 ' + ui.esc(next.day.slice(0, 3)) + ' S' + next.number + ' \u2192</a>' : '') +
+        '<a class="resume-side" href="#/course/' + s.week + '"><small>Overview</small>Week ' + s.week + ' outline</a>' +
+      '</div>' +
+    '</div>';
+  }
+
   function render() {
-    var session = core.nextSession();
+    var session = core.currentSession();
     var doneCount = core.sessionDoneCount();
     var total = core.data.sessions.length;
     var everything = doneCount === total;
@@ -152,6 +180,7 @@
 
     return '' +
       heroBanner(session) +
+      resumeCard() +
       '<div class="miteny-section" style="padding-bottom:0">' +
         '<section class="panel" style="border:2px solid #c93b2b;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">' +
           '<div>' +
@@ -198,7 +227,7 @@
               '<div class="preview">' + previewTurns(session) + '</div>' +
               steps(session, false) +
               '<div class="btn-row">' +
-                '<a class="btn btn-lg" href="#/session/' + session.id + '">Start session' +
+                '<a class="btn btn-lg" href="' + (core.lastPosition() ? core.positionHash(core.lastPosition()) : '#/session/' + session.id + '/dialogue') + '">' + (core.lastPosition() ? 'Continue lesson' : 'Start session') +
                   ui.icon('arrow-right') + '</a>' +
                 '<a class="btn btn-quiet" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
               '</div>' +
