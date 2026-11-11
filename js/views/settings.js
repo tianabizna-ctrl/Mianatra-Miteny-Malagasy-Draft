@@ -183,9 +183,8 @@
         '</div>' +
         '<p class="setting-note">' +
           (clips
-            ? clips + ' authentic Malagasy neural recordings (Abidi by Artifisialy, 22 kHz) ship with the app and play automatically across all words, phrases, and dialogues.'
+            ? clips + ' authentic Malagasy voice recordings ship with Salama! and play automatically across all words, phrases, dialogues, and roleplays.'
             : 'No recorded word clips ship with this build yet, so words use the device voice.') +
-          ' Peace Corps Madagascar audio lessons are available <a href="https://www.livelingua.com/course/peace-corps/malagasy_language_lessons" target="_blank" rel="noopener noreferrer">online at Live Lingua</a>.' +
         '</p>' +
         '<p class="setting-note">On an iPhone or iPad the side switch silences the device voice ' +
           'but not recorded audio. If a word is silent and a lesson recording is not, check that switch.</p>' +

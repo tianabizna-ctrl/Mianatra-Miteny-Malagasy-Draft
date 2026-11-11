@@ -3,7 +3,7 @@ window.CONTENT = {
     "app": "Salama! — Learn Malagasy Gently",
     "project": "Vahiny Mianatra Malagasy",
     "audience": "Elderly American absolute beginner",
-    "version": "4.4.9",
+    "version": "4.5.0",
     "dialect_note": "Official Malagasy (Tenim-pirenena ofisialy).",
     "counts": {
       "vocabulary": 2198,
@@ -37631,8 +37631,8 @@ window.CONTENT = {
     {
       "id": "dlg_rp_w1s1",
       "title": "Passing a Neighbor on the Street in the Morning",
-      "scenario": "Step 1 was visiting a friend's house. Now you are out on the street in the morning and pass an elder neighbor. Greet each other respectfully, ask how things are and what's new, and wish each other a productive day.",
-      "task": "Play Neighbor and You. First run through the 6 lines aloud, then switch roles and try substituting informal ('Salama!') vs. respectful ('Salama tompoko!') greetings.",
+      "scenario": "You are out on the street in the morning and pass an elder neighbor. Greet each other respectfully, ask how things are and what's new, and wish each other a productive day.",
+      "task": "Play Neighbor and You. First run through the lines aloud, then switch roles and try substituting informal ('Salama!') vs. respectful ('Salama tompoko!') greetings.",
       "roles": [
         "Neighbor",
         "You"
@@ -37720,13 +37720,14 @@ window.CONTENT = {
           "pron": "mee-SOH-trah ee-AH-noh KOO-ah",
           "sourceKey": "dlg:dlg_intro_2_20:1"
         }
-      ]
+      ],
+      "group": "greetings"
     },
     {
       "id": "dlg_rp_w1s2",
       "title": "Welcoming a Visitor, Apologizing & Giving Thanks",
-      "scenario": "Instead of squeezing past someone on the path (Step 1), you are welcoming a guest into your home. You accidentally bump their bag while offering a seat, apologize ('Azafady / Tsy maninona'), and exchange thanks ('Misaotra / Tsy misy fisaorana').",
-      "task": "Practice the difference between 'Azafady' for 'Excuse me, may I pass?' (Step 1) and 'Azafady' for 'I'm sorry!' plus welcoming ('Tonga soa') and thanking.",
+      "scenario": "You are welcoming a guest into your home. You accidentally bump their bag while offering a seat, apologize ('Azafady / Tsy maninona'), and exchange thanks ('Misaotra / Tsy misy fisaorana').",
+      "task": "Practice using 'Azafady' to apologize ('I'm sorry!'), welcoming a guest ('Tonga soa!'), and responding to thanks ('Tsy misy fisaorana').",
       "roles": [
         "Guest",
         "Host"
@@ -37814,12 +37815,13 @@ window.CONTENT = {
           "pron": "TSEE MEE-see fee-soh-RAH-nah",
           "sourceKey": "dlg:dlg_intro_2_14:1"
         }
-      ]
+      ],
+      "group": "greetings"
     },
     {
       "id": "dlg_rp_w1s3",
       "title": "Seeing Off a Friend & Saying Goodnight",
-      "scenario": "Step 1 was parting before lunch ('Mazotoa homana'). Now it is evening: your friend is heading home and leaving on a trip tomorrow. Wish them safe travels ('Soava dia'), say see you tomorrow, and wish them a restful night ('Tafandria mandry').",
+      "scenario": "It is evening: your friend is heading home and leaving on a trip tomorrow morning. Wish them safe travels ('Soava dia'), say see you tomorrow, and wish them a restful night ('Tafandria mandry').",
       "task": "Take turns as Friend and You. On Round 2, swap the parting to match different times of day ('Rehefa avy eo!', 'Mandrapihaona!', 'Veloma rahampitso koa!').",
       "roles": [
         "Friend",
@@ -37894,12 +37896,13 @@ window.CONTENT = {
           "pron": "tah-fahn-DREE-ah MAHN-dree",
           "sourceKey": "phrase:rpb_tafandria_mandry"
         }
-      ]
+      ],
+      "group": "greetings"
     },
     {
       "id": "dlg_rp_w2s1",
-      "title": "First-Time Interview with Faly from Antsirabe",
-      "scenario": "You meet Faly, an English teacher in Antsirabe, for the very first time (Bako Review 1–4). Ask his name, his job, where he is from, and where he lives.",
+      "title": "First-Time Conversation with Faly from Antsirabe",
+      "scenario": "You meet Faly, an English teacher in Antsirabe, for the very first time. Ask his name, his job, where he is from, and where he lives.",
       "task": "One person interviews Faly, then swap roles and answer with your own real name, hometown, and city!",
       "roles": [
         "You",
@@ -37988,12 +37991,13 @@ window.CONTENT = {
           "pron": "EH-too ahn-tsee-RAH-beh",
           "sourceKey": "dlg:dlg_intro_review_1_4_25:17"
         }
-      ]
+      ],
+      "group": "introducing"
     },
     {
       "id": "dlg_rp_w2s2",
       "title": "Asking Yes/No Questions with 've' About Languages & Work",
-      "scenario": "A curious neighbor asks whether you are a foreigner ('Vahiny ve ianao?'), whether you speak Malagasy ('Miteny malagasy ve ianao?'), and what you do in Antananarivo.",
+      "scenario": "A curious neighbor asks whether you are a visitor ('Vahiny ve ianao?'), whether you speak Malagasy ('Miteny malagasy ve ianao?'), and what you do in Antananarivo.",
       "task": "Focus on placing the question particle 've' right after the predicate, and answering with 'Eny, Tompoko' or 'Kely fotsiny'.",
       "roles": [
         "Neighbor",
@@ -38082,12 +38086,13 @@ window.CONTENT = {
           "pron": "mee-PEH-trah-kah EH-too ahn-tah-nah-nah-REE-voo AH-hoo",
           "sourceKey": "phrase:mipetraka_eto_antananarivo_aho"
         }
-      ]
+      ],
+      "group": "introducing"
     },
     {
       "id": "dlg_rp_w2s3",
-      "title": "Asking About Spouse, Family & Professions (Faly & Felana)",
-      "scenario": "Continue the conversation with Faly (Bako Review 1–4): ask if he is married, what his wife's name is ('vadinao'), whether she is also a teacher, and if they have children.",
+      "title": "Asking About Spouse, Family & Professions",
+      "scenario": "Continue your conversation with Faly: ask if he is married, what his wife's name is ('vadinao'), whether she is also a teacher, and if they have children.",
       "task": "Notice how possessive suffixes work ('vadinao' = your spouse, 'asany' = her job) and how 'mbola tsy' means 'not yet'.",
       "roles": [
         "You",
@@ -38176,12 +38181,13 @@ window.CONTENT = {
           "pron": "TSEE-ah MBOO-lah TSEE mah-nah-ndzah-NAH-kah",
           "sourceKey": "dlg:dlg_intro_review_1_4_25:15"
         }
-      ]
+      ],
+      "group": "introducing"
     },
     {
       "id": "dlg_rp_w3s1",
       "title": "Counting Cups of Rice & Checking Availability",
-      "scenario": "Step 1 was buying eggs. Now you are at the grain stall asking if there is rice ('Misy vary ve?'), ordering three cups ('telo kapoaka'), and wrapping up your purchase politely.",
+      "scenario": "You are at the grain stall in the market asking if there is rice ('Misy vary ve?'), ordering three cups ('telo kapoaka'), and wrapping up your purchase politely.",
       "task": "Practice replacing the quantity ('iray, roa, telo, efatra, dimy, enina') as you order from the vendor.",
       "roles": [
         "Vendor",
@@ -38275,7 +38281,8 @@ window.CONTENT = {
           "pron": "AHM-pee EE-zeye mee-SOH-trah",
           "sourceKey": "phrase:ampy_izay,_misaotra"
         }
-      ]
+      ],
+      "group": "market"
     },
     {
       "id": "dlg_rp_w3s2",
@@ -38362,12 +38369,13 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah",
           "sourceKey": "phrase:misaotra_betsaka"
         }
-      ]
+      ],
+      "group": "money"
     },
     {
       "id": "dlg_rp_w3s3",
       "title": "Polite Bargaining at a Craft Stall ('Lafo be! Mba andatsao ny vidiny azafady')",
-      "scenario": "Step 1 was buying rice at a fixed price. Now you are at a handicraft stall where bargaining is expected. Ask the price, say it's too expensive, and ask for the vendor's final price ('Ohatrinona ny farany?').",
+      "scenario": "You are at a handicraft stall where bargaining is expected. Ask the price, say it is too expensive, ask the seller to lower the price ('Mba andatsao ny vidiny azafady'), and ask for the final price ('Ohatrinona ny farany?').",
       "task": "Play Buyer and Vendor. Negotiate with a smile — try starting at 20,000 Ar ('roa alina ariary') and coming down to 5,000 Ar ('dimy arivo ariary')!",
       "roles": [
         "Buyer",
@@ -38456,13 +38464,14 @@ window.CONTENT = {
           "pron": "EE-zeye mee-HEE-tsee NEE fah-RAH-nee",
           "sourceKey": "phrase:rpb_izay_mihitsy_ny_farany"
         }
-      ]
+      ],
+      "group": "market"
     },
     {
       "id": "dlg_rp_w4s1",
       "title": "Arriving Home Hot, Tired & Thirsty on a Sunny Afternoon",
-      "scenario": "After walking across town in the afternoon heat (Peace Corps L6), you arrive at your host family's home feeling tired, hot, and thirsty. Ask politely for a glass of water or coffee.",
-      "task": "Practice expressing physical states ('Noana aho, Mangetaheta aho, Reraka aho, Mafana aho, Voky aho') with adjective/state + 'aho'.",
+      "scenario": "After walking across town in the afternoon heat, you arrive at your host family's home feeling tired, hot, and thirsty. Ask politely for a glass of water or coffee.",
+      "task": "Practice expressing physical states ('Noana aho, Mangetaheta aho, Reraka aho, Mafana aho, Voky aho') with state + 'aho'.",
       "roles": [
         "Host",
         "You"
@@ -38550,7 +38559,8 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah",
           "sourceKey": "dlg:dlg_basic_needs:2"
         }
-      ]
+      ],
+      "group": "basics"
     },
     {
       "id": "dlg_rp_w4s2",
@@ -38644,7 +38654,8 @@ window.CONTENT = {
           "pron": "TEH hah-TOO-ree AH-hoo",
           "sourceKey": "phrase:te_hatory_aho"
         }
-      ]
+      ],
+      "group": "basics"
     },
     {
       "id": "dlg_rp_w4s3",
@@ -38731,12 +38742,13 @@ window.CONTENT = {
           "pron": "mah-TOO-kee AH-noh AH-hoo",
           "sourceKey": "phrase:matoky_anao_aho"
         }
-      ]
+      ],
+      "group": "basics"
     },
     {
       "id": "dlg_rp_w5s1",
       "title": "Morning Breakfast at a Guesthouse: Coffee, Rice & Bottled Water",
-      "scenario": "It is morning at a Malagasy hotely. Tell the host you are having breakfast ('Misakafo maraina aho'), ask if there is rice, and order a cup of coffee and bottled water.",
+      "scenario": "It is morning at a local guesthouse. Tell the host you are having breakfast ('Misakafo maraina aho'), ask if there is rice, and order a cup of coffee and bottled water.",
       "task": "Play Guest and Host. On Round 2, swap coffee ('kafe') with tea ('dite'), bread ('mofo'), or fish ('trondro').",
       "roles": [
         "Guest",
@@ -38825,13 +38837,14 @@ window.CONTENT = {
           "pron": "mah-zoo-TOO-ah HOO-mah-nah",
           "sourceKey": "phrase:rpb_mazotoa_homana"
         }
-      ]
+      ],
+      "group": "food"
     },
     {
       "id": "dlg_rp_w5s2",
       "title": "At the Family Table: Passing the Salt, Tasting Chili & Second Helpings",
-      "scenario": "Your Malagasy host urges you to eat more laoka (Peace Corps L10). Ask for the salt, check whether the chili ('sakay') is spicy ('Mahery ve ity?'), and politely say you are full ('Voky aho, misaotra!').",
-      "task": "Practice the classic Malagasy table hospitality ritual: hosts always urge guests to eat more ('Hihinana bebebebe kokoa!').",
+      "scenario": "At a family meal, your Malagasy host warmly urges you to eat more laoka. Ask for the salt, check whether the chili ('sakay') is spicy ('Mahery ve ity?'), and politely say you are full ('Voky aho, misaotra!').",
+      "task": "Practice the classic Malagasy table hospitality ritual where hosts encourage guests to take second helpings ('Hihinana bebebebe kokoa!').",
       "roles": [
         "Host",
         "Guest"
@@ -38919,12 +38932,13 @@ window.CONTENT = {
           "pron": "mah-zoo-TOO-ah",
           "sourceKey": "dlg:dlg_eating_ordering:4"
         }
-      ]
+      ],
+      "group": "food"
     },
     {
       "id": "dlg_rp_w5s3",
       "title": "Dining Out at a Restaurant: Table, Menu, Order & Bill",
-      "scenario": "You walk into a sit-down restaurant for dinner. Ask for a table for one, request the menu ('karta'), place your order, and ask for the bill and receipt at the end.",
+      "scenario": "You walk into a sit-down restaurant for dinner. Ask for a table for one, request the menu ('karta'), place your order, and ask for the bill at the end.",
       "task": "Play Customer and Waiter from arrival to paying the bill.",
       "roles": [
         "Customer",
@@ -39013,7 +39027,8 @@ window.CONTENT = {
           "pron": "NEE ah-ddee-TEE-oon ah-zah-FAH-dee",
           "sourceKey": "phrase:rpb_ny_addition,_azafady"
         }
-      ]
+      ],
+      "group": "food"
     },
     {
       "id": "dlg_rp_w6s1",
@@ -39107,11 +39122,12 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah",
           "sourceKey": "phrase:misaotra_betsaka"
         }
-      ]
+      ],
+      "group": "directions"
     },
     {
       "id": "dlg_rp_w6s2",
-      "title": "Turn-by-Turn Directions to the Hospital (Bako Theme 11a)",
+      "title": "Turn-by-Turn Directions to the Hospital",
       "scenario": "You are in a new town and need to find the hospital. Ask a passerby for directions and follow their turn-by-turn instructions ('mandeha mahitsy, miankavanana, miankavia').",
       "task": "Practice giving different combinations of 'Mandeha mahitsy' (go straight), 'Mihodina miankavanana' (turn right), and 'Mihodina miankavia' (turn left).",
       "roles": [
@@ -39201,7 +39217,8 @@ window.CONTENT = {
           "pron": "TSEE MEE-see fee-soh-RAH-nah",
           "sourceKey": "dlg:dlg_directions_travel:3"
         }
-      ]
+      ],
+      "group": "directions"
     },
     {
       "id": "dlg_rp_w6s3",
@@ -39295,12 +39312,13 @@ window.CONTENT = {
           "pron": "TSAH-rah NEE lah-LAH-nah",
           "sourceKey": "phrase:tsara_ny_lalana"
         }
-      ]
+      ],
+      "group": "directions"
     },
     {
       "id": "dlg_rp_w7s1",
-      "title": "At a Malagasy Church Service: Present (m-) vs. Future (h-) Verbs",
-      "scenario": "In Bako Lesson 5 ('Going to church'), you hear how Malagasy speakers shift active verbs from present ('mitsangana, mihira') to future ('hitsangana isika, hihira isika, hivavaka isika, hamaky isika').",
+      "title": "At a Sunday Service: Present (m-) vs. Future (h-) Verbs",
+      "scenario": "At a community church service ('Fiangonana'), listen to how speakers shift active verbs from present ('mitsangana, mihira') to future ('hitsangana isika, hihira isika, hivavaka isika, hamaky isika').",
       "task": "Compare each imperative/present form ('Mitsangàna / Mihira / Mipetraha') with the inclusive future ('Hitsangana isika / Hihira isika / Hivavaka isika').",
       "roles": [
         "Leader",
@@ -39389,7 +39407,8 @@ window.CONTENT = {
           "pron": "hee-vah-VAH-kah ee-SEE-kah",
           "sourceKey": "dlg:dlg_intro_5_27:7"
         }
-      ]
+      ],
+      "group": "time"
     },
     {
       "id": "dlg_rp_w7s2",
@@ -39483,12 +39502,13 @@ window.CONTENT = {
           "pron": "hee-HOH-nah ah-MEE-n'nee ZOO-mah ah-MEE-n'nee EH-fah-trah ee-SEE-kah",
           "sourceKey": "phrase:hihaona_amin'ny_zoma_amin'ny_efatra_isika"
         }
-      ]
+      ],
+      "group": "time"
     },
     {
       "id": "dlg_rp_w7s3",
       "title": "Storytelling: How Was Your Visit to the Countryside Village?",
-      "scenario": "You have just returned from a trip to a countryside village ('any ambanivohitra', Bako Lesson 6). Tell your friend how the village was: few cars, clean air, fresh food, quiet nights, and starry skies.",
+      "scenario": "You have just returned from a trip to a countryside village ('any ambanivohitra'). Tell your friend how the village was: few cars, clean air, fresh food, quiet nights, and starry skies.",
       "task": "Practice descriptive storytelling sentences where the adjective comes first ('Madio ny rivotra', 'Vaovao ny sakafo', 'Tsara tarehy ny lanitra').",
       "roles": [
         "Friend",
@@ -39577,12 +39597,13 @@ window.CONTENT = {
           "pron": "mah-hah-FAH-lee AH-hee ee-ZAH-nee",
           "sourceKey": "phrase:mahafaly_ahy_izany"
         }
-      ]
+      ],
+      "group": "weather"
     },
     {
       "id": "dlg_rp_w8s1",
       "title": "Setting Up a Friday Afternoon Meeting ('Hihaona isika ve?')",
-      "scenario": "Step 1 was discussing daily wake-up times. Now you and a friend are arranging to meet on Friday at 4:00 pm (Peace Corps L11).",
+      "scenario": "You and a friend are coordinating your schedules for the week and arranging to meet on Friday at 4:00 pm.",
       "task": "On Round 2, change the day of the week ('Alatsinainy, Talata, Alarobia, Alakamisy, Zoma, Sabotsy, Alahady') and the hour!",
       "roles": [
         "Friend",
@@ -39664,7 +39685,8 @@ window.CONTENT = {
           "pron": "TSAH-rah mahn-drah-PEE-hoh-nah ZOO-mah",
           "sourceKey": "dlg:dlg_time_appointments:4"
         }
-      ]
+      ],
+      "group": "time"
     },
     {
       "id": "dlg_rp_w8s2",
@@ -39758,7 +39780,8 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah",
           "sourceKey": "phrase:misaotra_betsaka"
         }
-      ]
+      ],
+      "group": "time"
     },
     {
       "id": "dlg_rp_w8s3",
@@ -39852,12 +39875,13 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah",
           "sourceKey": "phrase:misaotra_betsaka"
         }
-      ]
+      ],
+      "group": "travel"
     },
     {
       "id": "dlg_rp_w9s1",
       "title": "Welcoming a Guest & Showing Where Rooms Are in the House",
-      "scenario": "Step 1 was looking for lost sunglasses. Now a visitor arrives at your front gate ('vavahady'). Welcome them in and show them where the kitchen and bathroom are.",
+      "scenario": "A visitor arrives at your front gate ('vavahady'). Welcome them in and show them where the kitchen and bathroom are.",
       "task": "Practice household nouns ('vavahady, varavarana, lakozia, kabone, trano') and open/closed states ('misokatra / mikatona').",
       "roles": [
         "Visitor",
@@ -39946,12 +39970,13 @@ window.CONTENT = {
           "pron": "AH-tee AHN kee-AH-ndzah NEE kah-BOO-neh",
           "sourceKey": "phrase:aty_an-kianja_ny_kabone"
         }
-      ]
+      ],
+      "group": "basics"
     },
     {
       "id": "dlg_rp_w9s2",
       "title": "Describing Sizes, Colors & Cleanliness at a Clothing Shop",
-      "scenario": "Step 1 was moving a table at home. Now you are inspecting clothes at a shop and using adjectives to ask for a larger/smaller size or a different color.",
+      "scenario": "You are inspecting clothes at a shop and using adjectives to ask for a larger or smaller size or a different color.",
       "task": "Practice using descriptive adjectives ('lehibe, kely, madio, maloto, tsara, ratsy') without a 'to be' verb.",
       "roles": [
         "Shopkeeper",
@@ -40040,13 +40065,14 @@ window.CONTENT = {
           "pron": "HAH-dzoh NEE fah-hah-dee-oo-VAH-nah",
           "sourceKey": "phrase:wv_respect_clean"
         }
-      ]
+      ],
+      "group": "colours"
     },
     {
       "id": "dlg_rp_w9s3",
       "title": "Working Together at Home: Polite Imperatives & Clarifications",
       "scenario": "You are helping out with household tasks and practicing everyday imperatives ('Avia aty!', 'Andraso!') and asking someone to speak slowly or repeat an instruction.",
-      "task": "Practice every learner's survival requests: 'Afaka manampy ahy ve ianao?', 'Afaka miteny miadana kokoa ve ianao?', and 'Afaka averinao ve azafady?'",
+      "task": "Practice essential everyday requests: 'Afaka manampy ahy ve ianao?', 'Afaka miteny miadana kokoa ve ianao?', and 'Afaka averinao ve azafady?'",
       "roles": [
         "You",
         "Helper"
@@ -40134,12 +40160,13 @@ window.CONTENT = {
           "pron": "TSEE ah-ZOO-koo",
           "sourceKey": "phrase:wv_dontunderstand"
         }
-      ]
+      ],
+      "group": "greetings"
     },
     {
       "id": "dlg_rp_w10s1",
       "title": "At the Nurse's Triage Desk: Explaining What Part of the Body Hurts",
-      "scenario": "Step 1 was buying medicine at a pharmacy. Now you are at a clinic triage desk where the nurse asks 'Aiza no marary?' (Where does it hurt?) and you point out different body parts.",
+      "scenario": "You are at a clinic triage desk where the nurse asks 'Aiza no marary?' (Where does it hurt?) and you point out which parts of your body hurt.",
       "task": "Play Nurse and Patient. Swap in different body aches ('marary an-doha, marary kibo, marary nify, marary tenda, marary tratra').",
       "roles": [
         "Nurse",
@@ -40228,13 +40255,14 @@ window.CONTENT = {
           "pron": "mah-RAH-ree NEE-fee AH-hoo",
           "sourceKey": "phrase:marary_nify_aho"
         }
-      ]
+      ],
+      "group": "health"
     },
     {
       "id": "dlg_rp_w10s2",
-      "title": "At the Doctor's Office: Diagnosing a Cold & Fever (Bako Theme 7b)",
-      "scenario": "You are consulting a doctor about fever, dizziness, and cold symptoms ('voan'ny sery, voan'ny tazo, fanina'), and asking which pharmacy is open tonight.",
-      "task": "Practice the 'voan'ny ... aho' pattern ('voan'ny sery aho, voan'ny tazo aho, voan'ny tazo moka aho') and receiving medicine from the doctor.",
+      "title": "At the Doctor's Office: Diagnosing a Cold & Fever",
+      "scenario": "You are consulting a doctor about fever, dizziness, and cold symptoms ('voan'ny sery, voan'ny tazo, fanina'), and receiving medicine.",
+      "task": "Practice the 'voan'ny ... aho' pattern ('voan'ny sery aho, voan'ny tazo aho, voan'ny tazo moka aho') and thanking the doctor.",
       "roles": [
         "Doctor",
         "Patient"
@@ -40322,7 +40350,8 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah toom-POO-koo",
           "sourceKey": "dlg:dlg_health_emergency:5"
         }
-      ]
+      ],
+      "group": "health"
     },
     {
       "id": "dlg_rp_w10s3",
@@ -40416,12 +40445,13 @@ window.CONTENT = {
           "pron": "NDOH hahn-DEH-hah",
           "sourceKey": "phrase:ndao_handeha"
         }
-      ]
+      ],
+      "group": "emergencies"
     },
     {
       "id": "dlg_rp_w11s1",
-      "title": "Morning Weather Small Talk & Bringing an Umbrella (Bako Theme 3)",
-      "scenario": "Step 1 was waiting for a late bus in the rain. Now you are having a cheerful morning chat with a neighbor about today's sunshine, tomorrow's rain forecast, and dressing warmly.",
+      "title": "Morning Weather Small Talk & Bringing an Umbrella",
+      "scenario": "You are having a cheerful morning chat with a neighbor about today's sunshine, tomorrow's rain forecast, and dressing warmly.",
       "task": "Swap weather conditions on Round 2: 'Mafana ny andro', 'Mangatsiaka ny andro', 'Avy ny orana', 'Mandrivotra ny andro', 'Manjavona ny andro'.",
       "roles": [
         "Neighbor",
@@ -40503,7 +40533,8 @@ window.CONTENT = {
           "pron": "mee-TOON-drah EH-loo",
           "sourceKey": "phrase:rpb_mitondra_elo"
         }
-      ]
+      ],
+      "group": "weather"
     },
     {
       "id": "dlg_rp_w11s2",
@@ -40597,7 +40628,8 @@ window.CONTENT = {
           "pron": "TSEE-ah toom-POO-koo",
           "sourceKey": "phrase:wv_no_sir"
         }
-      ]
+      ],
+      "group": "weather"
     },
     {
       "id": "dlg_rp_w11s3",
@@ -40691,12 +40723,13 @@ window.CONTENT = {
           "pron": "SOO-ah ah-nee-EH",
           "sourceKey": "phrase:soa_anie"
         }
-      ]
+      ],
+      "group": "greetings"
     },
     {
       "id": "dlg_rp_w12s1",
-      "title": "City Bus Transfer: Taking Bus 154 & Bus H to Ankadikely (Bako Theme 15e)",
-      "scenario": "Step 1 was catching a regional taxi-brousse to Mandritsara. Now you are at a city bus stop in Antananarivo asking a local whether Bus 163 passes here and learning how to transfer from Bus 154 at Andravoahangy to Bus H.",
+      "title": "City Bus Transfer: Taking Bus 154 & Bus H to Ankadikely",
+      "scenario": "You are at a city bus stop in Antananarivo asking a local whether Bus 163 passes here and learning how to transfer from Bus 154 at Andravoahangy to Bus H.",
       "task": "Play Passenger and Local. Practice asking about bus routes, where to get off ('miala'), and whether you need to transfer ('Mila miova bus izany?').",
       "roles": [
         "Passenger",
@@ -40792,12 +40825,13 @@ window.CONTENT = {
           "pron": "TSEE MEE-see fee-soh-RAH-nah",
           "sourceKey": "dlg:dlg_theme_15e_0:8"
         }
-      ]
+      ],
+      "group": "transport"
     },
     {
       "id": "dlg_rp_w12s2",
       "title": "At the Taxi-Brousse Station: Luggage, Departure Time & Free Seats",
-      "scenario": "Step 1 was booking Saturday tickets to Antsirabe in advance. Now it is departure day at the station ('garinarobe'): ask where the station is, when the bus leaves, how long the trip takes, and hand over your luggage ('entako').",
+      "scenario": "It is departure day at the regional station ('garinarobe'): ask where the boarding area is, when the bus leaves, how long the trip takes, and hand over your luggage ('entako').",
       "task": "Play Traveler and Station Agent. Practice all essential station survival questions!",
       "roles": [
         "Traveler",
@@ -40893,12 +40927,13 @@ window.CONTENT = {
           "pron": "EE-tee NEE ehn-TAH-koo",
           "sourceKey": "phrase:ity_ny_entako"
         }
-      ]
+      ],
+      "group": "transport"
     },
     {
       "id": "dlg_rp_w12s3",
-      "title": "Hailing a City Taxi to the Analakely Post Office (Bako Theme 15e)",
-      "scenario": "Step 1 was riding the train to Moramanga. For your final capstone roleplay, hail a taxi in Antananarivo, tell the driver where in Analakely you are going ('Eo amin'ny paositra'), agree on the 10,000 Ar fare, and pay upon arrival!",
+      "title": "Hailing a City Taxi to the Analakely Post Office",
+      "scenario": "For your final capstone roleplay, hail a taxi in Antananarivo, tell the driver where in Analakely you are going ('Eo amin'ny paositra'), agree on the 10,000 Ar fare, and pay upon arrival!",
       "task": "Play Driver and Passenger. After completing the dialogue, improvise a second taxi ride to a different landmark in town!",
       "roles": [
         "Driver",
@@ -40987,7 +41022,8 @@ window.CONTENT = {
           "pron": "mee-SOH-trah toom-POO-koo",
           "sourceKey": "dlg:dlg_theme_15e_2:7"
         }
-      ]
+      ],
+      "group": "transport"
     }
   ],
   "grammar": [
@@ -42198,7 +42234,7 @@ window.CONTENT = {
       "rules": [
         {
           "rule": "1. Review: building a possessive adjective (NOUN + SUFFIX)",
-          "explanation": "The structure is the same as in Lesson 13A: NOUN (thing possessed) + SUFFIX (possessor).",
+          "explanation": "The structure is the same in the standard possessive pattern: NOUN (thing possessed) + SUFFIX (possessor).",
           "examples": [
             {
               "mg": "Mofo + IZAHAY (we excl.) → MofoNAY",
@@ -42949,624 +42985,620 @@ window.CONTENT = {
   ],
   "culture": [
     {
-      "lesson": "wikivoyage_regional_greetings",
+      "lesson": "Regional Greetings",
       "note": "Greeting in Northern region (incl. the practice place area north): \"Mbola tsara!\" — Still well! (common northern greeting)"
     },
     {
-      "lesson": "wikivoyage_regional_greetings",
+      "lesson": "Regional Greetings",
       "note": "Greeting in Everywhere (pan-regional): \"Salama\" — Hello — understood everywhere"
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "Use tompoko ('TOOM-pook', unisex: sir/madam) after a sentence when speaking to an elder or authority figure."
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "In Madagascar each region has its own greeting — learning the local one earns warm smiles."
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "Antananarivo means 'City of the Thousand' (arivo = thousand)."
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "'Tsy misy' (there is nothing) is a polite reply to beggars."
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "Bargaining at markets: sellers expect it; start lower and increase in small amounts."
     },
     {
-      "lesson": "wikivoyage_culture",
+      "lesson": "Malagasy Culture & Etiquette",
       "note": "The traveler's tree (ravinala) holds drinkable water in its trunk — a living symbol of Malagasy hospitality."
     },
     {
-      "lesson": "intro_1a",
-      "note": "the tutor, has been a language tutor in the region since 2008, teaching missionaries and visitors to the Hopitaly Vaovao Mahafaly project."
-    },
-    {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "in the region the most common way of greeting each other is by saying 'Salama Tompoko', literally 'hello, sir'."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "When one arrives at a friend's house, the guest initiates the greeting at the door by saying out loud 'Haody!', much like a knock on the door."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "A 'Kabary' is where both the guest and host take turns to give a short speech."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "Malagasy Kabary originated as a highly poeticised speech performed in front of an audience. Today it is an integral part of social life, used in social events like festivities, ceremonies and funerals. Informally, people use it to convey thanks or welcome at dinner parties or gatherings."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "If a guest is invited to a meal, the host never asks 'Inona ny vaovao?' (what's new), as the intention for the visit is obvious."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "There are 18 tribes spread across 22 regions in Madagascar."
     },
     {
-      "lesson": "intro_1a",
+      "lesson": "Greetings & Hospitality",
       "note": "Standard ways of saying hello in Official Malagasy: 'Manao ahoana' and 'Salama' (or politely 'Manao ahoana tompoko' / 'Salama tompoko')., 'Miarahaba' (Central)."
     },
     {
-      "lesson": "intro_1b",
+      "lesson": "Partings & Times of Day",
       "note": "There are a number of ways to say goodbye in Malagasy; the most common are 'Veloma tompoko', 'Veloma e', 'Mazotoa', and 'Amin'ny manaraka indray'."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "Although 'misaotra' is sufficient, saying 'MISAOTRA BETSAKA' is more polite."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "You will invariably hear the word 'azafady' used a lot; it is an extremely useful word."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "Body language (giving/receiving a gift): one usually stretches out both hands to express politeness. in the region, when one gives something or says 'misaotra', one usually bends the knee slightly as a sign of reverence."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "Body language (walking past people): slightly bow your body and stretch your right hand out."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "'MIALA TSINY' is another way of apologising over something trivial. For a serious offence you would literally be asking for forgiveness: 'MIFONA'. This is the term used in the Bible."
     },
     {
-      "lesson": "intro_2",
+      "lesson": "Politeness & Respect",
       "note": "When invited with 'mandroso' to join a meal, the person is definitely not obliged to sit down and eat; they can simply respond 'Misaotra, mazotoa'."
     },
     {
-      "lesson": "intro_3",
+      "lesson": "Introductions & Family",
       "note": "It is important to know how to introduce yourself when you arrive in Madagascar. One can talk about anything, but in practice some things are essential: saying your name, where you are from and what you do for a living."
     },
     {
-      "lesson": "intro_3",
+      "lesson": "Introductions & Family",
       "note": "After the obligatory introduction, you can talk about anything you like - for example your family, your spouse and children."
     },
     {
-      "lesson": "intro_3",
+      "lesson": "Introductions & Family",
       "note": "Malagasy society generally favours marriage and having children. If you are in neither of these categories, it might be difficult to avoid feeling a bit second-class."
     },
     {
-      "lesson": "intro_3",
+      "lesson": "Introductions & Family",
       "note": "So, if you don't know someone that well, it's probably not a good idea to ask if they are married or how many children they have!"
     },
     {
-      "lesson": "intro_3",
+      "lesson": "Introductions & Family",
       "note": "In Malagasy, the word for boy, man and male are the same (lehilahy); likewise for girl/woman/female (vehivavy)."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "Money: 1 Ar = 1 ariary. Ariary x 5 = Franc Malagasy."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "When talking about money, 'ariary' is used with 10 Ar (ariary folo) and 100 Ar (ariary zato) only. For all other values the word is dropped, e.g. 200 Ar = roanjato."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "In the market, prices generally start from about 100 Ar."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "Malagasy Franc was replaced by Ariary in 2005 at a rate of 5 francs = 1 Ar. Hence, you will still find vendors quoting prices in Francs, especially to foreigners."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "Always check if it's Francs or Ariary, and know your 5 times table well!"
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "If the price is not displayed, do ask. The price is usually quoted in Ariary."
     },
     {
-      "lesson": "intro_4",
+      "lesson": "Markets & Numbers",
       "note": "Even though there is no physical shop, 'mandroso' is used to invite the customer to approach and make their purchase."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Veloma e! Mazotoa homana' > what people say to each other when leaving to have their meal at midday or at the end of the day."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Veloma e, Hariva koa' > when saying goodbye and expecting to see each other again in the afternoon."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Veloma rahampitso koa' > when saying goodbye and expecting to see each other again the next day."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Veloma e. Alatsinainy koa' > when saying goodbye at the end of the week and expecting to see each other the following Monday."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Misaotra. Ianao koa' > a response after saying 'bon appétit' or 'have a good evening'."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Tsy misy fisaorana' > a response to being thanked."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Misaotra Tompoko' > expression of thank you but in a more polite way."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Misaotra betsaka' > expression of thank you but in a more polite way (thank you very much)."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Mandroso' > 1. when inviting someone in, 2. when inviting someone to eat, 3. when a vendor invites customers into their shop."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Misaotra. Mazotoa.' > a response to someone saying 'mandroso' as an invitation to eat together."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Azafady' > 1. to apologise, 2. when passing by someone else."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Ndao' > when one allows another person to walk past."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Tsy maninona' > a response to someone saying sorry."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Soava dia' > for expressing 'bon voyage'."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Tonga soa' > for expressing welcome."
     },
     {
-      "lesson": "intro_review_1_4",
+      "lesson": "Intro Review 1 4",
       "note": "'Mazotoa' > wishing/saying someone: 1. have a good day, 2. keep it up, 3. enjoy."
     },
     {
-      "lesson": "intro_5",
-      "note": "Lesson 5 walks through a typical Baptist church service ( is a member of a Baptist church), so that you do not get lost on your first Sunday."
+      "lesson": "Community & Sunday Worship",
+      "note": "In Madagascar, a typical Baptist church service, so that you do not get lost on your first Sunday."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "There are two main hymn books: FFPM (Fiombonan'ny Fiangonana Protestanta eto Madagasikara) - the official hymn book of Protestants throughout Madagascar; and ASAFA - the official hymn book of Baptist churches in Madagascar. There is also the Fihirana FANAMPINY, also referred to as the second volume of FFPM."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "Church services (fanompoam-pivavahana) usually start at 9am."
     },
     {
-      "lesson": "intro_5",
-      "note": "Typical order of a Baptist service: 1. Fiderana (worship: sing, pray, read God's word, give a testimony), 2. Fanatitra (offering), 3. Anjara ho an'ny ankizy (children's lesson), 4. Vakiteny (Bible reading, usually the sermon passage), 5. Toriteny (sermon), 6. Filazana vaovao (announcements - includes welcoming first-time visitors, who usually stand up and give a short KABARY, see lesson 1a), 7. Tsodrano (benediction, usually a blessing from scripture), 8. Mifandray tanana (shaking hands with everyone) before parting."
+      "lesson": "Community & Sunday Worship",
+      "note": "Typical order of a Baptist service: 1. Fiderana (worship: sing, pray, read God's word, give a testimony), 2. Fanatitra (offering), 3. Anjara ho an'ny ankizy (children's lesson), 4. Vakiteny (Bible reading, usually the sermon passage), 5. Toriteny (sermon), 6. Filazana vaovao (announcements - includes welcoming first-time visitors, who usually stand up and give a short KABARY), 7. Tsodrano (benediction, usually a blessing from scripture), 8. Mifandray tanana (shaking hands with everyone) before parting."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "Sunday school is usually at 8am before the service, and communion is after the service."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "Being a Christian majority nation, it is quite easy to make a distinction in Madagascar between those who go to church (not necessarily Christians) and those who do not."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "Malagasies believe in the existence of the greatest of gods, the Creator God (ZANAHARY / ANDRIAMANITRA), with different attributes such as God who blesses, protects, sees everything, etc."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "In general, Malagasies believe that those who die 'are not dead' but are in a better place, somewhere between God and the living. Deceased people are said to be 'called by their fathers' or 'they have fallen asleep'."
     },
     {
-      "lesson": "intro_5",
+      "lesson": "Community & Sunday Worship",
       "note": "You might remember the numbers by now, but hearing them reeled off quickly at church requires quite a bit more practice and time! Trying to figure out which song or passage is being referenced during the service is really a challenge, but don't lose heart, as you'll soon get used to it."
     },
     {
-      "lesson": "intro_6",
+      "lesson": "Countryside & Village Life",
       "note": "During your time in the region, you might have the opportunity of visiting villages around the region - a day trip on foot/motorbike, or a few days with the community team by helicopter."
     },
     {
-      "lesson": "intro_6",
+      "lesson": "Countryside & Village Life",
       "note": "It is helpful to equip yourself with some basic vocabulary, including a few adjectives that might come in handy."
     },
     {
-      "lesson": "intro_6",
+      "lesson": "Countryside & Village Life",
       "note": "Village life observations from the text: few vehicles, clean air, spacious land, generally fresh food, little noise, beautiful sky and stars at night."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Family size tends to be large in Madagascar. Relationships between family members are important in daily life, through good and bad times."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Starting a family is one of the main purposes of marriage - it is challenging being single or childless in the Malagasy culture."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Malagasies consider: uncles/aunties like parents; cousins like siblings; nephews/nieces like one's own children."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Marriage is a family affair, not just between the couple."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Specific terms for family members are very complicated in Malagasy, depending on the speaker's and relative's gender and relative age."
     },
     {
-      "lesson": "theme_1",
+      "lesson": "Family & Kinship",
       "note": "Naming conventions of relationships between family members are illustrated with family tree diagrams covering three generations and siblings."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "Traditional Malagasy houses are built with wood or raw earth. The roof is made of tafo bozaka (thatch) or tafo taila - tile / terracotta."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "Traditional houses typically consist of 1 or 2 rooms: one room with a kitchen corner, or 2 rooms, one of which is a lakozia (kitchen) and the other a tranobe - the large room."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "All doors of traditional Malagasy houses should always face west so that the house can benefit from the sunlight until sunset."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "Malagasy people often use the cardinal points North (avaratra), South (atsimo), West (andrefana), and East (atsinanana) for orientation."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "In Malagasy, tanana or vohitra means town or village. The size of a town is defined by the number of roofs or kitchens."
     },
     {
-      "lesson": "theme_2",
+      "lesson": "Traditional & Modern Homes",
       "note": "Grammar rule from the lesson: 'Mi-' is used for intransitive verbs and 'Ma-' for transitive verbs in relation to houses or doors (e.g. mivoha = to be open vs mamoha = to open)."
     },
     {
-      "lesson": "theme_3",
+      "lesson": "Weather & Seasons",
       "note": "For Malagasy people in general, when listening to the weather forecast, 'good weather' means sunny and without rain. However, during the planting season, rain is needed, and farmers do not agree with the concept of 'bad weather' (with rain)."
     },
     {
-      "lesson": "theme_3",
+      "lesson": "Weather & Seasons",
       "note": "The word 'NY ANDRO' (which means day) is used to describe the weather or climate."
     },
     {
-      "lesson": "theme_3",
+      "lesson": "Weather & Seasons",
       "note": "Madagascar is in the southern hemisphere, so the characteristics of the seasons are different from those in the northern hemisphere. The words for the four Malagasy seasons are: fahavaratra = summer; fararana = autumn; ririnina = winter; lohataona = spring."
     },
     {
-      "lesson": "theme_3",
+      "lesson": "Weather & Seasons",
       "note": "Madagascar has two main climates: MAFANA sy MANDO (hot and humid) from October to March, and MANINTSY sy MAINA (cool and dry) from April to September."
     },
     {
-      "lesson": "theme_4",
+      "lesson": "Malagasy Cuisine & Kitchen",
       "note": "Sentence-building tip from the lesson: to set the kitchen verbs into sentences, start by asking 'Maninona izy?' - What is he/she doing?"
     },
     {
-      "lesson": "theme_5",
+      "lesson": "Livelihoods & Professions",
       "note": "Many job names in Malagasy are derived from verbs, generally by changing the initial letter M of the verb to Mp (with some exceptions), e.g. mianatra (to study) becomes mpianatra (student)."
     },
     {
-      "lesson": "theme_5",
+      "lesson": "Livelihoods & Professions",
       "note": "Possessive adjectives in Malagasy are added as suffixes to nouns, e.g. asako = my job, asanao = your job."
     },
     {
-      "lesson": "theme_5",
+      "lesson": "Livelihoods & Professions",
       "note": "Possessive suffix table from the lesson: aho + -ko (asako); ianao + -nao (asanao); izy + -ny (asany); izahay + -nay; isika + -ntsika; ianareo + -reo; izy ireo + -ny."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "Clothing in Madagascar varies depending on the region of origin. Most people wear lamba (traditional cloth) by either mitafy (draping) or misikina (wrapping it around themselves)."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "There are clothes worn daily, some reserved for celebrations, and others for funerals or mourning. During mourning, people often wear dark or white clothing, with red being rarely used."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "As Madagascar is a hot country, there aren't specific clothes for cold weather. Instead, people wear more layers to keep warm."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "Women: generally have long hair, sometimes braided, and often wear dresses. In many regions, they also wear lambahoany (a type of traditional cloth)."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "Men: tend to wear hats more frequently than women."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "In some regions, people remove their shoes before entering a house."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "According to Malagasy culture, hats are removed when entering a house, singing the national anthem, or encountering a funeral procession."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "Dark-coloured clothes are typically worn during mourning, while bright-coloured ones are worn for celebrations."
     },
     {
-      "lesson": "theme_6",
+      "lesson": "Clothing & Lamba",
       "note": "Grammar note: certain colour names can be duplicated to signify a more vivid or purer shade, e.g. fotsy = fotsifotsy, mena = menamena, mavo = mavomavo, mainty = maintimainty, maitso = maitsomaitso, manga = mangamanga."
     },
     {
-      "lesson": "theme_7a",
+      "lesson": "Body & Well-Being",
       "note": "Learning technique from the lesson for body parts vocabulary: 1. listen repeatedly (e.g. maso = eye); 2. listen and point to the part on your body; 3. point and say ITY (this) or IRETO (these) in response to 'AIZA ny ...?' (Where is the ...?); 4. listen and repeat twice (maso >> maso, maso); 5. answer 'INONA ity / ireto?' (What is this / what are these?) with the body part name."
     },
     {
-      "lesson": "theme_7b",
+      "lesson": "Health & Remedies",
       "note": "Madagascar does not have enough medical infrastructure or doctors, especially in villages far from the cities. Many people do not have the budget for healthcare. Consequently people rely on traditional medicine (herbal teas, massages, etc.)."
     },
     {
-      "lesson": "theme_7b",
+      "lesson": "Health & Remedies",
       "note": "Madagascar has many medicinal plants, and their names and uses are passed down orally. Some remedies are effective, others are not, and some can even be toxic depending on preparation and dosage. Some pharmaceutical laboratories have begun to study and use these plants."
     },
     {
-      "lesson": "theme_7b",
+      "lesson": "Health & Remedies",
       "note": "The word MARARY can mean: ny marary (noun) = the patient; ny marary (noun) = pain; marary (adjective) = painful."
     },
     {
-      "lesson": "theme_7b",
+      "lesson": "Health & Remedies",
       "note": "There are three common ways to describe being sick in Malagasy: 1. Using 'voan'ny' + disease name to say 'I have a ...'; 2. Using 'marary' + body part to say 'I have pain in ...'; 3. Using adjectives and verbs (e.g. mafana hoditra izy = he has a fever, lit. hot skin)"
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "Madagascar is a large tropical island where more than 80% of Malagasy households work in agriculture. For some it's their main source of income; for others it's a secondary activity. The primary crop is rice."
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "Each region of Madagascar is known for specific crops, depending on its climate (hot, cold, humid, etc.) and soil type (volcanic, sandy, clay, etc.). Even in the southern regions, which face significant rainfall challenges, fruits and legumes (dry grain vegetables) are abundant."
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "The central, northern, and eastern regions are rich in fruits, while vegetables are plentiful in the highlands. Wild fruits are also part of the landscape."
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "Madagascar's lychee is well recognized in some European countries and neighbouring islands."
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "Fruits and vegetables are seasonal. The only fruit available year-round is bananas. Fresh grain legumes can be purchased during their season, while dried ones are available year-round."
     },
     {
-      "lesson": "theme_8a",
+      "lesson": "Fruits of Madagascar",
       "note": "The Malagasy consume fruits fresh and vegetables either raw or cooked, often served with rice."
     },
     {
-      "lesson": "theme_8b",
+      "lesson": "Vegetables & Spices",
       "note": "Most fresh vegetables are seasonal, but dried-grain vegetables can be found all year round. They are preserved by harvesting the grains when mature and drying them. They are typically eaten with rice."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "The daily life of Malagasy people is closely linked with insects and animals, wild or domesticated. Farmers often engage in animal husbandry alongside crop farming. Since rice is the staple, without the zebu there would be no rice paddies except with a great deal of extra work."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "Animals play many roles: companions like the cat and dog; protectors like the dog; sources of food (meat, eggs, honey, locusts, etc.); sources of fertiliser; work animals like the zebu; means of transport; sources of income for the family and the country's economy; indicators of time (the first crowing of the rooster is at 3 a.m.); some transmit diseases like mosquitoes, or are pests like locusts."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "Malagasy people are superstitious: seeing certain birds like crows or owls has a particular meaning."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "The zebu has important roles at all stages of life, from birth to funerals, even after death: they work the fields; are a source of meat, fertiliser, milk, horns, and skin for industry; are a symbol of wealth and success; are a form of savings (in difficult times such as illness, zebus are sold to obtain money); are a means of transport harnessed to carts, replacing cars in rural areas; and are used in culture (sports, sacrifices, wedding ceremonies, funerals, national holidays, New Year in certain regions)."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "In some ethnic groups, a boy only becomes a man after stealing his first zebu."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "In certain ethnic groups in southern Madagascar, when a man from the Mahafaly ethnic group dies, his zebu herd is sacrificed before burying him, with the skulls and horns hanging on his tomb. The people of the village eat the sacrificed meat. In this case, there is no inheritance of the herd for the children; they must create their own herd."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "In some regions, during the wake or wedding, one or more zebus are killed to feed the village, family, or guests."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "Zebu sacrifice is also important in certain regions during the 'Famadihana' (turning of the dead) ceremony."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "In certain regions, the man gives a zebu as a 'Moletry' dowry to the bride's family."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "In Malagasy, for the names of most animals the word 'vavy' (female) is added for the female, 'lahy' (male) for the male, and 'kely' (small) or 'zanaka' (child) for the young, e.g. akoho (chicken)."
     },
     {
-      "lesson": "theme_9",
+      "lesson": "Wildlife & Livestock",
       "note": "Madagascar has endemic animals like lemurs, but there are no venomous animals."
     },
     {
-      "lesson": "theme_9",
-      "note": "Exercise answers from the lesson: mammals (biby mampinono, 13): omby, ondry, osy, kisoa, apondra, soavaly, saka, alika, bitro, sokina, voalavo, totozy, gidro. Egg-laying (biby manatody, 22): akoho, gana, gisa, vorontsiloza, vorompotsy, voromailala, papango, fody, renintantely, moka, lolo, valala, vitsika, parasy, hala, bibilava, sokatra, tanalahy, androngo, trondro, foza, makamba. Insects (bibikely, 6): renintantely, moka, lolo, valala, vitsika, parasy. Birds (vorona, 8): akoho, gana, gisa, vorontsiloza, vorompotsy, voromailala, papango, fody. Living in water (biby anaty rano, 4): trondro, foza, makamba, sokatra."
+      "lesson": "Wildlife & Livestock",
+      "note": "Common Malagasy animal groupings — mammals (biby mampinono, 13): omby, ondry, osy, kisoa, apondra, soavaly, saka, alika, bitro, sokina, voalavo, totozy, gidro. Egg-laying (biby manatody, 22): akoho, gana, gisa, vorontsiloza, vorompotsy, voromailala, papango, fody, renintantely, moka, lolo, valala, vitsika, parasy, hala, bibilava, sokatra, tanalahy, androngo, trondro, foza, makamba. Insects (bibikely, 6): renintantely, moka, lolo, valala, vitsika, parasy. Birds (vorona, 8): akoho, gana, gisa, vorontsiloza, vorompotsy, voromailala, papango, fody. Living in water (biby anaty rano, 4): trondro, foza, makamba, sokatra."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "The concept of time or the hour is one of the causes of frustration or misunderstanding for foreigners who work with Malagasy people or live in Madagascar."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "There is an expression: 'Fotoan-gasy' (Malagasy time), and 'Manao fotoan-gasy ny Malagasy' (Malagasy people are not on time). It's 50% true - 50% false, because the two groups think with two different systems: foreigners have the hour and use a watch, but Malagasy people have time and use other systems like shadows, life events, and animal calls. That doesn't mean Malagasy people don't use watches."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "Examples of Malagasy time concepts: A doctor telling a patient to return at 2 p.m. finds it more effective to say 'Come back after lunch' - in that case the patient might arrive even earlier. Waiting is not a big issue for Malagasy people."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "When a Malagasy person gives someone an appointment they say 'You can come after 4 because I won't be there before' - not a precise time like '4:30'."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "'How long was your journey?' - 'We left when the first rooster crowed and arrived at lunchtime.' - no number shows the trip's length in that answer."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "'How many days were you coughing?' - 'Since Tuesday last week.'"
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "Time is deeply tied to the environment and daily life of Malagasy people (most of whom are farmers): they use ALOKA = shadow (shadow position helps determine whether it's nearly midday or already afternoon), MASOANDRO = sun (position and movement), FEON-BIBY = animal sounds, and daily activities (e.g. pounding rice, cows leaving or returning)."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "FAMANTARANANDRO means 'to know the day' and refers to a watch or clock. In everyday speech, 'montre' (from French) is also heard."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "'Minitra' (minute) and 'segondra' (second) are only used when talking about durations, not for telling the time."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "To express the time, Malagasy uses the numbers from 1 to 12, relying on context or adding a time-of-day word (maraina, atoandro, tolakandro, hariva, alina) to indicate morning, noon, evening, etc."
     },
     {
-      "lesson": "theme_10",
+      "lesson": "Malagasy Time & Daily Rhythm",
       "note": "Traditional clock-time expressions tied to daily life: 00:00 misasakalina (midnight); 02:00 maneno sahona (frogs croaking); 03:00 maneno akoho tokana (rooster crows once); 04:00 magiran-dratsy / mazava ratsy (dawn); 05:00 mifoha olo-mazoto (hard-working people wake up); 06:00 vaky masoandro (sunrise); 08:00 mivoaka omby (zebus come out of the pen); 09:00 mivoaka omby tera-bao (cow with calf comes out); 12:00 mitataovovonana (the sun is at the roof's highest point = noon); 13:00 mihilana ny andro (the day starts to lean = afternoon); 15:00 anpitotoam-bary ny andro (time when women pound rice); 17:00 mody omby (zebus come home); 18:00 maty masoandro (the sun dies = sunset); 20:00 manokom-bary olona (people cook dinner); 21:00 homam-bary olona (dinnertime); 21:30 tapi-mandry olona (everyone sleeps); 22:00 mivoaka mpamosavy (witches come out)."
     },
     {
-      "lesson": "theme_11a",
+      "lesson": "Directions & Distance",
       "note": "Distance is relative: what some people call 'far', others call 'close', depending on their habits of travel."
     },
     {
-      "lesson": "theme_11a",
+      "lesson": "Directions & Distance",
       "note": "In rural areas, kilometres are not commonly used to describe distance. Instead, people speak in terms of time using the word ADINY = hour. Example: 'làlana adiny 3' - a 3-hour journey (by foot or vehicle)."
     },
     {
-      "lesson": "theme_11a",
+      "lesson": "Directions & Distance",
       "note": "To indicate a location, a place, or a region, Malagasy people often use the cardinal points (avaratra = North, atsimo = South, andrefana = West, atsinanana = East)."
     },
     {
-      "lesson": "theme_11a",
+      "lesson": "Directions & Distance",
       "note": "Both 'mpivarotra' and 'fivarotana' are used for shops/sellers."
     },
     {
-      "lesson": "theme_11b",
+      "lesson": "Landmarks & Navigation",
       "note": "In Madagascar, only in large towns do streets usually have names or numbers. In most places, people use landmarks instead."
     },
     {
-      "lesson": "theme_11b",
+      "lesson": "Landmarks & Navigation",
       "note": "When asking, Malagasy speakers always use azafady (please) first, then either ask the question directly or begin with an introductory phrase like 'Could you show/tell me ...'."
     },
     {
-      "lesson": "theme_12a",
+      "lesson": "Education in Madagascar",
       "note": "Under the reign of King Radama I (1810-1828), the French Robin and Rev. Jones of the London Missionary Society (LMS) founded the first schools in Madagascar in 1820, at the initiative of a king who wanted closer ties with Europe through religious missionaries."
     },
     {
-      "lesson": "theme_12a",
+      "lesson": "Education in Madagascar",
       "note": "Although every person has the right to education, teaching, and training, access to education remains a challenge for different reasons: parental poverty, a bad harvest, early marriage, lack of nearby infrastructure, or competing priorities. There are still those who are illiterate or leave school early, and the level of schooling remains unequal across the country."
     },
     {
-      "lesson": "theme_12a",
+      "lesson": "Education in Madagascar",
       "note": "State school starts at age 6, private school at age 3. University begins at around age 18. There are three official exams: at age 10, 14, and 18."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "Many Malagasy families still live from farming, livestock, fishing, and crafts. The tasks of each family member vary according to geographical, economic, social, and family circumstances."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "Women more often stay at home, looking after the household and children, at least when the children are young, or they work from home to earn money. Traditionally, Malagasy women are responsible for managing the home and finances, the family's wellbeing, organising daily life, and the care and education of the children. Some also do gardening, sewing, or weaving. Men (the head of the family) are responsible for providing for and protecting the family, and making important decisions, though men can help and participate in household tasks."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "More typically feminine tasks: preparing meals, cleaning the house, doing the laundry, fetching water, looking after young children, and tending the farmyard animals."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "More typically masculine tasks: building and repairing the house, looking after the zebus, collecting firewood, and working in the fields."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "When children are young they are taught traditional values, social rules, and the skills needed to succeed in life - they are already being prepared for their future roles. This is visible in play: boys make omby tanimanga (zebus made of clay); girls play tsikonona (cooking, but in small quantities)."
     },
     {
-      "lesson": "theme_13",
+      "lesson": "Household & Community Life",
       "note": "Children participate in household chores according to their age, and sometimes, unfortunately, children have to help their parents by working."
     },
     {
-      "lesson": "theme_14a",
+      "lesson": "Daily Routines",
       "note": "Every day we do almost the same things: get up, get ready, eat, go to work or school. But not everyone has the same daily routine - it depends on a person's activity and where they live."
     },
     {
-      "lesson": "theme_14a",
+      "lesson": "Daily Routines",
       "note": "Many Malagasy people are farmers: they get up before sunrise and start work while it is still cool, and they go to bed early. Their routine is more physical and seasonal, depending on the climate, and farmers do not do just one job - they look after animals, work in the fields, repair tools, sell produce, and listen to the radio for the news and serials with the family."
     },
     {
-      "lesson": "theme_14a",
+      "lesson": "Daily Routines",
       "note": "Language structure notes: MANDEHA + verb = 'go + verb' (e.g. mandeha miasa = go to work); you can join routine sentences with the conjunctions 'SY' = and and 'AVY EO' = then."
     },
     {
-      "lesson": "theme_14b",
-      "note": "NB from the lesson: In Malagasy, times are expressed from 1 to 12. To tell them apart, the part of the day is added after the number, such as maraina (morning) or hariva (afternoon/even). Adding the word 'ora' (hour) after the number is optional and does not change how the time is understood."
+      "lesson": "Rural Life",
+      "note": "In Malagasy, times are expressed from 1 to 12. To tell them apart, the part of the day is added after the number, such as maraina (morning) or hariva (afternoon/even). Adding the word 'ora' (hour) after the number is optional and does not change how the time is understood."
     },
     {
-      "lesson": "theme_15a",
+      "lesson": "Travel & Transport",
       "note": "In the past in Madagascar, people travelled mostly on foot. Kings and nobles used the 'filanjana', a chair carried by men. Goods were carried by porters, or in carts pulled by zebu. Later the choices became wide: rail, road, sea and river, and air. Sometimes the fare is fixed, sometimes negotiable."
     },
     {
-      "lesson": "theme_15a",
+      "lesson": "Travel & Transport",
       "note": "The taxi-brousse is very typical for linking the different towns and villages of the big island. It is inexpensive, can carry many passengers and their luggage, and can cover long distances even on difficult roads."
     },
     {
-      "lesson": "theme_15a",
+      "lesson": "Travel & Transport",
       "note": "Some means of transport, such as the motorbike or the cart, can provide transport in remote areas that are hard to reach. Pirogues and boats are used in places beside rivers and the sea."
     },
     {
-      "lesson": "theme_15a",
+      "lesson": "Travel & Transport",
       "note": "Some names of means of transport are foreign words or Malagasy-ised words, such as 'taxi' and 'kamiao'. Others describe what the thing is, e.g. fiarandalamby (fiara + làlana + vy): a vehicle (fiara) whose road (làlana) is made of iron (vy); fiaramanidina (fiara + manidina): a vehicle (fiara) that flies (manidina)."
     },
     {
-      "lesson": "theme_15a",
+      "lesson": "Travel & Transport",
       "note": "Grammar: the verb MANDEHA (to go / to take) is used before the means of transport or travel, e.g. 'mandeha lakana' = to go by pirogue."
     },
     {
-      "lesson": "theme_15d",
+      "lesson": "Tickets & Journeys",
       "note": "NB: 'mandroso sy miverina' is a set expression for a return (round-trip) ticket, lit. 'going and returning'."
     },
     {
-      "lesson": "theme_15e",
+      "lesson": "Taxis & Taxi-Brousse",
       "note": "Fare-setting culture from the taxi dialogue: after agreeing on the price (here 10,000 Ar / 20,000 Ar per person), payment is settled directly with cash ('Ity ny volanao / Ity ny vola' = here is the money)."
     },
     {
-      "lesson": "theme_15e",
+      "lesson": "Taxis & Taxi-Brousse",
       "note": "Politeness formulas used throughout: azafady (please/excuse me), tompoko (sir/madam), misaotra (betsaka) (thank you very much), tsy misy fisaorana (you're welcome), and soava dia (have a good journey)."
     },
     {
-      "lesson": "theme_15e",
-      "note": "Note from the lesson: to understand the dialogues, listen to them and then repeat them; you can take useful expressions from them."
+      "lesson": "Taxis & Taxi-Brousse",
+      "note": "Tip: to understand the dialogues, listen to them and then repeat them; you can take useful expressions from them."
     }
   ],
   "pronunciation": {
@@ -47492,7 +47524,6 @@ window.CONTENT = {
           "week_title": "Pronunciation & Greetings",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_greet_and_farewell",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47518,7 +47549,6 @@ window.CONTENT = {
           "week_title": "Pronunciation & Greetings",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_polite_words",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47544,7 +47574,6 @@ window.CONTENT = {
           "week_title": "Pronunciation & Greetings",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_1b_13",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47578,7 +47607,6 @@ window.CONTENT = {
           "week_title": "Pronouns & Introducing Yourself",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_introducing_yourself",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47604,7 +47632,6 @@ window.CONTENT = {
           "week_title": "Pronouns & Introducing Yourself",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_21",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47630,7 +47657,6 @@ window.CONTENT = {
           "week_title": "Pronouns & Introducing Yourself",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
           "grammar": "core_grammar_for_beginners",
           "words": [
@@ -47663,7 +47689,6 @@ window.CONTENT = {
           "week_title": "Numbers & Money",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_market_shopping",
           "grammar": "gram_1",
           "words": [
@@ -47689,7 +47714,6 @@ window.CONTENT = {
           "week_title": "Numbers & Money",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_23",
           "grammar": "gram_1",
           "words": [
@@ -47716,7 +47740,6 @@ window.CONTENT = {
           "week_title": "Numbers & Money",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_24",
           "grammar": "gram_1",
           "words": [
@@ -47750,7 +47773,6 @@ window.CONTENT = {
           "week_title": "Making Sentences (VOS Order)",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
           "grammar": "gram_1",
           "words": [
@@ -47776,7 +47798,6 @@ window.CONTENT = {
           "week_title": "Making Sentences (VOS Order)",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_polite_words",
           "grammar": "gram_1",
           "words": [
@@ -47804,7 +47825,6 @@ window.CONTENT = {
           "week_title": "Making Sentences (VOS Order)",
           "month": 1,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_24",
           "grammar": "gram_1",
           "words": [
@@ -47837,7 +47857,6 @@ window.CONTENT = {
           "week_title": "Food & Ordering",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_eating_ordering",
           "grammar": "gram_2",
           "words": [
@@ -47864,7 +47883,6 @@ window.CONTENT = {
           "week_title": "Food & Ordering",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
           "grammar": "gram_2",
           "words": [
@@ -47890,7 +47908,6 @@ window.CONTENT = {
           "week_title": "Food & Ordering",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_eating_ordering",
           "grammar": "gram_2",
           "words": [
@@ -47923,7 +47940,6 @@ window.CONTENT = {
           "week_title": "Directions & Places",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
           "grammar": "gram_3",
           "words": [
@@ -47949,7 +47965,6 @@ window.CONTENT = {
           "week_title": "Directions & Places",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
           "grammar": "gram_3",
           "words": [
@@ -47975,7 +47990,6 @@ window.CONTENT = {
           "week_title": "Directions & Places",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
           "grammar": "gram_3",
           "words": [
@@ -48008,7 +48022,6 @@ window.CONTENT = {
           "week_title": "Family & Possessives",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
           "grammar": "gram_13a",
           "words": [
@@ -48034,7 +48047,6 @@ window.CONTENT = {
           "week_title": "Family & Possessives",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
           "grammar": "gram_13a",
           "words": [
@@ -48060,7 +48072,6 @@ window.CONTENT = {
           "week_title": "Family & Possessives",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_introducing_yourself",
           "grammar": "gram_13a",
           "words": [
@@ -48093,7 +48104,6 @@ window.CONTENT = {
           "week_title": "Time & Calendar",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
           "grammar": "gram_15a",
           "words": [
@@ -48119,7 +48129,6 @@ window.CONTENT = {
           "week_title": "Time & Calendar",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
           "grammar": "gram_15a",
           "words": [
@@ -48145,7 +48154,6 @@ window.CONTENT = {
           "week_title": "Time & Calendar",
           "month": 2,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
           "grammar": "gram_15a",
           "words": [
@@ -48178,7 +48186,6 @@ window.CONTENT = {
           "week_title": "Past & Future Tenses",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
           "grammar": "gram_2",
           "words": [
@@ -48204,7 +48211,6 @@ window.CONTENT = {
           "week_title": "Past & Future Tenses",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
           "grammar": "gram_2",
           "words": [
@@ -48231,7 +48237,6 @@ window.CONTENT = {
           "week_title": "Past & Future Tenses",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
           "grammar": "gram_2",
           "words": [
@@ -48264,7 +48269,6 @@ window.CONTENT = {
           "week_title": "Health & Emergencies",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
           "grammar": "gram_10",
           "words": [
@@ -48290,7 +48294,6 @@ window.CONTENT = {
           "week_title": "Health & Emergencies",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
           "grammar": "gram_10",
           "words": [
@@ -48316,7 +48319,6 @@ window.CONTENT = {
           "week_title": "Health & Emergencies",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
           "grammar": "gram_10",
           "words": [
@@ -48349,7 +48351,6 @@ window.CONTENT = {
           "week_title": "Small Talk & Weather",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
           "grammar": "gram_7",
           "words": [
@@ -48376,7 +48377,6 @@ window.CONTENT = {
           "week_title": "Small Talk & Weather",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
           "grammar": "gram_7",
           "words": [
@@ -48404,7 +48404,6 @@ window.CONTENT = {
           "week_title": "Small Talk & Weather",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
           "grammar": "gram_7",
           "words": [
@@ -48438,7 +48437,6 @@ window.CONTENT = {
           "week_title": "Grand Finale",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_transport_travel",
           "grammar": "gram_1",
           "words": [
@@ -48464,7 +48462,6 @@ window.CONTENT = {
           "week_title": "Grand Finale",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_theme_15e_3",
           "grammar": "gram_1",
           "words": [
@@ -48492,7 +48489,6 @@ window.CONTENT = {
           "week_title": "Grand Finale",
           "month": 3,
           "total_sessions": 3,
-          "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_theme_15e_1",
           "grammar": "gram_1",
           "words": [
@@ -48522,7 +48518,6 @@ window.CONTENT = {
       "week_title": "Pronunciation & Greetings",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_greet_and_farewell",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48548,7 +48543,6 @@ window.CONTENT = {
       "week_title": "Pronunciation & Greetings",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_polite_words",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48574,7 +48568,6 @@ window.CONTENT = {
       "week_title": "Pronunciation & Greetings",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_1b_13",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48601,7 +48594,6 @@ window.CONTENT = {
       "week_title": "Pronouns & Introducing Yourself",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_introducing_yourself",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48627,7 +48619,6 @@ window.CONTENT = {
       "week_title": "Pronouns & Introducing Yourself",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_21",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48653,7 +48644,6 @@ window.CONTENT = {
       "week_title": "Pronouns & Introducing Yourself",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
       "grammar": "core_grammar_for_beginners",
       "words": [
@@ -48679,7 +48669,6 @@ window.CONTENT = {
       "week_title": "Numbers & Money",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_market_shopping",
       "grammar": "gram_1",
       "words": [
@@ -48705,7 +48694,6 @@ window.CONTENT = {
       "week_title": "Numbers & Money",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_23",
       "grammar": "gram_1",
       "words": [
@@ -48732,7 +48720,6 @@ window.CONTENT = {
       "week_title": "Numbers & Money",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_24",
       "grammar": "gram_1",
       "words": [
@@ -48759,7 +48746,6 @@ window.CONTENT = {
       "week_title": "Making Sentences (VOS Order)",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
       "grammar": "gram_1",
       "words": [
@@ -48785,7 +48771,6 @@ window.CONTENT = {
       "week_title": "Making Sentences (VOS Order)",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_polite_words",
       "grammar": "gram_1",
       "words": [
@@ -48813,7 +48798,6 @@ window.CONTENT = {
       "week_title": "Making Sentences (VOS Order)",
       "month": 1,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_24",
       "grammar": "gram_1",
       "words": [
@@ -48839,7 +48823,6 @@ window.CONTENT = {
       "week_title": "Food & Ordering",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_eating_ordering",
       "grammar": "gram_2",
       "words": [
@@ -48866,7 +48849,6 @@ window.CONTENT = {
       "week_title": "Food & Ordering",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
       "grammar": "gram_2",
       "words": [
@@ -48892,7 +48874,6 @@ window.CONTENT = {
       "week_title": "Food & Ordering",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_eating_ordering",
       "grammar": "gram_2",
       "words": [
@@ -48918,7 +48899,6 @@ window.CONTENT = {
       "week_title": "Directions & Places",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
       "grammar": "gram_3",
       "words": [
@@ -48944,7 +48924,6 @@ window.CONTENT = {
       "week_title": "Directions & Places",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
       "grammar": "gram_3",
       "words": [
@@ -48970,7 +48949,6 @@ window.CONTENT = {
       "week_title": "Directions & Places",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
       "grammar": "gram_3",
       "words": [
@@ -48996,7 +48974,6 @@ window.CONTENT = {
       "week_title": "Family & Possessives",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
       "grammar": "gram_13a",
       "words": [
@@ -49022,7 +48999,6 @@ window.CONTENT = {
       "week_title": "Family & Possessives",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
       "grammar": "gram_13a",
       "words": [
@@ -49048,7 +49024,6 @@ window.CONTENT = {
       "week_title": "Family & Possessives",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_introducing_yourself",
       "grammar": "gram_13a",
       "words": [
@@ -49074,7 +49049,6 @@ window.CONTENT = {
       "week_title": "Time & Calendar",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
       "grammar": "gram_15a",
       "words": [
@@ -49100,7 +49074,6 @@ window.CONTENT = {
       "week_title": "Time & Calendar",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
       "grammar": "gram_15a",
       "words": [
@@ -49126,7 +49099,6 @@ window.CONTENT = {
       "week_title": "Time & Calendar",
       "month": 2,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
       "grammar": "gram_15a",
       "words": [
@@ -49152,7 +49124,6 @@ window.CONTENT = {
       "week_title": "Past & Future Tenses",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
       "grammar": "gram_2",
       "words": [
@@ -49178,7 +49149,6 @@ window.CONTENT = {
       "week_title": "Past & Future Tenses",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
       "grammar": "gram_2",
       "words": [
@@ -49205,7 +49175,6 @@ window.CONTENT = {
       "week_title": "Past & Future Tenses",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
       "grammar": "gram_2",
       "words": [
@@ -49231,7 +49200,6 @@ window.CONTENT = {
       "week_title": "Health & Emergencies",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
       "grammar": "gram_10",
       "words": [
@@ -49257,7 +49225,6 @@ window.CONTENT = {
       "week_title": "Health & Emergencies",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
       "grammar": "gram_10",
       "words": [
@@ -49283,7 +49250,6 @@ window.CONTENT = {
       "week_title": "Health & Emergencies",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
       "grammar": "gram_10",
       "words": [
@@ -49309,7 +49275,6 @@ window.CONTENT = {
       "week_title": "Small Talk & Weather",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
       "grammar": "gram_7",
       "words": [
@@ -49336,7 +49301,6 @@ window.CONTENT = {
       "week_title": "Small Talk & Weather",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
       "grammar": "gram_7",
       "words": [
@@ -49364,7 +49328,6 @@ window.CONTENT = {
       "week_title": "Small Talk & Weather",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
       "grammar": "gram_7",
       "words": [
@@ -49391,7 +49354,6 @@ window.CONTENT = {
       "week_title": "Grand Finale",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_transport_travel",
       "grammar": "gram_1",
       "words": [
@@ -49417,7 +49379,6 @@ window.CONTENT = {
       "week_title": "Grand Finale",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_theme_15e_3",
       "grammar": "gram_1",
       "words": [
@@ -49445,7 +49406,6 @@ window.CONTENT = {
       "week_title": "Grand Finale",
       "month": 3,
       "total_sessions": 3,
-      "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_theme_15e_1",
       "grammar": "gram_1",
       "words": [
