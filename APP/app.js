@@ -167,7 +167,7 @@
     if ('caches' in window) {
       caches.keys().then(function (keys) {
         keys.forEach(function (k) {
-          if (k !== 'salama-v4.4.3') caches.delete(k);
+          if (k !== 'salama-v4.4.4') caches.delete(k);
         });
       }).catch(function () {});
     }
@@ -179,7 +179,7 @@
         refreshing = true;
         location.reload();
       });
-      navigator.serviceWorker.register('sw.js?v=4.4.3').then(function (registration) {
+      navigator.serviceWorker.register('sw.js?v=4.4.4').then(function (registration) {
         if (registration && typeof registration.update === 'function') {
           registration.update();
         }

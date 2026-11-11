@@ -26,6 +26,10 @@
   }
 
   function wordsFor(session) {
+    if (session && Array.isArray(session.words) && session.words.length) {
+      var explicit = session.words.map(function (id) { return core.wordById(id); }).filter(Boolean);
+      if (explicit.length) return explicit;
+    }
     var seen = {};
     var out = [];
     (session.themes || []).forEach(function (theme) {
@@ -40,7 +44,9 @@
       if (ca && !cb) return 1;
       return (a.level || 1) - (b.level || 1);
     });
-    return out.slice(0, 6);
+    var offset = ((session && session.number ? session.number : 1) - 1) * 6;
+    var slice = out.slice(offset, offset + 6);
+    return slice.length ? slice : out.slice(0, 6);
   }
 
   function speakButton(text, wordId) {
