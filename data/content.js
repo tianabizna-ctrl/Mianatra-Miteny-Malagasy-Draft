@@ -43850,7 +43850,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_greet_and_farewell",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "salama",
+            "salama_tompoko",
+            "manao_ahoana",
+            "fahasalamana",
+            "tsara_fa_misaotra",
+            "inona_ny_vaovao"
+          ]
         },
         {
           "day": "Wednesday",
@@ -43867,7 +43875,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_2_15",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "misaotra",
+            "misaotra_betsaka",
+            "azafady",
+            "tsy_maninona",
+            "ndao",
+            "haody"
+          ]
         },
         {
           "day": "Friday",
@@ -43884,7 +43900,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_1b_13",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "veloma",
+            "veloma_tompoko",
+            "mazotoa_homana",
+            "misaotra_ianao_koa",
+            "mandrapihaona",
+            "soava_dia"
+          ]
         }
       ]
     },
@@ -43909,7 +43933,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_introducing_yourself",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "izaho",
+            "aho",
+            "ianao",
+            "izy",
+            "miteny",
+            "kely_fotsiny"
+          ]
         },
         {
           "day": "Wednesday",
@@ -43926,7 +43958,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_21",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "isika",
+            "izahay",
+            "ianareo",
+            "izy_ireo",
+            "tongasoa",
+            "tongasoa_eto"
+          ]
         },
         {
           "day": "Friday",
@@ -43943,7 +43983,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
-          "grammar": "core_grammar_for_beginners"
+          "grammar": "core_grammar_for_beginners",
+          "words": [
+            "iza_no_anaranao",
+            "avy_aiza_ianao",
+            "faly_mahalala_anao",
+            "vady",
+            "zanaka",
+            "fianakaviana"
+          ]
         }
       ]
     },
@@ -43967,7 +44015,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_24",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "iray",
+            "roa",
+            "telo",
+            "efatra",
+            "dimy",
+            "firy"
+          ]
         },
         {
           "day": "Wednesday",
@@ -43984,7 +44040,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_23",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "folo",
+            "iraika_ambin'ny_folo",
+            "roapolo",
+            "zato",
+            "arivo",
+            "ariary"
+          ]
         },
         {
           "day": "Friday",
@@ -44002,7 +44066,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_market_shopping",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "ohatrinona_ity",
+            "lafo_be",
+            "mora_ve",
+            "tsy_misy_madinika",
+            "vola",
+            "mpivarotra"
+          ]
         }
       ]
     },
@@ -44027,7 +44099,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "mihinana",
+            "misotro",
+            "vary",
+            "rano",
+            "kafe",
+            "manana"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44044,7 +44124,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_polite_words",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "tsy",
+            "eny",
+            "tsia",
+            "ve",
+            "hena",
+            "mividy"
+          ]
         },
         {
           "day": "Friday",
@@ -44063,7 +44151,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_4_24",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "kapoaka",
+            "kilao",
+            "toko",
+            "atody",
+            "siramamy",
+            "mivarotra"
+          ]
         }
       ]
     },
@@ -44087,7 +44183,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_eating_ordering",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "sakafo",
+            "laoka",
+            "mofo_gasy",
+            "henomby",
+            "akoho",
+            "trondro"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44105,7 +44209,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "mila",
+            "te",
+            "noana_aho",
+            "mangetaheta_aho",
+            "te_hisotro_rano_aho",
+            "te_hisakafo_aho"
+          ]
         },
         {
           "day": "Friday",
@@ -44122,7 +44234,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_eating_ordering",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "matsiro",
+            "voky_aho",
+            "ampy_izay",
+            "romazava",
+            "ravitoto",
+            "ranon'ampango"
+          ]
         }
       ]
     },
@@ -44146,7 +44266,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
-          "grammar": "gram_3"
+          "grammar": "gram_3",
+          "words": [
+            "aiza",
+            "tsena",
+            "hopitaly",
+            "banky",
+            "trano_fivoahana",
+            "fivarotam-panafody"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44163,7 +44291,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
-          "grammar": "gram_3"
+          "grammar": "gram_3",
+          "words": [
+            "ankavanana",
+            "ankavia",
+            "mahitsy",
+            "mihodina",
+            "akaiky",
+            "lavitra"
+          ]
         },
         {
           "day": "Friday",
@@ -44180,7 +44316,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_directions_travel",
-          "grammar": "gram_3"
+          "grammar": "gram_3",
+          "words": [
+            "làlana",
+            "arabe",
+            "avaratra",
+            "atsimo",
+            "atsinanana",
+            "andrefana"
+          ]
         }
       ]
     },
@@ -44204,7 +44348,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
-          "grammar": "gram_13a"
+          "grammar": "gram_13a",
+          "words": [
+            "dada",
+            "neny",
+            "ray_aman-dreny",
+            "dadabe",
+            "nenibe",
+            "zaza"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44221,7 +44373,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_intro_3_22",
-          "grammar": "gram_13a"
+          "grammar": "gram_13a",
+          "words": [
+            "zoky",
+            "zandry",
+            "rahalahy",
+            "rahavavy",
+            "anadahy",
+            "anabavy"
+          ]
         },
         {
           "day": "Friday",
@@ -44238,7 +44398,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_introducing_yourself",
-          "grammar": "gram_13a"
+          "grammar": "gram_13a",
+          "words": [
+            "havana",
+            "namana",
+            "lehilahy",
+            "vehivavy",
+            "dadatoa",
+            "nenitoa"
+          ]
         }
       ]
     },
@@ -44262,7 +44430,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
-          "grammar": "gram_15a"
+          "grammar": "gram_15a",
+          "words": [
+            "alatsinainy",
+            "talata",
+            "alarobia",
+            "alakamisy",
+            "zoma",
+            "sabotsy"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44279,7 +44455,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
-          "grammar": "gram_15a"
+          "grammar": "gram_15a",
+          "words": [
+            "alahady",
+            "androany",
+            "omaly",
+            "rahampitso",
+            "amin'ny_firy_izao_azafady",
+            "ora"
+          ]
         },
         {
           "day": "Friday",
@@ -44296,7 +44480,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
-          "grammar": "gram_15a"
+          "grammar": "gram_15a",
+          "words": [
+            "maraina",
+            "atoandro",
+            "tolakandro",
+            "hariva",
+            "alina",
+            "fotoana"
+          ]
         }
       ]
     },
@@ -44320,7 +44512,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "miasa",
+            "mianatra",
+            "mandeha",
+            "matory",
+            "mifoha",
+            "mahandro"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44337,7 +44537,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_basic_needs",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "mivoaka",
+            "miditra",
+            "miainga",
+            "mody",
+            "miantsena",
+            "miala_sasatra"
+          ]
         },
         {
           "day": "Friday",
@@ -44355,7 +44563,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_time_appointments",
-          "grammar": "gram_2"
+          "grammar": "gram_2",
+          "words": [
+            "inona",
+            "rahoviana",
+            "oviana",
+            "herinandro",
+            "volana",
+            "taona"
+          ]
         }
       ]
     },
@@ -44379,7 +44595,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
-          "grammar": "gram_10"
+          "grammar": "gram_10",
+          "words": [
+            "loha",
+            "maso",
+            "sofina",
+            "vava",
+            "tenda",
+            "kibo"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44396,7 +44620,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
-          "grammar": "gram_10"
+          "grammar": "gram_10",
+          "words": [
+            "tànana",
+            "tongotra",
+            "marary",
+            "marary_an-doha_aho",
+            "marary_kibo_aho",
+            "reraka_aho"
+          ]
         },
         {
           "day": "Friday",
@@ -44413,7 +44645,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_health_emergency",
-          "grammar": "gram_10"
+          "grammar": "gram_10",
+          "words": [
+            "vonjeo_aho",
+            "mila_dokotera_aho",
+            "dokotera",
+            "fanafody",
+            "tazo",
+            "sery"
+          ]
         }
       ]
     },
@@ -44437,7 +44677,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
-          "grammar": "gram_7"
+          "grammar": "gram_7",
+          "words": [
+            "toetr'andro",
+            "masoandro",
+            "orana",
+            "rivotra",
+            "mafana",
+            "mangatsiaka"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44455,7 +44703,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
-          "grammar": "gram_7"
+          "grammar": "gram_7",
+          "words": [
+            "tsara_ny_andro",
+            "ratsy_ny_andro",
+            "avy_ny_orana",
+            "tsara_be",
+            "tsara_kely",
+            "faly"
+          ]
         },
         {
           "day": "Friday",
@@ -44474,7 +44730,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_weather_smalltalk",
-          "grammar": "gram_7"
+          "grammar": "gram_7",
+          "words": [
+            "tia",
+            "tsy_tia",
+            "lamba",
+            "akanjo",
+            "kiraro",
+            "satroka"
+          ]
         }
       ]
     },
@@ -44499,7 +44763,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_market_shopping",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "voankazo",
+            "legioma",
+            "akondro",
+            "voatabia",
+            "ovy",
+            "sakay"
+          ]
         },
         {
           "day": "Wednesday",
@@ -44516,7 +44788,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_transport_travel",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "fiara",
+            "taxibe",
+            "bisikileta",
+            "lakana",
+            "entana",
+            "mpamily"
+          ]
         },
         {
           "day": "Friday",
@@ -44535,7 +44815,15 @@ window.CONTENT = {
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
           "dialogue": "dlg_greet_and_farewell",
-          "grammar": "gram_1"
+          "grammar": "gram_1",
+          "words": [
+            "mandrosoa",
+            "mipetrapetraha",
+            "misaotra_betsaka",
+            "soa_am-bifilana",
+            "amin'ny_manaraka_indray",
+            "veloma_rahampitso_koa"
+          ]
         }
       ]
     }
@@ -44556,7 +44844,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_greet_and_farewell",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "salama",
+        "salama_tompoko",
+        "manao_ahoana",
+        "fahasalamana",
+        "tsara_fa_misaotra",
+        "inona_ny_vaovao"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44573,7 +44869,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_2_15",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "misaotra",
+        "misaotra_betsaka",
+        "azafady",
+        "tsy_maninona",
+        "ndao",
+        "haody"
+      ]
     },
     {
       "day": "Friday",
@@ -44590,7 +44894,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_1b_13",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "veloma",
+        "veloma_tompoko",
+        "mazotoa_homana",
+        "misaotra_ianao_koa",
+        "mandrapihaona",
+        "soava_dia"
+      ]
     },
     {
       "day": "Monday",
@@ -44608,7 +44920,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_introducing_yourself",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "izaho",
+        "aho",
+        "ianao",
+        "izy",
+        "miteny",
+        "kely_fotsiny"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44625,7 +44945,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_21",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "isika",
+        "izahay",
+        "ianareo",
+        "izy_ireo",
+        "tongasoa",
+        "tongasoa_eto"
+      ]
     },
     {
       "day": "Friday",
@@ -44642,7 +44970,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
-      "grammar": "core_grammar_for_beginners"
+      "grammar": "core_grammar_for_beginners",
+      "words": [
+        "iza_no_anaranao",
+        "avy_aiza_ianao",
+        "faly_mahalala_anao",
+        "vady",
+        "zanaka",
+        "fianakaviana"
+      ]
     },
     {
       "day": "Monday",
@@ -44659,7 +44995,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_24",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "iray",
+        "roa",
+        "telo",
+        "efatra",
+        "dimy",
+        "firy"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44676,7 +45020,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_23",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "folo",
+        "iraika_ambin'ny_folo",
+        "roapolo",
+        "zato",
+        "arivo",
+        "ariary"
+      ]
     },
     {
       "day": "Friday",
@@ -44694,7 +45046,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_market_shopping",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "ohatrinona_ity",
+        "lafo_be",
+        "mora_ve",
+        "tsy_misy_madinika",
+        "vola",
+        "mpivarotra"
+      ]
     },
     {
       "day": "Monday",
@@ -44712,7 +45072,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "mihinana",
+        "misotro",
+        "vary",
+        "rano",
+        "kafe",
+        "manana"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44729,7 +45097,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_polite_words",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "tsy",
+        "eny",
+        "tsia",
+        "ve",
+        "hena",
+        "mividy"
+      ]
     },
     {
       "day": "Friday",
@@ -44748,7 +45124,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_4_24",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "kapoaka",
+        "kilao",
+        "toko",
+        "atody",
+        "siramamy",
+        "mivarotra"
+      ]
     },
     {
       "day": "Monday",
@@ -44765,7 +45149,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_eating_ordering",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "sakafo",
+        "laoka",
+        "mofo_gasy",
+        "henomby",
+        "akoho",
+        "trondro"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44783,7 +45175,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "mila",
+        "te",
+        "noana_aho",
+        "mangetaheta_aho",
+        "te_hisotro_rano_aho",
+        "te_hisakafo_aho"
+      ]
     },
     {
       "day": "Friday",
@@ -44800,7 +45200,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_eating_ordering",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "matsiro",
+        "voky_aho",
+        "ampy_izay",
+        "romazava",
+        "ravitoto",
+        "ranon'ampango"
+      ]
     },
     {
       "day": "Monday",
@@ -44817,7 +45225,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
-      "grammar": "gram_3"
+      "grammar": "gram_3",
+      "words": [
+        "aiza",
+        "tsena",
+        "hopitaly",
+        "banky",
+        "trano_fivoahana",
+        "fivarotam-panafody"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44834,7 +45250,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
-      "grammar": "gram_3"
+      "grammar": "gram_3",
+      "words": [
+        "ankavanana",
+        "ankavia",
+        "mahitsy",
+        "mihodina",
+        "akaiky",
+        "lavitra"
+      ]
     },
     {
       "day": "Friday",
@@ -44851,7 +45275,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_directions_travel",
-      "grammar": "gram_3"
+      "grammar": "gram_3",
+      "words": [
+        "làlana",
+        "arabe",
+        "avaratra",
+        "atsimo",
+        "atsinanana",
+        "andrefana"
+      ]
     },
     {
       "day": "Monday",
@@ -44868,7 +45300,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
-      "grammar": "gram_13a"
+      "grammar": "gram_13a",
+      "words": [
+        "dada",
+        "neny",
+        "ray_aman-dreny",
+        "dadabe",
+        "nenibe",
+        "zaza"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44885,7 +45325,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_intro_3_22",
-      "grammar": "gram_13a"
+      "grammar": "gram_13a",
+      "words": [
+        "zoky",
+        "zandry",
+        "rahalahy",
+        "rahavavy",
+        "anadahy",
+        "anabavy"
+      ]
     },
     {
       "day": "Friday",
@@ -44902,7 +45350,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_introducing_yourself",
-      "grammar": "gram_13a"
+      "grammar": "gram_13a",
+      "words": [
+        "havana",
+        "namana",
+        "lehilahy",
+        "vehivavy",
+        "dadatoa",
+        "nenitoa"
+      ]
     },
     {
       "day": "Monday",
@@ -44919,7 +45375,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
-      "grammar": "gram_15a"
+      "grammar": "gram_15a",
+      "words": [
+        "alatsinainy",
+        "talata",
+        "alarobia",
+        "alakamisy",
+        "zoma",
+        "sabotsy"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44936,7 +45400,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
-      "grammar": "gram_15a"
+      "grammar": "gram_15a",
+      "words": [
+        "alahady",
+        "androany",
+        "omaly",
+        "rahampitso",
+        "amin'ny_firy_izao_azafady",
+        "ora"
+      ]
     },
     {
       "day": "Friday",
@@ -44953,7 +45425,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
-      "grammar": "gram_15a"
+      "grammar": "gram_15a",
+      "words": [
+        "maraina",
+        "atoandro",
+        "tolakandro",
+        "hariva",
+        "alina",
+        "fotoana"
+      ]
     },
     {
       "day": "Monday",
@@ -44970,7 +45450,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "miasa",
+        "mianatra",
+        "mandeha",
+        "matory",
+        "mifoha",
+        "mahandro"
+      ]
     },
     {
       "day": "Wednesday",
@@ -44987,7 +45475,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_basic_needs",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "mivoaka",
+        "miditra",
+        "miainga",
+        "mody",
+        "miantsena",
+        "miala_sasatra"
+      ]
     },
     {
       "day": "Friday",
@@ -45005,7 +45501,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_time_appointments",
-      "grammar": "gram_2"
+      "grammar": "gram_2",
+      "words": [
+        "inona",
+        "rahoviana",
+        "oviana",
+        "herinandro",
+        "volana",
+        "taona"
+      ]
     },
     {
       "day": "Monday",
@@ -45022,7 +45526,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
-      "grammar": "gram_10"
+      "grammar": "gram_10",
+      "words": [
+        "loha",
+        "maso",
+        "sofina",
+        "vava",
+        "tenda",
+        "kibo"
+      ]
     },
     {
       "day": "Wednesday",
@@ -45039,7 +45551,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
-      "grammar": "gram_10"
+      "grammar": "gram_10",
+      "words": [
+        "tànana",
+        "tongotra",
+        "marary",
+        "marary_an-doha_aho",
+        "marary_kibo_aho",
+        "reraka_aho"
+      ]
     },
     {
       "day": "Friday",
@@ -45056,7 +45576,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_health_emergency",
-      "grammar": "gram_10"
+      "grammar": "gram_10",
+      "words": [
+        "vonjeo_aho",
+        "mila_dokotera_aho",
+        "dokotera",
+        "fanafody",
+        "tazo",
+        "sery"
+      ]
     },
     {
       "day": "Monday",
@@ -45073,7 +45601,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
-      "grammar": "gram_7"
+      "grammar": "gram_7",
+      "words": [
+        "toetr'andro",
+        "masoandro",
+        "orana",
+        "rivotra",
+        "mafana",
+        "mangatsiaka"
+      ]
     },
     {
       "day": "Wednesday",
@@ -45091,7 +45627,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
-      "grammar": "gram_7"
+      "grammar": "gram_7",
+      "words": [
+        "tsara_ny_andro",
+        "ratsy_ny_andro",
+        "avy_ny_orana",
+        "tsara_be",
+        "tsara_kely",
+        "faly"
+      ]
     },
     {
       "day": "Friday",
@@ -45110,7 +45654,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_weather_smalltalk",
-      "grammar": "gram_7"
+      "grammar": "gram_7",
+      "words": [
+        "tia",
+        "tsy_tia",
+        "lamba",
+        "akanjo",
+        "kiraro",
+        "satroka"
+      ]
     },
     {
       "day": "Monday",
@@ -45128,7 +45680,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_market_shopping",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "voankazo",
+        "legioma",
+        "akondro",
+        "voatabia",
+        "ovy",
+        "sakay"
+      ]
     },
     {
       "day": "Wednesday",
@@ -45145,7 +45705,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_transport_travel",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "fiara",
+        "taxibe",
+        "bisikileta",
+        "lakana",
+        "entana",
+        "mpamily"
+      ]
     },
     {
       "day": "Friday",
@@ -45164,7 +45732,15 @@ window.CONTENT = {
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
       "dialogue": "dlg_greet_and_farewell",
-      "grammar": "gram_1"
+      "grammar": "gram_1",
+      "words": [
+        "mandrosoa",
+        "mipetrapetraha",
+        "misaotra_betsaka",
+        "soa_am-bifilana",
+        "amin'ny_manaraka_indray",
+        "veloma_rahampitso_koa"
+      ]
     }
   ],
   "themeMap": [
