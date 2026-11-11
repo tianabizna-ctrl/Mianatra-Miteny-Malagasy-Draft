@@ -362,24 +362,103 @@ window.Salama = window.Salama || {};
     return out;
   }
 
+  var VOICE_SYNONYMS = {
+    'tongasoa': 'tonga soa',
+    'haody': 'haody oh',
+    'mandra pihaona': 'mandrapihaona',
+    'tsisy fisaorana': 'tsy misy fisaorana',
+    'tsisy vaovao': 'tsy misy vaovao',
+    'manahoana': 'manao ahoana',
+    'manakory ianao': 'manao ahoana ianao',
+    'salama e': 'salama',
+    'azafady o': 'azafady',
+    'aza fady': 'azafady',
+    'azafady kely e': 'azafady',
+    'mandroso': 'mandrosoa',
+    'inona no asanao': 'inona ny asanao',
+    'inona no vaovao': 'inona ny vaovao',
+    'iza ny anaranao': 'iza no anaranao'
+  };
+
+  function normVoiceText(text) {
+    var nm = normLookup(text);
+    return VOICE_SYNONYMS[nm] || nm;
+  }
+
+  var _textToKeysIndex = null;
+  function getTextToKeysIndex() {
+    if (_textToKeysIndex) return _textToKeysIndex;
+    var data = (S.core && S.core.data) || window.CONTENT;
+    if (!data) return {};
+    var idx = {};
+    function add(nm, k) {
+      if (!nm) return;
+      if (!idx[nm]) idx[nm] = [];
+      if (idx[nm].indexOf(k) === -1) idx[nm].push(k);
+    }
+    (data.vocabulary || []).forEach(function (w) {
+      add(normVoiceText(w.mg), 'word:' + w.id);
+    });
+    (data.phrases || []).forEach(function (p) {
+      add(normVoiceText(p.mg), 'phrase:' + p.id);
+    });
+    (data.dialogues || []).forEach(function (d) {
+      (d.lines || []).forEach(function (l, i) {
+        add(normVoiceText(l.mg), 'dlg:' + d.id + ':' + i);
+      });
+    });
+    _textToKeysIndex = idx;
+    return idx;
+  }
+
+  function setClipForKey(k, audioVal) {
+    if (!k || !audioVal) return;
+    customClips[k] = audioVal;
+    var shortId = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+    customClips[shortId] = audioVal;
+    if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0) {
+      customClips['word:' + shortId] = audioVal;
+      customClips['phrase:' + shortId] = audioVal;
+    }
+  }
+
+  function propagateVoiceByText(mgText, audioVal) {
+    var nm = normVoiceText(mgText);
+    if (!nm || !audioVal) return [];
+    customClips['text:' + nm] = audioVal;
+    var idx = getTextToKeysIndex();
+    var matched = idx[nm] || [];
+    matched.forEach(function (mk) {
+      setClipForKey(mk, audioVal);
+    });
+    return matched;
+  }
+
+  function isValidAudioVal(val) {
+    if (typeof val !== 'string' || !val) return false;
+    return val.indexOf('data:audio') === 0 ||
+           val.indexOf('media/audio_custom/') === 0 ||
+           val.indexOf('https://') === 0 ||
+           val.indexOf('http://') === 0 ||
+           val.indexOf('blob:') === 0;
+  }
+
   function applyVoiceMapInMemory(mapObj) {
     if (!mapObj || typeof mapObj !== 'object') return;
     Object.keys(mapObj).forEach(function (k) {
       var val = mapObj[k];
-      var dataUrl = typeof val === 'string' ? val : (val && val.dataUrl);
-      if (!dataUrl || dataUrl.indexOf('data:audio') !== 0) return;
-      customClips[k] = dataUrl;
-      var shortId = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-      customClips[shortId] = dataUrl;
-      if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0) {
-        customClips['word:' + shortId] = dataUrl;
-        customClips['phrase:' + shortId] = dataUrl;
+      var audioVal = typeof val === 'string' ? val : (val && (val.dataUrl || val.url));
+      if (!isValidAudioVal(audioVal)) return;
+      setClipForKey(k, audioVal);
+      if (k.indexOf('text:') === 0) {
+        propagateVoiceByText(k.slice(5), audioVal);
+        return;
       }
+      var shortId = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
       if (S.core && S.core.entryForKey) {
         var entry = S.core.entryForKey(k) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
         if (entry && entry.mg) {
-          var nm = normLookup(entry.mg);
-          if (nm) customClips['text:' + nm] = dataUrl;
+          propagateVoiceByText(entry.mg, audioVal);
         }
       }
     });
@@ -445,36 +524,47 @@ window.Salama = window.Salama || {};
     });
   }
 
-  function syncCustomVoicesToGitHub(changedKey, changedDataUrl, cb) {
+  function syncCustomVoicesToGitHub(changedKey, changedDataUrl, propagatedKeys, cb) {
     if (typeof fetch !== 'function') { if (cb) cb(false); return; }
-    var payload = {};
-    var seenShort = {};
-    Object.keys(customClips).forEach(function (k) {
-      if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0 || k.indexOf('dlg:') === 0) {
-        var shortId = k.replace(/^(word|phrase):/, '');
-        if (seenShort[shortId]) return;
-        seenShort[shortId] = true;
-        payload[k] = customClips[k];
-      }
-    });
-    var jsonStr = JSON.stringify(payload);
-    var b64Json = btoa(unescape(encodeURIComponent(jsonStr)));
     var shortName = String(changedKey || 'voice').replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
     var msg = 'Auto-save recorded voice for ' + shortName;
+    var rawWavUrl = 'https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/' + shortName + '.wav?t=' + Date.now();
 
-    var tasks = [
-      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/data/custom_voices.json', b64Json, msg),
-      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'main', 'APP/data/custom_voices.json', b64Json, msg)
-    ];
-
+    var uploadWavPromise = Promise.resolve(true);
     if (changedDataUrl && changedDataUrl.indexOf('base64,') !== -1) {
       var rawB64 = changedDataUrl.split('base64,')[1];
-      tasks.push(
-        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/media/audio_custom/' + shortName + '.wav', rawB64, msg)
-      );
+      uploadWavPromise = Promise.all([
+        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/media/audio_custom/' + shortName + '.wav', rawB64, msg),
+        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'main', 'APP/media/audio_custom/' + shortName + '.wav', rawB64, msg)
+      ]).then(function (r) { return Boolean(r && r[0]); });
     }
 
-    Promise.all(tasks).then(function (results) {
+    uploadWavPromise.then(function () {
+      var payload = {};
+      Object.keys(customClips).forEach(function (k) {
+        if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0 || k.indexOf('dlg:') === 0) {
+          var v = customClips[k];
+          if (!v) return;
+          // Keep custom_voices.json lightweight (<30 KB) by storing the hosted .wav URL instead of multi-MB base64 strings
+          if (v.indexOf('data:audio') === 0) {
+            if (k === changedKey || (propagatedKeys && propagatedKeys.indexOf(k) !== -1)) {
+              payload[k] = rawWavUrl;
+            } else {
+              var kShort = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+              payload[k] = 'media/audio_custom/' + kShort + '.wav';
+            }
+          } else {
+            payload[k] = v;
+          }
+        }
+      });
+      var jsonStr = JSON.stringify(payload, null, 2);
+      var b64Json = btoa(unescape(encodeURIComponent(jsonStr)));
+      return Promise.all([
+        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/data/custom_voices.json', b64Json, msg),
+        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'main', 'APP/data/custom_voices.json', b64Json, msg)
+      ]);
+    }).then(function (results) {
       var ok = results && results[0];
       if (cb) cb(ok);
     }).catch(function () {
@@ -500,6 +590,10 @@ window.Salama = window.Salama || {};
   }
 
   function loadAllCustomClips() {
+    var initialData = (S.core && S.core.data) || window.CONTENT;
+    if (initialData && initialData.recordedByUser) {
+      applyVoiceMapInMemory(initialData.recordedByUser);
+    }
     openCustomDb(function (db) {
       if (!db) return;
       try {
@@ -509,8 +603,10 @@ window.Salama = window.Salama || {};
         req.onsuccess = function (e) {
           var cursor = e.target.result;
           if (cursor) {
-            customClips[cursor.key] = cursor.value;
+            setClipForKey(cursor.key, cursor.value);
             cursor.continue();
+          } else {
+            applyVoiceMapInMemory(customClips);
           }
         };
       } catch (err) {}
@@ -521,30 +617,22 @@ window.Salama = window.Salama || {};
 
   function saveCustomAudio(key, dataUrl, cb) {
     if (!key || !dataUrl) return;
-    customClips[key] = dataUrl;
+    setClipForKey(key, dataUrl);
     var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-    customClips[shortId] = dataUrl;
-    if (key.indexOf('word:') === 0 || key.indexOf('phrase:') === 0) {
-      customClips['word:' + shortId] = dataUrl;
-      customClips['phrase:' + shortId] = dataUrl;
-    }
-    var textKey = null;
     var entryMg = shortId;
+    var propagated = [];
     if (S.core && S.core.entryForKey) {
       var entry = S.core.entryForKey(key) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
       if (entry && entry.mg) {
         entryMg = entry.mg;
-        var nm = normLookup(entry.mg);
-        if (nm) {
-          textKey = 'text:' + nm;
-          customClips[textKey] = dataUrl;
-        }
+        propagated = propagateVoiceByText(entry.mg, dataUrl);
       }
     }
+    try { document.dispatchEvent(new CustomEvent('salama:voices-loaded')); } catch (e) {}
     if (key.indexOf('openai:') !== 0) {
-      syncCustomVoicesToGitHub(key, dataUrl, function (ok) {
+      syncCustomVoicesToGitHub(key, dataUrl, propagated, function (ok) {
         if (ok && S.ui && S.ui.toast) {
-          S.ui.toast('\u2713 Auto-published! Your voice for "' + entryMg + '" is now live on the site for everyone.');
+          S.ui.toast('\u2713 Auto-published! Your voice for "' + entryMg + '" is now active everywhere it appears.');
         }
       });
     }
@@ -555,11 +643,11 @@ window.Salama = window.Salama || {};
           var store = tx.objectStore(CUSTOM_STORE);
           store.put(dataUrl, key);
           store.put(dataUrl, shortId);
-          if (key.indexOf('word:') === 0 || key.indexOf('phrase:') === 0) {
-            store.put(dataUrl, 'word:' + shortId);
-            store.put(dataUrl, 'phrase:' + shortId);
-          }
-          if (textKey) store.put(dataUrl, textKey);
+          var nm = normVoiceText(entryMg);
+          if (nm) store.put(dataUrl, 'text:' + nm);
+          propagated.forEach(function (pk) {
+            store.put(dataUrl, pk);
+          });
           tx.oncomplete = function () { if (cb) cb(true); };
           return;
         } catch (err) {}
@@ -571,12 +659,16 @@ window.Salama = window.Salama || {};
   function removeCustomAudio(key, cb) {
     if (!key) return;
     var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+    var propagated = [];
     var textKey = null;
     if (S.core && S.core.entryForKey) {
       var entry = S.core.entryForKey(key) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
       if (entry && entry.mg) {
-        var nm = normLookup(entry.mg);
-        if (nm) textKey = 'text:' + nm;
+        var nm = normVoiceText(entry.mg);
+        if (nm) {
+          textKey = 'text:' + nm;
+          propagated = getTextToKeysIndex()[nm] || [];
+        }
       }
     }
     delete customClips[key];
@@ -584,7 +676,12 @@ window.Salama = window.Salama || {};
     delete customClips['word:' + shortId];
     delete customClips['phrase:' + shortId];
     if (textKey) delete customClips[textKey];
-    syncCustomVoicesToGitHub(key, null);
+    propagated.forEach(function (pk) {
+      delete customClips[pk];
+      var pShort = String(pk).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+      delete customClips[pShort];
+    });
+    syncCustomVoicesToGitHub(key, null, []);
     openCustomDb(function (db) {
       if (db) {
         try {
@@ -595,6 +692,7 @@ window.Salama = window.Salama || {};
           store.delete('word:' + shortId);
           store.delete('phrase:' + shortId);
           if (textKey) store.delete(textKey);
+          propagated.forEach(function (pk) { store.delete(pk); });
           tx.oncomplete = function () { if (cb) cb(true); };
           return;
         } catch (err) {}
@@ -603,16 +701,28 @@ window.Salama = window.Salama || {};
     });
   }
 
-  function hasCustomAudio(key) {
-    if (!key) return false;
-    var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-    return Boolean(customClips[key] || customClips[shortId]);
+  function getCustomAudio(key, fallbackText) {
+    if (key) {
+      var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+      var direct = customClips[key] || customClips[shortId] || customClips['word:' + shortId] || customClips['phrase:' + shortId];
+      if (direct) return direct;
+      if (S.core && S.core.entryForKey) {
+        var entry = S.core.entryForKey(key) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
+        if (entry && entry.mg) {
+          var byEntryText = customClips['text:' + normVoiceText(entry.mg)];
+          if (byEntryText) return byEntryText;
+        }
+      }
+    }
+    if (fallbackText) {
+      var byText = customClips['text:' + normVoiceText(fallbackText)];
+      if (byText) return byText;
+    }
+    return null;
   }
 
-  function getCustomAudio(key) {
-    if (!key) return null;
-    var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-    return customClips[key] || customClips[shortId] || null;
+  function hasCustomAudio(key, fallbackText) {
+    return Boolean(getCustomAudio(key, fallbackText));
   }
 
   function customAudioKeys() {
@@ -839,7 +949,7 @@ window.Salama = window.Salama || {};
       try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
       if (inFrame) {
         var shortSlug = String(key).replace(/^(word|phrase):/, '');
-        var fullTabUrl = location.origin + location.pathname + '?v=4.4.7#/record/' + encodeURIComponent(shortSlug);
+        var fullTabUrl = location.origin + location.pathname + '?v=4.4.8#/record/' + encodeURIComponent(shortSlug);
         try { window.open(fullTabUrl, '_blank', 'noopener'); } catch (e2) {}
         if (S.ui && S.ui.toast) {
           S.ui.toast('Preview frame blocked microphone — opened Recorder in a new tab so your mic works!');
@@ -1038,11 +1148,9 @@ window.Salama = window.Salama || {};
 
   function clipFor(id) {
     if (!id) return null;
+    var cust = getCustomAudio(id);
+    if (cust) return cust;
     var cleanId = String(id).replace(/^dlg:/, '').replace(/:/g, '-');
-    if (customClips[id]) return customClips[id];
-    if (customClips['word:' + id]) return customClips['word:' + id];
-    if (customClips['phrase:' + id]) return customClips['phrase:' + id];
-    if (customClips[cleanId]) return customClips[cleanId];
     var maps = recordingsFor();
     var raw = maps.words[id] || maps.phrases[id] || maps.lines[id] || maps.lines[cleanId] || null;
     return swapVoicePath(raw, maps.useMms);
@@ -1050,12 +1158,15 @@ window.Salama = window.Salama || {};
 
   function clipForText(text) {
     if (!text) return null;
+    var vnm = normVoiceText(text);
+    if (vnm && customClips['text:' + vnm]) return customClips['text:' + vnm];
     var nm = normLookup(text);
     if (nm && customClips['text:' + nm]) return customClips['text:' + nm];
     if (S.core && S.core.keyForText) {
       var key = S.core.keyForText(text) || (nm ? S.core.keyForText(nm) : null);
       if (key) {
-        if (customClips[key]) return customClips[key];
+        var cKey = getCustomAudio(key, text);
+        if (cKey) return cKey;
         var parts = String(key).split(':');
         if (parts[0] === 'dlg' && parts.length >= 3) {
           var lineId = parts[1] + '-' + parts[2];
@@ -1076,10 +1187,8 @@ window.Salama = window.Salama || {};
   /** Speak one vocabulary entry: custom recording first, OpenAI Coral/Sage/Ash if configured, rendered clip, fallback voice. */
   function speakWord(word, options) {
     if (!word) return false;
-    if (hasCustomAudio('word:' + word.id) || hasCustomAudio(word.id)) {
-      var custom = clipFor(word.id);
-      if (custom && play(custom, options)) return true;
-    }
+    var custom = getCustomAudio('word:' + word.id, word.mg) || getCustomAudio(word.id, word.mg);
+    if (custom && play(custom, options)) return true;
     var file = clipFor(word.id);
     if (isOpenAIVoiceSelected()) {
       var ed = (S.core && S.core.getEdit) ? S.core.getEdit('word:' + word.id) : null;
@@ -1096,10 +1205,8 @@ window.Salama = window.Salama || {};
   function speakWordId(id, options) {
     if (!id) return false;
     var word = S.core && S.core.wordById ? S.core.wordById(id) : null;
-    if (hasCustomAudio(id)) {
-      var custom = clipFor(id);
-      if (custom && play(custom, options)) return true;
-    }
+    var custom = getCustomAudio(id, word && word.mg);
+    if (custom && play(custom, options)) return true;
     var file = clipFor(id);
     if (isOpenAIVoiceSelected() && word) {
       var ed = (S.core && S.core.getEdit) ? (S.core.getEdit('word:' + id) || S.core.getEdit('phrase:' + id)) : null;
@@ -1117,17 +1224,13 @@ window.Salama = window.Salama || {};
   function speakLine(dialogueId, index, text, options) {
     var lineId = dialogueId + '-' + index;
     var dlgKey = 'dlg:' + dialogueId + ':' + index;
-    if (hasCustomAudio(dlgKey) || hasCustomAudio(lineId)) {
-      var custom = customClips[dlgKey] || customClips[lineId];
-      if (custom && play(custom, options)) return true;
-    }
+    var custom = getCustomAudio(dlgKey, text) || getCustomAudio(lineId, text);
+    if (custom && play(custom, options)) return true;
     if (S.core && S.core.dialogue) {
       var dObj = S.core.dialogue(dialogueId);
       var lObj = dObj && dObj.lines && dObj.lines[index];
       if (lObj && lObj.sourceKey) {
-        var sk = lObj.sourceKey;
-        var skShort = sk.replace(/^(word|phrase|dlg):/, '').replace(/:/g, '-');
-        var srcCustom = customClips[sk] || customClips['word:' + skShort] || customClips['phrase:' + skShort] || customClips[skShort];
+        var srcCustom = getCustomAudio(lObj.sourceKey, lObj.mg || text);
         if (srcCustom && play(srcCustom, options)) return true;
       }
     }
@@ -1150,7 +1253,7 @@ window.Salama = window.Salama || {};
     var h = handlers || {};
     stopAll();
     var isData = url && (url.indexOf('data:') === 0 || url.indexOf('blob:') === 0);
-    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.4.7' : url;
+    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.4.8' : url;
     var audio = new Audio(versionedUrl);
     currentAudio = audio;
     markButton(h.node);
