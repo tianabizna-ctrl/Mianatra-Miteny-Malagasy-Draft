@@ -482,8 +482,12 @@
   "phrase:mihinana": "media/audio_custom/mihinana.wav",
   "word:misotro": "media/audio_custom/misotro.wav",
   "phrase:misotro": "media/audio_custom/misotro.wav",
-  "word:vary": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/vary.wav?t=1794399470025",
+  "word:vary": "media/audio_custom/vary.wav",
   "phrase:vary": "media/audio_custom/vary.wav",
-  "phrase:wv_rice": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/vary.wav?t=1794399470025",
-  "word:wv_rice": "media/audio_custom/wv_rice.wav"
+  "phrase:wv_rice": "media/audio_custom/wv_rice.wav",
+  "word:wv_rice": "media/audio_custom/wv_rice.wav",
+  "word:rano": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/rano.wav?t=1794399479324",
+  "phrase:rano": "media/audio_custom/rano.wav",
+  "phrase:wv_water": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/rano.wav?t=1794399479324",
+  "word:wv_water": "media/audio_custom/wv_water.wav"
 }
