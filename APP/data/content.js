@@ -3,7 +3,7 @@ window.CONTENT = {
     "app": "Salama! — Learn Malagasy Gently",
     "project": "Vahiny Mianatra Malagasy",
     "audience": "Elderly American absolute beginner",
-    "version": "3.4",
+    "version": "4.4.5",
     "dialect_note": "Official Malagasy (Tenim-pirenena ofisialy).",
     "counts": {
       "vocabulary": 2198,
@@ -37627,6 +37627,3367 @@ window.CONTENT = {
           "pron": "mee-SOH-trah beh-TSAH-kah ah-MEE-n'nee sah-BOO-tsee ee-ZAH-nee AH-zah TAH-rah"
         }
       ]
+    },
+    {
+      "id": "dlg_rp_w1s1",
+      "title": "Passing a Neighbor on the Street in the Morning",
+      "scenario": "Step 1 was visiting a friend's house. Now you are out on the street in the morning and pass an elder neighbor. Greet each other respectfully, ask how things are and what's new, and wish each other a productive day.",
+      "task": "Play Neighbor and You. First run through the 6 lines aloud, then switch roles and try substituting informal ('Salama!') vs. respectful ('Salama tompoko!') greetings.",
+      "roles": [
+        "Neighbor",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "salama",
+          "mg": "Salama!",
+          "en": "Hello! / Hi!",
+          "pron": "sah-LAH-mah"
+        },
+        {
+          "id": "salama_tompoko",
+          "mg": "Salama tompoko!",
+          "en": "Hello, sir/ma'am!",
+          "pron": "sah-LAH-mah toom-POO-koo"
+        },
+        {
+          "id": "fahasalamana",
+          "mg": "Fahasalamana?",
+          "en": "How are you? (asking after health)",
+          "pron": "fah-hah-sah-lah-MAH-nah"
+        },
+        {
+          "id": "inona_ny_vaovao",
+          "mg": "Inona ny vaovao?",
+          "en": "What's new?",
+          "pron": "ee-NOO-nah NEE vah-OO-vah-oo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Neighbor",
+          "mg": "Salama Tompoko!",
+          "en": "Hello, sir!",
+          "pron": "sah-LAH-mah toom-POO-koo",
+          "sourceKey": "dlg:dlg_intro_1a_11:0"
+        },
+        {
+          "speaker": "You",
+          "mg": "Salama Tompoko!",
+          "en": "Hello, sir!",
+          "pron": "sah-LAH-mah toom-POO-koo",
+          "sourceKey": "dlg:dlg_intro_1a_11:1"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Manao ahoana ianao?",
+          "en": "How are you?",
+          "pron": "MAH-noh ah-HOO-ah-nah ee-AH-noh",
+          "sourceKey": "dlg:dlg_intro_1a_11:2"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara fa misaotra.",
+          "en": "Fine, thank you.",
+          "pron": "TSAH-rah FAH mee-SOH-trah",
+          "sourceKey": "dlg:dlg_intro_1a_11:3"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Inona ny vaovao?",
+          "en": "What's new?",
+          "pron": "ee-NOO-nah NEE vah-OO-vah-oo",
+          "sourceKey": "dlg:dlg_intro_1a_11:4"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsy misy vaovao.",
+          "en": "Nothing's new.",
+          "pron": "TSEE MEE-see vah-OO-vah-oo",
+          "sourceKey": "dlg:dlg_intro_1a_11:5"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Mazotoa.",
+          "en": "Enjoy / have a good day / keep it up (or MANDROSO as an invitation)",
+          "pron": "mah-zoo-TOO-ah",
+          "sourceKey": "dlg:dlg_intro_2_20:0"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misaotra, ianao koa.",
+          "en": "Thank you, you too",
+          "pron": "mee-SOH-trah ee-AH-noh KOO-ah",
+          "sourceKey": "dlg:dlg_intro_2_20:1"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w1s2",
+      "title": "Welcoming a Visitor, Apologizing & Giving Thanks",
+      "scenario": "Instead of squeezing past someone on the path (Step 1), you are welcoming a guest into your home. You accidentally bump their bag while offering a seat, apologize ('Azafady / Tsy maninona'), and exchange thanks ('Misaotra / Tsy misy fisaorana').",
+      "task": "Practice the difference between 'Azafady' for 'Excuse me, may I pass?' (Step 1) and 'Azafady' for 'I'm sorry!' plus welcoming ('Tonga soa') and thanking.",
+      "roles": [
+        "Guest",
+        "Host"
+      ],
+      "swapPrompts": [
+        {
+          "id": "tonga_soa",
+          "mg": "Tonga soa",
+          "en": "welcome (literally combining 'arrived' + 'well': tonga = come/arrived, soa = good/well)",
+          "pron": "TOO-ngah SOO-ah"
+        },
+        {
+          "id": "azafady",
+          "mg": "Azafady!",
+          "en": "Please / excuse me / sorry / pardon",
+          "pron": "ah-zah-FAH-dee"
+        },
+        {
+          "id": "misaotra_betsaka",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah beh-TSAH-kah"
+        },
+        {
+          "id": "tsy_misy_fisaorana",
+          "mg": "Tsy misy fisaorana",
+          "en": "You are welcome",
+          "pron": "TSEE MEE-see fee-soh-RAH-nah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Guest",
+          "mg": "Haody oh!",
+          "en": "Hello! (announcing arrival, like a knock)",
+          "pron": "outdzioh",
+          "sourceKey": "dlg:dlg_intro_1a_12:0"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Tonga soa.",
+          "en": "Welcome",
+          "pron": "TOO-ngah SOO-ah",
+          "sourceKey": "dlg:dlg_intro_2_19:0"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "dlg:dlg_intro_2_19:1"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa. Mipetrapetraha.",
+          "en": "Come in. Have a seat.",
+          "pron": "mahn-DROO-soo-ah mee-PEH-trah-peh-trah-hah",
+          "sourceKey": "dlg:dlg_intro_1a_12:1"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Azafady.",
+          "en": "Sorry",
+          "pron": "ah-zah-FAH-dee",
+          "sourceKey": "dlg:dlg_intro_2_16:0"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Tsy maninona.",
+          "en": "No problem",
+          "pron": "TSEE mah-nee-NOO-nah",
+          "sourceKey": "dlg:dlg_intro_2_16:1"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misaotra.",
+          "en": "Thank you",
+          "pron": "mee-SOH-trah",
+          "sourceKey": "dlg:dlg_intro_2_14:0"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Tsy misy fisaorana.",
+          "en": "Not at all / no need for thanks",
+          "pron": "TSEE MEE-see fee-soh-RAH-nah",
+          "sourceKey": "dlg:dlg_intro_2_14:1"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w1s3",
+      "title": "Seeing Off a Friend & Saying Goodnight",
+      "scenario": "Step 1 was parting before lunch ('Mazotoa homana'). Now it is evening: your friend is heading home and leaving on a trip tomorrow. Wish them safe travels ('Soava dia'), say see you tomorrow, and wish them a restful night ('Tafandria mandry').",
+      "task": "Take turns as Friend and You. On Round 2, swap the parting to match different times of day ('Rehefa avy eo!', 'Mandrapihaona!', 'Veloma rahampitso koa!').",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "soava_dia",
+          "mg": "Soava dia!",
+          "en": "Have a safe journey! / bon voyage!",
+          "pron": "soo-AH-vah DEE-ah"
+        },
+        {
+          "id": "veloma_rahampitso_koa",
+          "mg": "Veloma rahampitso koa!",
+          "en": "See you tomorrow!",
+          "pron": "veh-LOO-mah rah-hahm-PEE-tsoo KOO-ah"
+        },
+        {
+          "id": "mandrapihaona",
+          "mg": "Mandrapihaona!",
+          "en": "See you later! (same day or next)",
+          "pron": "mahn-drah-PEE-hoh-nah"
+        },
+        {
+          "id": "rpb_tafandria_mandry",
+          "mg": "tafandria mandry",
+          "en": "Good night",
+          "pron": "tah-fahn-DREE-ah MAHN-dree"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Ndao handeha!",
+          "en": "Let's go! / Come on!",
+          "pron": "NDOH hahn-DEH-hah",
+          "sourceKey": "phrase:ndao_handeha"
+        },
+        {
+          "speaker": "You",
+          "mg": "Soava dia.",
+          "en": "Have a safe journey (bon voyage)",
+          "pron": "soo-AH-vah DEE-ah",
+          "sourceKey": "dlg:dlg_intro_2_18:0"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "dlg:dlg_intro_2_18:1"
+        },
+        {
+          "speaker": "You",
+          "mg": "Veloma rahampitso koa!",
+          "en": "See you tomorrow!",
+          "pron": "veh-LOO-mah rah-hahm-PEE-tsoo KOO-ah",
+          "sourceKey": "phrase:veloma_rahampitso_koa"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Mandrapihaona!",
+          "en": "See you later!",
+          "pron": "mahn-drah-PEE-hoh-nah",
+          "sourceKey": "phrase:mandrapihaona"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tafandria mandry",
+          "en": "Good night",
+          "pron": "tah-fahn-DREE-ah MAHN-dree",
+          "sourceKey": "phrase:rpb_tafandria_mandry"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w2s1",
+      "title": "First-Time Interview with Faly from Antsirabe",
+      "scenario": "You meet Faly, an English teacher in Antsirabe, for the very first time (Bako Review 1–4). Ask his name, his job, where he is from, and where he lives.",
+      "task": "One person interviews Faly, then swap roles and answer with your own real name, hometown, and city!",
+      "roles": [
+        "You",
+        "Faly"
+      ],
+      "swapPrompts": [
+        {
+          "id": "iza_no_anaranao",
+          "mg": "Iza no anaranao?",
+          "en": "What is your name?",
+          "pron": "EE-zah NOO ah-nah-RAH-noh"
+        },
+        {
+          "id": "faly_mahalala_anao",
+          "mg": "Faly mahalala anao!",
+          "en": "Pleased to meet you!",
+          "pron": "FAH-lee mah-hah-LAH-lah AH-noh"
+        },
+        {
+          "id": "avy_any_etazonia_aho",
+          "mg": "Avy any Etazonia aho.",
+          "en": "I'm from the United States.",
+          "pron": "AH-vee AH-nee eh-tah-zoo-NEE-ah AH-hoo"
+        },
+        {
+          "id": "mipetraka_eto_antananarivo_aho",
+          "mg": "Mipetraka eto Antananarivo aho.",
+          "en": "I live here in Antananarivo.",
+          "pron": "mee-PEH-trah-kah EH-too ahn-tah-nah-nah-REE-voo AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "You",
+          "mg": "Iza no anaranao?",
+          "en": "What is your name?",
+          "pron": "EE-zah NOO ah-nah-RAH-noh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:0"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Faly",
+          "en": "Faly (the name)",
+          "pron": "FAH-lee",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:1"
+        },
+        {
+          "speaker": "You",
+          "mg": "Inona no asanao?",
+          "en": "What is your job?",
+          "pron": "ee-NOO-nah NOO ah-SAH-noh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:2"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Mpampianatra anglisy",
+          "en": "English teacher",
+          "pron": "mpahm-pee-AH-nah-trah ah-NGLEE-see",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:3"
+        },
+        {
+          "speaker": "You",
+          "mg": "Avy aiza ianao?",
+          "en": "Where are you from?",
+          "pron": "AH-vee EYE-zah ee-AH-noh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:10"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Avy eto Antsirabe",
+          "en": "I am from here, Antsirabe",
+          "pron": "AH-vee EH-too ahn-tsee-RAH-beh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:11"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mipetraka aiza ianareo?",
+          "en": "Where do you live?",
+          "pron": "mee-PEH-trah-kah EYE-zah ee-ah-nah-REH-oo",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:16"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Eto Antsirabe",
+          "en": "Here in Antsirabe",
+          "pron": "EH-too ahn-tsee-RAH-beh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:17"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w2s2",
+      "title": "Asking Yes/No Questions with 've' About Languages & Work",
+      "scenario": "A curious neighbor asks whether you are a foreigner ('Vahiny ve ianao?'), whether you speak Malagasy ('Miteny malagasy ve ianao?'), and what you do in Antananarivo.",
+      "task": "Focus on placing the question particle 've' right after the predicate, and answering with 'Eny, Tompoko' or 'Kely fotsiny'.",
+      "roles": [
+        "Neighbor",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "miteny_malagasy_ve_ianao",
+          "mg": "Miteny malagasy ve ianao?",
+          "en": "Do you speak Malagasy?",
+          "pron": "mee-TEH-nee mah-lah-GAH-see VEH ee-AH-noh"
+        },
+        {
+          "id": "kely_fotsiny",
+          "mg": "Kely fotsiny.",
+          "en": "Just a little.",
+          "pron": "KEH-lee foo-TSEE-nee"
+        },
+        {
+          "id": "mianatra_teny_malagasy_aho",
+          "mg": "Mianatra teny malagasy aho.",
+          "en": "I'm learning Malagasy.",
+          "pron": "mee-AH-nah-trah TEH-nee mah-lah-GAH-see AH-hoo"
+        },
+        {
+          "id": "inona_ny_asanao",
+          "mg": "Inona ny asanao?",
+          "en": "What do you do (for work)?",
+          "pron": "ee-NOO-nah NEE ah-SAH-noh"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Neighbor",
+          "mg": "Vahiny ve ianao?",
+          "en": "Are you a foreigner?",
+          "pron": "vah-HEE-nee VEH ee-AH-noh",
+          "sourceKey": "phrase:wv_foreign"
+        },
+        {
+          "speaker": "You",
+          "mg": "Eny, Tompoko",
+          "en": "Yes (polite)",
+          "pron": "EH-nee toom-POO-koo",
+          "sourceKey": "phrase:wv_yes_sir"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Miteny malagasy ve ianao?",
+          "en": "Do you speak Malagasy?",
+          "pron": "mee-TEH-nee mah-lah-GAH-see VEH ee-AH-noh",
+          "sourceKey": "phrase:miteny_malagasy_ve_ianao"
+        },
+        {
+          "speaker": "You",
+          "mg": "Kely fotsiny.",
+          "en": "Just a little.",
+          "pron": "KEH-lee foo-TSEE-nee",
+          "sourceKey": "phrase:kely_fotsiny"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mianatra teny malagasy aho.",
+          "en": "I'm learning Malagasy.",
+          "pron": "mee-AH-nah-trah TEH-nee mah-lah-GAH-see AH-hoo",
+          "sourceKey": "phrase:mianatra_teny_malagasy_aho"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Inona ny asanao?",
+          "en": "What do you do (for work)?",
+          "pron": "ee-NOO-nah NEE ah-SAH-noh",
+          "sourceKey": "phrase:inona_ny_asanao"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mpiofana aho.",
+          "en": "I'm a trainee.",
+          "pron": "mpee-oo-FAH-nah AH-hoo",
+          "sourceKey": "phrase:mpiofana_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mipetraka eto Antananarivo aho.",
+          "en": "I live here in Antananarivo.",
+          "pron": "mee-PEH-trah-kah EH-too ahn-tah-nah-nah-REE-voo AH-hoo",
+          "sourceKey": "phrase:mipetraka_eto_antananarivo_aho"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w2s3",
+      "title": "Asking About Spouse, Family & Professions (Faly & Felana)",
+      "scenario": "Continue the conversation with Faly (Bako Review 1–4): ask if he is married, what his wife's name is ('vadinao'), whether she is also a teacher, and if they have children.",
+      "task": "Notice how possessive suffixes work ('vadinao' = your spouse, 'asany' = her job) and how 'mbola tsy' means 'not yet'.",
+      "roles": [
+        "You",
+        "Faly"
+      ],
+      "swapPrompts": [
+        {
+          "id": "vady",
+          "mg": "vady",
+          "en": "spouse, husband/wife",
+          "pron": "VAH-dee"
+        },
+        {
+          "id": "zanaka",
+          "mg": "zanaka",
+          "en": "child, children (in relation to their parents)",
+          "pron": "zah-NAH-kah"
+        },
+        {
+          "id": "manambady_aho",
+          "mg": "Manambady aho.",
+          "en": "I am married.",
+          "pron": "mah-nahm-BAH-dee AH-hoo"
+        },
+        {
+          "id": "manana_zanaka_aho",
+          "mg": "Manana zanaka aho.",
+          "en": "I have children.",
+          "pron": "mah-NAH-nah zah-NAH-kah AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "You",
+          "mg": "Manambady ve ianao?",
+          "en": "Are you married?",
+          "pron": "mah-nahm-BAH-dee VEH ee-AH-noh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:4"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Eny",
+          "en": "Yes",
+          "pron": "EH-nee",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:5"
+        },
+        {
+          "speaker": "You",
+          "mg": "Iza no anaran'ny vadinao?",
+          "en": "What is your spouse's name?",
+          "pron": "EE-zah NOO ah-nah-RAH-n'nee vah-DEE-noh",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:6"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Felana",
+          "en": "Felana (the name)",
+          "pron": "feh-LAH-nah",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:7"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mpampianatra koa ve izy?",
+          "en": "Is she/he a teacher too?",
+          "pron": "mpahm-pee-AH-nah-trah KOO-ah VEH EE-zee",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:8"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Tsia, Mpivarotra no asany",
+          "en": "No, her/his job is a seller/merchant",
+          "pron": "TSEE-ah mpee-VAH-roo-trah NOO ah-SAH-nee",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:9"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mananjanaka ve ianareo?",
+          "en": "Do you (plural) have children?",
+          "pron": "mah-nah-ndzah-NAH-kah VEH ee-ah-nah-REH-oo",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:14"
+        },
+        {
+          "speaker": "Faly",
+          "mg": "Tsia, mbola tsy mananjanaka",
+          "en": "No, we don't have children yet",
+          "pron": "TSEE-ah MBOO-lah TSEE mah-nah-ndzah-NAH-kah",
+          "sourceKey": "dlg:dlg_intro_review_1_4_25:15"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w3s1",
+      "title": "Counting Cups of Rice & Checking Availability",
+      "scenario": "Step 1 was buying eggs. Now you are at the grain stall asking if there is rice ('Misy vary ve?'), ordering three cups ('telo kapoaka'), and wrapping up your purchase politely.",
+      "task": "Practice replacing the quantity ('iray, roa, telo, efatra, dimy, enina') as you order from the vendor.",
+      "roles": [
+        "Vendor",
+        "Buyer"
+      ],
+      "swapPrompts": [
+        {
+          "id": "iray",
+          "mg": "iray",
+          "en": "one, 1",
+          "pron": "EE-reye"
+        },
+        {
+          "id": "roa",
+          "mg": "roa",
+          "en": "two, 2",
+          "pron": "ROO-ah"
+        },
+        {
+          "id": "telo",
+          "mg": "telo",
+          "en": "three, 3",
+          "pron": "TEH-loo"
+        },
+        {
+          "id": "efatra",
+          "mg": "efatra",
+          "en": "four, 4",
+          "pron": "EH-fah-trah"
+        },
+        {
+          "id": "dimy",
+          "mg": "dimy",
+          "en": "five, 5",
+          "pron": "DEE-mee"
+        },
+        {
+          "id": "enina",
+          "mg": "enina",
+          "en": "six, 6",
+          "pron": "eh-NEE-nah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Vendor",
+          "mg": "Mandroso!",
+          "en": "Come and buy!",
+          "pron": "mahn-DROO-soo",
+          "sourceKey": "phrase:mandroso"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Inona no atao ho anao?",
+          "en": "What can I do for you?",
+          "pron": "ee-NOO-nah NOO AH-toh HOO AH-noh",
+          "sourceKey": "phrase:rpb_inona_no_atao_ho_anao"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Misy vary ve?",
+          "en": "Is there rice? / do you have rice?",
+          "pron": "MEE-see VAH-ree VEH",
+          "sourceKey": "phrase:misy_vary_ve"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Eny, misy.",
+          "en": "Yes, there are.",
+          "pron": "EH-nee MEE-see",
+          "sourceKey": "phrase:ia,_misy"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Omeo telo kapoaka azafady.",
+          "en": "Give me three cups (of rice), please.",
+          "pron": "oo-MEH-oo TEH-loo kah-poo-AH-kah ah-zah-FAH-dee",
+          "sourceKey": "phrase:omeo_telo_kapoaka_azafady"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Fitonjato (ariary).",
+          "en": "Seven hundred (ariary).",
+          "pron": "fee-too-NDZAH-too ah-ree-AH-ree",
+          "sourceKey": "phrase:fitonjato_(ariary)"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Ampy izay, misaotra!",
+          "en": "That's all, thank you!",
+          "pron": "AHM-pee EE-zeye mee-SOH-trah",
+          "sourceKey": "phrase:ampy_izay,_misaotra"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w3s2",
+      "title": "Exchanging Money at the Bank & Asking for Small Change",
+      "scenario": "Before heading to the open-air market, you stop at a bank counter to ask the exchange rate, change money into Ariary, and request small bills ('vola madinika').",
+      "task": "Take turns as Customer and Bank Teller. Practice calling out different Ariary amounts ('zato ariary, arivo ariary, roa arivo ariary, dimy arivo ariary').",
+      "roles": [
+        "Customer",
+        "Teller"
+      ],
+      "swapPrompts": [
+        {
+          "id": "wvm_zato_ariary",
+          "mg": "zato ariary",
+          "en": "100 Ar",
+          "pron": "ZAH-too ah-ree-AH-ree"
+        },
+        {
+          "id": "wvm_arivo_ariary",
+          "mg": "arivo ariary",
+          "en": "1000 Ar",
+          "pron": "ah-REE-voo ah-ree-AH-ree"
+        },
+        {
+          "id": "wvm_roa_arivo_ariary",
+          "mg": "roa arivo ariary",
+          "en": "2000 Ar",
+          "pron": "ROO-ah ah-REE-voo ah-ree-AH-ree"
+        },
+        {
+          "id": "wvm_dimy_arivo_ariary",
+          "mg": "dimy arivo ariary",
+          "en": "5000 Ar",
+          "pron": "DEE-mee ah-REE-voo ah-ree-AH-ree"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Customer",
+          "mg": "Aiza no afaka manakalo vola?",
+          "en": "Where can I change some money?",
+          "pron": "EYE-zah NOO ah-FAH-kah mah-nah-KAH-loo VOO-lah",
+          "sourceKey": "phrase:rpb_aiza_no_afaka_manakalo_vola"
+        },
+        {
+          "speaker": "Teller",
+          "mg": "Ny pasiparonao azafady",
+          "en": "Your passport, please",
+          "pron": "NEE pah-see-pah-ROO-noh ah-zah-FAH-dee",
+          "sourceKey": "phrase:rpb_ny_pasiparonao_azafady"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Ohatrinona ny cours anio?",
+          "en": "What is the exchange rate today?",
+          "pron": "oo-hah-tree-NOO-nah NEE COHRS ah-NEE-oo",
+          "sourceKey": "phrase:rpb_ohatrinona_ny_cours_anio"
+        },
+        {
+          "speaker": "Teller",
+          "mg": "Roa arivo ariary",
+          "en": "2000 Ar",
+          "pron": "ROO-ah ah-REE-voo ah-ree-AH-ree",
+          "sourceKey": "phrase:wvm_roa_arivo_ariary"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Afaka manome vola madinika ve ianao?",
+          "en": "Can you give me some small change?",
+          "pron": "ah-FAH-kah mah-noo-MEH VOO-lah mah-dee-NEE-kah VEH ee-AH-noh",
+          "sourceKey": "phrase:rpb_afaka_manome_vola_madinika_ve_ianao"
+        },
+        {
+          "speaker": "Teller",
+          "mg": "Ity ny volanao.",
+          "en": "Here is your change. (lit. your money)",
+          "pron": "EE-tee NEE voo-LAH-noh",
+          "sourceKey": "phrase:ity_ny_volanao"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "phrase:misaotra_betsaka"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w3s3",
+      "title": "Polite Bargaining at a Craft Stall ('Lafo be! Mora azafady!')",
+      "scenario": "Step 1 was buying rice at a fixed price. Now you are at a handicraft stall where bargaining is expected. Ask the price, say it's too expensive, and ask for the vendor's final price ('Ohatrinona ny farany?').",
+      "task": "Play Buyer and Vendor. Negotiate with a smile — try starting at 20,000 Ar ('roa alina ariary') and coming down to 5,000 Ar ('dimy arivo ariary')!",
+      "roles": [
+        "Buyer",
+        "Vendor"
+      ],
+      "swapPrompts": [
+        {
+          "id": "ohatrinona_ity",
+          "mg": "Ohatrinona ity?",
+          "en": "How much is this?",
+          "pron": "oo-hah-tree-noh-nah ee-tee"
+        },
+        {
+          "id": "lafo_be",
+          "mg": "Lafo be!",
+          "en": "It's very expensive!",
+          "pron": "LAH-foo BEH"
+        },
+        {
+          "id": "mora_azafady",
+          "mg": "Mora azafady!",
+          "en": "Cheap it down, please! / give me a better price!",
+          "pron": "MOO-rah ah-zah-FAH-dee"
+        },
+        {
+          "id": "tsy_misy_madinika",
+          "mg": "Tsy misy madinika.",
+          "en": "There's no change.",
+          "pron": "TSEE MEE-see mah-dee-NEE-kah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Buyer",
+          "mg": "Tiako vidiana ity",
+          "en": "I would like to buy this",
+          "pron": "tee-AH-koo vee-dee-AH-nah EE-tee",
+          "sourceKey": "phrase:rpb_tiako_vidiana_ity"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Ohatrinona ity?",
+          "en": "How much is this?",
+          "pron": "oo-hah-tree-NOO-nah EE-tee",
+          "sourceKey": "phrase:ohatrinona_ity"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Dimy arivo ariary",
+          "en": "5000 Ar",
+          "pron": "DEE-mee ah-REE-voo ah-ree-AH-ree",
+          "sourceKey": "phrase:wvm_dimy_arivo_ariary"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Lafo be!",
+          "en": "That's very expensive!",
+          "pron": "LAH-foo BEH",
+          "sourceKey": "phrase:lafo_be"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Mora azafady!",
+          "en": "Cheap it down, please! / give me a better price!",
+          "pron": "MOO-rah ah-zah-FAH-dee",
+          "sourceKey": "phrase:mora_azafady"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Tsy ampy ny volako.",
+          "en": "I don't have enough money.",
+          "pron": "TSEE AHM-pee NEE voo-LAH-koo",
+          "sourceKey": "phrase:tsy_ampy_ny_volako"
+        },
+        {
+          "speaker": "Buyer",
+          "mg": "Ohatrinona ny farany?",
+          "en": "What is your last price?",
+          "pron": "oo-hah-tree-NOO-nah NEE fah-RAH-nee",
+          "sourceKey": "phrase:rpb_ohatrinona_ny_farany"
+        },
+        {
+          "speaker": "Vendor",
+          "mg": "Izay mihitsy ny farany",
+          "en": "That is my very last price",
+          "pron": "EE-zeye mee-HEE-tsee NEE fah-RAH-nee",
+          "sourceKey": "phrase:rpb_izay_mihitsy_ny_farany"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w4s1",
+      "title": "Arriving Home Hot, Tired & Thirsty on a Sunny Afternoon",
+      "scenario": "After walking across town in the afternoon heat (Peace Corps L6), you arrive at your host family's home feeling tired, hot, and thirsty. Ask politely for a glass of water or coffee.",
+      "task": "Practice expressing physical states ('Noana aho, Mangetaheta aho, Reraka aho, Mafana aho, Voky aho') with adjective/state + 'aho'.",
+      "roles": [
+        "Host",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "noana_aho",
+          "mg": "Noana aho.",
+          "en": "I'm hungry.",
+          "pron": "noo-AH-nah AH-hoo"
+        },
+        {
+          "id": "mangetaheta_aho",
+          "mg": "Mangetaheta aho.",
+          "en": "I'm thirsty.",
+          "pron": "mah-ngeh-tah-HEH-tah AH-hoo"
+        },
+        {
+          "id": "reraka_aho",
+          "mg": "Reraka aho.",
+          "en": "I'm tired.",
+          "pron": "reh-RAH-kah AH-hoo"
+        },
+        {
+          "id": "voky_aho",
+          "mg": "Voky aho.",
+          "en": "I'm full (after a meal)",
+          "pron": "VOO-kee AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Host",
+          "mg": "Salama tsara ve ianao?",
+          "en": "Are you feeling well?",
+          "pron": "sah-LAH-mah TSAH-rah VEH ee-AH-noh",
+          "sourceKey": "phrase:salama_tsara_ve_ianao"
+        },
+        {
+          "speaker": "You",
+          "mg": "Reraka aho.",
+          "en": "I'm tired.",
+          "pron": "reh-RAH-kah AH-hoo",
+          "sourceKey": "phrase:reraka_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mafana aho.",
+          "en": "I'm hot.",
+          "pron": "mah-FAH-nah AH-hoo",
+          "sourceKey": "phrase:mafana_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mangetaheta aho!",
+          "en": "I'm thirsty!",
+          "pron": "mah-ngeh-tah-HEH-tah AH-hoo",
+          "sourceKey": "dlg:dlg_basic_needs:0"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa! Misotro kafe.",
+          "en": "Come in! Have some coffee.",
+          "pron": "mahn-DROO-soo-ah mee-SOO-troo kah-FEH",
+          "sourceKey": "dlg:dlg_basic_needs:1"
+        },
+        {
+          "speaker": "You",
+          "mg": "Afaka mahazo vera rano ve aho azafady?",
+          "en": "Could I have a glass of water, please?",
+          "pron": "ah-FAH-kah mah-HAH-zoo VEH-rah RAH-noo VEH AH-hoo ah-zah-FAH-dee",
+          "sourceKey": "phrase:afaka_mahazo_vera_rano_ve_aho_azafady"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa!",
+          "en": "Come in!",
+          "pron": "mahn-DROO-soo-ah",
+          "sourceKey": "phrase:mandrosoa"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misaotra betsaka!",
+          "en": "Thank you very much!",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "dlg:dlg_basic_needs:2"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w4s2",
+      "title": "Deciding What You Want to Do Today ('Te + h-' Verbs)",
+      "scenario": "You and a friend are planning the afternoon together. Express what each of you wants to eat, drink, or do using 'Te + future verb (h-)'.",
+      "task": "Notice how 'misakafo' becomes 'te hisakafo', 'misotro' becomes 'te hisotro', and 'matory' becomes 'te hatory'. Swap in your own afternoon wishes!",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "te_hisotro_rano_aho",
+          "mg": "Te hisotro rano aho.",
+          "en": "I want to drink water",
+          "pron": "TEH hee-SOO-troo RAH-noo AH-hoo"
+        },
+        {
+          "id": "te_hisakafo_aho",
+          "mg": "Te hisakafo aho.",
+          "en": "I want to eat.",
+          "pron": "TEH hee-sah-KAH-foo AH-hoo"
+        },
+        {
+          "id": "te_hatory_aho",
+          "mg": "Te hatory aho.",
+          "en": "I want to sleep.",
+          "pron": "TEH hah-TOO-ree AH-hoo"
+        },
+        {
+          "id": "te_hivoaka_aho",
+          "mg": "Te hivoaka aho.",
+          "en": "I want to go out.",
+          "pron": "TEH hee-voo-AH-kah AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Noana aho.",
+          "en": "I'm hungry.",
+          "pron": "noo-AH-nah AH-hoo",
+          "sourceKey": "phrase:noana_aho"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Te hisakafo aho.",
+          "en": "I want to eat.",
+          "pron": "TEH hee-sah-KAH-foo AH-hoo",
+          "sourceKey": "phrase:te_hisakafo_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mangetaheta aho.",
+          "en": "I'm thirsty.",
+          "pron": "mah-ngeh-tah-HEH-tah AH-hoo",
+          "sourceKey": "phrase:mangetaheta_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Te hisotro rano aho.",
+          "en": "I want to drink water.",
+          "pron": "TEH hee-SOO-troo RAH-noo AH-hoo",
+          "sourceKey": "phrase:te_hisotro_rano_aho"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Te-hitsangatsangana aho",
+          "en": "I would like to go for a walk",
+          "pron": "TEH hee-tsah-ngah-tsah-NGAH-nah AH-hoo",
+          "sourceKey": "phrase:rpb_te-hitsangatsangana_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Te hivoaka aho.",
+          "en": "I want to go out.",
+          "pron": "TEH hee-voo-AH-kah AH-hoo",
+          "sourceKey": "phrase:te_hivoaka_aho"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Reraka aho.",
+          "en": "I'm tired.",
+          "pron": "reh-RAH-kah AH-hoo",
+          "sourceKey": "phrase:reraka_aho"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Te hatory aho.",
+          "en": "I want to sleep.",
+          "pron": "TEH hah-TOO-ree AH-hoo",
+          "sourceKey": "phrase:te_hatory_aho"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w4s3",
+      "title": "Sharing Likes, Dislikes & Dietary Preferences ('Tia / Tsy tia')",
+      "scenario": "You are shopping and dining with a friend. Explain what foods and colors you like or dislike ('Tsy tia hena aho', 'Tsy tiako ity loko ity', 'Halako ity').",
+      "task": "Practice both 'Tsy tia ... aho' (general preference) and 'Tsy tiako ity' (this specific item).",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "tsy_tia_hena_aho",
+          "mg": "Tsy tia hena aho.",
+          "en": "I don't like meat.",
+          "pron": "TSEE TEE-ah HEH-nah AH-hoo"
+        },
+        {
+          "id": "mihinana_vary_aho",
+          "mg": "Mihinana vary aho.",
+          "en": "I eat rice.",
+          "pron": "mee-hee-NAH-nah VAH-ree AH-hoo"
+        },
+        {
+          "id": "halako_ity",
+          "mg": "Halako ity.",
+          "en": "I hate this/it.",
+          "pron": "hah-LAH-koo EE-tee"
+        },
+        {
+          "id": "matoky_anao_aho",
+          "mg": "Matoky anao aho.",
+          "en": "I trust you.",
+          "pron": "mah-TOO-kee AH-noh AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Mihinana vary aho.",
+          "en": "I eat rice.",
+          "pron": "mee-hee-NAH-nah VAH-ree AH-hoo",
+          "sourceKey": "phrase:mihinana_vary_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsy tia hena aho.",
+          "en": "I don't like meat.",
+          "pron": "TSEE TEE-ah HEH-nah AH-hoo",
+          "sourceKey": "phrase:tsy_tia_hena_aho"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Tsy tiako ity loko ity",
+          "en": "I do not like this color",
+          "pron": "TSEE tee-AH-koo EE-tee LOO-koo EE-tee",
+          "sourceKey": "phrase:rpb_tsy_tiako_ity_loko_ity"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misy loko hafa ve ity?",
+          "en": "Does it come in a different color?",
+          "pron": "MEE-see LOO-koo HAH-fah VEH EE-tee",
+          "sourceKey": "phrase:rpb_misy_loko_hafa_ve_ity"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Tsy tiako ity",
+          "en": "I do not like this",
+          "pron": "TSEE tee-AH-koo EE-tee",
+          "sourceKey": "phrase:rpb_tsy_tiako_ity"
+        },
+        {
+          "speaker": "You",
+          "mg": "Halako ity.",
+          "en": "I hate this/it.",
+          "pron": "hah-LAH-koo EE-tee",
+          "sourceKey": "phrase:halako_ity"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Matoky anao aho.",
+          "en": "I trust you.",
+          "pron": "mah-TOO-kee AH-noh AH-hoo",
+          "sourceKey": "phrase:matoky_anao_aho"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w5s1",
+      "title": "Morning Breakfast at a Guesthouse: Coffee, Rice & Bottled Water",
+      "scenario": "It is morning at a Malagasy hotely. Tell the host you are having breakfast ('Misakafo maraina aho'), ask if there is rice, and order a cup of coffee and bottled water.",
+      "task": "Play Guest and Host. On Round 2, swap coffee ('kafe') with tea ('dite'), bread ('mofo'), or fish ('trondro').",
+      "roles": [
+        "Guest",
+        "Host"
+      ],
+      "swapPrompts": [
+        {
+          "id": "vary",
+          "mg": "vary",
+          "en": "rice",
+          "pron": "VAH-ree"
+        },
+        {
+          "id": "rano",
+          "mg": "rano",
+          "en": "water",
+          "pron": "RAH-noo"
+        },
+        {
+          "id": "kafe",
+          "mg": "kafe",
+          "en": "coffee",
+          "pron": "kah-FEH"
+        },
+        {
+          "id": "mofo",
+          "mg": "mofo",
+          "en": "bread",
+          "pron": "MOOF"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Guest",
+          "mg": "Salama e",
+          "en": "Good morning",
+          "pron": "sah-LAH-mah EH",
+          "sourceKey": "phrase:wv_goodmorning"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misakafo maraina aho.",
+          "en": "I'm having breakfast.",
+          "pron": "mee-sah-KAH-foo mah-REYE-nah AH-hoo",
+          "sourceKey": "phrase:misakafo_maraina_aho"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa!",
+          "en": "Come in!",
+          "pron": "mahn-DROO-soo-ah",
+          "sourceKey": "phrase:mandrosoa"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misy vary ve?",
+          "en": "Is there rice? / do you have rice?",
+          "pron": "MEE-see VAH-ree VEH",
+          "sourceKey": "phrase:misy_vary_ve"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Eny, misy.",
+          "en": "Yes, there are.",
+          "pron": "EH-nee MEE-see",
+          "sourceKey": "phrase:ia,_misy"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Kaopy kafe iray azafady.",
+          "en": "One cup of coffee, please.",
+          "pron": "KOH-pee kah-FEH EE-reye ah-zah-FAH-dee",
+          "sourceKey": "phrase:kaopy_kafe_iray_azafady"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Mila rano amin'ny tavoahangy aho.",
+          "en": "I'd like bottled water.",
+          "pron": "MEE-lah RAH-noo ah-MEE-n'nee tah-voo-ah-HAH-ngee AH-hoo",
+          "sourceKey": "phrase:mila_rano_amin'ny_tavoahangy_aho"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mazotoa homana",
+          "en": "Bon appétit! (eat well)",
+          "pron": "mah-zoo-TOO-ah HOO-mah-nah",
+          "sourceKey": "phrase:rpb_mazotoa_homana"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w5s2",
+      "title": "At the Family Table: Passing the Salt, Tasting Chili & Second Helpings",
+      "scenario": "Your Malagasy host urges you to eat more laoka (Peace Corps L10). Ask for the salt, check whether the chili ('sakay') is spicy ('Mahery ve ity?'), and politely say you are full ('Voky aho, misaotra!').",
+      "task": "Practice the classic Malagasy table hospitality ritual: hosts always urge guests to eat more ('Hihinana bebebebe kokoa!').",
+      "roles": [
+        "Host",
+        "Guest"
+      ],
+      "swapPrompts": [
+        {
+          "id": "omeo_ny_sira_azafady",
+          "mg": "Omeo ny sira azafady.",
+          "en": "Pass the salt, please.",
+          "pron": "oo-MEH-oo NEE SEE-rah ah-zah-FAH-dee"
+        },
+        {
+          "id": "mahery_ve_ity",
+          "mg": "Mahery ve ity?",
+          "en": "Is this (chili) hot?",
+          "pron": "mah-HEH-ree VEH EE-tee"
+        },
+        {
+          "id": "voky_aho,_misaotra",
+          "mg": "Voky aho, misaotra!",
+          "en": "I'm full, thank you!",
+          "pron": "VOO-kee AH-hoo mee-SOH-trah"
+        },
+        {
+          "id": "aiza_ny_lakozia",
+          "mg": "Aiza ny lakozia?",
+          "en": "Where is the kitchen?",
+          "pron": "EYE-zah NEE lah-koo-ZEE-ah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa! Misakafo isika!",
+          "en": "Come! Let's eat!",
+          "pron": "mahn-DROO-soo-ah mee-sah-KAH-foo ee-SEE-kah",
+          "sourceKey": "dlg:dlg_eating_ordering:0"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misaotra betsaka! Matsiro be ity laoka ity.",
+          "en": "Thank you very much! This laoka is delicious.",
+          "pron": "mee-SOH-trah beh-TSAH-kah mah-TSEE-roo BEH EE-tee LOH-kah EE-tee",
+          "sourceKey": "dlg:dlg_eating_ordering:1"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Omeo ny sira azafady.",
+          "en": "Pass the salt, please.",
+          "pron": "oo-MEH-oo NEE SEE-rah ah-zah-FAH-dee",
+          "sourceKey": "phrase:omeo_ny_sira_azafady"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Mahery ve ity?",
+          "en": "Is this (chili) hot?",
+          "pron": "mah-HEH-ree VEH EE-tee",
+          "sourceKey": "phrase:mahery_ve_ity"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Tsara be! Tsy mahery.",
+          "en": "It's great! Not hot.",
+          "pron": "TSAH-rah BEH TSEE mah-HEH-ree",
+          "sourceKey": "phrase:tsara_be!_tsy_mahery"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Hihinana bebebebe kokoa!",
+          "en": "Have some more! (urge-urge-urge)",
+          "pron": "hee-hee-NAH-nah beh-beh-BEH-beh koo-KOO-ah",
+          "sourceKey": "dlg:dlg_eating_ordering:2"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Ampy izay! Voky aho, misaotra!",
+          "en": "That's enough! I'm full, thank you!",
+          "pron": "AHM-pee EE-zeye VOO-kee AH-hoo mee-SOH-trah",
+          "sourceKey": "dlg:dlg_eating_ordering:3"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mazotoa!",
+          "en": "Enjoy!",
+          "pron": "mah-zoo-TOO-ah",
+          "sourceKey": "dlg:dlg_eating_ordering:4"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w5s3",
+      "title": "Dining Out at a Restaurant: Table, Menu, Order & Bill",
+      "scenario": "You walk into a sit-down restaurant for dinner. Ask for a table for one, request the menu ('karta'), place your order, and ask for the bill and receipt at the end.",
+      "task": "Play Customer and Waiter from arrival to paying the bill.",
+      "roles": [
+        "Customer",
+        "Waiter"
+      ],
+      "swapPrompts": [
+        {
+          "id": "rpb_latabatra_iray,_azafady",
+          "mg": "latabatra iray, azafady",
+          "en": "I would like a table, please",
+          "pron": "lah-TAH-bah-trah EE-reye ah-zah-FAH-dee"
+        },
+        {
+          "id": "rpb_karta,_azafady",
+          "mg": "karta, azafady",
+          "en": "The menu, please",
+          "pron": "KAH-rtah ah-zah-FAH-dee"
+        },
+        {
+          "id": "rpb_saika_hanao_komandy_aho",
+          "mg": "saika hanao komandy aho",
+          "en": "I would like to order",
+          "pron": "SEYE-kah HAH-noh koo-MAHN-dee AH-hoo"
+        },
+        {
+          "id": "rpb_ny_addition,_azafady",
+          "mg": "ny addition, azafady",
+          "en": "The bill, please",
+          "pron": "NEE ah-ddee-TEE-oon ah-zah-FAH-dee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Customer",
+          "mg": "Latabatra iray, azafady",
+          "en": "I would like a table, please",
+          "pron": "lah-TAH-bah-trah EE-reye ah-zah-FAH-dee",
+          "sourceKey": "phrase:rpb_latabatra_iray,_azafady"
+        },
+        {
+          "speaker": "Waiter",
+          "mg": "Mipetrapetraha!",
+          "en": "Have a seat!",
+          "pron": "mee-PEH-trah-peh-trah-hah",
+          "sourceKey": "phrase:mipetrapetraha"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Karta, azafady",
+          "en": "The menu, please",
+          "pron": "KAH-rtah ah-zah-FAH-dee",
+          "sourceKey": "phrase:rpb_karta,_azafady"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Saika hanao komandy aho",
+          "en": "I would like to order",
+          "pron": "SEYE-kah HAH-noh koo-MAHN-dee AH-hoo",
+          "sourceKey": "phrase:rpb_saika_hanao_komandy_aho"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Tsy oman-kena aho",
+          "en": "I am a vegetarian/I do not eat meat",
+          "pron": "TSEE OO-mahn KEH-nah AH-hoo",
+          "sourceKey": "phrase:rpb_tsy_oman-kena_aho"
+        },
+        {
+          "speaker": "Waiter",
+          "mg": "Mazotoa homana",
+          "en": "Bon appétit! (eat well)",
+          "pron": "mah-zoo-TOO-ah HOO-mah-nah",
+          "sourceKey": "phrase:rpb_mazotoa_homana"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Vita sakafo aho",
+          "en": "I have finished eating",
+          "pron": "VEE-tah sah-KAH-foo AH-hoo",
+          "sourceKey": "phrase:rpb_vita_sakafo_aho"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Ny addition, azafady",
+          "en": "The bill, please",
+          "pron": "NEE ah-ddee-TEE-oon ah-zah-FAH-dee",
+          "sourceKey": "phrase:rpb_ny_addition,_azafady"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w6s1",
+      "title": "On the Town Road: Where Are You Going & Where Is the Market?",
+      "scenario": "You meet an acquaintance while walking in town. Tell them you are coming from home and heading to the market, then ask where the nearest post office and market are.",
+      "task": "Swap the destination ('tsena, hopitaly, banky, sekoly, fiangonana, paositra') on Round 2!",
+      "roles": [
+        "Local",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "mandeha_aiza_ianao",
+          "mg": "Mandeha aiza ianao?",
+          "en": "Where are you going?",
+          "pron": "mahn-DEH-hah EYE-zah ee-AH-noh"
+        },
+        {
+          "id": "mandeha_any_amin'ny_tsena_aho",
+          "mg": "Mandeha any amin'ny tsena aho.",
+          "en": "I'm going to the market.",
+          "pron": "mahn-DEH-hah AH-nee ah-MEE-n'nee TSEH-nah AH-hoo"
+        },
+        {
+          "id": "avy_eto_an-trano_aho",
+          "mg": "Avy eto an-trano aho.",
+          "en": "I'm coming from home.",
+          "pron": "AH-vee EH-too AHN TRAH-noo AH-hoo"
+        },
+        {
+          "id": "rpb_aiza_ny_paositra_akaiky_eto",
+          "mg": "aiza ny paositra akaiky eto?",
+          "en": "Where is a nearby post office?",
+          "pron": "EYE-zah NEE POH-see-trah ah-KEYE-kee EH-too"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Local",
+          "mg": "Mandeha aiza ianao?",
+          "en": "Where are you going?",
+          "pron": "mahn-DEH-hah EYE-zah ee-AH-noh",
+          "sourceKey": "phrase:mandeha_aiza_ianao"
+        },
+        {
+          "speaker": "You",
+          "mg": "Avy eto an-trano aho.",
+          "en": "I'm coming from home.",
+          "pron": "AH-vee EH-too AHN TRAH-noo AH-hoo",
+          "sourceKey": "phrase:avy_eto_an-trano_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mandeha any amin'ny tsena aho.",
+          "en": "I'm going to the market.",
+          "pron": "mahn-DEH-hah AH-nee ah-MEE-n'nee TSEH-nah AH-hoo",
+          "sourceKey": "phrase:mandeha_any_amin'ny_tsena_aho"
+        },
+        {
+          "speaker": "You",
+          "mg": "Aiza no misy ny tsena?",
+          "en": "Where is the market?",
+          "pron": "EYE-zah NOO MEE-see NEE TSEH-nah",
+          "sourceKey": "phrase:rpb_aiza_no_misy_ny_tsena"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Akaiky.",
+          "en": "It's near.",
+          "pron": "ah-KEYE-kee",
+          "sourceKey": "phrase:akaiky"
+        },
+        {
+          "speaker": "You",
+          "mg": "Aiza ny paositra akaiky eto?",
+          "en": "Where is a nearby post office?",
+          "pron": "EYE-zah NEE POH-see-trah ah-KEYE-kee EH-too",
+          "sourceKey": "phrase:rpb_aiza_ny_paositra_akaiky_eto"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Mandeha mahitsy.",
+          "en": "Go straight ahead.",
+          "pron": "mahn-DEH-hah mah-HEE-tsee",
+          "sourceKey": "phrase:mandeha_mahitsy"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "phrase:misaotra_betsaka"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w6s2",
+      "title": "Turn-by-Turn Directions to the Hospital (Bako Theme 11a)",
+      "scenario": "You are in a new town and need to find the hospital. Ask a passerby for directions and follow their turn-by-turn instructions ('mandeha mahitsy, miankavanana, miankavia').",
+      "task": "Practice giving different combinations of 'Mandeha mahitsy' (go straight), 'Mihodina miankavanana' (turn right), and 'Mihodina miankavia' (turn left).",
+      "roles": [
+        "You",
+        "Local"
+      ],
+      "swapPrompts": [
+        {
+          "id": "mandeha_mahitsy",
+          "mg": "Mandeha mahitsy.",
+          "en": "Go straight ahead.",
+          "pron": "mahn-DEH-hah mah-HEE-tsee"
+        },
+        {
+          "id": "mihodina_miankavanana",
+          "mg": "Mihodina miankavanana.",
+          "en": "Turn right.",
+          "pron": "mee-hoo-DEE-nah mee-ahn-kah-vah-NAH-nah"
+        },
+        {
+          "id": "mihodina_miankavia",
+          "mg": "Mihodina miankavia.",
+          "en": "Turn left.",
+          "pron": "mee-hoo-DEE-nah mee-ahn-kah-VEE-ah"
+        },
+        {
+          "id": "akaiky",
+          "mg": "akaiky",
+          "en": "near, nearby",
+          "pron": "ah-KEYE-kee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "You",
+          "mg": "Azafady, aiza ny hopitaly?",
+          "en": "Excuse me, where is the hospital?",
+          "pron": "ah-zah-FAH-dee EYE-zah NEE hoo-pee-TAH-lee",
+          "sourceKey": "dlg:dlg_directions_travel:0"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Tsy lavitra. Mianatsimo, avy eo miankavanana.",
+          "en": "Not far. Go south, then turn right.",
+          "pron": "TSEE LAH-vee-trah mee-ah-nah-TSEE-moo AH-vee EH-oo mee-ahn-kah-vah-NAH-nah",
+          "sourceKey": "dlg:dlg_directions_travel:1"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mandeha mahitsy.",
+          "en": "Go straight ahead.",
+          "pron": "mahn-DEH-hah mah-HEE-tsee",
+          "sourceKey": "phrase:mandeha_mahitsy"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Mihodina miankavanana.",
+          "en": "Turn right.",
+          "pron": "mee-hoo-DEE-nah mee-ahn-kah-vah-NAH-nah",
+          "sourceKey": "phrase:mihodina_miankavanana"
+        },
+        {
+          "speaker": "You",
+          "mg": "Lavitra eto ve izany?",
+          "en": "Is it far from here?",
+          "pron": "LAH-vee-trah EH-too VEH ee-ZAH-nee",
+          "sourceKey": "phrase:rpb_lavitra_eto_ve_izany"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Akaiky.",
+          "en": "It's near.",
+          "pron": "ah-KEYE-kee",
+          "sourceKey": "phrase:akaiky"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misaotra betsaka!",
+          "en": "Thank you very much!",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "dlg:dlg_directions_travel:2"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Tsy misy fisaorana.",
+          "en": "Not at all.",
+          "pron": "TSEE MEE-see fee-soh-RAH-nah",
+          "sourceKey": "dlg:dlg_directions_travel:3"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w6s3",
+      "title": "Checking Upcountry Road Conditions & Compass Directions",
+      "scenario": "Before setting out on a trip during the rainy season, you ask a local driver which compass direction to take and how the road surface is ('malama, mikitoantoana, tapaka').",
+      "task": "Practice the four cardinal directions ('mianavaratra, mianatsimo, miatsinanana, miankandrefana') and road condition adjectives.",
+      "roles": [
+        "Traveler",
+        "Driver"
+      ],
+      "swapPrompts": [
+        {
+          "id": "manao_ahoana_ny_lalana",
+          "mg": "Manao ahoana ny lalana?",
+          "en": "How is the road?",
+          "pron": "MAH-noh ah-HOO-ah-nah NEE lah-LAH-nah"
+        },
+        {
+          "id": "malama_ny_lalana",
+          "mg": "Malama ny lalana.",
+          "en": "The road is muddy.",
+          "pron": "mah-LAH-mah NEE lah-LAH-nah"
+        },
+        {
+          "id": "mikitoantoana_ny_lalana",
+          "mg": "Mikitoantoana ny lalana.",
+          "en": "The road is bumpy.",
+          "pron": "mee-kee-too-ahn-too-AH-nah NEE lah-LAH-nah"
+        },
+        {
+          "id": "tapaka_ny_lalana",
+          "mg": "Tapaka ny lalana.",
+          "en": "The road is cut off.",
+          "pron": "tah-PAH-kah NEE lah-LAH-nah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Traveler",
+          "mg": "Manao ahoana ny lalana?",
+          "en": "How is the road?",
+          "pron": "MAH-noh ah-HOO-ah-nah NEE lah-LAH-nah",
+          "sourceKey": "phrase:manao_ahoana_ny_lalana"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Ratsy ny lalana.",
+          "en": "The road is bad.",
+          "pron": "RAH-tsee NEE lah-LAH-nah",
+          "sourceKey": "phrase:ratsy_ny_lalana"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Malama ny lalana.",
+          "en": "The road is muddy.",
+          "pron": "mah-LAH-mah NEE lah-LAH-nah",
+          "sourceKey": "phrase:malama_ny_lalana"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Mikitoantoana ny lalana.",
+          "en": "The road is bumpy.",
+          "pron": "mee-kee-too-ahn-too-AH-nah NEE lah-LAH-nah",
+          "sourceKey": "phrase:mikitoantoana_ny_lalana"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Mianavaratra.",
+          "en": "It's to the north / go north.",
+          "pron": "mee-ah-nah-VAH-rah-trah",
+          "sourceKey": "phrase:mianavaratra"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Lalana adin-telo.",
+          "en": "It's a 3-hour journey.",
+          "pron": "lah-LAH-nah AH-deen TEH-loo",
+          "sourceKey": "phrase:lalana_adin-telo"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Tapaka ny lalana.",
+          "en": "The road is cut off.",
+          "pron": "tah-PAH-kah NEE lah-LAH-nah",
+          "sourceKey": "phrase:tapaka_ny_lalana"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Tsara ny lalana.",
+          "en": "The road is good.",
+          "pron": "TSAH-rah NEE lah-LAH-nah",
+          "sourceKey": "phrase:tsara_ny_lalana"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w7s1",
+      "title": "At a Malagasy Church Service: Present (m-) vs. Future (h-) Verbs",
+      "scenario": "In Bako Lesson 5 ('Going to church'), you hear how Malagasy speakers shift active verbs from present ('mitsangana, mihira') to future ('hitsangana isika, hihira isika, hivavaka isika, hamaky isika').",
+      "task": "Compare each imperative/present form ('Mitsangàna / Mihira / Mipetraha') with the inclusive future ('Hitsangana isika / Hihira isika / Hivavaka isika').",
+      "roles": [
+        "Leader",
+        "Reader"
+      ],
+      "swapPrompts": [
+        {
+          "id": "mivavaka",
+          "mg": "Mivavaka",
+          "en": "pray",
+          "pron": "mee-vah-VAH-kah"
+        },
+        {
+          "id": "mihira",
+          "mg": "Mihira",
+          "en": "sing",
+          "pron": "mee-HEE-rah"
+        },
+        {
+          "id": "mitsangana",
+          "mg": "Mitsangana",
+          "en": "stand up",
+          "pron": "mee-tsah-NGAH-nah"
+        },
+        {
+          "id": "mipetraka",
+          "mg": "mipetraka",
+          "en": "to live, to reside",
+          "pron": "mee-PEH-trah-kah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Leader",
+          "mg": "Mitsangàna",
+          "en": "Stand up",
+          "pron": "mee-tsah-NGAH-nah",
+          "sourceKey": "dlg:dlg_intro_5_27:0"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Hitsangana isika",
+          "en": "Let us stand",
+          "pron": "hee-tsah-NGAH-nah ee-SEE-kah",
+          "sourceKey": "dlg:dlg_intro_5_27:1"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Mihira",
+          "en": "Sing",
+          "pron": "mee-HEE-rah",
+          "sourceKey": "dlg:dlg_intro_5_27:4"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Hihira isika",
+          "en": "Let us sing",
+          "pron": "hee-HEE-rah ee-SEE-kah",
+          "sourceKey": "dlg:dlg_intro_5_27:5"
+        },
+        {
+          "speaker": "Reader",
+          "mg": "FFPM fahafolo",
+          "en": "FFPM 10 (FFPM hymn number ten)",
+          "pron": "FFPM fah-hah-FOO-loo",
+          "sourceKey": "dlg:dlg_intro_5_28:0"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Afaka mipetraka isika. Mahazoa toerana.",
+          "en": "We can have a seat / you may take a seat",
+          "pron": "ah-FAH-kah mee-PEH-trah-kah ee-SEE-kah mah-hah-ZOO-ah too-EH-rah-nah",
+          "sourceKey": "dlg:dlg_intro_5_27:3"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Hamaky ny Tenin'Andriamanitra isika",
+          "en": "We will read God's word together",
+          "pron": "hah-MAH-kee NEE tenin'andriamanitra ee-SEE-kah",
+          "sourceKey": "dlg:dlg_intro_5_27:6"
+        },
+        {
+          "speaker": "Leader",
+          "mg": "Hivavaka isika",
+          "en": "Let us pray",
+          "pron": "hee-vah-VAH-kah ee-SEE-kah",
+          "sourceKey": "dlg:dlg_intro_5_27:7"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w7s2",
+      "title": "Yesterday, Today & Tomorrow: Comparing Past and Future Plans",
+      "scenario": "You and a friend compare what happened yesterday ('omaly'), what day it is today ('androany'), and what you will do tomorrow ('rahampitso').",
+      "task": "Notice the tense prefix shift in 'Inona no nataonao omaly?' (past n-) vs. 'Inona no hataonao rahampitso?' (future h-) and 'Nanakory' vs. 'Hanakory'.",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "inona_no_nataonao_omaly",
+          "mg": "Inona no nataonao omaly?",
+          "en": "What did you do yesterday?",
+          "pron": "ee-NOO-nah NOO nah-TOH-noh oo-MAH-lee"
+        },
+        {
+          "id": "inona_no_hataonao_rahampitso",
+          "mg": "Inona no hataonao rahampitso?",
+          "en": "What will you do tomorrow?",
+          "pron": "ee-NOO-nah NOO hah-TOH-noh rah-hahm-PEE-tsoo"
+        },
+        {
+          "id": "nanakory_ny_andro_omaly",
+          "mg": "Nanakory ny andro omaly?",
+          "en": "How was the weather yesterday?",
+          "pron": "nah-nah-KOO-ree NEE AHN-droo oo-MAH-lee"
+        },
+        {
+          "id": "hanakory_ny_andro_rahampitso",
+          "mg": "Hanakory ny andro rahampitso?",
+          "en": "How will the weather be tomorrow?",
+          "pron": "hah-nah-KOO-ree NEE AHN-droo rah-hahm-PEE-tsoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Inona no andro androany?",
+          "en": "What day is it today?",
+          "pron": "ee-NOO-nah NOO AHN-droo ahn-droo-AH-nee",
+          "sourceKey": "phrase:inona_no_andro_androany"
+        },
+        {
+          "speaker": "You",
+          "mg": "Zoma androany.",
+          "en": "It's Friday today.",
+          "pron": "ZOO-mah ahn-droo-AH-nee",
+          "sourceKey": "phrase:zoma_androany"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Inona no nataonao omaly?",
+          "en": "What did you do yesterday?",
+          "pron": "ee-NOO-nah NOO nah-TOH-noh oo-MAH-lee",
+          "sourceKey": "phrase:inona_no_nataonao_omaly"
+        },
+        {
+          "speaker": "You",
+          "mg": "Nanakory ny andro omaly?",
+          "en": "How was the weather yesterday?",
+          "pron": "nah-nah-KOO-ree NEE AHN-droo oo-MAH-lee",
+          "sourceKey": "phrase:nanakory_ny_andro_omaly"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara ny andro.",
+          "en": "It's nice out (sunny).",
+          "pron": "TSAH-rah NEE AHN-droo",
+          "sourceKey": "phrase:tsara_ny_andro"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Inona no hataonao rahampitso?",
+          "en": "What will you do tomorrow?",
+          "pron": "ee-NOO-nah NOO hah-TOH-noh rah-hahm-PEE-tsoo",
+          "sourceKey": "phrase:inona_no_hataonao_rahampitso"
+        },
+        {
+          "speaker": "You",
+          "mg": "Hanakory ny andro rahampitso?",
+          "en": "How will the weather be tomorrow?",
+          "pron": "hah-nah-KOO-ree NEE AHN-droo rah-hahm-PEE-tsoo",
+          "sourceKey": "phrase:hanakory_ny_andro_rahampitso"
+        },
+        {
+          "speaker": "You",
+          "mg": "Hihaona amin'ny Zoma amin'ny efatra isika.",
+          "en": "We'll meet Friday at four.",
+          "pron": "hee-HOH-nah ah-MEE-n'nee ZOO-mah ah-MEE-n'nee EH-fah-trah ee-SEE-kah",
+          "sourceKey": "phrase:hihaona_amin'ny_zoma_amin'ny_efatra_isika"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w7s3",
+      "title": "Storytelling: How Was Your Visit to the Countryside Village?",
+      "scenario": "You have just returned from a trip to a countryside village ('any ambanivohitra', Bako Lesson 6). Tell your friend how the village was: few cars, clean air, fresh food, quiet nights, and starry skies.",
+      "task": "Practice descriptive storytelling sentences where the adjective comes first ('Madio ny rivotra', 'Vaovao ny sakafo', 'Tsara tarehy ny lanitra').",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "ambanivohitra",
+          "mg": "ambanivohitra",
+          "en": "country ambany prep, under",
+          "pron": "ahm-bah-nee-VOO-hee-trah"
+        },
+        {
+          "id": "rivotra",
+          "mg": "rivotra",
+          "en": "wind",
+          "pron": "REE-voo-trah"
+        },
+        {
+          "id": "kintana",
+          "mg": "kintana",
+          "en": "star",
+          "pron": "keen-TAH-nah"
+        },
+        {
+          "id": "vaovao",
+          "mg": "Vaovao",
+          "en": "new",
+          "pron": "vah-OO-vah-oo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Tsara ve any ambanivohitra?",
+          "en": "How was the village / was the village visit good?",
+          "pron": "TSAH-rah VEH AH-nee ahm-bah-nee-VOO-hee-trah",
+          "sourceKey": "dlg:dlg_intro_6_29:0"
+        },
+        {
+          "speaker": "You",
+          "mg": "Eny, tsara satria tsy betsaka ny fiara.",
+          "en": "Yes, it was good because there weren't many vehicles",
+          "pron": "EH-nee TSAH-rah sah-TREE-ah TSEE beh-TSAH-kah NEE fee-AH-rah",
+          "sourceKey": "dlg:dlg_intro_6_29:1"
+        },
+        {
+          "speaker": "You",
+          "mg": "Madio ny rivotra.",
+          "en": "The air was clean",
+          "pron": "mah-DEE-oo NEE REE-voo-trah",
+          "sourceKey": "dlg:dlg_intro_6_29:2"
+        },
+        {
+          "speaker": "You",
+          "mg": "Malalaka.",
+          "en": "It (the land) was spacious",
+          "pron": "mah-lah-LAH-kah",
+          "sourceKey": "dlg:dlg_intro_6_29:3"
+        },
+        {
+          "speaker": "You",
+          "mg": "Vaovao ny sakafo amin'ny ankapobeny.",
+          "en": "The food was generally fresh",
+          "pron": "vah-OO-vah-oo NEE sah-KAH-foo ah-MEE-n'nee ahn-kah-poo-BEH-nee",
+          "sourceKey": "dlg:dlg_intro_6_29:4"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsy misy tabataba.",
+          "en": "There wasn't much noise",
+          "pron": "TSEE MEE-see tah-bah-TAH-bah",
+          "sourceKey": "dlg:dlg_intro_6_29:5"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara tarehy ny lanitra sy ny kintana amin'ny alina.",
+          "en": "The sky and stars at night were beautiful",
+          "pron": "TSAH-rah tah-REH-hee NEE lah-NEE-trah SEE NEE keen-TAH-nah ah-MEE-n'nee ah-LEE-nah",
+          "sourceKey": "dlg:dlg_intro_6_29:6"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Mahafaly ahy izany.",
+          "en": "That makes me happy.",
+          "pron": "mah-hah-FAH-lee AH-hee ee-ZAH-nee",
+          "sourceKey": "phrase:mahafaly_ahy_izany"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w8s1",
+      "title": "Setting Up a Friday Afternoon Meeting ('Hihaona isika ve?')",
+      "scenario": "Step 1 was discussing daily wake-up times. Now you and a friend are arranging to meet on Friday at 4:00 pm (Peace Corps L11).",
+      "task": "On Round 2, change the day of the week ('Alatsinainy, Talata, Alarobia, Alakamisy, Zoma, Sabotsy, Alahady') and the hour!",
+      "roles": [
+        "Friend",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "oviana_isika_no_hihaona",
+          "mg": "Oviana isika no hihaona?",
+          "en": "When shall we meet?",
+          "pron": "oo-vee-AH-nah ee-SEE-kah NOO hee-HOH-nah"
+        },
+        {
+          "id": "zoma_androany",
+          "mg": "Zoma androany.",
+          "en": "It's Friday today.",
+          "pron": "ZOO-mah ahn-droo-AH-nee"
+        },
+        {
+          "id": "amin'ny_telo_tolakandro",
+          "mg": "Amin'ny telo tolakandro.",
+          "en": "At three in the afternoon.",
+          "pron": "ah-MEE-n'nee TEH-loo too-lah-KAHN-droo"
+        },
+        {
+          "id": "manao_fotoan-gasy_izy",
+          "mg": "Manao fotoan-gasy izy.",
+          "en": "He's on Malagasy time (running late).",
+          "pron": "MAH-noh foo-TOO-ahn GAH-see EE-zee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Friend",
+          "mg": "Hihaona isika ve?",
+          "en": "Shall we meet?",
+          "pron": "hee-HOH-nah ee-SEE-kah VEH",
+          "sourceKey": "dlg:dlg_time_appointments:0"
+        },
+        {
+          "speaker": "You",
+          "mg": "Eny! Rahoviana?",
+          "en": "Yes! When?",
+          "pron": "EH-nee rah-hoo-vee-AH-nah",
+          "sourceKey": "dlg:dlg_time_appointments:1"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Amin'ny Zoma. Amin'ny firy?",
+          "en": "On Friday. At what time?",
+          "pron": "ah-MEE-n'nee ZOO-mah ah-MEE-n'nee FEE-ree",
+          "sourceKey": "dlg:dlg_time_appointments:2"
+        },
+        {
+          "speaker": "You",
+          "mg": "Amin'ny efatra tolakandro.",
+          "en": "At four in the afternoon.",
+          "pron": "ah-MEE-n'nee EH-fah-trah too-lah-KAHN-droo",
+          "sourceKey": "dlg:dlg_time_appointments:3"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Miandrasa kely azafady.",
+          "en": "Please wait a moment.",
+          "pron": "mee-ahn-DRAH-sah KEH-lee ah-zah-FAH-dee",
+          "sourceKey": "phrase:miandrasa_kely_azafady"
+        },
+        {
+          "speaker": "Friend",
+          "mg": "Manao fotoan-gasy izy.",
+          "en": "He's on Malagasy time (running late).",
+          "pron": "MAH-noh foo-TOO-ahn GAH-see EE-zee",
+          "sourceKey": "phrase:manao_fotoan-gasy_izy"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara! Mandrapihaona Zoma!",
+          "en": "Great! See you Friday!",
+          "pron": "TSAH-rah mahn-drah-PEE-hoh-nah ZOO-mah",
+          "sourceKey": "dlg:dlg_time_appointments:4"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w8s2",
+      "title": "Asking the Time & Checking Opening Hours ('Amin'ny firy izao?')",
+      "scenario": "You are running errands in town and need to check the current time and when the bank opens and closes.",
+      "task": "Practice telling time across different parts of the day: morning ('maraina'), noon ('mitataovovonana'), afternoon ('tolakandro'), and quarter-to ('latsaka fahefany').",
+      "roles": [
+        "You",
+        "Local"
+      ],
+      "swapPrompts": [
+        {
+          "id": "amin'ny_firy_izao_azafady",
+          "mg": "Amin'ny firy izao azafady?",
+          "en": "What time is it, please?",
+          "pron": "ah-MEE-n'nee FEE-ree EE-zoh ah-zah-FAH-dee"
+        },
+        {
+          "id": "wv_sivy_ora_maraina",
+          "mg": "sivy ora maraina",
+          "en": "9:00 in the morning",
+          "pron": "SEE-vee OO-rah mah-REYE-nah"
+        },
+        {
+          "id": "mitataovovonana",
+          "mg": "mitataovovonana",
+          "en": "noon",
+          "pron": "mee-tah-toh-voo-voo-NAH-nah"
+        },
+        {
+          "id": "wv_amin'ny_fito_latsaka_fahefany",
+          "mg": "amin'ny fito latsaka fahefany",
+          "en": "18:45 (quarter 'til seven)",
+          "pron": "ah-MEE-n'nee FEE-too lah-TSAH-kah fah-HEH-fah-nee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "You",
+          "mg": "Amin'ny firy izao azafady?",
+          "en": "What time is it now, please?",
+          "pron": "ah-MEE-n'nee FEE-ree EE-zoh ah-zah-FAH-dee",
+          "sourceKey": "phrase:amin'ny_firy_izao_azafady"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Sivy ora maraina",
+          "en": "9:00 in the morning",
+          "pron": "SEE-vee OO-rah mah-REYE-nah",
+          "sourceKey": "phrase:wv_sivy_ora_maraina"
+        },
+        {
+          "speaker": "You",
+          "mg": "Amin'ny firy ny banky no misokatra?",
+          "en": "When is the bank open?",
+          "pron": "ah-MEE-n'nee FEE-ree NEE BAHN-kee NOO mee-SOO-kah-trah",
+          "sourceKey": "phrase:rpb_amin'ny_firy_ny_banky_no_misokatra"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Mitataovovonana.",
+          "en": "It's noon.",
+          "pron": "mee-tah-toh-voo-voo-NAH-nah",
+          "sourceKey": "phrase:mitataovovonana"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Amin'ny telo tolakandro.",
+          "en": "At three in the afternoon.",
+          "pron": "ah-MEE-n'nee TEH-loo too-lah-KAHN-droo",
+          "sourceKey": "phrase:amin'ny_telo_tolakandro"
+        },
+        {
+          "speaker": "You",
+          "mg": "Amin'ny firy ny banky no mihidy?",
+          "en": "When does the bank close?",
+          "pron": "ah-MEE-n'nee FEE-ree NEE BAHN-kee NOO mee-HEE-dee",
+          "sourceKey": "phrase:rpb_amin'ny_firy_ny_banky_no_mihidy"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Amin'ny fito latsaka fahefany",
+          "en": "18:45 (quarter 'til seven)",
+          "pron": "ah-MEE-n'nee FEE-too lah-TSAH-kah fah-HEH-fah-nee",
+          "sourceKey": "phrase:wv_amin'ny_fito_latsaka_fahefany"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "phrase:misaotra_betsaka"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w8s3",
+      "title": "Checking In at a Hotel & Setting an Early Morning Routine",
+      "scenario": "You arrive at a hotel in the evening, show your ID card, ask for your room key, and arrange an early morning wake-up time before going to sleep.",
+      "task": "Play Guest and Receptionist. Practice combining evening and early-morning time expressions.",
+      "roles": [
+        "Receptionist",
+        "Guest"
+      ],
+      "swapPrompts": [
+        {
+          "id": "rpb_manana_kara-panondro_ve_ianao",
+          "mg": "manana kara-panondro ve ianao?",
+          "en": "Do you have any I.D.?",
+          "pron": "mah-NAH-nah KAH-rah pah-NOON-droo VEH ee-AH-noh"
+        },
+        {
+          "id": "rpb_aiza_ny_lakile_an'ny_efitro",
+          "mg": "aiza ny lakile an'ny efitro?",
+          "en": "Can I have the key to my room?",
+          "pron": "EYE-zah NEE lah-kee-LEH AH-n'nee eh-FEE-troo"
+        },
+        {
+          "id": "amin'ny_telo_maraina",
+          "mg": "Amin'ny telo maraina.",
+          "en": "At three in the morning.",
+          "pron": "ah-MEE-n'nee TEH-loo mah-REYE-nah"
+        },
+        {
+          "id": "amin'ny_enina_hariva",
+          "mg": "Amin'ny enina hariva.",
+          "en": "At six in the evening.",
+          "pron": "ah-MEE-n'nee eh-NEE-nah hah-REE-vah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Receptionist",
+          "mg": "Tongasoa!",
+          "en": "Welcome!",
+          "pron": "too-ngah-SOO-ah",
+          "sourceKey": "phrase:wv_welcome"
+        },
+        {
+          "speaker": "Receptionist",
+          "mg": "Manana kara-panondro ve ianao?",
+          "en": "Do you have any I.D.?",
+          "pron": "mah-NAH-nah KAH-rah pah-NOON-droo VEH ee-AH-noh",
+          "sourceKey": "phrase:rpb_manana_kara-panondro_ve_ianao"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Eny, Tompoko",
+          "en": "Yes (polite)",
+          "pron": "EH-nee toom-POO-koo",
+          "sourceKey": "phrase:wv_yes_sir"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Aiza ny lakile an'ny efitro?",
+          "en": "Can I have the key to my room?",
+          "pron": "EYE-zah NEE lah-kee-LEH AH-n'nee eh-FEE-troo",
+          "sourceKey": "phrase:rpb_aiza_ny_lakile_an'ny_efitro"
+        },
+        {
+          "speaker": "Receptionist",
+          "mg": "Aiza ny efitro e?",
+          "en": "Where is my room?",
+          "pron": "EYE-zah NEE eh-FEE-troo EH",
+          "sourceKey": "phrase:rpb_aiza_ny_efitro_e"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Amin'ny telo maraina.",
+          "en": "At three in the morning.",
+          "pron": "ah-MEE-n'nee TEH-loo mah-REYE-nah",
+          "sourceKey": "phrase:amin'ny_telo_maraina"
+        },
+        {
+          "speaker": "Receptionist",
+          "mg": "Tafandria mandry",
+          "en": "Good night",
+          "pron": "tah-fahn-DREE-ah MAHN-dree",
+          "sourceKey": "phrase:rpb_tafandria_mandry"
+        },
+        {
+          "speaker": "Guest",
+          "mg": "Misaotra betsaka.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "phrase:misaotra_betsaka"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w9s1",
+      "title": "Welcoming a Guest & Showing Where Rooms Are in the House",
+      "scenario": "Step 1 was looking for lost sunglasses. Now a visitor arrives at your front gate ('vavahady'). Welcome them in and show them where the kitchen and bathroom are.",
+      "task": "Practice household nouns ('vavahady, varavarana, lakozia, kabone, trano') and open/closed states ('misokatra / mikatona').",
+      "roles": [
+        "Visitor",
+        "Host"
+      ],
+      "swapPrompts": [
+        {
+          "id": "misokatra_ny_vavahady",
+          "mg": "Misokatra ny vavahady.",
+          "en": "The gate is open.",
+          "pron": "mee-SOO-kah-trah NEE vah-vah-HAH-dee"
+        },
+        {
+          "id": "mikatona_ny_varavarana",
+          "mg": "Mikatona ny varavarana.",
+          "en": "The door is closed.",
+          "pron": "mee-kah-TOO-nah NEE vah-rah-vah-RAH-nah"
+        },
+        {
+          "id": "aiza_ny_lakozia",
+          "mg": "Aiza ny lakozia?",
+          "en": "Where is the kitchen?",
+          "pron": "EYE-zah NEE lah-koo-ZEE-ah"
+        },
+        {
+          "id": "aty_an-kianja_ny_kabone",
+          "mg": "Aty an-kianja ny kabone.",
+          "en": "The toilet is outside in the yard.",
+          "pron": "AH-tee AHN kee-AH-ndzah NEE kah-BOO-neh"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Visitor",
+          "mg": "Haody oh!",
+          "en": "Hello! (at the door)",
+          "pron": "outdzioh",
+          "sourceKey": "phrase:haody"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Misokatra ny vavahady.",
+          "en": "The gate is open.",
+          "pron": "mee-SOO-kah-trah NEE vah-vah-HAH-dee",
+          "sourceKey": "phrase:misokatra_ny_vavahady"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mandrosoa!",
+          "en": "Come in!",
+          "pron": "mahn-DROO-soo-ah",
+          "sourceKey": "phrase:mandrosoa"
+        },
+        {
+          "speaker": "Visitor",
+          "mg": "Mikatona ny varavarana.",
+          "en": "The door is closed.",
+          "pron": "mee-kah-TOO-nah NEE vah-rah-vah-RAH-nah",
+          "sourceKey": "phrase:mikatona_ny_varavarana"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Mipetrapetraha!",
+          "en": "Have a seat!",
+          "pron": "mee-PEH-trah-peh-trah-hah",
+          "sourceKey": "phrase:mipetrapetraha"
+        },
+        {
+          "speaker": "Visitor",
+          "mg": "Aiza ny lakozia?",
+          "en": "Where is the kitchen?",
+          "pron": "EYE-zah NEE lah-koo-ZEE-ah",
+          "sourceKey": "phrase:aiza_ny_lakozia"
+        },
+        {
+          "speaker": "Visitor",
+          "mg": "Aiza ny kabone?",
+          "en": "Where is the toilet?",
+          "pron": "EYE-zah NEE kah-BOO-neh",
+          "sourceKey": "phrase:aiza_ny_kabone"
+        },
+        {
+          "speaker": "Host",
+          "mg": "Aty an-kianja ny kabone.",
+          "en": "The toilet is outside in the yard.",
+          "pron": "AH-tee AHN kee-AH-ndzah NEE kah-BOO-neh",
+          "sourceKey": "phrase:aty_an-kianja_ny_kabone"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w9s2",
+      "title": "Describing Sizes, Colors & Cleanliness at a Clothing Shop",
+      "scenario": "Step 1 was moving a table at home. Now you are inspecting clothes at a shop and using adjectives to ask for a larger/smaller size or a different color.",
+      "task": "Practice using descriptive adjectives ('lehibe, kely, madio, maloto, tsara, ratsy') without a 'to be' verb.",
+      "roles": [
+        "Shopkeeper",
+        "Customer"
+      ],
+      "swapPrompts": [
+        {
+          "id": "madio",
+          "mg": "madio",
+          "en": "clean",
+          "pron": "mah-DEE-oo"
+        },
+        {
+          "id": "maloto",
+          "mg": "maloto",
+          "en": "dirty",
+          "pron": "mah-LOO-too"
+        },
+        {
+          "id": "lehibe",
+          "mg": "lehibe",
+          "en": "big, large",
+          "pron": "LEH-hee-beh"
+        },
+        {
+          "id": "kely",
+          "mg": "kely",
+          "en": "small, a little",
+          "pron": "KEH-lee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Shopkeeper",
+          "mg": "Inona no atao ho anao?",
+          "en": "What can I do for you?",
+          "pron": "ee-NOO-nah NOO AH-toh HOO AH-noh",
+          "sourceKey": "phrase:rpb_inona_no_atao_ho_anao"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Tsy tiako ity",
+          "en": "I do not like this",
+          "pron": "TSEE tee-AH-koo EE-tee",
+          "sourceKey": "phrase:rpb_tsy_tiako_ity"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Misy lehibebe/kelikely noho ity ve?",
+          "en": "Do you have anything bigger/smaller?",
+          "pron": "MEE-see leh-hee-beh-BEH keh-lee-KEH-lee NOO-hoo EE-tee VEH",
+          "sourceKey": "phrase:rpb_misy_lehibebe/kelikely_noho_ity_ve"
+        },
+        {
+          "speaker": "Shopkeeper",
+          "mg": "Mbola misy hafa ve?",
+          "en": "Do you have any others?",
+          "pron": "MBOO-lah MEE-see HAH-fah VEH",
+          "sourceKey": "phrase:rpb_mbola_misy_hafa_ve"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Misy loko hafa ve?",
+          "en": "Do you have a different color?",
+          "pron": "MEE-see LOO-koo HAH-fah VEH",
+          "sourceKey": "phrase:rpb_misy_loko_hafa_ve"
+        },
+        {
+          "speaker": "Shopkeeper",
+          "mg": "Eny, misy.",
+          "en": "Yes, there are.",
+          "pron": "EH-nee MEE-see",
+          "sourceKey": "phrase:ia,_misy"
+        },
+        {
+          "speaker": "Customer",
+          "mg": "Tiako vidiana ity",
+          "en": "I would like to buy this",
+          "pron": "tee-AH-koo vee-dee-AH-nah EE-tee",
+          "sourceKey": "phrase:rpb_tiako_vidiana_ity"
+        },
+        {
+          "speaker": "Shopkeeper",
+          "mg": "Hajao ny fahadiovana",
+          "en": "Respect the cleanness",
+          "pron": "HAH-dzoh NEE fah-hah-dee-oo-VAH-nah",
+          "sourceKey": "phrase:wv_respect_clean"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w9s3",
+      "title": "Working Together at Home: Polite Imperatives & Clarifications",
+      "scenario": "You are helping out with household tasks and practicing everyday imperatives ('Avia aty!', 'Andraso!') and asking someone to speak slowly or repeat an instruction.",
+      "task": "Practice every learner's survival requests: 'Afaka manampy ahy ve ianao?', 'Afaka miteny miadana kokoa ve ianao?', and 'Afaka averinao ve azafady?'",
+      "roles": [
+        "You",
+        "Helper"
+      ],
+      "swapPrompts": [
+        {
+          "id": "avia_aty",
+          "mg": "Avia aty!",
+          "en": "Come here!",
+          "pron": "ah-VEE-ah AH-tee"
+        },
+        {
+          "id": "andraso",
+          "mg": "Andraso!",
+          "en": "Wait!",
+          "pron": "ahn-DRAH-soo"
+        },
+        {
+          "id": "afaka_miteny_miadana_kokoa_ve_ianao",
+          "mg": "Afaka miteny miadana kokoa ve ianao?",
+          "en": "Could you speak more slowly, please?",
+          "pron": "ah-FAH-kah mee-TEH-nee mee-ah-DAH-nah koo-KOO-ah VEH ee-AH-noh"
+        },
+        {
+          "id": "afaka_averinao_ve_azafady",
+          "mg": "Afaka averinao ve azafady?",
+          "en": "Could you say that again, please?",
+          "pron": "ah-FAH-kah ah-veh-REE-noh VEH ah-zah-FAH-dee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "You",
+          "mg": "Avia aty!",
+          "en": "Come here!",
+          "pron": "ah-VEE-ah AH-tee",
+          "sourceKey": "phrase:avia_aty"
+        },
+        {
+          "speaker": "You",
+          "mg": "Afaka manampy ahy ve ianao?",
+          "en": "Could you help me please?",
+          "pron": "ah-FAH-kah mah-NAHM-pee AH-hee VEH ee-AH-noh",
+          "sourceKey": "phrase:rpb_afaka_manampy_ahy_ve_ianao"
+        },
+        {
+          "speaker": "Helper",
+          "mg": "Andraso!",
+          "en": "Wait!",
+          "pron": "ahn-DRAH-soo",
+          "sourceKey": "phrase:andraso"
+        },
+        {
+          "speaker": "Helper",
+          "mg": "Miandrasa kely azafady.",
+          "en": "Please wait a moment.",
+          "pron": "mee-ahn-DRAH-sah KEH-lee ah-zah-FAH-dee",
+          "sourceKey": "phrase:miandrasa_kely_azafady"
+        },
+        {
+          "speaker": "You",
+          "mg": "Afaka miteny miadana kokoa ve ianao?",
+          "en": "Could you speak more slowly, please?",
+          "pron": "ah-FAH-kah mee-TEH-nee mee-ah-DAH-nah koo-KOO-ah VEH ee-AH-noh",
+          "sourceKey": "phrase:afaka_miteny_miadana_kokoa_ve_ianao"
+        },
+        {
+          "speaker": "Helper",
+          "mg": "Azo?",
+          "en": "Understand? / OK?",
+          "pron": "AH-zoo",
+          "sourceKey": "phrase:azo"
+        },
+        {
+          "speaker": "You",
+          "mg": "Afaka averinao ve azafady?",
+          "en": "Could you say that again, please?",
+          "pron": "ah-FAH-kah ah-veh-REE-noh VEH ah-zah-FAH-dee",
+          "sourceKey": "phrase:afaka_averinao_ve_azafady"
+        },
+        {
+          "speaker": "Helper",
+          "mg": "Tsy azoko",
+          "en": "I don't understand",
+          "pron": "TSEE ah-ZOO-koo",
+          "sourceKey": "phrase:wv_dontunderstand"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w10s1",
+      "title": "At the Nurse's Triage Desk: Explaining What Part of the Body Hurts",
+      "scenario": "Step 1 was buying medicine at a pharmacy. Now you are at a clinic triage desk where the nurse asks 'Aiza no marary?' (Where does it hurt?) and you point out different body parts.",
+      "task": "Play Nurse and Patient. Swap in different body aches ('marary an-doha, marary kibo, marary nify, marary tenda, marary tratra').",
+      "roles": [
+        "Nurse",
+        "Patient"
+      ],
+      "swapPrompts": [
+        {
+          "id": "aiza_no_marary",
+          "mg": "Aiza no marary?",
+          "en": "Where does it hurt?",
+          "pron": "EYE-zah NOO mah-RAH-ree"
+        },
+        {
+          "id": "marary_an-doha_aho",
+          "mg": "Marary an-doha aho.",
+          "en": "I have a headache.",
+          "pron": "mah-RAH-ree AHN DOO-hah AH-hoo"
+        },
+        {
+          "id": "marary_kibo_aho",
+          "mg": "Marary kibo aho.",
+          "en": "My stomach hurts.",
+          "pron": "mah-RAH-ree KEE-boo AH-hoo"
+        },
+        {
+          "id": "marary_nify_aho",
+          "mg": "Marary nify aho.",
+          "en": "I have a toothache.",
+          "pron": "mah-RAH-ree NEE-fee AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Nurse",
+          "mg": "Salama tsara ve ianao?",
+          "en": "Are you feeling well?",
+          "pron": "sah-LAH-mah TSAH-rah VEH ee-AH-noh",
+          "sourceKey": "phrase:salama_tsara_ve_ianao"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Tsy metimety aho",
+          "en": "I do not feel well",
+          "pron": "TSEE meh-tee-MEH-tee AH-hoo",
+          "sourceKey": "phrase:rpb_tsy_metimety_aho"
+        },
+        {
+          "speaker": "Nurse",
+          "mg": "Aiza no marary?",
+          "en": "Where does it hurt?",
+          "pron": "EYE-zah NOO mah-RAH-ree",
+          "sourceKey": "phrase:aiza_no_marary"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Marary an-doha aho.",
+          "en": "My head hurts.",
+          "pron": "mah-RAH-ree AHN DOO-hah AH-hoo",
+          "sourceKey": "phrase:marary_an-doha_aho"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Marary kibo aho.",
+          "en": "My stomach hurts.",
+          "pron": "mah-RAH-ree KEE-boo AH-hoo",
+          "sourceKey": "phrase:marary_kibo_aho"
+        },
+        {
+          "speaker": "Nurse",
+          "mg": "Marary ve?",
+          "en": "Does it hurt?",
+          "pron": "mah-RAH-ree VEH",
+          "sourceKey": "phrase:marary_ve"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Marary tenda aho.",
+          "en": "My throat hurts.",
+          "pron": "mah-RAH-ree TEHN-dah AH-hoo",
+          "sourceKey": "phrase:marary_tenda_aho"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Marary nify aho.",
+          "en": "I have a toothache.",
+          "pron": "mah-RAH-ree NEE-fee AH-hoo",
+          "sourceKey": "phrase:marary_nify_aho"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w10s2",
+      "title": "At the Doctor's Office: Diagnosing a Cold & Fever (Bako Theme 7b)",
+      "scenario": "You are consulting a doctor about fever, dizziness, and cold symptoms ('voan'ny sery, voan'ny tazo, fanina'), and asking which pharmacy is open tonight.",
+      "task": "Practice the 'voan'ny ... aho' pattern ('voan'ny sery aho, voan'ny tazo aho, voan'ny tazo moka aho') and receiving medicine from the doctor.",
+      "roles": [
+        "Doctor",
+        "Patient"
+      ],
+      "swapPrompts": [
+        {
+          "id": "voan'ny_sery_aho",
+          "mg": "Voan'ny sery aho.",
+          "en": "I have a cold.",
+          "pron": "voo-AH-n'nee SEH-ree AH-hoo"
+        },
+        {
+          "id": "voan'ny_tazo_aho",
+          "mg": "Voan'ny tazo aho.",
+          "en": "I have a fever.",
+          "pron": "voo-AH-n'nee TAH-zoo AH-hoo"
+        },
+        {
+          "id": "fanina_aho",
+          "mg": "Fanina aho.",
+          "en": "I feel dizzy.",
+          "pron": "fah-NEE-nah AH-hoo"
+        },
+        {
+          "id": "mila_fanafody_aho",
+          "mg": "Mila fanafody aho.",
+          "en": "I need medicine.",
+          "pron": "MEE-lah fah-NAH-foo-dee AH-hoo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Doctor",
+          "mg": "Iza no marary?",
+          "en": "Who is sick?",
+          "pron": "EE-zah NOO mah-RAH-ree",
+          "sourceKey": "dlg:dlg_health_emergency:0"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Izaho, tompoko.",
+          "en": "Me, doctor.",
+          "pron": "ee-ZAH-hoo toom-POO-koo",
+          "sourceKey": "dlg:dlg_health_emergency:1"
+        },
+        {
+          "speaker": "Doctor",
+          "mg": "Inona no marary?",
+          "en": "What is the problem?",
+          "pron": "ee-NOO-nah NOO mah-RAH-ree",
+          "sourceKey": "dlg:dlg_health_emergency:2"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Marary an-doha sy tenda aho.",
+          "en": "My head and throat hurt.",
+          "pron": "mah-RAH-ree AHN DOO-hah SEE TEHN-dah AH-hoo",
+          "sourceKey": "dlg:dlg_health_emergency:3"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Voan'ny tazo aho.",
+          "en": "I have a fever.",
+          "pron": "voo-AH-n'nee TAH-zoo AH-hoo",
+          "sourceKey": "phrase:voan'ny_tazo_aho"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Fanina aho.",
+          "en": "I feel dizzy.",
+          "pron": "fah-NEE-nah AH-hoo",
+          "sourceKey": "phrase:fanina_aho"
+        },
+        {
+          "speaker": "Doctor",
+          "mg": "Voan'ny sery ianao. Ity ny fanafody.",
+          "en": "You have a cold. Here is the medicine.",
+          "pron": "voo-AH-n'nee SEH-ree ee-AH-noh EE-tee NEE fah-NAH-foo-dee",
+          "sourceKey": "dlg:dlg_health_emergency:4"
+        },
+        {
+          "speaker": "Patient",
+          "mg": "Misaotra betsaka, tompoko!",
+          "en": "Thank you very much, doctor!",
+          "pron": "mee-SOH-trah beh-TSAH-kah toom-POO-koo",
+          "sourceKey": "dlg:dlg_health_emergency:5"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w10s3",
+      "title": "Roadside Emergency: Calling for Help, a Doctor & the Hospital",
+      "scenario": "An accident ('aksida') has just happened on the street. Call out for help ('Vonjeo aho! Ampio aho azafady!'), ask bystanders to call a doctor and the police, and ask to be taken to the nearest hospital.",
+      "task": "Practice urgent emergency phrases clearly and confidently so you can handle any real-life emergency in Madagascar.",
+      "roles": [
+        "Witness",
+        "Bystander"
+      ],
+      "swapPrompts": [
+        {
+          "id": "vonjeo_aho",
+          "mg": "Vonjeo aho!",
+          "en": "Help me! / rescue me!",
+          "pron": "voo-NDZEH-oo AH-hoo"
+        },
+        {
+          "id": "ampio_aho_azafady",
+          "mg": "Ampio aho azafady!",
+          "en": "Help me, please!",
+          "pron": "ahm-PEE-oo AH-hoo ah-zah-FAH-dee"
+        },
+        {
+          "id": "mila_dokotera_aho",
+          "mg": "Mila dokotera aho!",
+          "en": "I need a doctor!",
+          "pron": "MEE-lah doo-KOO-teh-rah AH-hoo"
+        },
+        {
+          "id": "miantsoa_polisy",
+          "mg": "Miantsoa polisy!",
+          "en": "Call the police!",
+          "pron": "mee-ahn-TSOO-ah poo-LEE-see"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Witness",
+          "mg": "Vonjeo aho!",
+          "en": "Help me! / rescue me!",
+          "pron": "voo-NDZEH-oo AH-hoo",
+          "sourceKey": "phrase:vonjeo_aho"
+        },
+        {
+          "speaker": "Witness",
+          "mg": "Ampio aho azafady!",
+          "en": "Help me, please!",
+          "pron": "ahm-PEE-oo AH-hoo ah-zah-FAH-dee",
+          "sourceKey": "phrase:ampio_aho_azafady"
+        },
+        {
+          "speaker": "Bystander",
+          "mg": "Misy aksida aty",
+          "en": "There has been an accident",
+          "pron": "MEE-see ah-KSEE-dah AH-tee",
+          "sourceKey": "phrase:misy_aksida_aty"
+        },
+        {
+          "speaker": "Witness",
+          "mg": "Mila dokotera aho!",
+          "en": "I need a doctor!",
+          "pron": "MEE-lah doo-KOO-teh-rah AH-hoo",
+          "sourceKey": "phrase:mila_dokotera_aho"
+        },
+        {
+          "speaker": "Witness",
+          "mg": "Afaka miantso dokotera ve ianao?",
+          "en": "Can you call a doctor?",
+          "pron": "ah-FAH-kah mee-AHN-tsoo doo-KOO-teh-rah VEH ee-AH-noh",
+          "sourceKey": "phrase:rpb_afaka_miantso_dokotera_ve_ianao"
+        },
+        {
+          "speaker": "Bystander",
+          "mg": "Miantsoa polisy!",
+          "en": "Call the police!",
+          "pron": "mee-ahn-TSOO-ah poo-LEE-see",
+          "sourceKey": "phrase:miantsoa_polisy"
+        },
+        {
+          "speaker": "Witness",
+          "mg": "Ento amin'ny hopitaly akaiky indrindra aho",
+          "en": "Take me to the nearest hospital",
+          "pron": "EHN-too ah-MEE-n'nee hoo-pee-TAH-lee ah-KEYE-kee een-DREEN-drah AH-hoo",
+          "sourceKey": "phrase:rpb_ento_amin'ny_hopitaly_akaiky_indrindra_aho"
+        },
+        {
+          "speaker": "Bystander",
+          "mg": "Ndao handeha!",
+          "en": "Let's go! / Come on!",
+          "pron": "NDOH hahn-DEH-hah",
+          "sourceKey": "phrase:ndao_handeha"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w11s1",
+      "title": "Morning Weather Small Talk & Bringing an Umbrella (Bako Theme 3)",
+      "scenario": "Step 1 was waiting for a late bus in the rain. Now you are having a cheerful morning chat with a neighbor about today's sunshine, tomorrow's rain forecast, and dressing warmly.",
+      "task": "Swap weather conditions on Round 2: 'Mafana ny andro', 'Mangatsiaka ny andro', 'Avy ny orana', 'Mandrivotra ny andro', 'Manjavona ny andro'.",
+      "roles": [
+        "Neighbor",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "manao_ahoana_ny_andro",
+          "mg": "Manao ahoana ny andro?",
+          "en": "How is the weather?",
+          "pron": "MAH-noh ah-HOO-ah-nah NEE AHN-droo"
+        },
+        {
+          "id": "tsara_ny_andro",
+          "mg": "Tsara ny andro.",
+          "en": "The weather is nice (sunny).",
+          "pron": "TSAH-rah NEE AHN-droo"
+        },
+        {
+          "id": "avy_ny_orana",
+          "mg": "Avy ny orana!",
+          "en": "It's raining!",
+          "pron": "AH-vee NEE oo-RAH-nah"
+        },
+        {
+          "id": "mangatsiaka_ny_andro",
+          "mg": "Mangatsiaka ny andro.",
+          "en": "It's cold.",
+          "pron": "mah-ngah-tsee-AH-kah NEE AHN-droo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Neighbor",
+          "mg": "Salama tompoko! Manao ahoana ny andro?",
+          "en": "Hello! How is the weather?",
+          "pron": "sah-LAH-mah toom-POO-koo MAH-noh ah-HOO-ah-nah NEE AHN-droo",
+          "sourceKey": "dlg:dlg_weather_smalltalk:0"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara ny andro. Misehatra ny masoandro!",
+          "en": "It's nice. The sun is shining!",
+          "pron": "TSAH-rah NEE AHN-droo mee-SEH-hah-trah NEE mah-soo-AHN-droo",
+          "sourceKey": "dlg:dlg_weather_smalltalk:1"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Mahafinaritra! Avy ny orana rahampitso sa tsia?",
+          "en": "Lovely! Rain tomorrow or not?",
+          "pron": "mah-hah-fee-NAH-ree-trah AH-vee NEE oo-RAH-nah rah-hahm-PEE-tsoo SAH TSEE-ah",
+          "sourceKey": "dlg:dlg_weather_smalltalk:2"
+        },
+        {
+          "speaker": "You",
+          "mg": "Misy orana kely angaha.",
+          "en": "Maybe a little rain.",
+          "pron": "MEE-see oo-RAH-nah KEH-lee ah-NGAH-hah",
+          "sourceKey": "dlg:dlg_weather_smalltalk:3"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Mangatsiaka androany.",
+          "en": "It's cold today.",
+          "pron": "mah-ngah-tsee-AH-kah ahn-droo-AH-nee",
+          "sourceKey": "phrase:mangatsiaka_androany"
+        },
+        {
+          "speaker": "Neighbor",
+          "mg": "Manaova akanjo mafana",
+          "en": "Put on warm clothing",
+          "pron": "mah-NOH-vah ah-KAH-ndzoo mah-FAH-nah",
+          "sourceKey": "phrase:rpb_manaova_akanjo_mafana"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mitondra elo",
+          "en": "Take an umbrella",
+          "pron": "mee-TOON-drah EH-loo",
+          "sourceKey": "phrase:rpb_mitondra_elo"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w11s2",
+      "title": "On a Nature Trail in the Rainy Season: Spotting Wildlife",
+      "scenario": "You are hiking in a forest reserve during Madagascar's warm rainy season ('fahavaratra'). Ask your guide about what you see and hear in the trees and whether a creature is dangerous to touch.",
+      "task": "Practice nature observation questions ('Hitanao ve io?', 'Henonao ve izany?', 'Misy poizina ve io?') and season words.",
+      "roles": [
+        "Guide",
+        "Hiker"
+      ],
+      "swapPrompts": [
+        {
+          "id": "fahavaratra_izao",
+          "mg": "Fahavaratra izao.",
+          "en": "It's the rainy/hot season now.",
+          "pron": "fah-hah-VAH-rah-trah EE-zoh"
+        },
+        {
+          "id": "mandrivotra_ny_andro",
+          "mg": "Mandrivotra ny andro.",
+          "en": "It's windy.",
+          "pron": "mahn-DREE-voo-trah NEE AHN-droo"
+        },
+        {
+          "id": "rpb_hitanao_ve_io",
+          "mg": "hitanao ve io?",
+          "en": "Do you see that?",
+          "pron": "hee-TAH-noh VEH EE-oo"
+        },
+        {
+          "id": "rpb_henonao_ve_izany",
+          "mg": "henonao ve izany?",
+          "en": "Do you hear that?",
+          "pron": "heh-NOO-noh VEH ee-ZAH-nee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Guide",
+          "mg": "Fahavaratra izao.",
+          "en": "It's the rainy/hot season now.",
+          "pron": "fah-hah-VAH-rah-trah EE-zoh",
+          "sourceKey": "phrase:fahavaratra_izao"
+        },
+        {
+          "speaker": "Guide",
+          "mg": "Tsara ny toetrandro.",
+          "en": "The weather is nice.",
+          "pron": "TSAH-rah NEE too-eh-TRAHN-droo",
+          "sourceKey": "phrase:tsara_ny_toetrandro"
+        },
+        {
+          "speaker": "Hiker",
+          "mg": "Te ho any an'ala aho",
+          "en": "I would like to go to the forest",
+          "pron": "TEH HOO AH-nee ah-N'AH-lah AH-hoo",
+          "sourceKey": "phrase:rpb_te_ho_any_an'ala_aho"
+        },
+        {
+          "speaker": "Hiker",
+          "mg": "Hitanao ve io?",
+          "en": "Do you see that?",
+          "pron": "hee-TAH-noh VEH EE-oo",
+          "sourceKey": "phrase:rpb_hitanao_ve_io"
+        },
+        {
+          "speaker": "Guide",
+          "mg": "Henonao ve izany?",
+          "en": "Do you hear that?",
+          "pron": "heh-NOO-noh VEH ee-ZAH-nee",
+          "sourceKey": "phrase:rpb_henonao_ve_izany"
+        },
+        {
+          "speaker": "Hiker",
+          "mg": "Misy poizina ve io?",
+          "en": "Is it poisonous?",
+          "pron": "MEE-see poy-ZEE-nah VEH EE-oo",
+          "sourceKey": "phrase:rpb_misy_poizina_ve_io"
+        },
+        {
+          "speaker": "Hiker",
+          "mg": "Mampidi-doza ve ny mikasika an'io?",
+          "en": "Is it dangerous to touch it?",
+          "pron": "mahm-PEE-dee DOO-zah VEH NEE mee-kah-SEE-kah ah-N'EE-oo",
+          "sourceKey": "phrase:rpb_mampidi-doza_ve_ny_mikasika_an'io"
+        },
+        {
+          "speaker": "Guide",
+          "mg": "Tsia, Tompoko",
+          "en": "No (polite)",
+          "pron": "TSEE-ah toom-POO-koo",
+          "sourceKey": "phrase:wv_no_sir"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w11s3",
+      "title": "Monday Morning Catch-Up: Reacting to Weekend Stories",
+      "scenario": "You meet a colleague on Monday morning ('Ahoana ny weekend?') and react naturally to each piece of news — happy, surprising, tiring, sad, and funny!",
+      "task": "Practice Malagasy's expressive 'maha- / mamp-' reaction phrases with natural emotion in your voice.",
+      "roles": [
+        "Colleague",
+        "You"
+      ],
+      "swapPrompts": [
+        {
+          "id": "ahoana_ny_weekend",
+          "mg": "Ahoana ny weekend?",
+          "en": "How was the weekend?",
+          "pron": "ah-HOO-ah-nah NEE weh-EH-kehnd"
+        },
+        {
+          "id": "mahafaly_ahy_izany",
+          "mg": "Mahafaly ahy izany.",
+          "en": "That makes me happy.",
+          "pron": "mah-hah-FAH-lee AH-hee ee-ZAH-nee"
+        },
+        {
+          "id": "mahagaga_izany",
+          "mg": "Mahagaga izany.",
+          "en": "That's surprising!",
+          "pron": "mah-hah-GAH-gah ee-ZAH-nee"
+        },
+        {
+          "id": "mampihomehy_izany",
+          "mg": "Mampihomehy izany.",
+          "en": "Amusing! Hilarious!",
+          "pron": "mahm-pee-hoo-MEH-hee ee-ZAH-nee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Colleague",
+          "mg": "Ahoana ny weekend?",
+          "en": "How was the weekend?",
+          "pron": "ah-HOO-ah-nah NEE weh-EH-kehnd",
+          "sourceKey": "phrase:ahoana_ny_weekend"
+        },
+        {
+          "speaker": "You",
+          "mg": "Tsara be",
+          "en": "Fine, thank you (literally 'very good')",
+          "pron": "TSAH-rah BEH",
+          "sourceKey": "phrase:wv_fine"
+        },
+        {
+          "speaker": "Colleague",
+          "mg": "Mahafaly ahy izany.",
+          "en": "That makes me happy.",
+          "pron": "mah-hah-FAH-lee AH-hee ee-ZAH-nee",
+          "sourceKey": "phrase:mahafaly_ahy_izany"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mahagaga izany.",
+          "en": "That's surprising!",
+          "pron": "mah-hah-GAH-gah ee-ZAH-nee",
+          "sourceKey": "phrase:mahagaga_izany"
+        },
+        {
+          "speaker": "Colleague",
+          "mg": "Mandreraka izany.",
+          "en": "It's tiring.",
+          "pron": "mahn-dreh-RAH-kah ee-ZAH-nee",
+          "sourceKey": "phrase:mandrеraka_izany"
+        },
+        {
+          "speaker": "You",
+          "mg": "Mampalahelo izany.",
+          "en": "That's sad.",
+          "pron": "mahm-pah-lah-HEH-loo ee-ZAH-nee",
+          "sourceKey": "phrase:mampalahelo_izany"
+        },
+        {
+          "speaker": "Colleague",
+          "mg": "Mampihomehy izany.",
+          "en": "That's funny / hilarious!",
+          "pron": "mahm-pee-hoo-MEH-hee ee-ZAH-nee",
+          "sourceKey": "phrase:mampihomehy_izany"
+        },
+        {
+          "speaker": "You",
+          "mg": "Soa anie.",
+          "en": "Good luck / may it go well.",
+          "pron": "SOO-ah ah-nee-EH",
+          "sourceKey": "phrase:soa_anie"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w12s1",
+      "title": "City Bus Transfer: Taking Bus 154 & Bus H to Ankadikely (Bako Theme 15e)",
+      "scenario": "Step 1 was catching a regional taxi-brousse to Mandritsara. Now you are at a city bus stop in Antananarivo asking a local whether Bus 163 passes here and learning how to transfer from Bus 154 at Andravoahangy to Bus H.",
+      "task": "Play Passenger and Local. Practice asking about bus routes, where to get off ('miala'), and whether you need to transfer ('Mila miova bus izany?').",
+      "roles": [
+        "Passenger",
+        "Local"
+      ],
+      "swapPrompts": [
+        {
+          "id": "fiara",
+          "mg": "fiara",
+          "en": "vehicle",
+          "pron": "fee-AH-rah"
+        },
+        {
+          "id": "mandeha_bisikileta_aho",
+          "mg": "Mandeha bisikileta aho.",
+          "en": "I'm going by bicycle.",
+          "pron": "mahn-DEH-hah bee-see-kee-LEH-tah AH-hoo"
+        },
+        {
+          "id": "mandeha_tongotra_aho",
+          "mg": "Mandeha tongotra aho.",
+          "en": "I'm going on foot.",
+          "pron": "mahn-DEH-hah TOO-ngoo-trah AH-hoo"
+        },
+        {
+          "id": "ajanona_kely_azafady",
+          "mg": "Ajanona kely azafady!",
+          "en": "Stop for a moment, please!",
+          "pron": "ah-dzah-NOO-nah KEH-lee ah-zah-FAH-dee"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Passenger",
+          "mg": "Azafady tompoko, mandalo eto ve ny bus 163?",
+          "en": "Excuse me, does bus 163 pass by here?",
+          "pron": "ah-zah-FAH-dee toom-POO-koo mahn-DAH-loo EH-too VEH NEE BUS",
+          "sourceKey": "dlg:dlg_theme_15e_0:0"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Tsia, fa handeha aiza ianao?",
+          "en": "No, but where are you going?",
+          "pron": "TSEE-ah FAH hahn-DEH-hah EYE-zah ee-AH-noh",
+          "sourceKey": "dlg:dlg_theme_15e_0:1"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Ho any Ankadikely.",
+          "en": "I am going to Ankadikely.",
+          "pron": "HOO AH-nee ahn-kah-dee-KEH-lee",
+          "sourceKey": "dlg:dlg_theme_15e_0:2"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Maka bus 154 eto ianao, dia miala any Andravoahangy.",
+          "en": "Take bus 154 here, then get off at Andravoahangy.",
+          "pron": "MAH-kah BUS EH-too ee-AH-noh DEE-ah mee-AH-lah AH-nee ahn-drah-voo-ah-HAH-ngee",
+          "sourceKey": "dlg:dlg_theme_15e_0:3"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Any Andravoahangy, maka bus H ianao, dia tonga any Ankadikely.",
+          "en": "From Andravoahangy, take bus H and you will arrive at Ankadikely.",
+          "pron": "",
+          "sourceKey": "dlg:dlg_theme_15e_0:4"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Mila miova bus izany?",
+          "en": "So do I need to change bus?",
+          "pron": "MEE-lah mee-OO-vah BUS ee-ZAH-nee",
+          "sourceKey": "dlg:dlg_theme_15e_0:5"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Eny. Fa tsy sarotra.",
+          "en": "Yes, but it is not difficult.",
+          "pron": "EH-nee FAH TSEE SAH-roo-trah",
+          "sourceKey": "dlg:dlg_theme_15e_0:6"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Misaotra tompoko.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah toom-POO-koo",
+          "sourceKey": "dlg:dlg_theme_15e_0:7"
+        },
+        {
+          "speaker": "Local",
+          "mg": "Tsy misy fisaorana.",
+          "en": "You are welcome.",
+          "pron": "TSEE MEE-see fee-soh-RAH-nah",
+          "sourceKey": "dlg:dlg_theme_15e_0:8"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w12s2",
+      "title": "At the Taxi-Brousse Station: Luggage, Departure Time & Free Seats",
+      "scenario": "Step 1 was booking Saturday tickets to Antsirabe in advance. Now it is departure day at the station ('garinarobe'): ask where the station is, when the bus leaves, how long the trip takes, and hand over your luggage ('entako').",
+      "task": "Play Traveler and Station Agent. Practice all essential station survival questions!",
+      "roles": [
+        "Traveler",
+        "Agent"
+      ],
+      "swapPrompts": [
+        {
+          "id": "aiza_ny_garinarobe",
+          "mg": "Aiza ny garinarobe?",
+          "en": "Where is the taxi-brousse station?",
+          "pron": "EYE-zah NEE gah-ree-nah-ROO-beh"
+        },
+        {
+          "id": "oviana_miainga_ny_bis",
+          "mg": "Oviana miainga ny bis?",
+          "en": "When does the bus leave?",
+          "pron": "oo-vee-AH-nah mee-EYE-ngah NEE BEES"
+        },
+        {
+          "id": "misy_seza_malalaka_ve",
+          "mg": "Misy seza malalaka ve?",
+          "en": "Are there free seats?",
+          "pron": "MEE-see SEH-zah mah-lah-LAH-kah VEH"
+        },
+        {
+          "id": "ity_ny_entako",
+          "mg": "Ity ny entako.",
+          "en": "Here's my luggage.",
+          "pron": "EE-tee NEE ehn-TAH-koo"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Traveler",
+          "mg": "Aiza ny garinarobe?",
+          "en": "Where is the taxi-brousse station?",
+          "pron": "EYE-zah NEE gah-ree-nah-ROO-beh",
+          "sourceKey": "phrase:aiza_ny_garinarobe"
+        },
+        {
+          "speaker": "Agent",
+          "mg": "Eto no miditra.",
+          "en": "This is where we get on.",
+          "pron": "EH-too NOO MEE-dee-trah",
+          "sourceKey": "phrase:eto_no_miditra"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Oviana miainga ny bis?",
+          "en": "When does the bus leave?",
+          "pron": "oo-vee-AH-nah mee-EYE-ngah NEE BEES",
+          "sourceKey": "phrase:oviana_miainga_ny_bis"
+        },
+        {
+          "speaker": "Agent",
+          "mg": "Amin'ny telo maraina.",
+          "en": "At three in the morning.",
+          "pron": "ah-MEE-n'nee TEH-loo mah-REYE-nah",
+          "sourceKey": "phrase:amin'ny_telo_maraina"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Misy seza malalaka ve?",
+          "en": "Are there free seats?",
+          "pron": "MEE-see SEH-zah mah-lah-LAH-kah VEH",
+          "sourceKey": "phrase:misy_seza_malalaka_ve"
+        },
+        {
+          "speaker": "Agent",
+          "mg": "Eny, misy.",
+          "en": "Yes, there are.",
+          "pron": "EH-nee MEE-see",
+          "sourceKey": "phrase:ia,_misy"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Ohatrinona ny fotoana?",
+          "en": "How long does it take?",
+          "pron": "oo-hah-tree-NOO-nah NEE foo-too-AH-nah",
+          "sourceKey": "phrase:ohatrinona_ny_fotoana"
+        },
+        {
+          "speaker": "Agent",
+          "mg": "Adin-telo.",
+          "en": "Three hours.",
+          "pron": "AH-deen TEH-loo",
+          "sourceKey": "phrase:adin-telo"
+        },
+        {
+          "speaker": "Traveler",
+          "mg": "Ity ny entako.",
+          "en": "Here's my luggage.",
+          "pron": "EE-tee NEE ehn-TAH-koo",
+          "sourceKey": "phrase:ity_ny_entako"
+        }
+      ]
+    },
+    {
+      "id": "dlg_rp_w12s3",
+      "title": "Hailing a City Taxi to the Analakely Post Office (Bako Theme 15e)",
+      "scenario": "Step 1 was riding the train to Moramanga. For your final capstone roleplay, hail a taxi in Antananarivo, tell the driver where in Analakely you are going ('Eo amin'ny paositra'), agree on the 10,000 Ar fare, and pay upon arrival!",
+      "task": "Play Driver and Passenger. After completing the dialogue, improvise a second taxi ride to a different landmark in town!",
+      "roles": [
+        "Driver",
+        "Passenger"
+      ],
+      "swapPrompts": [
+        {
+          "id": "ohatrinona_ny_lalana",
+          "mg": "Ohatrinona ny lalana?",
+          "en": "How much is the fare/trip?",
+          "pron": "oo-hah-tree-NOO-nah NEE lah-LAH-nah"
+        },
+        {
+          "id": "ajanona_kely_azafady",
+          "mg": "Ajanona kely azafady!",
+          "en": "Stop for a moment, please!",
+          "pron": "ah-dzah-NOO-nah KEH-lee ah-zah-FAH-dee"
+        },
+        {
+          "id": "ity_ny_volanao",
+          "mg": "Ity ny volanao.",
+          "en": "Here is your change. (lit. your money)",
+          "pron": "EE-tee NEE voo-LAH-noh"
+        },
+        {
+          "id": "soava_dia",
+          "mg": "Soava dia!",
+          "en": "Have a safe journey! / bon voyage!",
+          "pron": "soo-AH-vah DEE-ah"
+        }
+      ],
+      "lines": [
+        {
+          "speaker": "Driver",
+          "mg": "Salama tompoko. Handeha aiza ianao?",
+          "en": "Hello! Where would you like to go?",
+          "pron": "sah-LAH-mah toom-POO-koo hahn-DEH-hah EYE-zah ee-AH-noh",
+          "sourceKey": "dlg:dlg_theme_15e_2:0"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Salama tompoko. Ohatrinona mandeha any Analakely?",
+          "en": "Hello! How much is it to go to Analakely?",
+          "pron": "sah-LAH-mah toom-POO-koo oo-hah-tree-NOO-nah mahn-DEH-hah AH-nee ah-nah-lah-KEH-lee",
+          "sourceKey": "dlg:dlg_theme_15e_2:1"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Azafady, Analakely aiza ho aiza?",
+          "en": "Excuse me, where exactly in Analakely?",
+          "pron": "ah-zah-FAH-dee ah-nah-lah-KEH-lee EYE-zah HOO EYE-zah",
+          "sourceKey": "dlg:dlg_theme_15e_2:2"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Eo amin'ny paositra.",
+          "en": "Near the post office.",
+          "pron": "EH-oo ah-MEE-n'nee POH-see-trah",
+          "sourceKey": "dlg:dlg_theme_15e_2:3"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Ndao! 10 000 ar.",
+          "en": "All right. That is 10,000 Ar.",
+          "pron": "NDOH AHR",
+          "sourceKey": "dlg:dlg_theme_15e_2:4"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Eto ve?",
+          "en": "Is it here?",
+          "pron": "EH-too VEH",
+          "sourceKey": "dlg:dlg_theme_15e_2:5"
+        },
+        {
+          "speaker": "Passenger",
+          "mg": "Eny, eto. Ity ny volanao. Misaotra betsaka.",
+          "en": "Yes, here. Here is the money. Thank you very much.",
+          "pron": "EH-nee EH-too EE-tee NEE voo-LAH-noh mee-SOH-trah beh-TSAH-kah",
+          "sourceKey": "dlg:dlg_theme_15e_2:6"
+        },
+        {
+          "speaker": "Driver",
+          "mg": "Misaotra tompoko.",
+          "en": "Thank you very much.",
+          "pron": "mee-SOH-trah toom-POO-koo",
+          "sourceKey": "dlg:dlg_theme_15e_2:7"
+        }
+      ]
     }
   ],
   "grammar": [
@@ -43827,7 +47188,290 @@ window.CONTENT = {
     "dlg_theme_15e_3-10": "media/audio_abidi/lines/dlg-theme-15e-3-10.mp3",
     "dlg_theme_15e_3-11": "media/audio_abidi/lines/dlg-theme-15e-3-11.mp3",
     "dlg_theme_15e_3-12": "media/audio_abidi/lines/dlg-theme-15e-3-12.mp3",
-    "dlg_theme_15e_3-13": "media/audio_abidi/lines/dlg-theme-15e-3-13.mp3"
+    "dlg_theme_15e_3-13": "media/audio_abidi/lines/dlg-theme-15e-3-13.mp3",
+    "dlg_rp_w1s1-0": "media/audio_abidi/lines/dlg-intro-1a-11-0.mp3",
+    "dlg_rp_w1s1-1": "media/audio_abidi/lines/dlg-intro-1a-11-1.mp3",
+    "dlg_rp_w1s1-2": "media/audio_abidi/lines/dlg-intro-1a-11-2.mp3",
+    "dlg_rp_w1s1-3": "media/audio_abidi/lines/dlg-intro-1a-11-3.mp3",
+    "dlg_rp_w1s1-4": "media/audio_abidi/lines/dlg-intro-1a-11-4.mp3",
+    "dlg_rp_w1s1-5": "media/audio_abidi/lines/dlg-intro-1a-11-5.mp3",
+    "dlg_rp_w1s1-6": "media/audio_abidi/lines/dlg-intro-2-20-0.mp3",
+    "dlg_rp_w1s1-7": "media/audio_abidi/lines/dlg-intro-2-20-1.mp3",
+    "dlg_rp_w1s2-0": "media/audio_abidi/lines/dlg-intro-1a-12-0.mp3",
+    "dlg_rp_w1s2-1": "media/audio_abidi/lines/dlg-intro-2-19-0.mp3",
+    "dlg_rp_w1s2-2": "media/audio_abidi/lines/dlg-intro-2-19-1.mp3",
+    "dlg_rp_w1s2-3": "media/audio_abidi/lines/dlg-intro-1a-12-1.mp3",
+    "dlg_rp_w1s2-4": "media/audio_abidi/lines/dlg-intro-2-16-0.mp3",
+    "dlg_rp_w1s2-5": "media/audio_abidi/lines/dlg-intro-2-16-1.mp3",
+    "dlg_rp_w1s2-6": "media/audio_abidi/lines/dlg-intro-2-14-0.mp3",
+    "dlg_rp_w1s2-7": "media/audio_abidi/lines/dlg-intro-2-14-1.mp3",
+    "dlg_rp_w1s3-0": "media/audio_abidi/phrases/ndao-handeha.mp3",
+    "dlg_rp_w1s3-1": "media/audio_abidi/lines/dlg-intro-2-18-0.mp3",
+    "dlg_rp_w1s3-2": "media/audio_abidi/lines/dlg-intro-2-18-1.mp3",
+    "dlg_rp_w1s3-3": "media/audio_abidi/phrases/veloma-rahampitso-koa.mp3",
+    "dlg_rp_w1s3-4": "media/audio_abidi/phrases/mandrapihaona.mp3",
+    "dlg_rp_w1s3-5": "media/audio_abidi/phrases/rpb-tafandria-mandry.mp3",
+    "dlg_rp_w2s1-0": "media/audio_abidi/lines/dlg-intro-review-1-4-25-0.mp3",
+    "dlg_rp_w2s1-1": "media/audio_abidi/lines/dlg-intro-review-1-4-25-1.mp3",
+    "dlg_rp_w2s1-2": "media/audio_abidi/lines/dlg-intro-review-1-4-25-2.mp3",
+    "dlg_rp_w2s1-3": "media/audio_abidi/lines/dlg-intro-review-1-4-25-3.mp3",
+    "dlg_rp_w2s1-4": "media/audio_abidi/lines/dlg-intro-review-1-4-25-10.mp3",
+    "dlg_rp_w2s1-5": "media/audio_abidi/lines/dlg-intro-review-1-4-25-11.mp3",
+    "dlg_rp_w2s1-6": "media/audio_abidi/lines/dlg-intro-review-1-4-25-16.mp3",
+    "dlg_rp_w2s1-7": "media/audio_abidi/lines/dlg-intro-review-1-4-25-17.mp3",
+    "dlg_rp_w2s2-0": "media/audio_abidi/phrases/wv-foreign.mp3",
+    "dlg_rp_w2s2-1": "media/audio_abidi/phrases/wv-yes-sir.mp3",
+    "dlg_rp_w2s2-2": "media/audio_abidi/phrases/miteny-malagasy-ve-ianao.mp3",
+    "dlg_rp_w2s2-3": "media/audio_abidi/phrases/kely-fotsiny.mp3",
+    "dlg_rp_w2s2-4": "media/audio_abidi/phrases/mianatra-teny-malagasy-aho.mp3",
+    "dlg_rp_w2s2-5": "media/audio_abidi/phrases/inona-ny-asanao.mp3",
+    "dlg_rp_w2s2-6": "media/audio_abidi/phrases/mpiofana-aho.mp3",
+    "dlg_rp_w2s2-7": "media/audio_abidi/phrases/mipetraka-eto-antananarivo-aho.mp3",
+    "dlg_rp_w2s3-0": "media/audio_abidi/lines/dlg-intro-review-1-4-25-4.mp3",
+    "dlg_rp_w2s3-1": "media/audio_abidi/lines/dlg-intro-review-1-4-25-5.mp3",
+    "dlg_rp_w2s3-2": "media/audio_abidi/lines/dlg-intro-review-1-4-25-6.mp3",
+    "dlg_rp_w2s3-3": "media/audio_abidi/lines/dlg-intro-review-1-4-25-7.mp3",
+    "dlg_rp_w2s3-4": "media/audio_abidi/lines/dlg-intro-review-1-4-25-8.mp3",
+    "dlg_rp_w2s3-5": "media/audio_abidi/lines/dlg-intro-review-1-4-25-9.mp3",
+    "dlg_rp_w2s3-6": "media/audio_abidi/lines/dlg-intro-review-1-4-25-14.mp3",
+    "dlg_rp_w2s3-7": "media/audio_abidi/lines/dlg-intro-review-1-4-25-15.mp3",
+    "dlg_rp_w3s1-0": "media/audio_abidi/phrases/mandroso.mp3",
+    "dlg_rp_w3s1-1": "media/audio_abidi/phrases/rpb-inona-no-atao-ho-anao.mp3",
+    "dlg_rp_w3s1-2": "media/audio_abidi/phrases/misy-vary-ve.mp3",
+    "dlg_rp_w3s1-3": "media/audio_abidi/phrases/ia-misy.mp3",
+    "dlg_rp_w3s1-4": "media/audio_abidi/phrases/omeo-telo-kapoaka-azafady.mp3",
+    "dlg_rp_w3s1-5": "media/audio_abidi/phrases/fitonjato-ariary.mp3",
+    "dlg_rp_w3s1-6": "media/audio_abidi/phrases/ampy-izay-misaotra.mp3",
+    "dlg_rp_w3s2-0": "media/audio_abidi/phrases/rpb-aiza-no-afaka-manakalo-vola.mp3",
+    "dlg_rp_w3s2-1": "media/audio_abidi/phrases/rpb-ny-pasiparonao-azafady.mp3",
+    "dlg_rp_w3s2-2": "media/audio_abidi/phrases/rpb-ohatrinona-ny-cours-anio.mp3",
+    "dlg_rp_w3s2-3": "media/audio_abidi/phrases/wvm-roa-arivo-ariary.mp3",
+    "dlg_rp_w3s2-4": "media/audio_abidi/phrases/rpb-afaka-manome-vola-madinika-ve-ianao.mp3",
+    "dlg_rp_w3s2-5": "media/audio_abidi/phrases/ity-ny-volanao.mp3",
+    "dlg_rp_w3s2-6": "media/audio_abidi/phrases/misaotra-betsaka.mp3",
+    "dlg_rp_w3s3-0": "media/audio_abidi/phrases/rpb-tiako-vidiana-ity.mp3",
+    "dlg_rp_w3s3-1": "media/audio_abidi/phrases/ohatrinona-ity.mp3",
+    "dlg_rp_w3s3-2": "media/audio_abidi/phrases/wvm-dimy-arivo-ariary.mp3",
+    "dlg_rp_w3s3-3": "media/audio_abidi/phrases/lafo-be.mp3",
+    "dlg_rp_w3s3-4": "media/audio_abidi/phrases/mora-azafady.mp3",
+    "dlg_rp_w3s3-5": "media/audio_abidi/phrases/tsy-ampy-ny-volako.mp3",
+    "dlg_rp_w3s3-6": "media/audio_abidi/phrases/rpb-ohatrinona-ny-farany.mp3",
+    "dlg_rp_w3s3-7": "media/audio_abidi/phrases/rpb-izay-mihitsy-ny-farany.mp3",
+    "dlg_rp_w4s1-0": "media/audio_abidi/phrases/salama-tsara-ve-ianao.mp3",
+    "dlg_rp_w4s1-1": "media/audio_abidi/phrases/reraka-aho.mp3",
+    "dlg_rp_w4s1-2": "media/audio_abidi/phrases/mafana-aho.mp3",
+    "dlg_rp_w4s1-3": "media/audio_abidi/lines/dlg-basic-needs-0.mp3",
+    "dlg_rp_w4s1-4": "media/audio_abidi/lines/dlg-basic-needs-1.mp3",
+    "dlg_rp_w4s1-5": "media/audio_abidi/phrases/afaka-mahazo-vera-rano-ve-aho-azafady.mp3",
+    "dlg_rp_w4s1-6": "media/audio_abidi/phrases/mandrosoa.mp3",
+    "dlg_rp_w4s1-7": "media/audio_abidi/lines/dlg-basic-needs-2.mp3",
+    "dlg_rp_w4s2-0": "media/audio_abidi/phrases/noana-aho.mp3",
+    "dlg_rp_w4s2-1": "media/audio_abidi/phrases/te-hisakafo-aho.mp3",
+    "dlg_rp_w4s2-2": "media/audio_abidi/phrases/mangetaheta-aho.mp3",
+    "dlg_rp_w4s2-3": "media/audio_abidi/phrases/te-hisotro-rano-aho.mp3",
+    "dlg_rp_w4s2-4": "media/audio_abidi/phrases/rpb-te-hitsangatsangana-aho.mp3",
+    "dlg_rp_w4s2-5": "media/audio_abidi/phrases/te-hivoaka-aho.mp3",
+    "dlg_rp_w4s2-6": "media/audio_abidi/phrases/reraka-aho.mp3",
+    "dlg_rp_w4s2-7": "media/audio_abidi/phrases/te-hatory-aho.mp3",
+    "dlg_rp_w4s3-0": "media/audio_abidi/phrases/mihinana-vary-aho.mp3",
+    "dlg_rp_w4s3-1": "media/audio_abidi/phrases/tsy-tia-hena-aho.mp3",
+    "dlg_rp_w4s3-2": "media/audio_abidi/phrases/rpb-tsy-tiako-ity-loko-ity.mp3",
+    "dlg_rp_w4s3-3": "media/audio_abidi/phrases/rpb-misy-loko-hafa-ve-ity.mp3",
+    "dlg_rp_w4s3-4": "media/audio_abidi/phrases/rpb-tsy-tiako-ity.mp3",
+    "dlg_rp_w4s3-5": "media/audio_abidi/phrases/halako-ity.mp3",
+    "dlg_rp_w4s3-6": "media/audio_abidi/phrases/matoky-anao-aho.mp3",
+    "dlg_rp_w5s1-0": "media/audio_abidi/phrases/wv-goodmorning.mp3",
+    "dlg_rp_w5s1-1": "media/audio_abidi/phrases/misakafo-maraina-aho.mp3",
+    "dlg_rp_w5s1-2": "media/audio_abidi/phrases/mandrosoa.mp3",
+    "dlg_rp_w5s1-3": "media/audio_abidi/phrases/misy-vary-ve.mp3",
+    "dlg_rp_w5s1-4": "media/audio_abidi/phrases/ia-misy.mp3",
+    "dlg_rp_w5s1-5": "media/audio_abidi/phrases/kaopy-kafe-iray-azafady.mp3",
+    "dlg_rp_w5s1-6": "media/audio_abidi/phrases/mila-rano-amin-ny-tavoahangy-aho.mp3",
+    "dlg_rp_w5s1-7": "media/audio_abidi/phrases/rpb-mazotoa-homana.mp3",
+    "dlg_rp_w5s2-0": "media/audio_abidi/lines/dlg-eating-ordering-0.mp3",
+    "dlg_rp_w5s2-1": "media/audio_abidi/lines/dlg-eating-ordering-1.mp3",
+    "dlg_rp_w5s2-2": "media/audio_abidi/phrases/omeo-ny-sira-azafady.mp3",
+    "dlg_rp_w5s2-3": "media/audio_abidi/phrases/mahery-ve-ity.mp3",
+    "dlg_rp_w5s2-4": "media/audio_abidi/phrases/tsara-be-tsy-mahery.mp3",
+    "dlg_rp_w5s2-5": "media/audio_abidi/lines/dlg-eating-ordering-2.mp3",
+    "dlg_rp_w5s2-6": "media/audio_abidi/lines/dlg-eating-ordering-3.mp3",
+    "dlg_rp_w5s2-7": "media/audio_abidi/lines/dlg-eating-ordering-4.mp3",
+    "dlg_rp_w5s3-0": "media/audio_abidi/phrases/rpb-latabatra-iray-azafady.mp3",
+    "dlg_rp_w5s3-1": "media/audio_abidi/phrases/mipetrapetraha.mp3",
+    "dlg_rp_w5s3-2": "media/audio_abidi/phrases/rpb-karta-azafady.mp3",
+    "dlg_rp_w5s3-3": "media/audio_abidi/phrases/rpb-saika-hanao-komandy-aho.mp3",
+    "dlg_rp_w5s3-4": "media/audio_abidi/phrases/rpb-tsy-oman-kena-aho.mp3",
+    "dlg_rp_w5s3-5": "media/audio_abidi/phrases/rpb-mazotoa-homana.mp3",
+    "dlg_rp_w5s3-6": "media/audio_abidi/phrases/rpb-vita-sakafo-aho.mp3",
+    "dlg_rp_w5s3-7": "media/audio_abidi/phrases/rpb-ny-addition-azafady.mp3",
+    "dlg_rp_w6s1-0": "media/audio_abidi/phrases/mandeha-aiza-ianao.mp3",
+    "dlg_rp_w6s1-1": "media/audio_abidi/phrases/avy-eto-an-trano-aho.mp3",
+    "dlg_rp_w6s1-2": "media/audio_abidi/phrases/mandeha-any-amin-ny-tsena-aho.mp3",
+    "dlg_rp_w6s1-3": "media/audio_abidi/phrases/rpb-aiza-no-misy-ny-tsena.mp3",
+    "dlg_rp_w6s1-4": "media/audio_abidi/phrases/akaiky.mp3",
+    "dlg_rp_w6s1-5": "media/audio_abidi/phrases/rpb-aiza-ny-paositra-akaiky-eto.mp3",
+    "dlg_rp_w6s1-6": "media/audio_abidi/phrases/mandeha-mahitsy.mp3",
+    "dlg_rp_w6s1-7": "media/audio_abidi/phrases/misaotra-betsaka.mp3",
+    "dlg_rp_w6s2-0": "media/audio_abidi/lines/dlg-directions-travel-0.mp3",
+    "dlg_rp_w6s2-1": "media/audio_abidi/lines/dlg-directions-travel-1.mp3",
+    "dlg_rp_w6s2-2": "media/audio_abidi/phrases/mandeha-mahitsy.mp3",
+    "dlg_rp_w6s2-3": "media/audio_abidi/phrases/mihodina-miankavanana.mp3",
+    "dlg_rp_w6s2-4": "media/audio_abidi/phrases/rpb-lavitra-eto-ve-izany.mp3",
+    "dlg_rp_w6s2-5": "media/audio_abidi/phrases/akaiky.mp3",
+    "dlg_rp_w6s2-6": "media/audio_abidi/lines/dlg-directions-travel-2.mp3",
+    "dlg_rp_w6s2-7": "media/audio_abidi/lines/dlg-directions-travel-3.mp3",
+    "dlg_rp_w6s3-0": "media/audio_abidi/phrases/manao-ahoana-ny-lalana.mp3",
+    "dlg_rp_w6s3-1": "media/audio_abidi/phrases/ratsy-ny-lalana.mp3",
+    "dlg_rp_w6s3-2": "media/audio_abidi/phrases/malama-ny-lalana.mp3",
+    "dlg_rp_w6s3-3": "media/audio_abidi/phrases/mikitoantoana-ny-lalana.mp3",
+    "dlg_rp_w6s3-4": "media/audio_abidi/phrases/mianavaratra.mp3",
+    "dlg_rp_w6s3-5": "media/audio_abidi/phrases/lalana-adin-telo.mp3",
+    "dlg_rp_w6s3-6": "media/audio_abidi/phrases/tapaka-ny-lalana.mp3",
+    "dlg_rp_w6s3-7": "media/audio_abidi/phrases/tsara-ny-lalana.mp3",
+    "dlg_rp_w7s1-0": "media/audio_abidi/lines/dlg-intro-5-27-0.mp3",
+    "dlg_rp_w7s1-1": "media/audio_abidi/lines/dlg-intro-5-27-1.mp3",
+    "dlg_rp_w7s1-2": "media/audio_abidi/lines/dlg-intro-5-27-4.mp3",
+    "dlg_rp_w7s1-3": "media/audio_abidi/lines/dlg-intro-5-27-5.mp3",
+    "dlg_rp_w7s1-4": "media/audio_abidi/lines/dlg-intro-5-28-0.mp3",
+    "dlg_rp_w7s1-5": "media/audio_abidi/lines/dlg-intro-5-27-3.mp3",
+    "dlg_rp_w7s1-6": "media/audio_abidi/lines/dlg-intro-5-27-6.mp3",
+    "dlg_rp_w7s1-7": "media/audio_abidi/lines/dlg-intro-5-27-7.mp3",
+    "dlg_rp_w7s2-0": "media/audio_abidi/phrases/inona-no-andro-androany.mp3",
+    "dlg_rp_w7s2-1": "media/audio_abidi/phrases/zoma-androany.mp3",
+    "dlg_rp_w7s2-2": "media/audio_abidi/phrases/inona-no-nataonao-omaly.mp3",
+    "dlg_rp_w7s2-3": "media/audio_abidi/phrases/nanakory-ny-andro-omaly.mp3",
+    "dlg_rp_w7s2-4": "media/audio_abidi/phrases/tsara-ny-andro.mp3",
+    "dlg_rp_w7s2-5": "media/audio_abidi/phrases/inona-no-hataonao-rahampitso.mp3",
+    "dlg_rp_w7s2-6": "media/audio_abidi/phrases/hanakory-ny-andro-rahampitso.mp3",
+    "dlg_rp_w7s2-7": "media/audio_abidi/phrases/hihaona-amin-ny-zoma-amin-ny-efatra-isika.mp3",
+    "dlg_rp_w7s3-0": "media/audio_abidi/lines/dlg-intro-6-29-0.mp3",
+    "dlg_rp_w7s3-1": "media/audio_abidi/lines/dlg-intro-6-29-1.mp3",
+    "dlg_rp_w7s3-2": "media/audio_abidi/lines/dlg-intro-6-29-2.mp3",
+    "dlg_rp_w7s3-3": "media/audio_abidi/lines/dlg-intro-6-29-3.mp3",
+    "dlg_rp_w7s3-4": "media/audio_abidi/lines/dlg-intro-6-29-4.mp3",
+    "dlg_rp_w7s3-5": "media/audio_abidi/lines/dlg-intro-6-29-5.mp3",
+    "dlg_rp_w7s3-6": "media/audio_abidi/lines/dlg-intro-6-29-6.mp3",
+    "dlg_rp_w7s3-7": "media/audio_abidi/phrases/mahafaly-ahy-izany.mp3",
+    "dlg_rp_w8s1-0": "media/audio_abidi/lines/dlg-time-appointments-0.mp3",
+    "dlg_rp_w8s1-1": "media/audio_abidi/lines/dlg-time-appointments-1.mp3",
+    "dlg_rp_w8s1-2": "media/audio_abidi/lines/dlg-time-appointments-2.mp3",
+    "dlg_rp_w8s1-3": "media/audio_abidi/lines/dlg-time-appointments-3.mp3",
+    "dlg_rp_w8s1-4": "media/audio_abidi/phrases/miandrasa-kely-azafady.mp3",
+    "dlg_rp_w8s1-5": "media/audio_abidi/phrases/manao-fotoan-gasy-izy.mp3",
+    "dlg_rp_w8s1-6": "media/audio_abidi/lines/dlg-time-appointments-4.mp3",
+    "dlg_rp_w8s2-0": "media/audio_abidi/phrases/amin-ny-firy-izao-azafady.mp3",
+    "dlg_rp_w8s2-1": "media/audio_abidi/phrases/wv-sivy-ora-maraina.mp3",
+    "dlg_rp_w8s2-2": "media/audio_abidi/phrases/rpb-amin-ny-firy-ny-banky-no-misokatra.mp3",
+    "dlg_rp_w8s2-3": "media/audio_abidi/phrases/mitataovovonana.mp3",
+    "dlg_rp_w8s2-4": "media/audio_abidi/phrases/amin-ny-telo-tolakandro.mp3",
+    "dlg_rp_w8s2-5": "media/audio_abidi/phrases/rpb-amin-ny-firy-ny-banky-no-mihidy.mp3",
+    "dlg_rp_w8s2-6": "media/audio_abidi/phrases/wv-amin-ny-fito-latsaka-fahefany.mp3",
+    "dlg_rp_w8s2-7": "media/audio_abidi/phrases/misaotra-betsaka.mp3",
+    "dlg_rp_w8s3-0": "media/audio_abidi/phrases/wv-welcome.mp3",
+    "dlg_rp_w8s3-1": "media/audio_abidi/phrases/rpb-manana-kara-panondro-ve-ianao.mp3",
+    "dlg_rp_w8s3-2": "media/audio_abidi/phrases/wv-yes-sir.mp3",
+    "dlg_rp_w8s3-3": "media/audio_abidi/phrases/rpb-aiza-ny-lakile-an-ny-efitro.mp3",
+    "dlg_rp_w8s3-4": "media/audio_abidi/phrases/rpb-aiza-ny-efitro-e.mp3",
+    "dlg_rp_w8s3-5": "media/audio_abidi/phrases/amin-ny-telo-maraina.mp3",
+    "dlg_rp_w8s3-6": "media/audio_abidi/phrases/rpb-tafandria-mandry.mp3",
+    "dlg_rp_w8s3-7": "media/audio_abidi/phrases/misaotra-betsaka.mp3",
+    "dlg_rp_w9s1-0": "media/audio_abidi/phrases/haody.mp3",
+    "dlg_rp_w9s1-1": "media/audio_abidi/phrases/misokatra-ny-vavahady.mp3",
+    "dlg_rp_w9s1-2": "media/audio_abidi/phrases/mandrosoa.mp3",
+    "dlg_rp_w9s1-3": "media/audio_abidi/phrases/mikatona-ny-varavarana.mp3",
+    "dlg_rp_w9s1-4": "media/audio_abidi/phrases/mipetrapetraha.mp3",
+    "dlg_rp_w9s1-5": "media/audio_abidi/phrases/aiza-ny-lakozia.mp3",
+    "dlg_rp_w9s1-6": "media/audio_abidi/phrases/aiza-ny-kabone.mp3",
+    "dlg_rp_w9s1-7": "media/audio_abidi/phrases/aty-an-kianja-ny-kabone.mp3",
+    "dlg_rp_w9s2-0": "media/audio_abidi/phrases/rpb-inona-no-atao-ho-anao.mp3",
+    "dlg_rp_w9s2-1": "media/audio_abidi/phrases/rpb-tsy-tiako-ity.mp3",
+    "dlg_rp_w9s2-2": "media/audio_abidi/phrases/rpb-misy-lehibebe-kelikely-noho-ity-ve.mp3",
+    "dlg_rp_w9s2-3": "media/audio_abidi/phrases/rpb-mbola-misy-hafa-ve.mp3",
+    "dlg_rp_w9s2-4": "media/audio_abidi/phrases/rpb-misy-loko-hafa-ve.mp3",
+    "dlg_rp_w9s2-5": "media/audio_abidi/phrases/ia-misy.mp3",
+    "dlg_rp_w9s2-6": "media/audio_abidi/phrases/rpb-tiako-vidiana-ity.mp3",
+    "dlg_rp_w9s2-7": "media/audio_abidi/phrases/wv-respect-clean.mp3",
+    "dlg_rp_w9s3-0": "media/audio_abidi/phrases/avia-aty.mp3",
+    "dlg_rp_w9s3-1": "media/audio_abidi/phrases/rpb-afaka-manampy-ahy-ve-ianao.mp3",
+    "dlg_rp_w9s3-2": "media/audio_abidi/phrases/andraso.mp3",
+    "dlg_rp_w9s3-3": "media/audio_abidi/phrases/miandrasa-kely-azafady.mp3",
+    "dlg_rp_w9s3-4": "media/audio_abidi/phrases/afaka-miteny-miadana-kokoa-ve-ianao.mp3",
+    "dlg_rp_w9s3-5": "media/audio_abidi/phrases/azo.mp3",
+    "dlg_rp_w9s3-6": "media/audio_abidi/phrases/afaka-averinao-ve-azafady.mp3",
+    "dlg_rp_w9s3-7": "media/audio_abidi/phrases/wv-dontunderstand.mp3",
+    "dlg_rp_w10s1-0": "media/audio_abidi/phrases/salama-tsara-ve-ianao.mp3",
+    "dlg_rp_w10s1-1": "media/audio_abidi/phrases/rpb-tsy-metimety-aho.mp3",
+    "dlg_rp_w10s1-2": "media/audio_abidi/phrases/aiza-no-marary.mp3",
+    "dlg_rp_w10s1-3": "media/audio_abidi/phrases/marary-an-doha-aho.mp3",
+    "dlg_rp_w10s1-4": "media/audio_abidi/phrases/marary-kibo-aho.mp3",
+    "dlg_rp_w10s1-5": "media/audio_abidi/phrases/marary-ve.mp3",
+    "dlg_rp_w10s1-6": "media/audio_abidi/phrases/marary-tenda-aho.mp3",
+    "dlg_rp_w10s1-7": "media/audio_abidi/phrases/marary-nify-aho.mp3",
+    "dlg_rp_w10s2-0": "media/audio_abidi/lines/dlg-health-emergency-0.mp3",
+    "dlg_rp_w10s2-1": "media/audio_abidi/lines/dlg-health-emergency-1.mp3",
+    "dlg_rp_w10s2-2": "media/audio_abidi/lines/dlg-health-emergency-2.mp3",
+    "dlg_rp_w10s2-3": "media/audio_abidi/lines/dlg-health-emergency-3.mp3",
+    "dlg_rp_w10s2-4": "media/audio_abidi/phrases/voan-ny-tazo-aho.mp3",
+    "dlg_rp_w10s2-5": "media/audio_abidi/phrases/fanina-aho.mp3",
+    "dlg_rp_w10s2-6": "media/audio_abidi/lines/dlg-health-emergency-4.mp3",
+    "dlg_rp_w10s2-7": "media/audio_abidi/lines/dlg-health-emergency-5.mp3",
+    "dlg_rp_w10s3-0": "media/audio_abidi/phrases/vonjeo-aho.mp3",
+    "dlg_rp_w10s3-1": "media/audio_abidi/phrases/ampio-aho-azafady.mp3",
+    "dlg_rp_w10s3-2": "media/audio_abidi/phrases/misy-aksida-aty.mp3",
+    "dlg_rp_w10s3-3": "media/audio_abidi/phrases/mila-dokotera-aho.mp3",
+    "dlg_rp_w10s3-4": "media/audio_abidi/phrases/rpb-afaka-miantso-dokotera-ve-ianao.mp3",
+    "dlg_rp_w10s3-5": "media/audio_abidi/phrases/miantsoa-polisy.mp3",
+    "dlg_rp_w10s3-6": "media/audio_abidi/phrases/rpb-ento-amin-ny-hopitaly-akaiky-indrindra-aho.mp3",
+    "dlg_rp_w10s3-7": "media/audio_abidi/phrases/ndao-handeha.mp3",
+    "dlg_rp_w11s1-0": "media/audio_abidi/lines/dlg-weather-smalltalk-0.mp3",
+    "dlg_rp_w11s1-1": "media/audio_abidi/lines/dlg-weather-smalltalk-1.mp3",
+    "dlg_rp_w11s1-2": "media/audio_abidi/lines/dlg-weather-smalltalk-2.mp3",
+    "dlg_rp_w11s1-3": "media/audio_abidi/lines/dlg-weather-smalltalk-3.mp3",
+    "dlg_rp_w11s1-4": "media/audio_abidi/phrases/mangatsiaka-androany.mp3",
+    "dlg_rp_w11s1-5": "media/audio_abidi/phrases/rpb-manaova-akanjo-mafana.mp3",
+    "dlg_rp_w11s1-6": "media/audio_abidi/phrases/rpb-mitondra-elo.mp3",
+    "dlg_rp_w11s2-0": "media/audio_abidi/phrases/fahavaratra-izao.mp3",
+    "dlg_rp_w11s2-1": "media/audio_abidi/phrases/tsara-ny-toetrandro.mp3",
+    "dlg_rp_w11s2-2": "media/audio_abidi/phrases/rpb-te-ho-any-an-ala-aho.mp3",
+    "dlg_rp_w11s2-3": "media/audio_abidi/phrases/rpb-hitanao-ve-io.mp3",
+    "dlg_rp_w11s2-4": "media/audio_abidi/phrases/rpb-henonao-ve-izany.mp3",
+    "dlg_rp_w11s2-5": "media/audio_abidi/phrases/rpb-misy-poizina-ve-io.mp3",
+    "dlg_rp_w11s2-6": "media/audio_abidi/phrases/rpb-mampidi-doza-ve-ny-mikasika-an-io.mp3",
+    "dlg_rp_w11s2-7": "media/audio_abidi/phrases/wv-no-sir.mp3",
+    "dlg_rp_w11s3-0": "media/audio_abidi/phrases/ahoana-ny-weekend.mp3",
+    "dlg_rp_w11s3-1": "media/audio_abidi/phrases/wv-fine.mp3",
+    "dlg_rp_w11s3-2": "media/audio_abidi/phrases/mahafaly-ahy-izany.mp3",
+    "dlg_rp_w11s3-3": "media/audio_abidi/phrases/mahagaga-izany.mp3",
+    "dlg_rp_w11s3-4": "media/audio_abidi/phrases/mandr-raka-izany.mp3",
+    "dlg_rp_w11s3-5": "media/audio_abidi/phrases/mampalahelo-izany.mp3",
+    "dlg_rp_w11s3-6": "media/audio_abidi/phrases/mampihomehy-izany.mp3",
+    "dlg_rp_w11s3-7": "media/audio_abidi/phrases/soa-anie.mp3",
+    "dlg_rp_w12s1-0": "media/audio_abidi/lines/dlg-theme-15e-0-0.mp3",
+    "dlg_rp_w12s1-1": "media/audio_abidi/lines/dlg-theme-15e-0-1.mp3",
+    "dlg_rp_w12s1-2": "media/audio_abidi/lines/dlg-theme-15e-0-2.mp3",
+    "dlg_rp_w12s1-3": "media/audio_abidi/lines/dlg-theme-15e-0-3.mp3",
+    "dlg_rp_w12s1-4": "media/audio_abidi/lines/dlg-theme-15e-0-4.mp3",
+    "dlg_rp_w12s1-5": "media/audio_abidi/lines/dlg-theme-15e-0-5.mp3",
+    "dlg_rp_w12s1-6": "media/audio_abidi/lines/dlg-theme-15e-0-6.mp3",
+    "dlg_rp_w12s1-7": "media/audio_abidi/lines/dlg-theme-15e-0-7.mp3",
+    "dlg_rp_w12s1-8": "media/audio_abidi/lines/dlg-theme-15e-0-8.mp3",
+    "dlg_rp_w12s2-0": "media/audio_abidi/phrases/aiza-ny-garinarobe.mp3",
+    "dlg_rp_w12s2-1": "media/audio_abidi/phrases/eto-no-miditra.mp3",
+    "dlg_rp_w12s2-2": "media/audio_abidi/phrases/oviana-miainga-ny-bis.mp3",
+    "dlg_rp_w12s2-3": "media/audio_abidi/phrases/amin-ny-telo-maraina.mp3",
+    "dlg_rp_w12s2-4": "media/audio_abidi/phrases/misy-seza-malalaka-ve.mp3",
+    "dlg_rp_w12s2-5": "media/audio_abidi/phrases/ia-misy.mp3",
+    "dlg_rp_w12s2-6": "media/audio_abidi/phrases/ohatrinona-ny-fotoana.mp3",
+    "dlg_rp_w12s2-7": "media/audio_abidi/phrases/adin-telo.mp3",
+    "dlg_rp_w12s2-8": "media/audio_abidi/phrases/ity-ny-entako.mp3",
+    "dlg_rp_w12s3-0": "media/audio_abidi/lines/dlg-theme-15e-2-0.mp3",
+    "dlg_rp_w12s3-1": "media/audio_abidi/lines/dlg-theme-15e-2-1.mp3",
+    "dlg_rp_w12s3-2": "media/audio_abidi/lines/dlg-theme-15e-2-2.mp3",
+    "dlg_rp_w12s3-3": "media/audio_abidi/lines/dlg-theme-15e-2-3.mp3",
+    "dlg_rp_w12s3-4": "media/audio_abidi/lines/dlg-theme-15e-2-4.mp3",
+    "dlg_rp_w12s3-5": "media/audio_abidi/lines/dlg-theme-15e-2-5.mp3",
+    "dlg_rp_w12s3-6": "media/audio_abidi/lines/dlg-theme-15e-2-6.mp3",
+    "dlg_rp_w12s3-7": "media/audio_abidi/lines/dlg-theme-15e-2-7.mp3"
   },
   "curriculum": [
     {
@@ -43858,7 +47502,8 @@ window.CONTENT = {
             "fahasalamana",
             "tsara_fa_misaotra",
             "inona_ny_vaovao"
-          ]
+          ],
+          "roleplay": "dlg_rp_w1s1"
         },
         {
           "day": "Wednesday",
@@ -43874,7 +47519,7 @@ window.CONTENT = {
           "month": 1,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_intro_2_15",
+          "dialogue": "dlg_polite_words",
           "grammar": "core_grammar_for_beginners",
           "words": [
             "misaotra",
@@ -43883,7 +47528,8 @@ window.CONTENT = {
             "tsy_maninona",
             "ndao",
             "haody"
-          ]
+          ],
+          "roleplay": "dlg_rp_w1s2"
         },
         {
           "day": "Friday",
@@ -43908,7 +47554,8 @@ window.CONTENT = {
             "misaotra_ianao_koa",
             "mandrapihaona",
             "soava_dia"
-          ]
+          ],
+          "roleplay": "dlg_rp_w1s3"
         }
       ]
     },
@@ -43941,7 +47588,8 @@ window.CONTENT = {
             "izy",
             "miteny",
             "kely_fotsiny"
-          ]
+          ],
+          "roleplay": "dlg_rp_w2s1"
         },
         {
           "day": "Wednesday",
@@ -43966,7 +47614,8 @@ window.CONTENT = {
             "izy_ireo",
             "tongasoa",
             "tongasoa_eto"
-          ]
+          ],
+          "roleplay": "dlg_rp_w2s2"
         },
         {
           "day": "Friday",
@@ -43991,7 +47640,8 @@ window.CONTENT = {
             "vady",
             "zanaka",
             "fianakaviana"
-          ]
+          ],
+          "roleplay": "dlg_rp_w2s3"
         }
       ]
     },
@@ -44014,7 +47664,7 @@ window.CONTENT = {
           "month": 1,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_intro_4_24",
+          "dialogue": "dlg_market_shopping",
           "grammar": "gram_1",
           "words": [
             "iray",
@@ -44023,7 +47673,8 @@ window.CONTENT = {
             "efatra",
             "dimy",
             "firy"
-          ]
+          ],
+          "roleplay": "dlg_rp_w3s1"
         },
         {
           "day": "Wednesday",
@@ -44048,7 +47699,8 @@ window.CONTENT = {
             "zato",
             "arivo",
             "ariary"
-          ]
+          ],
+          "roleplay": "dlg_rp_w3s2"
         },
         {
           "day": "Friday",
@@ -44065,7 +47717,7 @@ window.CONTENT = {
           "month": 1,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_market_shopping",
+          "dialogue": "dlg_intro_4_24",
           "grammar": "gram_1",
           "words": [
             "ohatrinona_ity",
@@ -44074,7 +47726,8 @@ window.CONTENT = {
             "tsy_misy_madinika",
             "vola",
             "mpivarotra"
-          ]
+          ],
+          "roleplay": "dlg_rp_w3s3"
         }
       ]
     },
@@ -44107,7 +47760,8 @@ window.CONTENT = {
             "rano",
             "kafe",
             "manana"
-          ]
+          ],
+          "roleplay": "dlg_rp_w4s1"
         },
         {
           "day": "Wednesday",
@@ -44132,7 +47786,8 @@ window.CONTENT = {
             "ve",
             "hena",
             "mividy"
-          ]
+          ],
+          "roleplay": "dlg_rp_w4s2"
         },
         {
           "day": "Friday",
@@ -44159,7 +47814,8 @@ window.CONTENT = {
             "atody",
             "siramamy",
             "mivarotra"
-          ]
+          ],
+          "roleplay": "dlg_rp_w4s3"
         }
       ]
     },
@@ -44191,7 +47847,8 @@ window.CONTENT = {
             "henomby",
             "akoho",
             "trondro"
-          ]
+          ],
+          "roleplay": "dlg_rp_w5s1"
         },
         {
           "day": "Wednesday",
@@ -44217,7 +47874,8 @@ window.CONTENT = {
             "mangetaheta_aho",
             "te_hisotro_rano_aho",
             "te_hisakafo_aho"
-          ]
+          ],
+          "roleplay": "dlg_rp_w5s2"
         },
         {
           "day": "Friday",
@@ -44242,7 +47900,8 @@ window.CONTENT = {
             "romazava",
             "ravitoto",
             "ranon'ampango"
-          ]
+          ],
+          "roleplay": "dlg_rp_w5s3"
         }
       ]
     },
@@ -44274,7 +47933,8 @@ window.CONTENT = {
             "banky",
             "trano_fivoahana",
             "fivarotam-panafody"
-          ]
+          ],
+          "roleplay": "dlg_rp_w6s1"
         },
         {
           "day": "Wednesday",
@@ -44299,7 +47959,8 @@ window.CONTENT = {
             "mihodina",
             "akaiky",
             "lavitra"
-          ]
+          ],
+          "roleplay": "dlg_rp_w6s2"
         },
         {
           "day": "Friday",
@@ -44324,7 +47985,8 @@ window.CONTENT = {
             "atsimo",
             "atsinanana",
             "andrefana"
-          ]
+          ],
+          "roleplay": "dlg_rp_w6s3"
         }
       ]
     },
@@ -44356,7 +48018,8 @@ window.CONTENT = {
             "dadabe",
             "nenibe",
             "zaza"
-          ]
+          ],
+          "roleplay": "dlg_rp_w7s1"
         },
         {
           "day": "Wednesday",
@@ -44381,7 +48044,8 @@ window.CONTENT = {
             "rahavavy",
             "anadahy",
             "anabavy"
-          ]
+          ],
+          "roleplay": "dlg_rp_w7s2"
         },
         {
           "day": "Friday",
@@ -44406,7 +48070,8 @@ window.CONTENT = {
             "vehivavy",
             "dadatoa",
             "nenitoa"
-          ]
+          ],
+          "roleplay": "dlg_rp_w7s3"
         }
       ]
     },
@@ -44438,7 +48103,8 @@ window.CONTENT = {
             "alakamisy",
             "zoma",
             "sabotsy"
-          ]
+          ],
+          "roleplay": "dlg_rp_w8s1"
         },
         {
           "day": "Wednesday",
@@ -44463,7 +48129,8 @@ window.CONTENT = {
             "rahampitso",
             "amin'ny_firy_izao_azafady",
             "ora"
-          ]
+          ],
+          "roleplay": "dlg_rp_w8s2"
         },
         {
           "day": "Friday",
@@ -44488,7 +48155,8 @@ window.CONTENT = {
             "hariva",
             "alina",
             "fotoana"
-          ]
+          ],
+          "roleplay": "dlg_rp_w8s3"
         }
       ]
     },
@@ -44520,7 +48188,8 @@ window.CONTENT = {
             "matory",
             "mifoha",
             "mahandro"
-          ]
+          ],
+          "roleplay": "dlg_rp_w9s1"
         },
         {
           "day": "Wednesday",
@@ -44545,7 +48214,8 @@ window.CONTENT = {
             "mody",
             "miantsena",
             "miala_sasatra"
-          ]
+          ],
+          "roleplay": "dlg_rp_w9s2"
         },
         {
           "day": "Friday",
@@ -44571,7 +48241,8 @@ window.CONTENT = {
             "herinandro",
             "volana",
             "taona"
-          ]
+          ],
+          "roleplay": "dlg_rp_w9s3"
         }
       ]
     },
@@ -44603,7 +48274,8 @@ window.CONTENT = {
             "vava",
             "tenda",
             "kibo"
-          ]
+          ],
+          "roleplay": "dlg_rp_w10s1"
         },
         {
           "day": "Wednesday",
@@ -44628,7 +48300,8 @@ window.CONTENT = {
             "marary_an-doha_aho",
             "marary_kibo_aho",
             "reraka_aho"
-          ]
+          ],
+          "roleplay": "dlg_rp_w10s2"
         },
         {
           "day": "Friday",
@@ -44653,7 +48326,8 @@ window.CONTENT = {
             "fanafody",
             "tazo",
             "sery"
-          ]
+          ],
+          "roleplay": "dlg_rp_w10s3"
         }
       ]
     },
@@ -44685,7 +48359,8 @@ window.CONTENT = {
             "rivotra",
             "mafana",
             "mangatsiaka"
-          ]
+          ],
+          "roleplay": "dlg_rp_w11s1"
         },
         {
           "day": "Wednesday",
@@ -44711,7 +48386,8 @@ window.CONTENT = {
             "tsara_be",
             "tsara_kely",
             "faly"
-          ]
+          ],
+          "roleplay": "dlg_rp_w11s2"
         },
         {
           "day": "Friday",
@@ -44738,7 +48414,8 @@ window.CONTENT = {
             "akanjo",
             "kiraro",
             "satroka"
-          ]
+          ],
+          "roleplay": "dlg_rp_w11s3"
         }
       ]
     },
@@ -44762,7 +48439,7 @@ window.CONTENT = {
           "month": 3,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_market_shopping",
+          "dialogue": "dlg_transport_travel",
           "grammar": "gram_1",
           "words": [
             "voankazo",
@@ -44771,7 +48448,8 @@ window.CONTENT = {
             "voatabia",
             "ovy",
             "sakay"
-          ]
+          ],
+          "roleplay": "dlg_rp_w12s1"
         },
         {
           "day": "Wednesday",
@@ -44787,7 +48465,7 @@ window.CONTENT = {
           "month": 3,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_transport_travel",
+          "dialogue": "dlg_theme_15e_3",
           "grammar": "gram_1",
           "words": [
             "fiara",
@@ -44796,7 +48474,8 @@ window.CONTENT = {
             "lakana",
             "entana",
             "mpamily"
-          ]
+          ],
+          "roleplay": "dlg_rp_w12s2"
         },
         {
           "day": "Friday",
@@ -44814,7 +48493,7 @@ window.CONTENT = {
           "month": 3,
           "total_sessions": 3,
           "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-          "dialogue": "dlg_greet_and_farewell",
+          "dialogue": "dlg_theme_15e_1",
           "grammar": "gram_1",
           "words": [
             "mandrosoa",
@@ -44823,7 +48502,8 @@ window.CONTENT = {
             "soa_am-bifilana",
             "amin'ny_manaraka_indray",
             "veloma_rahampitso_koa"
-          ]
+          ],
+          "roleplay": "dlg_rp_w12s3"
         }
       ]
     }
@@ -44852,7 +48532,8 @@ window.CONTENT = {
         "fahasalamana",
         "tsara_fa_misaotra",
         "inona_ny_vaovao"
-      ]
+      ],
+      "roleplay": "dlg_rp_w1s1"
     },
     {
       "day": "Wednesday",
@@ -44868,7 +48549,7 @@ window.CONTENT = {
       "month": 1,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_intro_2_15",
+      "dialogue": "dlg_polite_words",
       "grammar": "core_grammar_for_beginners",
       "words": [
         "misaotra",
@@ -44877,7 +48558,8 @@ window.CONTENT = {
         "tsy_maninona",
         "ndao",
         "haody"
-      ]
+      ],
+      "roleplay": "dlg_rp_w1s2"
     },
     {
       "day": "Friday",
@@ -44902,7 +48584,8 @@ window.CONTENT = {
         "misaotra_ianao_koa",
         "mandrapihaona",
         "soava_dia"
-      ]
+      ],
+      "roleplay": "dlg_rp_w1s3"
     },
     {
       "day": "Monday",
@@ -44928,7 +48611,8 @@ window.CONTENT = {
         "izy",
         "miteny",
         "kely_fotsiny"
-      ]
+      ],
+      "roleplay": "dlg_rp_w2s1"
     },
     {
       "day": "Wednesday",
@@ -44953,7 +48637,8 @@ window.CONTENT = {
         "izy_ireo",
         "tongasoa",
         "tongasoa_eto"
-      ]
+      ],
+      "roleplay": "dlg_rp_w2s2"
     },
     {
       "day": "Friday",
@@ -44978,7 +48663,8 @@ window.CONTENT = {
         "vady",
         "zanaka",
         "fianakaviana"
-      ]
+      ],
+      "roleplay": "dlg_rp_w2s3"
     },
     {
       "day": "Monday",
@@ -44994,7 +48680,7 @@ window.CONTENT = {
       "month": 1,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_intro_4_24",
+      "dialogue": "dlg_market_shopping",
       "grammar": "gram_1",
       "words": [
         "iray",
@@ -45003,7 +48689,8 @@ window.CONTENT = {
         "efatra",
         "dimy",
         "firy"
-      ]
+      ],
+      "roleplay": "dlg_rp_w3s1"
     },
     {
       "day": "Wednesday",
@@ -45028,7 +48715,8 @@ window.CONTENT = {
         "zato",
         "arivo",
         "ariary"
-      ]
+      ],
+      "roleplay": "dlg_rp_w3s2"
     },
     {
       "day": "Friday",
@@ -45045,7 +48733,7 @@ window.CONTENT = {
       "month": 1,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_market_shopping",
+      "dialogue": "dlg_intro_4_24",
       "grammar": "gram_1",
       "words": [
         "ohatrinona_ity",
@@ -45054,7 +48742,8 @@ window.CONTENT = {
         "tsy_misy_madinika",
         "vola",
         "mpivarotra"
-      ]
+      ],
+      "roleplay": "dlg_rp_w3s3"
     },
     {
       "day": "Monday",
@@ -45080,7 +48769,8 @@ window.CONTENT = {
         "rano",
         "kafe",
         "manana"
-      ]
+      ],
+      "roleplay": "dlg_rp_w4s1"
     },
     {
       "day": "Wednesday",
@@ -45105,7 +48795,8 @@ window.CONTENT = {
         "ve",
         "hena",
         "mividy"
-      ]
+      ],
+      "roleplay": "dlg_rp_w4s2"
     },
     {
       "day": "Friday",
@@ -45132,7 +48823,8 @@ window.CONTENT = {
         "atody",
         "siramamy",
         "mivarotra"
-      ]
+      ],
+      "roleplay": "dlg_rp_w4s3"
     },
     {
       "day": "Monday",
@@ -45157,7 +48849,8 @@ window.CONTENT = {
         "henomby",
         "akoho",
         "trondro"
-      ]
+      ],
+      "roleplay": "dlg_rp_w5s1"
     },
     {
       "day": "Wednesday",
@@ -45183,7 +48876,8 @@ window.CONTENT = {
         "mangetaheta_aho",
         "te_hisotro_rano_aho",
         "te_hisakafo_aho"
-      ]
+      ],
+      "roleplay": "dlg_rp_w5s2"
     },
     {
       "day": "Friday",
@@ -45208,7 +48902,8 @@ window.CONTENT = {
         "romazava",
         "ravitoto",
         "ranon'ampango"
-      ]
+      ],
+      "roleplay": "dlg_rp_w5s3"
     },
     {
       "day": "Monday",
@@ -45233,7 +48928,8 @@ window.CONTENT = {
         "banky",
         "trano_fivoahana",
         "fivarotam-panafody"
-      ]
+      ],
+      "roleplay": "dlg_rp_w6s1"
     },
     {
       "day": "Wednesday",
@@ -45258,7 +48954,8 @@ window.CONTENT = {
         "mihodina",
         "akaiky",
         "lavitra"
-      ]
+      ],
+      "roleplay": "dlg_rp_w6s2"
     },
     {
       "day": "Friday",
@@ -45283,7 +48980,8 @@ window.CONTENT = {
         "atsimo",
         "atsinanana",
         "andrefana"
-      ]
+      ],
+      "roleplay": "dlg_rp_w6s3"
     },
     {
       "day": "Monday",
@@ -45308,7 +49006,8 @@ window.CONTENT = {
         "dadabe",
         "nenibe",
         "zaza"
-      ]
+      ],
+      "roleplay": "dlg_rp_w7s1"
     },
     {
       "day": "Wednesday",
@@ -45333,7 +49032,8 @@ window.CONTENT = {
         "rahavavy",
         "anadahy",
         "anabavy"
-      ]
+      ],
+      "roleplay": "dlg_rp_w7s2"
     },
     {
       "day": "Friday",
@@ -45358,7 +49058,8 @@ window.CONTENT = {
         "vehivavy",
         "dadatoa",
         "nenitoa"
-      ]
+      ],
+      "roleplay": "dlg_rp_w7s3"
     },
     {
       "day": "Monday",
@@ -45383,7 +49084,8 @@ window.CONTENT = {
         "alakamisy",
         "zoma",
         "sabotsy"
-      ]
+      ],
+      "roleplay": "dlg_rp_w8s1"
     },
     {
       "day": "Wednesday",
@@ -45408,7 +49110,8 @@ window.CONTENT = {
         "rahampitso",
         "amin'ny_firy_izao_azafady",
         "ora"
-      ]
+      ],
+      "roleplay": "dlg_rp_w8s2"
     },
     {
       "day": "Friday",
@@ -45433,7 +49136,8 @@ window.CONTENT = {
         "hariva",
         "alina",
         "fotoana"
-      ]
+      ],
+      "roleplay": "dlg_rp_w8s3"
     },
     {
       "day": "Monday",
@@ -45458,7 +49162,8 @@ window.CONTENT = {
         "matory",
         "mifoha",
         "mahandro"
-      ]
+      ],
+      "roleplay": "dlg_rp_w9s1"
     },
     {
       "day": "Wednesday",
@@ -45483,7 +49188,8 @@ window.CONTENT = {
         "mody",
         "miantsena",
         "miala_sasatra"
-      ]
+      ],
+      "roleplay": "dlg_rp_w9s2"
     },
     {
       "day": "Friday",
@@ -45509,7 +49215,8 @@ window.CONTENT = {
         "herinandro",
         "volana",
         "taona"
-      ]
+      ],
+      "roleplay": "dlg_rp_w9s3"
     },
     {
       "day": "Monday",
@@ -45534,7 +49241,8 @@ window.CONTENT = {
         "vava",
         "tenda",
         "kibo"
-      ]
+      ],
+      "roleplay": "dlg_rp_w10s1"
     },
     {
       "day": "Wednesday",
@@ -45559,7 +49267,8 @@ window.CONTENT = {
         "marary_an-doha_aho",
         "marary_kibo_aho",
         "reraka_aho"
-      ]
+      ],
+      "roleplay": "dlg_rp_w10s2"
     },
     {
       "day": "Friday",
@@ -45584,7 +49293,8 @@ window.CONTENT = {
         "fanafody",
         "tazo",
         "sery"
-      ]
+      ],
+      "roleplay": "dlg_rp_w10s3"
     },
     {
       "day": "Monday",
@@ -45609,7 +49319,8 @@ window.CONTENT = {
         "rivotra",
         "mafana",
         "mangatsiaka"
-      ]
+      ],
+      "roleplay": "dlg_rp_w11s1"
     },
     {
       "day": "Wednesday",
@@ -45635,7 +49346,8 @@ window.CONTENT = {
         "tsara_be",
         "tsara_kely",
         "faly"
-      ]
+      ],
+      "roleplay": "dlg_rp_w11s2"
     },
     {
       "day": "Friday",
@@ -45662,7 +49374,8 @@ window.CONTENT = {
         "akanjo",
         "kiraro",
         "satroka"
-      ]
+      ],
+      "roleplay": "dlg_rp_w11s3"
     },
     {
       "day": "Monday",
@@ -45679,7 +49392,7 @@ window.CONTENT = {
       "month": 3,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_market_shopping",
+      "dialogue": "dlg_transport_travel",
       "grammar": "gram_1",
       "words": [
         "voankazo",
@@ -45688,7 +49401,8 @@ window.CONTENT = {
         "voatabia",
         "ovy",
         "sakay"
-      ]
+      ],
+      "roleplay": "dlg_rp_w12s1"
     },
     {
       "day": "Wednesday",
@@ -45704,7 +49418,7 @@ window.CONTENT = {
       "month": 3,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_transport_travel",
+      "dialogue": "dlg_theme_15e_3",
       "grammar": "gram_1",
       "words": [
         "fiara",
@@ -45713,7 +49427,8 @@ window.CONTENT = {
         "lakana",
         "entana",
         "mpamily"
-      ]
+      ],
+      "roleplay": "dlg_rp_w12s2"
     },
     {
       "day": "Friday",
@@ -45731,7 +49446,7 @@ window.CONTENT = {
       "month": 3,
       "total_sessions": 3,
       "peace_corps_url": "https://www.livelingua.com/course/peace-corps/malagasy_language_lessons",
-      "dialogue": "dlg_greet_and_farewell",
+      "dialogue": "dlg_theme_15e_1",
       "grammar": "gram_1",
       "words": [
         "mandrosoa",
@@ -45740,7 +49455,8 @@ window.CONTENT = {
         "soa_am-bifilana",
         "amin'ny_manaraka_indray",
         "veloma_rahampitso_koa"
-      ]
+      ],
+      "roleplay": "dlg_rp_w12s3"
     }
   ],
   "themeMap": [

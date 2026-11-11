@@ -133,40 +133,82 @@
 
   /* ---------------- step 3: roleplay ---------------- */
   function roleplayStep(session) {
-    var dialogue = session.dialogue ? core.dialogue(session.dialogue) : null;
-    if (!dialogue) return '<p class="empty">No dialogue is mapped to this session yet.</p>';
+    var rpId = session.roleplay || ('dlg_rp_' + session.id);
+    var dialogue = (rpId && core.dialogue(rpId)) || (session.dialogue ? core.dialogue(session.dialogue) : null);
+    if (!dialogue) return '<p class="empty">No roleplay scenario is mapped to this session yet.</p>';
 
     var speakers = [];
     dialogue.lines.forEach(function (line) {
       if (line.speaker && speakers.indexOf(line.speaker) === -1) speakers.push(line.speaker);
     });
 
-    var chooser = '<div class="chips" role="group" aria-label="Choose your part">' +
+    var scenarioCard = '<div class="card" style="margin-bottom:14px;border-left:4px solid var(--gold,#F2B705);background:var(--surface,#fffdf8);">' +
+      '<div class="eyebrow" style="color:var(--orange,#F26B1D);">Roleplay Scenario \u00b7 New Situation</div>' +
+      '<h3 style="margin:4px 0 6px;font-family:var(--serif,Georgia,serif);font-size:1.2rem;color:var(--forest,#123F2B);">' +
+        ui.esc(dialogue.title || 'Roleplay Practice') +
+      '</h3>' +
+      (dialogue.scenario ? '<p style="margin:0 0 8px;line-height:1.5;">' + ui.esc(dialogue.scenario) + '</p>' : '') +
+      (dialogue.task ? '<p class="meta" style="margin:0;"><strong>How to practice:</strong> ' + ui.esc(dialogue.task) + '</p>' : '') +
+    '</div>';
+
+    var chooser = '<div class="chips" role="group" aria-label="Choose your part" style="margin-bottom:12px;">' +
+      '<button class="chip" type="button" data-role="" aria-pressed="' + (!run.role ? 'true' : 'false') + '">Both roles (Read together)</button>' +
       speakers.map(function (name) {
         return '<button class="chip" type="button" data-role="' + ui.esc(name) + '" ' +
-          'aria-pressed="' + (run.role === name ? 'true' : 'false') + '">' + ui.esc(name) + '</button>';
-      }).join('') + '</div>';
+          'aria-pressed="' + (run.role === name ? 'true' : 'false') + '">Play as ' + ui.esc(name) + '</button>';
+      }).join('') +
+      (run.role ? '<button class="chip" type="button" data-role="' + ui.esc(run.role) + '" title="Hide your lines again to practice another round">\u21bb Hide my lines again</button>' : '') +
+    '</div>';
 
-    var lines = dialogue.lines.slice(0, 8).map(function (line, i) {
+    var lines = dialogue.lines.slice(0, 10).map(function (line, i) {
       var mine = run.role && line.speaker === run.role;
       if (mine && !run.revealed[i]) {
-        return '<div class="turn">' +
-          '<span class="who">' + ui.esc(line.speaker) + ' · your part</span>' +
-          '<button class="icon-btn" type="button" data-reveal="' + i + '">Show reply</button>' +
+        return '<div class="turn turn-cue">' +
+          '<span class="who">' + ui.esc(line.speaker) + ' \u00b7 your turn to speak</span>' +
+          '<p class="trans" style="margin:6px 0 10px;font-weight:600;color:var(--forest,#123F2B);">Cue: \u201c' + ui.esc(line.en) + '\u201d</p>' +
+          '<button class="icon-btn" type="button" data-reveal="' + i + '">Show Malagasy reply</button>' +
           '</div>';
       }
       return '<div class="turn">' +
         '<span class="who">' + ui.esc(line.speaker) +
+          (mine ? ' \u00b7 your part' : '') +
           (line.stage ? ' <span class="stage">(' + ui.esc(line.stage) + ')</span>' : '') + '</span>' +
         '<p class="line" lang="mg">' + ui.esc(line.mg) + '</p>' +
+        (line.pron ? '<p class="pron">[' + ui.esc(line.pron) + ']</p>' : '') +
         '<p class="trans">' + ui.esc(line.en) + '</p>' +
         '<div class="turn-tools">' + ui.speakButtons(line.mg, { line: dialogue.id + ':' + i }) + '</div>' +
         '</div>';
     }).join('');
 
-    return (run.role ? '' : '<p class="meta">Choose the part you want to say.</p>') +
+    var swapSection = '';
+    if (dialogue.swapPrompts && dialogue.swapPrompts.length) {
+      swapSection = '<div class="card" style="margin-top:16px;">' +
+        '<div class="eyebrow">Round 2 \u00b7 Improvise & Swap Words</div>' +
+        '<p class="meta" style="margin:4px 0 10px;">Run the roleplay a second time and swap in these expressions from this lesson:</p>' +
+        '<div class="stack">' +
+          dialogue.swapPrompts.map(function (sp) {
+            return '<div class="row-card" style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 10px;border:1px solid var(--border,#e6dec8);border-radius:10px;">' +
+              '<div>' +
+                '<strong lang="mg">' + ui.esc(sp.mg) + '</strong>' +
+                (sp.pron ? ' <span class="pron">[' + ui.esc(sp.pron) + ']</span>' : '') +
+                '<div class="meta">' + ui.esc(sp.en) + '</div>' +
+              '</div>' +
+              '<div class="turn-tools">' + ui.speakButtons(sp.mg, { wordId: sp.id }) + '</div>' +
+            '</div>';
+          }).join('') +
+        '</div>' +
+      '</div>';
+    }
+
+    return scenarioCard +
+      '<p class="meta" style="margin-bottom:8px;">' +
+        (run.role
+          ? 'Playing as <strong>' + ui.esc(run.role) + '</strong> \u2014 say each Malagasy line from the English cue, then click <em>Show Malagasy reply</em> to check and listen.'
+          : 'Choose a character below to test yourself from English cues, or read both parts together:') +
+      '</p>' +
       chooser +
-      '<div class="dialogue">' + lines + '</div>';
+      '<div class="dialogue">' + lines + '</div>' +
+      swapSection;
   }
 
   /* ---------------- "you are here" compass ---------------- */
