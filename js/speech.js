@@ -445,6 +445,51 @@ window.Salama = window.Salama || {};
     });
   }
 
+  /* ---------------- Course progress cloud sync (v4.4.1) ----------------
+     A teacher on Google Meet switches between laptop and phone mid-week and
+     must not land back on Week 1. "You are here" + completion ticks live in
+     APP/data/course_progress.json on main; the browser pushes debounced
+     writes after any visit or tick, and pulls on boot (union merge, newest
+     position wins, so nothing is ever lost between two devices).          */
+  var progressPutTimer = null;
+
+  function syncCourseProgress() {
+    if (typeof fetch !== 'function' || !S.core || !S.core.progressPayload) return;
+    if (progressPutTimer) clearTimeout(progressPutTimer);
+    progressPutTimer = setTimeout(function () {
+      progressPutTimer = null;
+      var payload = S.core.progressPayload();
+      var b64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload, null, 2))));
+      var msg = 'Auto-save course position (' + (payload.lastSession || 'start') + ')';
+      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/data/course_progress.json', b64, msg);
+      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'main', 'APP/data/course_progress.json', b64, msg);
+    }, 4000);
+  }
+
+  function loadRemoteProgress() {
+    if (typeof fetch !== 'function') return;
+    var apiHeaders = { 'Accept': 'application/vnd.github.raw+json' };
+    var tok = _ghTok();
+    if (tok) apiHeaders['Authorization'] = 'Bearer ' + tok;
+    function applyJson(json) {
+      if (!json || typeof json !== 'object') return;
+      var changed = (S.core && S.core.applyRemoteProgress) ? S.core.applyRemoteProgress(json) : false;
+      if (changed && S.rerender) { try { S.rerender(); } catch (e) { /* ignore */ } }
+      try { document.dispatchEvent(new CustomEvent('salama:progress-loaded')); } catch (e) { /* ignore */ }
+    }
+    fetch('https://api.github.com/repos/tianabizna-ctrl/Mianatra-Miteny-Malagasy/contents/APP/data/course_progress.json?ref=main&_t=' + Date.now(), {
+      headers: apiHeaders,
+      cache: 'no-store'
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(applyJson).catch(function () {
+      fetch('data/course_progress.json?_t=' + Date.now(), { cache: 'no-store' })
+        .then(function (r2) { return r2.ok ? r2.json() : null; })
+        .then(applyJson).catch(function () { /* offline: local progress still rules */ });
+    });
+  }
+
   function syncCustomVoicesToGitHub(changedKey, changedDataUrl, cb) {
     if (typeof fetch !== 'function') { if (cb) cb(false); return; }
     var payload = {};
@@ -518,6 +563,7 @@ window.Salama = window.Salama || {};
     loadRemoteCustomVoices();
   }
   loadAllCustomClips();
+  loadRemoteProgress();
 
   function saveCustomAudio(key, dataUrl, cb) {
     if (!key || !dataUrl) return;
@@ -1210,6 +1256,8 @@ window.Salama = window.Salama || {};
     hasCustomAudio: hasCustomAudio,
     getCustomAudio: getCustomAudio,
     customAudioCount: customAudioCount,
+    syncCourseProgress: syncCourseProgress,
+    loadRemoteProgress: loadRemoteProgress,
     toggleMicRecording: toggleMicRecording,
     stopMicRecording: stopMicRecording,
     downloadCustomWav: downloadCustomWav,

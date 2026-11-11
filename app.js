@@ -55,50 +55,10 @@
     main.innerHTML = html;
     if (typeof view.mount === 'function') view.mount(main, parts);
     markNav(view);
-    resumeChip(parts);
     window.scrollTo(0, 0);
   }
 
-  /* ---------------- floating "you are here" chip ---------------- */
-  // Shown on every screen except the lesson itself, so a teacher who wanders off to
-  // the dictionary or recorder during a call can get back to the exact step.
-  function syncHeaderCta() {
-    try {
-      var cta = document.querySelector && document.querySelector('.header-cta');
-      if (!cta) return;
-      var pos = core.lastPosition ? core.lastPosition() : null;
-      var s = pos ? core.session(pos.id) : null;
-      if (s) {
-        cta.href = core.positionHash(pos);
-        cta.innerHTML = 'Continue W' + s.week + ' \u00b7 S' + s.number + ' &#9654;';
-        cta.title = 'Back to ' + s.focus + ' (' + core.STEP_NAMES[pos.step] + ')';
-      } else {
-        cta.href = '#/session/w1s1/dialogue';
-        cta.innerHTML = 'Start Lesson 1 &#9654;';
-      }
-    } catch (e) { /* optional */ }
-  }
-
-  function resumeChip(parts) {
-    syncHeaderCta();
-    try {
-      if (typeof document === 'undefined' || !document.body || !document.createElement) return;
-      var chip = document.getElementById('resumeChip');
-      var pos = core.lastPosition ? core.lastPosition() : null;
-      var s = pos ? core.session(pos.id) : null;
-      if (!s || parts[0] === 'session') { if (chip) chip.hidden = true; return; }
-      if (!chip) {
-        chip = document.createElement('a');
-        chip.id = 'resumeChip';
-        chip.className = 'resume-chip';
-        document.body.appendChild(chip);
-      }
-      chip.hidden = false;
-      chip.href = core.positionHash(pos);
-      chip.innerHTML = '<span class="rc-dot">\u25B6</span><span><small>Back to lesson</small>W' + s.week + ' \u00b7 ' +
-        ui.esc(s.day.slice(0, 3)) + ' S' + s.number + ' \u00b7 ' + core.STEP_NAMES[pos.step] + '</span>';
-    } catch (e) { /* chip is a convenience only */ }
-  }
+  S.rerender = render; // used by the cloud-progress sync to refresh the open view
 
   /* ---------------- versions ---------------- */
   // One number for the service worker cache, the About panel and the state key.
