@@ -28327,7 +28327,7 @@ window.CONTENT = {
     },
     {
       "id": "mazotoa_homana",
-      "mg": "Mazotoa mihinana!",
+      "mg": "Mazotoa homana",
       "en": "Enjoy your meal! (bon appétit)",
       "themes": [
         "greetings_courtesies"
@@ -28335,7 +28335,7 @@ window.CONTENT = {
       "level": 1,
       "note": "Reply: 'Misaotra, ianao koa.'",
       "isPhrase": true,
-      "pron": "mah-zoo-TOO-ah mee-hee-NAH-nah",
+      "pron": "mah-zoo-TOO-ah HOO-mah-nah",
       "pron_source": "phrase",
       "pron_approx": true
     },
@@ -29748,10 +29748,10 @@ window.CONTENT = {
     },
     {
       "id": "rpb_mazotoa_homana",
-      "mg": "Mazotoa mihinana!",
+      "mg": "Mazotoa homana",
       "en": "Bon appétit! (eat well)",
       "group": "basics",
-      "pron": "mah-zoo-TOO-ah mee-hee-NAH-nah",
+      "pron": "mah-zoo-TOO-ah HOO-mah-nah",
       "pron_source": "phrase",
       "pron_approx": true
     },
@@ -36767,9 +36767,9 @@ window.CONTENT = {
       "lines": [
         {
           "speaker": "Person 1",
-          "mg": "Mazotoa mihinana!",
+          "mg": "Mazotoa homana",
           "en": "Enjoy your meal (bon appétit)",
-          "pron": "mah-zoo-TOO-ah mee-hee-NAH-nah"
+          "pron": "mah-zoo-TOO-ah HOO-mah-nah"
         },
         {
           "speaker": "Person 2",
@@ -39729,7 +39729,7 @@ window.CONTENT = {
     },
     {
       "lesson": "intro_review_1_4",
-      "note": "'Veloma e! Mazotoa mihinana' > what people say to each other when leaving to have their meal at midday or at the end of the day."
+      "note": "'Veloma e! Mazotoa homana' > what people say to each other when leaving to have their meal at midday or at the end of the day."
     },
     {
       "lesson": "intro_review_1_4",

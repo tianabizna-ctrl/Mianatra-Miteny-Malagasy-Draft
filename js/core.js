@@ -226,7 +226,8 @@ window.Salama = window.Salama || {};
     'mahn-DROO-soo-ah mee-peh-trah-PEH-trah-hah': true,
     'mahn-DROO-soo-ah mee-PEH-trah-PEH-trah-hah': true,
     'mee-peh-TRAH-kah': true,
-    'HOH-dee': true
+    'HOH-dee': true,
+    'mah-zoo-TOO-ah mee-hee-NAH-nah': true
   };
 
   function loadEditsMap() {
@@ -239,6 +240,7 @@ window.Salama = window.Salama || {};
       var m = merged[k] || {};
       if (m.pron && STALE_PRONS[m.pron]) delete m.pron;
       if (m.mg === 'Haody!' || m.mg === 'Haody') delete m.mg;
+      if (m.mg === 'Mazotoa mihinana!' || m.mg === 'Mazotoa mihinana') delete m.mg;
       if (k.indexOf('dlg:dlg_intro_') === 0 && m.mg && m.mg === m.mg.toUpperCase()) delete m.mg;
       if (!m.mg && !m.pron && !m.en && !m.verdict && !m.note) delete merged[k];
     });
