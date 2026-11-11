@@ -839,7 +839,7 @@ window.Salama = window.Salama || {};
       try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
       if (inFrame) {
         var shortSlug = String(key).replace(/^(word|phrase):/, '');
-        var fullTabUrl = location.origin + location.pathname + '?v=4.4.4#/record/' + encodeURIComponent(shortSlug);
+        var fullTabUrl = location.origin + location.pathname + '?v=4.4.5#/record/' + encodeURIComponent(shortSlug);
         try { window.open(fullTabUrl, '_blank', 'noopener'); } catch (e2) {}
         if (S.ui && S.ui.toast) {
           S.ui.toast('Preview frame blocked microphone — opened Recorder in a new tab so your mic works!');
@@ -1121,6 +1121,16 @@ window.Salama = window.Salama || {};
       var custom = customClips[dlgKey] || customClips[lineId];
       if (custom && play(custom, options)) return true;
     }
+    if (S.core && S.core.dialogue) {
+      var dObj = S.core.dialogue(dialogueId);
+      var lObj = dObj && dObj.lines && dObj.lines[index];
+      if (lObj && lObj.sourceKey) {
+        var sk = lObj.sourceKey;
+        var skShort = sk.replace(/^(word|phrase|dlg):/, '').replace(/:/g, '-');
+        var srcCustom = customClips[sk] || customClips['word:' + skShort] || customClips['phrase:' + skShort] || customClips[skShort];
+        if (srcCustom && play(srcCustom, options)) return true;
+      }
+    }
     var maps = recordingsFor();
     var file = swapVoicePath(maps.lines[lineId], maps.useMms);
     if (isOpenAIVoiceSelected()) {
@@ -1140,7 +1150,7 @@ window.Salama = window.Salama || {};
     var h = handlers || {};
     stopAll();
     var isData = url && (url.indexOf('data:') === 0 || url.indexOf('blob:') === 0);
-    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.4.4' : url;
+    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.4.5' : url;
     var audio = new Audio(versionedUrl);
     currentAudio = audio;
     markButton(h.node);
