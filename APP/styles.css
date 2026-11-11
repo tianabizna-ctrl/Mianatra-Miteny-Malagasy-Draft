@@ -1304,62 +1304,6 @@ html[data-mode="dark"] .say-label { color: var(--gold-2); }
 }
 
 /* ---------------- Dialogues & Conversation Turns ---------------- */
-/* Roleplay directions deliberately use the primary ink colour rather than
-   .meta/muted, because these are instructions the learner must be able to
-   read quickly while teaching or practising on a video call. */
-.roleplay-scenario {
-  margin-bottom: 18px;
-  padding: 18px 20px;
-  border: 1px solid var(--line);
-  border-left: 5px solid var(--gold);
-  border-radius: 4px 18px 18px 4px;
-  background: var(--paper);
-  box-shadow: var(--shadow-sm);
-}
-.roleplay-scenario .eyebrow,
-.roleplay-round-two .eyebrow {
-  color: #A43D08;
-  font-size: 0.78rem;
-  font-weight: 850;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.roleplay-scenario h3 {
-  margin: 5px 0 9px;
-  color: var(--ink);
-  font-size: clamp(1.22rem, 2.4vw, 1.55rem);
-}
-.roleplay-setting {
-  margin: 0 0 12px;
-  color: var(--ink);
-  font-size: 1rem;
-  font-weight: 500;
-  line-height: 1.62;
-}
-.roleplay-instruction {
-  margin: 0;
-  padding: 11px 13px;
-  border-left: 3px solid var(--gold);
-  border-radius: 8px;
-  background: var(--gold-pale);
-  color: var(--ink);
-  font-size: 0.98rem;
-  font-weight: 550;
-  line-height: 1.58;
-}
-.roleplay-instruction strong { color: var(--green-2); }
-.roleplay-guide {
-  margin: 0 0 12px;
-  color: var(--ink);
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1.55;
-}
-.roleplay-round-two { margin-top: 18px; }
-html[data-mode="dark"] .roleplay-scenario .eyebrow,
-html[data-mode="dark"] .roleplay-round-two .eyebrow { color: #FFA06B; }
-html[data-mode="dark"] .roleplay-instruction strong { color: var(--gold-2); }
-
 .dialogue {
   display: flex;
   flex-direction: column;
@@ -1406,6 +1350,65 @@ html[data-mode="dark"] .roleplay-instruction strong { color: var(--gold-2); }
   display: flex;
   gap: 6px;
   margin-top: 10px;
+}
+
+/* ---------------- Readable roleplay instructions ---------------- */
+.roleplay-scenario {
+  margin-bottom: 18px;
+  padding: 20px 22px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 16px;
+  background: var(--paper);
+}
+.roleplay-kicker {
+  color: #963700;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.roleplay-title {
+  margin: 4px 0 8px;
+  color: var(--ink);
+  font-family: var(--f-display);
+  font-size: 1.25rem;
+}
+.roleplay-setting,
+.roleplay-instruction,
+.roleplay-help,
+.roleplay-round-help {
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.65;
+  opacity: 1;
+  animation: none;
+}
+.roleplay-instruction {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--surface-2);
+  font-weight: 500;
+}
+.roleplay-instruction strong { font-weight: 800; }
+.roleplay-help { margin: 0 0 10px; font-weight: 500; }
+.roleplay .chip { font-size: 0.94rem; }
+.roleplay .turn .who { color: #963700; }
+.roleplay .turn-tools { flex-wrap: wrap; }
+.roleplay .turn .trans { color: var(--ink-2); font-size: 1rem; }
+.roleplay .turn .roleplay-cue {
+  margin: 6px 0 10px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.roleplay-round { margin-top: 22px; }
+.roleplay-round-help { margin: 4px 0 12px; }
+.roleplay-translation { color: var(--ink-2); font-size: 1rem; line-height: 1.5; }
+html[data-mode="dark"] .roleplay-kicker,
+html[data-mode="dark"] .roleplay .turn .who { color: var(--gold-2); }
+
+@media (max-width: 480px) {
+  .roleplay-scenario { padding: 16px; }
 }
 
 /* ---------------- Session Runner ---------------- */
