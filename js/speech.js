@@ -530,7 +530,7 @@ window.Salama = window.Salama || {};
   function syncCustomVoicesToGitHub(changedKey, changedDataUrl, propagatedKeys, cb) {
     if (typeof fetch !== 'function') { if (cb) cb(false); return; }
     var shortName = String(changedKey || 'voice').replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-    var msg = 'Auto-save recorded voice for ' + shortName + ' [skip ci]';
+    var msg = 'Auto-save recorded voice for ' + shortName + ' [skip ci] [skip netlify]';
     var rawWavUrl = 'https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/' + shortName + '.wav?t=' + Date.now();
 
     var uploadWavPromise = Promise.resolve(true);
