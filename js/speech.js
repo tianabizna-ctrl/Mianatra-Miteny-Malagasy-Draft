@@ -390,7 +390,7 @@ window.Salama = window.Salama || {};
     var apiHeaders = { 'Accept': 'application/vnd.github.raw+json' };
     var tok = _ghTok();
     if (tok) apiHeaders['Authorization'] = 'Bearer ' + tok;
-    fetch('https://api.github.com/repos/tianabizna-ctrl/Mianatra-Miteny-Malagasy/contents/data/custom_voices.json?ref=gh-pages&_t=' + Date.now(), {
+    fetch('https://api.github.com/repos/tianabizna-ctrl/Mianatra-Miteny-Malagasy/contents/APP/data/custom_voices.json?ref=main&_t=' + Date.now(), {
       headers: apiHeaders,
       cache: 'no-store'
     }).then(function (r) {
@@ -463,15 +463,14 @@ window.Salama = window.Salama || {};
     var msg = 'Auto-save recorded voice for ' + shortName;
 
     var tasks = [
-      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'gh-pages', 'data/custom_voices.json', b64Json, msg),
       putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/data/custom_voices.json', b64Json, msg),
-      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'gh-pages', 'data/custom_voices.json', b64Json, msg)
+      putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy-Draft', 'main', 'APP/data/custom_voices.json', b64Json, msg)
     ];
 
     if (changedDataUrl && changedDataUrl.indexOf('base64,') !== -1) {
       var rawB64 = changedDataUrl.split('base64,')[1];
       tasks.push(
-        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'gh-pages', 'media/audio_custom/' + shortName + '.wav', rawB64, msg)
+        putGitHubFile('tianabizna-ctrl/Mianatra-Miteny-Malagasy', 'main', 'APP/media/audio_custom/' + shortName + '.wav', rawB64, msg)
       );
     }
 
