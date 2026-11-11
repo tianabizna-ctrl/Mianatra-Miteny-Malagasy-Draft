@@ -494,6 +494,10 @@
   "phrase:kafe": "media/audio_custom/kafe.wav",
   "phrase:wv_coffee": "media/audio_custom/wv_coffee.wav",
   "word:wv_coffee": "media/audio_custom/wv_coffee.wav",
-  "word:manana": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/manana.wav?t=1794399497988",
-  "phrase:manana": "media/audio_custom/manana.wav"
+  "word:manana": "media/audio_custom/manana.wav",
+  "phrase:manana": "media/audio_custom/manana.wav",
+  "dlg:dlg_rp_w4s1:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s1-0.wav?t=1794399690058",
+  "phrase:salama_tsara_ve_ianao": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s1-0.wav?t=1794399690058",
+  "word:salama_tsara_ve_ianao": "media/audio_custom/salama_tsara_ve_ianao.wav",
+  "dlg:dlg_rp_w10s1:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s1-0.wav?t=1794399690058"
 }
