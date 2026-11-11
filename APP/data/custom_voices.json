@@ -451,7 +451,7 @@
   "phrase:zato": "media/audio_custom/zato.wav",
   "word:zanaka": "media/audio_custom/zanaka.wav",
   "phrase:zanaka": "media/audio_custom/zanaka.wav",
-  "dlg:dlg_rp_w3s3:6": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w3s3-6.wav?t=1794399283661",
+  "dlg:dlg_rp_w3s3:6": "media/audio_custom/dlg_rp_w3s3-6.wav",
   "phrase:iraika_ambin'ny_folo": "media/audio_custom/iraika_ambin'ny_folo.wav",
   "word:iraika_ambin'ny_folo": "media/audio_custom/iraika_ambin'ny_folo.wav",
   "phrase:mora_ve": "media/audio_custom/mora_ve.wav",
@@ -460,12 +460,15 @@
   "word:mpivarotra": "media/audio_custom/mpivarotra.wav",
   "phrase:roa": "media/audio_custom/roa.wav",
   "word:roa": "media/audio_custom/roa.wav",
-  "phrase:rpb_ohatrinona_ny_farany": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w3s3-6.wav?t=1794399283661",
+  "phrase:rpb_ohatrinona_ny_farany": "media/audio_custom/rpb_ohatrinona_ny_farany.wav",
   "word:rpb_ohatrinona_ny_farany": "media/audio_custom/rpb_ohatrinona_ny_farany.wav",
   "phrase:tsy_misy_madinika": "media/audio_custom/tsy_misy_madinika.wav",
   "word:tsy_misy_madinika": "media/audio_custom/tsy_misy_madinika.wav",
   "phrase:vola": "media/audio_custom/vola.wav",
   "word:vola": "media/audio_custom/vola.wav",
   "phrase:wvm_vola": "media/audio_custom/wvm_vola.wav",
-  "word:wvm_vola": "media/audio_custom/wvm_vola.wav"
+  "word:wvm_vola": "media/audio_custom/wvm_vola.wav",
+  "dlg:dlg_rp_w3s3:7": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w3s3-7.wav?t=1794399298678",
+  "phrase:rpb_izay_mihitsy_ny_farany": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w3s3-7.wav?t=1794399298678",
+  "word:rpb_izay_mihitsy_ny_farany": "media/audio_custom/rpb_izay_mihitsy_ny_farany.wav"
 }
