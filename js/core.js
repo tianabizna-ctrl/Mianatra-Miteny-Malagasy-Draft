@@ -227,7 +227,10 @@ window.Salama = window.Salama || {};
     'mahn-DROO-soo-ah mee-PEH-trah-PEH-trah-hah': true,
     'mee-peh-TRAH-kah': true,
     'HOH-dee': true,
-    'mah-zoo-TOO-ah mee-hee-NAH-nah': true
+    'mah-zoo-TOO-ah mee-hee-NAH-nah': true,
+    'MOO-rah ah-zah-FAH-dee': true,
+    'ah-zah-FAH-dee EYE-zah ee-AH-noh': true,
+    'ah-FAH-kah mah-HAH-zoo VEH-rah RAH-noo VEH AH-hoo ah-zah-FAH-dee': true
   };
 
   function loadEditsMap() {
@@ -241,6 +244,9 @@ window.Salama = window.Salama || {};
       if (m.pron && STALE_PRONS[m.pron]) delete m.pron;
       if (m.mg === 'Haody!' || m.mg === 'Haody') delete m.mg;
       if (m.mg === 'Mazotoa mihinana!' || m.mg === 'Mazotoa mihinana') delete m.mg;
+      if (m.mg === 'Mora azafady!' || m.mg === 'Mora azafady') delete m.mg;
+      if (m.mg === 'Azafady, aiza ianao?') delete m.mg;
+      if (m.mg === 'Afaka mahazo vera rano ve aho azafady?') delete m.mg;
       if (k.indexOf('dlg:dlg_intro_') === 0 && m.mg && m.mg === m.mg.toUpperCase()) delete m.mg;
       if (!m.mg && !m.pron && !m.en && !m.verdict && !m.note) delete merged[k];
     });

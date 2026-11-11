@@ -3,7 +3,7 @@ window.CONTENT = {
     "app": "Salama! — Learn Malagasy Gently",
     "project": "Vahiny Mianatra Malagasy",
     "audience": "Elderly American absolute beginner",
-    "version": "4.5.0",
+    "version": "4.5.1",
     "dialect_note": "Official Malagasy (Tenim-pirenena ofisialy).",
     "counts": {
       "vocabulary": 2198,
@@ -260,7 +260,7 @@ window.CONTENT = {
     },
     {
       "id": "azafady,_aiza_ianao",
-      "mg": "Azafady, aiza ianao?",
+      "mg": "Azafady, mba afaka mandalo ve aho?",
       "en": "Excuse me (passing) — may I get by?",
       "themes": [
         "greetings_courtesies"
@@ -268,7 +268,7 @@ window.CONTENT = {
       "level": 1,
       "note": "Standard courtesy when squeezing past, e.g. on a taxi-brousse.",
       "isPhrase": true,
-      "pron": "ah-zah-FAH-dee EYE-zah ee-AH-noh",
+      "pron": "ah-zah-FAH-dee MBAH ah-FAH-kah mahn-DAH-loo VEH AH-hoo",
       "pron_source": "phrase",
       "pron_approx": true
     },
@@ -34386,10 +34386,10 @@ window.CONTENT = {
     },
     {
       "id": "azafady,_aiza_ianao",
-      "mg": "Azafady, aiza ianao?",
+      "mg": "Azafady, mba afaka mandalo ve aho?",
       "en": "Excuse me, may I get by?",
       "group": "greetings",
-      "pron": "ah-zah-FAH-dee EYE-zah ee-AH-noh",
+      "pron": "ah-zah-FAH-dee MBAH ah-FAH-kah mahn-DAH-loo VEH AH-hoo",
       "pron_source": "phrase",
       "pron_approx": true
     },
@@ -34784,10 +34784,10 @@ window.CONTENT = {
     },
     {
       "id": "afaka_mahazo_vera_rano_ve_aho_azafady",
-      "mg": "Afaka mahazo vera rano ve aho azafady?",
+      "mg": "Mba afaka mahazo rano ve aho azafady?",
       "en": "Could I have a glass of water, please?",
       "group": "basics",
-      "pron": "ah-FAH-kah mah-HAH-zoo VEH-rah RAH-noo VEH AH-hoo ah-zah-FAH-dee",
+      "pron": "mbah ah-FAH-kah mah-HAH-zoo RAH-noo VEH AH-hoo ah-zah-FAH-dee",
       "pron_source": "phrase",
       "pron_approx": true
     },
@@ -36248,9 +36248,9 @@ window.CONTENT = {
       "lines": [
         {
           "speaker": "You",
-          "mg": "Azafady, aiza ianao?",
+          "mg": "Azafady, mba afaka mandalo ve aho?",
           "en": "Excuse me, may I get by?",
-          "pron": "ah-zah-FAH-dee EYE-zah ee-AH-noh"
+          "pron": "ah-zah-FAH-dee MBAH ah-FAH-kah mahn-DAH-loo VEH AH-hoo"
         },
         {
           "speaker": "Other",
@@ -38540,9 +38540,9 @@ window.CONTENT = {
         },
         {
           "speaker": "You",
-          "mg": "Afaka mahazo vera rano ve aho azafady?",
+          "mg": "Mba afaka mahazo rano ve aho azafady?",
           "en": "Could I have a glass of water, please?",
-          "pron": "ah-FAH-kah mah-HAH-zoo VEH-rah RAH-noo VEH AH-hoo ah-zah-FAH-dee",
+          "pron": "mbah ah-FAH-kah mah-HAH-zoo RAH-noo VEH AH-hoo ah-zah-FAH-dee",
           "sourceKey": "phrase:afaka_mahazo_vera_rano_ve_aho_azafady"
         },
         {
@@ -46308,7 +46308,8 @@ window.CONTENT = {
     "tsentsi-nify_(teeth)": "media/audio_abidi/words/tsentsi-nify-teeth.mp3",
     "fandidiana_(chirurgical)": "media/audio_abidi/words/fandidiana-chirurgical.mp3",
     "fotoana_voafetra_(of_time)": "media/audio_abidi/words/fotoana-voafetra-of-time.mp3",
-    "petra-bola_(bonds_and_other_commercial_papers)": "media/audio_abidi/words/petra-bola-bonds-and-other-commercial-papers.mp3"
+    "petra-bola_(bonds_and_other_commercial_papers)": "media/audio_abidi/words/petra-bola-bonds-and-other-commercial-papers.mp3",
+    "afaka_mahazo_vera_rano_ve_aho_azafady": "media/audio_abidi/phrases/afaka-mahazo-vera-rano-ve-aho-azafady.mp3"
   },
   "phraseAudio": {
     "rpb_veloma": "media/audio_custom/veloma.wav",
