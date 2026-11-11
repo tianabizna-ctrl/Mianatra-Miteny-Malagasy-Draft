@@ -47,21 +47,12 @@
     return ui.speakButtons(text, { wordId: wordId, label: 'Listen' });
   }
 
-  function stepHref(step) {
-    var h = '#/session/' + run.id + '/' + core.STEP_SLUGS[step];
-    if (step === 1 && run.index) h += '/' + (run.index + 1);
-    return h;
-  }
-
   function stepList(active) {
-    return '<ol class="runner-steps" aria-label="Lesson steps">' + STEPS.map(function (name, i) {
-      var state = i === active ? 'active' : (i < active ? 'done' : 'todo');
-      return '<li data-state="' + state + '">' +
-        '<a href="' + stepHref(i) + '"' + (i === active ? ' aria-current="step"' : '') + '>' +
-          '<span class="rs-num">' + (i < active ? '\u2713' : (i + 1)) + '</span>' +
-          '<span class="rs-name">' + name + '</span>' +
-          (i === active ? '<span class="rs-here">You are here</span>' : '') +
-        '</a></li>';
+    return '<ol class="runner-steps">' + STEPS.map(function (name, i) {
+      var attrs = '';
+      if (i === active) attrs = ' data-active="true"';
+      else if (i < active) attrs = ' data-done="true"';
+      return '<li' + attrs + '>' + name + '</li>';
     }).join('') + '</ol>';
   }
 
@@ -85,7 +76,7 @@
       '<h2 style="margin-top:0">' + ui.esc(dialogue.title) + '</h2>' +
       '<div class="dialogue">' + dialogue.lines.map(function (line, index) {
         return '<div class="turn">' +
-          '<span class="who"><span class="line-no">' + (index + 1) + '/' + dialogue.lines.length + '</span> ' + ui.esc(line.speaker || 'A') +
+          '<span class="who">' + ui.esc(line.speaker || 'A') +
             (line.stage ? ' <span class="stage">(' + ui.esc(line.stage) + ')</span>' : '') + '</span>' +
           '<p class="line" lang="mg">' + ui.esc(line.mg) + '</p>' +
           (line.pron ? '<p class="say">' + ui.esc(line.pron) + ui.pronunciationTag(line) + '</p>' : '') +
@@ -118,10 +109,6 @@
           (run.index >= run.words.length - 1 ? ' disabled' : '') + '>Next word</button>' +
       '</div>' +
       '<p class="meta" style="margin-top:16px">Word ' + (run.index + 1) + ' of ' + run.words.length + '</p>' +
-      '<div class="word-chips" role="group" aria-label="Jump to a word">' + run.words.map(function (w, i) {
-        return '<button type="button" class="word-chip" data-word-go="' + i + '"' +
-          (i === run.index ? ' aria-current="true"' : '') + '><span>' + (i + 1) + '</span> ' + ui.esc(w.mg) + '</button>';
-      }).join('') + '</div>' +
       '</div>';
   }
 
@@ -163,84 +150,77 @@
       '<div class="dialogue">' + lines + '</div>';
   }
 
-  /* ---------------- "you are here" compass ---------------- */
-  function shortName(sess) {
-    return 'Week ' + sess.week + ' \u00b7 ' + sess.day.slice(0, 3) + ' \u00b7 Session ' + sess.number;
-  }
-
-  function jumpSelect(session) {
-    return '<select class="lc-select" data-jump="true" aria-label="Jump to any lesson">' +
-      core.data.curriculum.map(function (week) {
-        var list = core.data.sessions.filter(function (s) { return s.week === week.week; });
-        return '<optgroup label="Week ' + week.week + ' \u2014 ' + ui.esc(week.title) + '">' +
-          list.map(function (s) {
-            return '<option value="' + s.id + '"' + (s.id === session.id ? ' selected' : '') + '>' +
-              (core.isSessionDone(s.id) ? '\u2713 ' : '') + 'W' + s.week + ' \u00b7 ' + s.day.slice(0, 3) + ' S' + s.number + ' \u2014 ' + ui.esc(s.focus) +
-              '</option>';
-          }).join('') + '</optgroup>';
-      }).join('') + '</select>';
-  }
-
-  function compass(session, step) {
-    var idx = core.sessionIndex(session.id);
-    var total = core.data.sessions.length;
-    var prev = core.adjacentSession(session.id, -1);
-    var next = core.adjacentSession(session.id, 1);
-    var weekSessions = core.data.sessions.filter(function (s) { return s.week === session.week; });
-    var pct = Math.round(((idx + (Math.min(step, 3) / 3)) / total) * 100);
-
-    return '<nav class="lesson-compass" aria-label="Where you are in the course">' +
-      '<div class="lc-crumbs">' +
-        '<a href="#/course">Course</a><span class="lc-sep">\u203a</span>' +
-        '<a href="#/course/' + session.week + '">Week ' + session.week + ': ' + ui.esc(session.week_title || '') + '</a><span class="lc-sep">\u203a</span>' +
-        '<strong>' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + '</strong><span class="lc-sep">\u203a</span>' +
-        '<span class="lc-step">' + core.STEP_NAMES[step] + '</span>' +
-      '</div>' +
-      '<div class="lc-progress" title="Lesson ' + (idx + 1) + ' of ' + total + '">' +
-        '<span class="lc-bar"><span style="width:' + pct + '%"></span></span>' +
-        '<span class="lc-count">Lesson <strong>' + (idx + 1) + '</strong> of ' + total + '</span>' +
-      '</div>' +
-      '<div class="lc-week" role="group" aria-label="Sessions this week">' +
-        weekSessions.map(function (s) {
-          var cur = s.id === session.id;
-          return '<a class="lc-pill" href="#/session/' + s.id + '/dialogue"' + (cur ? ' aria-current="page"' : '') + '>' +
-            '<span class="lc-pill-day">' + ui.esc(s.day.slice(0, 3)) + ' \u00b7 S' + s.number + (core.isSessionDone(s.id) ? ' \u2713' : '') + '</span>' +
-            '<span class="lc-pill-focus">' + ui.esc(s.focus) + '</span>' +
-          '</a>';
-        }).join('') +
-      '</div>' +
-      '<div class="lc-row">' +
-        (prev
-          ? '<a class="lc-nav lc-prev" href="#/session/' + prev.id + '/dialogue"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>' + shortName(prev) + '</span></a>'
-          : '<span class="lc-nav lc-prev" aria-disabled="true"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>This is the first lesson</span></span>') +
-        '<label class="lc-jump"><small>Jump to any lesson</small>' + jumpSelect(session) + '</label>' +
-        (next
-          ? '<a class="lc-nav lc-next" href="#/session/' + next.id + '/dialogue"><span><small>Next lesson</small>' + shortName(next) + '</span><span class="lc-arrow">\u2192</span></a>'
-          : '<span class="lc-nav lc-next" aria-disabled="true"><span><small>Next lesson</small>Last lesson of the course</span><span class="lc-arrow">\u2192</span></span>') +
-      '</div>' +
+  /* ---------------- orientation (v4.4.1) ---------------- */
+  /* Every visit records "you are here" so Today, the course outline and the
+     cloud copy all agree on where the class stands. */
+  function crumbs(session) {
+    var idx = core.sessionIndexOf ? core.sessionIndexOf(session.id) : -1;
+    var week = core.data.curriculum.filter(function (w) { return w.week === session.week; })[0];
+    return '<nav class="crumbs" aria-label="Where you are in the course">' +
+      '<a href="#/today">⌂ Today</a> › ' +
+      '<a href="#/course">Course</a> › ' +
+      '<a href="#/course/' + session.week + '">Week ' + session.week + (week ? ': ' + ui.esc(week.title) : '') + '</a> › ' +
+      '<strong>' + ui.esc(session.day || '') + ' · Session ' + session.number + ' of ' + (session.total_sessions || 3) + '</strong>' +
+      (idx >= 0 ? ' <span class="crumbs-overall">#' + (idx + 1) + ' of ' + core.data.sessions.length + '</span>' : '') +
+      (core.isSessionDone(session.id) ? ' <span class="crumbs-done">✓ complete</span>' : '') +
     '</nav>';
   }
 
-  /* ---------------- render ---------------- */
-  function stepFromParts(parts) {
-    var slug = parts && parts[2];
-    var i = core.STEP_SLUGS.indexOf(slug);
-    return i < 0 ? 0 : i;
+  function pagerCard(session, dir) {
+    var other = dir === 'prev'
+      ? (core.prevSession ? core.prevSession(session.id) : null)
+      : (core.nextSessionAfter ? core.nextSessionAfter(session.id) : null);
+    if (dir === 'prev') {
+      return other
+        ? '<a class="pager-card" href="#/session/' + other.id + '" title="Go back one lesson">' +
+            '<span class="pager-dir">← Previous lesson</span>' +
+            '<span class="pager-title">W' + other.week + 'S' + other.number + ' · ' + ui.esc(other.focus) + '</span></a>'
+        : '<span class="pager-card pager-empty"><span class="pager-dir">← Previous lesson</span>' +
+            '<span class="pager-title">This is the very first lesson of the course</span></span>';
+    }
+    return other
+      ? '<a class="pager-card pager-next" href="#/session/' + other.id + '" title="Go to the next lesson">' +
+          '<span class="pager-dir">Next lesson →</span>' +
+          '<span class="pager-title">W' + other.week + 'S' + other.number + ' · ' + ui.esc(other.focus) + '</span></a>'
+      : '<span class="pager-card pager-empty pager-next"><span class="pager-dir">Next lesson →</span>' +
+          '<span class="pager-title">End of the 12-week course — well done! 🎉</span></span>';
   }
 
+  function sessionPager(session) {
+    return '<div class="session-pager">' + pagerCard(session, 'prev') + pagerCard(session, 'next') + '</div>' +
+      '<p class="pager-tip">Tip: press <kbd>←</kbd> / <kbd>→</kbd> to jump between lessons, like slides.</p>';
+  }
+
+  var keysBound = false;
+  function bindSessionKeys() {
+    if (keysBound || typeof document === 'undefined' || !document.addEventListener) return;
+    keysBound = true;
+    document.addEventListener('keydown', function (event) {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      var t = event.target;
+      var tag = ((t && t.tagName) || '').toUpperCase();
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || (t && t.isContentEditable)) return;
+      var match = /^#\/session\/([\w-]+)/.exec((typeof location !== 'undefined' && location.hash) || '');
+      if (!match) return;
+      var cur = core.session(match[1]);
+      if (!cur) return;
+      var jump = event.key === 'ArrowLeft'
+        ? (core.prevSession ? core.prevSession(cur.id) : null)
+        : (core.nextSessionAfter ? core.nextSessionAfter(cur.id) : null);
+      if (jump) { location.hash = '#/session/' + jump.id; event.preventDefault(); }
+    });
+  }
+
+  /* ---------------- completion ---------------- */
   function render(parts) {
     var session = core.session(parts && parts[1]);
     if (!session) return '<p class="empty">That session does not exist.</p>';
+    if (core.noteVisit) core.noteVisit(session.id);
     if (run.id !== session.id) reset(session);
-    run.step = stepFromParts(parts);
-    if (run.step === 1 && parts[3]) {
-      run.index = Math.max(0, Math.min(run.words.length - 1, (Number(parts[3]) || 1) - 1));
-    }
-    if (run.step === 3 && !core.isSessionDone(session.id)) core.markSession(session.id);
-    core.setPosition(session.id, run.step, run.index);
 
     if (run.step === 3) {
-      return '<div class="view-narrow">' + compass(session, 3) + completionPanel(session) + '</div>';
+      return '<div class="view-narrow">' + completionPanel(session) + '</div>';
     }
 
     var body;
@@ -248,144 +228,99 @@
     else if (run.step === 1) body = wordStep();
     else body = roleplayStep(session);
 
-    var prev = core.adjacentSession(session.id, -1);
+    var img = ui.photoForIndex ? ui.photoForIndex((session.week - 1) * 3 + session.number - 1) : 'img/highlands.jpg';
 
+    var posIdx = core.sessionIndexOf ? core.sessionIndexOf(session.id) : -1;
     return '<div class="view-narrow">' +
-      compass(session, run.step) +
+      crumbs(session) +
+      '<div class="session-hero-photo"><img src="' + img + '" alt="Madagascar landscape" loading="lazy"></div>' +
       '<div class="runner-head">' +
         '<div>' +
-          '<p class="meta">Week ' + session.week + ' \u00b7 ' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + ' of 3</p>' +
+          '<p class="meta">Week ' + session.week + ' · ' + ui.esc(session.day) + ' · Session ' + session.number +
+            ' of ' + (session.total_sessions || 3) +
+            (posIdx >= 0 ? ' <span class="crumbs-overall">#' + (posIdx + 1) + ' of ' + core.data.sessions.length + '</span>' : '') + '</p>' +
           '<h1>' + ui.esc(session.focus) + '</h1>' +
         '</div>' +
-        '<a class="cta-link" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
+        '<a class="cta-link" href="#/course/' + session.week + '">▣ All lessons of Week ' + session.week + '</a>' +
       '</div>' +
+      '<div class="session-nav-top">' + sessionPager(session) + '</div>' +
       stepList(run.step) +
       '<div class="runner-body">' + body + '</div>' +
+      sessionPager(session) +
       '<div class="runner-foot">' +
         '<button class="btn btn-quiet" type="button" data-back="true">' +
-          ui.icon('arrow-left') + backLabel(prev) + '</button>' +
-        '<span class="position">Step ' + (run.step + 1) + ' of 3 \u00b7 <kbd>\u2190</kbd> <kbd>\u2192</kbd> keys work too</span>' +
+          ui.icon('arrow-left') + 'Back</button>' +
+        '<span class="position">Step ' + (run.step + 1) + ' of 3</span>' +
         '<button class="btn" type="button" data-next="true">' + nextLabel() + ui.icon('arrow-right') + '</button>' +
       '</div>' +
       '</div>';
   }
 
-  function backLabel(prev) {
-    if (run.step === 1) return 'Back: Dialogue';
-    if (run.step === 2) return 'Back: New words';
-    return prev ? 'Previous lesson' : 'Week outline';
-  }
-
   function nextLabel() {
-    if (run.step === 0) return 'Next: New words';
-    if (run.step === 1) return 'Next: Roleplay';
-    return 'Finish lesson';
+    if (run.step === 0) return 'New words';
+    if (run.step === 1) return 'Roleplay';
+    return 'Finish session';
   }
 
   function completionPanel(session) {
     var doneCount = core.sessionDoneCount();
-    var next = core.adjacentSession(session.id, 1);
-    return '<section class="panel lesson-done" aria-labelledby="doneTitle">' +
-      '<p class="section-eyebrow" style="margin:0 0 6px">\u2713 Lesson finished</p>' +
-      '<h1 id="doneTitle" style="margin-top:0">' + ui.esc(session.focus) + '</h1>' +
-      '<p class="meta">Week ' + session.week + ' \u00b7 ' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + ' \u00b7 ' + doneCount + ' of ' + core.data.sessions.length + ' lessons done</p>' +
+    var total = core.data.sessions.length;
+    /* "Next" now means the *next lesson in the curriculum*, not "the first
+       undone thing anywhere" — that older rule could bounce a teacher back
+       to Week 1 after one missed tick. */
+    var next = (core.nextSessionAfter ? core.nextSessionAfter(session.id) : null) ||
+      core.data.sessions.filter(function (s) { return !core.isSessionDone(s.id); })[0] || null;
+    if (next && next.id === session.id) next = null;
+    var prev = core.prevSession ? core.prevSession(session.id) : null;
+    var pct = total ? Math.round((doneCount / total) * 100) : 0;
+    return '<div class="done-wrap">' + crumbs(session) +
+      '<section class="panel" aria-labelledby="doneTitle">' +
+      '<h1 id="doneTitle" style="margin-top:0">✓ Session complete</h1>' +
+      '<p class="meta">Week ' + session.week + ' · ' + ui.esc(session.day) + ' · Session ' + session.number +
+        ' of ' + (session.total_sessions || 3) + ' — ' + ui.esc(session.focus) + '</p>' +
+      '<div class="progress-meter" style="margin:10px 0 4px"><i style="width:' + pct + '%"></i></div>' +
+      '<p class="meta">' + doneCount + ' of ' + total + ' lessons done · ' + pct + '% of the course</p>' +
       (next
-        ? '<a class="next-lesson-card" href="#/session/' + next.id + '/dialogue">' +
-            '<small>Up next \u2192 ' + shortName(next) + '</small>' +
-            '<strong>' + ui.esc(next.focus) + '</strong>' +
-          '</a>'
-        : '<p><strong>That was the last lesson of the course.</strong></p>') +
+        ? '<div class="panel next-lesson-card">' +
+            '<p class="section-eyebrow" style="margin:0 0 4px;color:#C8500D">UP NEXT — WEEK ' + next.week + '</p>' +
+            '<h3 style="margin:0 0 6px">' + ui.esc(next.focus) + '</h3>' +
+            '<p class="meta" style="margin:0">' + ui.esc(next.day || '') + ' · Week ' + next.week + ' · Session ' + next.number + ' of ' + (next.total_sessions || 3) + '</p>' +
+            '<div class="btn-row" style="margin-top:12px"><a class="btn btn-lg" href="#/session/' + next.id + '">Go to the next lesson' + ui.icon('arrow-right') + '</a></div>' +
+          '</div>'
+        : '<p class="meta">That was the final lesson of the 12 weeks — well done! 🎉</p>') +
       '<div class="btn-row" style="margin-top:16px">' +
-        (next ? '<a class="btn btn-lg" href="#/session/' + next.id + '/dialogue">Start next lesson' + ui.icon('arrow-right') + '</a>' : '') +
-        '<a class="btn btn-secondary" href="#/session/' + session.id + '/roleplay">' + ui.icon('arrow-left') + 'Back to roleplay</a>' +
-        '<a class="btn btn-secondary" href="#/session/' + session.id + '/dialogue">Replay this lesson</a>' +
-        '<a class="btn btn-quiet" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
+        (prev ? '<a class="btn btn-quiet" href="#/session/' + prev.id + '">← Replay previous lesson</a>' : '') +
+        '<a class="btn btn-secondary" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
+        '<a class="btn btn-secondary" href="#/today">Back to Today</a>' +
         '<button class="btn btn-quiet" type="button" data-undo="' + ui.esc(session.id) + '">Mark as not done</button>' +
       '</div>' +
-      '</section>';
-  }
-
-  function go(hash) {
-    if (location.hash === hash) rerender();
-    else location.hash = hash;
+      '</section></div>';
   }
 
   function rerender() {
     var main = document.getElementById('main');
     if (core.session(run.id)) {
-      main.innerHTML = render(['session', run.id, core.STEP_SLUGS[run.step], run.step === 1 ? String(run.index + 1) : '']);
+      main.innerHTML = render(['session', run.id]);
       mount(main);
     }
-  }
-
-  /** Word changes update the address quietly so a refresh lands on the same word. */
-  function setWord(i) {
-    run.index = Math.max(0, Math.min(run.words.length - 1, i));
-    core.setPosition(run.id, run.step, run.index);
-    try {
-      if (window.history && history.replaceState) history.replaceState(null, '', stepHref(1));
-    } catch (e) { /* sandboxed */ }
-    rerender();
-  }
-
-  function goBack(session) {
-    if (run.step === 0) {
-      var prev = core.adjacentSession(session.id, -1);
-      go(prev ? '#/session/' + prev.id + '/roleplay' : '#/course/' + session.week);
-      return;
-    }
-    go(stepHref(run.step - 1));
-  }
-
-  function goNext() {
-    go('#/session/' + run.id + '/' + core.STEP_SLUGS[Math.min(3, run.step + 1)]);
-  }
-
-  var keysBound = false;
-  function bindKeys() {
-    if (keysBound || typeof document === 'undefined' || !document.addEventListener) return;
-    keysBound = true;
-    document.addEventListener('keydown', function (event) {
-      if (!/^#\/session\//.test(location.hash || '')) return;
-      if (event.altKey || event.ctrlKey || event.metaKey) return;
-      var tag = (event.target && event.target.tagName) || '';
-      if (/INPUT|TEXTAREA|SELECT/.test(tag) || (event.target && event.target.isContentEditable)) return;
-      var session = core.session(run.id);
-      if (!session || run.step === 3) return;
-      if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        if (run.step === 1 && run.index < run.words.length - 1) setWord(run.index + 1);
-        else goNext();
-      } else if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        if (run.step === 1 && run.index > 0) setWord(run.index - 1);
-        else goBack(session);
-      }
-    });
   }
 
   function mount(root, parts) {
     // The rendered container is replaced on every step change, so binding to it
     // (rather than to #main) keeps exactly one listener alive at a time.
+    bindSessionKeys();
     var sessionId = parts && parts[1];
     if (sessionId && run.id !== sessionId && core.session(sessionId)) reset(core.session(sessionId));
     var scope = root.querySelector('.view-narrow') || root;
     if (!core.session(run.id)) return;
-    bindKeys();
-
-    var jump = scope.querySelector && scope.querySelector('[data-jump]');
-    if (jump && jump.addEventListener) {
-      jump.addEventListener('change', function () {
-        if (jump.value) location.hash = '#/session/' + jump.value + '/dialogue';
-      });
-    }
 
     scope.addEventListener('click', function (event) {
       var session = core.session(run.id);
       if (ui.speakFrom(event)) return;
-      var target = event.target.closest('[data-next],[data-back],[data-role],[data-reveal],[data-word-next],[data-word-prev],[data-word-go],[data-undo]');
+      var target = event.target.closest('[data-next],[data-back],[data-role],[data-reveal],[data-word-next],[data-word-prev],[data-undo]');
       if (!target || !session) return;
 
+      if (ui.speakFrom(event)) return;
       if (target.hasAttribute('data-role')) {
         run.role = target.getAttribute('data-role');
         run.revealed = {};
@@ -397,16 +332,32 @@
         rerender();
         return;
       }
-      if (target.hasAttribute('data-word-next')) { setWord(run.index + 1); return; }
-      if (target.hasAttribute('data-word-prev')) { setWord(run.index - 1); return; }
-      if (target.hasAttribute('data-word-go')) { setWord(Number(target.getAttribute('data-word-go')) || 0); return; }
+      if (target.hasAttribute('data-word-next')) { run.index = Math.min(run.index + 1, run.words.length - 1); rerender(); return; }
+      if (target.hasAttribute('data-word-prev')) { run.index = Math.max(run.index - 1, 0); rerender(); return; }
       if (target.hasAttribute('data-undo')) {
         core.unmarkSession(target.getAttribute('data-undo'));
-        go('#/session/' + session.id + '/dialogue');
+        run.step = 0;
+        rerender();
         return;
       }
-      if (target.hasAttribute('data-back')) { goBack(session); return; }
-      if (target.hasAttribute('data-next')) { goNext(); }
+      if (target.hasAttribute('data-back')) {
+        if (run.step === 0) { location.hash = '#/course/' + session.week; return; }
+        run.step -= 1;
+        rerender();
+        return;
+      }
+      if (target.hasAttribute('data-next')) {
+        if (run.step === 2) {
+          core.markSession(session.id);
+          run.step = 3;
+          rerender();
+          window.scrollTo(0, 0);
+          return;
+        }
+        run.step += 1;
+        rerender();
+        window.scrollTo(0, 0);
+      }
     });
 
     // Auto-pronounce a new word when the learner arrives at the words step.

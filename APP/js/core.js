@@ -18,6 +18,8 @@ window.Salama = window.Salama || {};
       sessions: {},       // sessionId -> timestamp completed
       quizzes: [],        // [{ date, theme, score, total }]
       streak: { last: null, days: 0, visits: 0 },
+      lastSession: null,   // session id the learner/teacher last opened ("you are here")
+      lastSessionAt: 0,    // epoch ms of that visit, for cross-device merge
       prefs: {
         textsize: 0,
         autoplay: true,
@@ -70,6 +72,19 @@ window.Salama = window.Salama || {};
   state.quizzes = state.quizzes || [];
   state.streak = state.streak || { last: null, days: 0, visits: 0 };
   state.prefs = Object.assign(blank().prefs, state.prefs || {});
+  state.lastSession = state.lastSession || null;
+  state.lastSessionAt = state.lastSessionAt || 0;
+
+  /* Remember where the teacher/learner left off, and keep the clock ticking so
+     the newest device wins when progress is merged back from the cloud. */
+  var progressSyncTimer = null;
+  function scheduleProgressSync() {
+    if (progressSyncTimer) clearTimeout(progressSyncTimer);
+    progressSyncTimer = setTimeout(function () {
+      progressSyncTimer = null;
+      if (S.speech && S.speech.syncCourseProgress) S.speech.syncCourseProgress();
+    }, 5000);
+  }
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); }
@@ -473,11 +488,13 @@ window.Salama = window.Salama || {};
   function markSession(id) {
     state.sessions[id] = Date.now();
     save();
+    scheduleProgressSync();
   }
 
   function unmarkSession(id) {
     delete state.sessions[id];
     save();
+    scheduleProgressSync();
   }
 
   function nextSession() {
@@ -485,50 +502,92 @@ window.Salama = window.Salama || {};
     return pending.length ? pending[0] : C.sessions[C.sessions.length - 1];
   }
 
-
-  /* ---------------- lesson position ("you are here") ---------------- */
-  var POS_KEY = 'salama_lastpos_v1';
-  var STEP_SLUGS = ['dialogue', 'words', 'roleplay', 'done'];
-  var STEP_NAMES = ['Dialogue', 'New words', 'Roleplay', 'Finished'];
-
-  function lastPosition() {
-    var p = readJSON(POS_KEY);
-    if (p && p.id && sessionById[p.id]) {
-      p.step = Math.max(0, Math.min(3, Number(p.step) || 0));
-      return p;
+  /* --- Where am I? Position helpers (v4.4.1) -----------------------------
+     The whole point: no more landing on Week 1 Session 1 after a break.
+     lastSession is the marker; resumeSession() is "continue from here".   */
+  function sessionIndexOf(id) {
+    for (var i = 0; i < C.sessions.length; i++) {
+      if (C.sessions[i].id === id) return i;
     }
-    return null;
-  }
-
-  function setPosition(id, step, index) {
-    if (!sessionById[id]) return;
-    try {
-      localStorage.setItem(POS_KEY, JSON.stringify({ id: id, step: step || 0, index: index || 0, t: Date.now() }));
-    } catch (e) { /* private mode */ }
-  }
-
-  function sessionIndex(id) {
-    for (var i = 0; i < C.sessions.length; i++) if (C.sessions[i].id === id) return i;
     return -1;
   }
 
-  function adjacentSession(id, delta) {
-    var i = sessionIndex(id);
-    if (i < 0) return null;
-    return C.sessions[i + delta] || null;
+  function sessionAt(n) { return C.sessions[n] || null; }
+
+  function prevSession(id) {
+    var i = sessionIndexOf(id);
+    return i > 0 ? C.sessions[i - 1] : null;
   }
 
-  function positionHash(pos) {
-    if (!pos) return '#/today';
-    var h = '#/session/' + pos.id + '/' + STEP_SLUGS[pos.step || 0];
-    if ((pos.step || 0) === 1 && pos.index) h += '/' + (pos.index + 1);
-    return h;
+  function nextSessionAfter(id) {
+    var i = sessionIndexOf(id);
+    return (i >= 0 && i < C.sessions.length - 1) ? C.sessions[i + 1] : null;
   }
 
-  /** The lesson the teacher is on: last opened, else the first not yet finished. */
-  function currentSession() {
-    var p = lastPosition();
-    return p ? sessionById[p.id] : nextSession();
+  function noteVisit(id) {
+    if (!id || !sessionById[id]) return;
+    if (state.lastSession !== id || Date.now() - (state.lastSessionAt || 0) > 10 * 60 * 1000) {
+      state.lastSession = id;
+      state.lastSessionAt = Date.now();
+      save();
+      scheduleProgressSync();
+    }
+  }
+
+  /* Continue point: the last opened session if it is still fresh, otherwise
+     the next undone session after it, otherwise the first undone anywhere. */
+  function resumeSession() {
+    var start = state.lastSession ? sessionIndexOf(state.lastSession) : -1;
+    if (start < 0) return nextSession();
+    if (!isSessionDone(C.sessions[start].id)) return C.sessions[start];
+    for (var i = start + 1; i < C.sessions.length; i++) {
+      if (!isSessionDone(C.sessions[i].id)) return C.sessions[i];
+    }
+    for (var j = 0; j < start; j++) {
+      if (!isSessionDone(C.sessions[j].id)) return C.sessions[j];
+    }
+    return C.sessions[C.sessions.length - 1];
+  }
+
+  /* "Week 2 · Monday · Session 1 of 3 — #4 of 36" for any session. */
+  function whereLabel(session) {
+    if (!session) return '';
+    var idx = sessionIndexOf(session.id);
+    return 'Week ' + session.week + ' \\u00b7 ' + (session.day || '') + ' \\u00b7 Session ' +
+      session.number + ' of ' + (session.total_sessions || 3) +
+      (idx >= 0 ? ' \\u2014 #' + (idx + 1) + ' of ' + C.sessions.length : '');
+  }
+
+  /* Cloud merge: union of completions, newest "you are here" wins. */
+  function progressPayload() {
+    return {
+      updatedAt: new Date().toISOString(),
+      lastSessionAt: state.lastSessionAt || 0,
+      lastSession: state.lastSession || null,
+      sessions: state.sessions
+    };
+  }
+
+  function applyRemoteProgress(json) {
+    if (!json || typeof json !== 'object') return false;
+    var changed = false;
+    var remote = json.sessions || {};
+    Object.keys(remote).forEach(function (id) {
+      if (!sessionById[id]) return;
+      var ts = Number(remote[id]) || 0;
+      if (!state.sessions[id] || (Number(state.sessions[id]) || 0) < ts) {
+        state.sessions[id] = ts || 1;
+        changed = true;
+      }
+    });
+    if (json.lastSession && sessionById[json.lastSession] &&
+        (Number(json.lastSessionAt) || 0) > (state.lastSessionAt || 0)) {
+      state.lastSession = json.lastSession;
+      state.lastSessionAt = Number(json.lastSessionAt) || state.lastSessionAt || 0;
+      changed = true;
+    }
+    if (changed) save();
+    return changed;
   }
 
   function sessionDoneCount() {
@@ -675,14 +734,15 @@ window.Salama = window.Salama || {};
     markSession: markSession,
     unmarkSession: unmarkSession,
     nextSession: nextSession,
-    currentSession: currentSession,
-    lastPosition: lastPosition,
-    setPosition: setPosition,
-    sessionIndex: sessionIndex,
-    adjacentSession: adjacentSession,
-    positionHash: positionHash,
-    STEP_SLUGS: STEP_SLUGS,
-    STEP_NAMES: STEP_NAMES,
+    sessionIndexOf: sessionIndexOf,
+    sessionAt: sessionAt,
+    prevSession: prevSession,
+    nextSessionAfter: nextSessionAfter,
+    noteVisit: noteVisit,
+    resumeSession: resumeSession,
+    whereLabel: whereLabel,
+    progressPayload: progressPayload,
+    applyRemoteProgress: applyRemoteProgress,
     sessionDoneCount: sessionDoneCount,
     weekDoneCount: weekDoneCount,
     completedWeeks: completedWeeks,

@@ -60,9 +60,6 @@
   function heroBanner(session) {
     var lessonNum = session ? session.number : 1;
     var lessonId = session ? session.id : 'w1s1';
-    var pos = core.lastPosition();
-    var startHref = pos ? core.positionHash(pos) : '#/session/' + lessonId + '/dialogue';
-    var startLabel = pos ? 'Continue: Week ' + session.week + ' \u00b7 Session ' + lessonNum : 'Start Lesson ' + lessonNum;
 
     var tryRows = [
       { id: 'salama', mg: 'Salama.', speak: 'Salama!', pron: 'sah-LAH-mah', en: 'Hello!' },
@@ -72,6 +69,19 @@
     ].map(function (r) {
       var w = core.wordById(r.id) || r;
       var pronTxt = (w && w.pron) || r.pron;
+      // Record right here: resolve the same edit key the word/phrase cards use,
+      // so a take recorded from this strip is found everywhere else too.
+      var recKey = '';
+      if (core.entryForKey && core.entryForKey('word:' + r.id)) recKey = 'word:' + r.id;
+      else if (core.entryForKey && core.entryForKey('phrase:' + r.id)) recKey = 'phrase:' + r.id;
+      var hasMine = Boolean(recKey && S.speech && S.speech.hasCustomAudio && S.speech.hasCustomAudio(recKey));
+      var recBtn = recKey
+        ? '<button class="hero-hear-pill hero-rec-pill" type="button" data-mic-record="' + ui.esc(recKey) +
+            '" title="Record your own voice for ' + ui.esc(r.mg) + '">' +
+            (hasMine ? 'Re-record' : '\u25CF Record') + '</button>' +
+          (hasMine ? '<button class="hero-hear-pill hero-dl-pill" type="button" data-mic-download="' + ui.esc(recKey) +
+            '" title="Download your .wav recording">\u2B07 .wav</button>' : '')
+        : '';
       return '<div class="hero-try-row">' +
         '<div class="hero-try-row-left">' +
           '<div class="hero-try-row-top">' +
@@ -80,13 +90,10 @@
           '</div>' +
           '<div class="hero-try-en">\u2014 ' + ui.esc(r.en) + '</div>' +
         '</div>' +
-        '<div class="hero-try-actions">' +
-          '<button class="hero-hear-pill" type="button" data-speak="' + ui.esc(r.speak) + '" data-word-id="' + ui.esc(r.id) + '">' +
-            '&#9654; Hear it' +
-          '</button>' +
-          '<button class="hero-rec-pill" type="button" data-mic-record="word:' + ui.esc(r.id) + '" title="Record your own voice for ' + ui.esc(r.mg) + '">' +
-            '\u25CF<span>' + (S.speech && S.speech.hasCustomAudio && S.speech.hasCustomAudio('word:' + r.id) ? 'Re-record' : 'Record') + '</span>' +
-          '</button>' +
+        '<div class="hero-try-row-tools">' +
+          '<button class="hero-hear-pill' + (hasMine ? ' hero-hear-mine' : '') + '" type="button" data-speak="' + ui.esc(r.speak) + '" data-word-id="' + ui.esc(r.id) + '">' +
+            (hasMine ? '\u25B6 Hear My Voice' : '&#9654; Hear it') +
+          '</button>' + recBtn +
         '</div>' +
       '</div>';
     }).join('');
@@ -106,7 +113,7 @@
           '<p class="miteny-hero-sub">Speak like a local in Madagascar.</p>' +
           '<p class="miteny-hero-lead">Real Malagasy words, plain phonetic guides, and warm phrases you can use on day one \u2014 all right here.</p>' +
           '<div class="miteny-hero-ctas">' +
-            '<a class="btn btn-orange-cta btn-lg" href="' + startHref + '">' + startLabel + ' ' + ui.icon('arrow-right') + '</a>' +
+            '<a class="btn btn-orange-cta btn-lg" href="#/session/' + lessonId + '">Start Lesson ' + lessonNum + ' ' + ui.icon('arrow-right') + '</a>' +
             '<button class="btn btn-hero-ghost btn-lg" type="button" data-speak-greetings="true">&#9655; Hear Greetings</button>' +
           '</div>' +
         '</div>' +
@@ -124,9 +131,9 @@
           '</div>' +
 
           '<div class="hero-try-card">' +
-            '<div class="hero-try-eyebrow"><span class="hero-try-dot"></span> WEEK ' + (session ? session.week : 1) + ' \u2022 LESSON ' + lessonNum + ' \u2022 TRY IT NOW</div>' +
+            '<div class="hero-try-eyebrow"><span class="hero-try-dot"></span> LESSON ' + lessonNum + ' \u2022 TRY IT NOW</div>' +
             '<div class="hero-try-list">' + tryRows + '</div>' +
-            '<a class="hero-try-bottom-btn" href="' + startHref + '">Open Lesson ' + lessonNum + ' Dialogue &amp; Practice &rarr;</a>' +
+            '<a class="hero-try-bottom-btn" href="#/session/' + lessonId + '">Open Lesson ' + lessonNum + ' Dialogue &amp; Practice &rarr;</a>' +
           '</div>' +
         '</div>' +
       '</div>' +
@@ -147,28 +154,86 @@
     '</section>';
   }
 
-  function resumeCard() {
-    var pos = core.lastPosition();
-    var s = pos ? core.session(pos.id) : null;
-    if (!s) return '';
-    var next = core.adjacentSession(s.id, 1);
-    return '<div class="miteny-section" style="padding-bottom:0">' +
-      '<div class="resume-wrap">' +
-        '<a class="resume-card" href="' + core.positionHash(pos) + '">' +
-          '<span class="resume-dot">\u25B6</span>' +
-          '<span class="resume-text"><small>You are here \u2014 continue where you left off</small>' +
-          '<strong>Week ' + s.week + ' \u00b7 ' + ui.esc(s.day) + ' \u00b7 Session ' + s.number + ' \u00b7 ' + core.STEP_NAMES[pos.step] + '</strong>' +
-          '<span>' + ui.esc(s.focus) + '</span></span>' +
-          '<span class="resume-go">Continue \u2192</span>' +
-        '</a>' +
-        (next ? '<a class="resume-side" href="#/session/' + next.id + '/dialogue"><small>Next lesson</small>Week ' + next.week + ' \u00b7 ' + ui.esc(next.day.slice(0, 3)) + ' S' + next.number + ' \u2192</a>' : '') +
-        '<a class="resume-side" href="#/course/' + s.week + '"><small>Overview</small>Week ' + s.week + ' outline</a>' +
+  /* v4.4.1 — "Where am I / where to next" strip. The anchor for a live
+     Google Meet class: current position, prev/next lesson with titles,
+     a one-tick "done" button, and week-jump chips. */
+  function weekJump(currentWeek) {
+    return '<div class="week-jump-row"><span class="week-jump-label">Jump to week:</span>' +
+      core.data.curriculum.map(function (w) {
+        var doneN = core.weekDoneCount(w.week);
+        var full = doneN === w.sessions.length;
+        return '<a class="chip week-jump-chip' + (w.week === currentWeek ? ' chip-here' : '') + '"' +
+          ' href="#/course/' + w.week + '" title="' + ui.esc(w.title) + (full ? ' \u2014 complete' : ' \u2014 ' + doneN + ' of ' + w.sessions.length + ' done') + '">' +
+          w.week + (full ? ' \u2713' : '') + '</a>';
+      }).join('') + '</div>';
+  }
+
+  function lessonLink(session, verb) {
+    return '<a class="btn btn-lg where-continue" href="#/session/' + session.id + '">' +
+      verb + ' Week ' + session.week + ' \u00b7 Session ' + session.number + ': <em>' + ui.esc(session.focus) + '</em>' +
+      ui.icon('arrow-right') + '</a>';
+  }
+
+  function whereYouAre() {
+    var here = core.state.lastSession ? core.session(core.state.lastSession) : null;
+    var resume = core.resumeSession ? core.resumeSession() : core.nextSession();
+    var done = core.sessionDoneCount();
+    var total = core.data.sessions.length;
+    var pct = total ? Math.round((done / total) * 100) : 0;
+
+    if (!here) {
+      return '<section class="panel where-strip">' +
+        '<div class="where-main">' +
+          '<p class="section-eyebrow" style="margin:0 0 4px;color:#C8500D">\uD83D\uDCCD WHERE YOU ARE</p>' +
+          '<h2 style="margin:0 0 4px;font-size:1.3rem">Start of the course \u2014 Week 1 \u00b7 Session 1 of 3</h2>' +
+          '<p class="meta" style="margin:0 0 8px">You haven\u2019t opened a lesson yet on this device. Open one and its exact position is remembered here from now on \u2014 across days, refreshes, and even between your laptop and phone.</p>' +
+          '<div class="progress-meter" role="img" aria-label="' + done + ' of ' + total + ' sessions complete"><i style="width:' + pct + '%"></i></div>' +
+          '<p class="meta" style="margin:4px 0 0">' + done + ' of ' + total + ' sessions complete \u00b7 ' + pct + '%</p>' +
+        '</div>' +
+        '<div class="where-actions">' +
+          lessonLink(resume, 'Begin') +
+        '</div>' +
+        weekJump(1) +
+      '</section>';
+    }
+
+    var prev = core.prevSession ? core.prevSession(here.id) : null;
+    var next = core.nextSessionAfter ? core.nextSessionAfter(here.id) : null;
+    var idx = core.sessionIndexOf ? core.sessionIndexOf(here.id) : -1;
+    var hereDone = core.isSessionDone(here.id);
+
+    var prevBtn = prev
+      ? '<a class="btn btn-quiet btn-sm" href="#/session/' + prev.id + '">\u2190 Previous: W' + prev.week + 'S' + prev.number + ' \u00b7 ' + ui.esc(prev.day || '') + ' \u2014 ' + ui.esc(prev.focus) + '</a>'
+      : '<span class="btn btn-quiet btn-sm" aria-disabled="true">\u2190 First lesson</span>';
+    var nextBtn = next
+      ? '<a class="btn btn-secondary btn-sm" href="#/session/' + next.id + '">Next: W' + next.week + 'S' + next.number + ' \u00b7 ' + ui.esc(next.day || '') + ' \u2014 ' + ui.esc(next.focus) + ' \u2192</a>'
+      : '<span class="btn btn-quiet btn-sm" aria-disabled="true">Course end \u2014 well done \uD83C\uDF89</span>';
+
+    return '<section class="panel where-strip where-strip-here">' +
+      '<div class="where-main">' +
+        '<p class="section-eyebrow" style="margin:0 0 4px;color:#C8500D">\uD83D\uDCCD YOU ARE HERE \u2014 LAST OPENED LESSON</p>' +
+        '<h2 style="margin:0 0 2px;font-size:1.3rem">Week ' + here.week + ' \u00b7 ' + ui.esc(here.day || '') + ' \u00b7 Session ' + here.number + ' of ' + (here.total_sessions || 3) +
+          (idx >= 0 ? ' <span class="where-overall">#' + (idx + 1) + ' of ' + total + '</span>' : '') + '</h2>' +
+        '<p class="where-focus" lang="mg" style="margin:0 0 8px"><strong>' + ui.esc(here.focus) + '</strong></p>' +
+        '<div class="where-tick">' +
+          (hereDone
+            ? '<span class="where-done-badge">\u2713 Marked complete</span>'
+            : '<button class="chip where-done-btn" type="button" data-mark-here="' + ui.esc(here.id) + '" title="Tick this lesson and keep going">\u2713 Mark \u201C' + ui.esc(here.focus.split(':')[0]) + '\u201D complete</button>') +
+        '</div>' +
+        '<div class="progress-meter" role="img" aria-label="' + done + ' of ' + total + ' sessions complete"><i style="width:' + pct + '%"></i></div>' +
+        '<p class="meta" style="margin:4px 0 0">' + done + ' of ' + total + ' sessions complete \u00b7 Week ' + here.week + ' of 12 \u00b7 ' + pct + '% of the course</p>' +
       '</div>' +
-    '</div>';
+      '<div class="where-actions">' +
+        '<div class="where-prevnext">' + prevBtn + nextBtn + '</div>' +
+        lessonLink(hereDone && next ? next : here, hereDone && next ? 'Continue with' : 'Resume') +
+        '<a class="cta-link where-weeklink" href="#/course/' + here.week + '">\u25A3 Week ' + here.week + ' outline: all 3 lessons of this week</a>' +
+      '</div>' +
+      weekJump(here.week) +
+    '</section>';
   }
 
   function render() {
-    var session = core.currentSession();
+    var session = core.resumeSession ? core.resumeSession() : core.nextSession();
     var doneCount = core.sessionDoneCount();
     var total = core.data.sessions.length;
     var everything = doneCount === total;
@@ -180,7 +245,6 @@
 
     return '' +
       heroBanner(session) +
-      resumeCard() +
       '<div class="miteny-section" style="padding-bottom:0">' +
         '<section class="panel" style="border:2px solid #c93b2b;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">' +
           '<div>' +
@@ -194,6 +258,7 @@
           '</div>' +
         '</section>' +
       '</div>' +
+      '<div class="miteny-section" style="padding-top:0">' + whereYouAre() + '</div>' +
       '<div class="miteny-section">' +
         '<p class="section-eyebrow">01 \u2014 LEARN \u2022 ' + ui.esc(core.longDate().toUpperCase()) + '</p>' +
         '<div class="section-head-row">' +
@@ -227,7 +292,7 @@
               '<div class="preview">' + previewTurns(session) + '</div>' +
               steps(session, false) +
               '<div class="btn-row">' +
-                '<a class="btn btn-lg" href="' + (core.lastPosition() ? core.positionHash(core.lastPosition()) : '#/session/' + session.id + '/dialogue') + '">' + (core.lastPosition() ? 'Continue lesson' : 'Start session') +
+                '<a class="btn btn-lg" href="#/session/' + session.id + '">Start session' +
                   ui.icon('arrow-right') + '</a>' +
                 '<a class="btn btn-quiet" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
               '</div>' +
@@ -302,6 +367,13 @@
   function mount(root) {
     if (!root) return;
     root.addEventListener('click', function (event) {
+      var tickBtn = event.target.closest('[data-mark-here]');
+      if (tickBtn) {
+        core.markSession(tickBtn.getAttribute('data-mark-here'));
+        if (S.rerender) S.rerender();
+        if (ui.toast) ui.toast('\u2713 Session ticked off \u2014 your place moves to the next lesson.');
+        return;
+      }
       var greetBtn = event.target.closest('[data-speak-greetings]');
       if (greetBtn) {
         if (S.speech && S.speech.play) {
