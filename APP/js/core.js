@@ -485,6 +485,52 @@ window.Salama = window.Salama || {};
     return pending.length ? pending[0] : C.sessions[C.sessions.length - 1];
   }
 
+
+  /* ---------------- lesson position ("you are here") ---------------- */
+  var POS_KEY = 'salama_lastpos_v1';
+  var STEP_SLUGS = ['dialogue', 'words', 'roleplay', 'done'];
+  var STEP_NAMES = ['Dialogue', 'New words', 'Roleplay', 'Finished'];
+
+  function lastPosition() {
+    var p = readJSON(POS_KEY);
+    if (p && p.id && sessionById[p.id]) {
+      p.step = Math.max(0, Math.min(3, Number(p.step) || 0));
+      return p;
+    }
+    return null;
+  }
+
+  function setPosition(id, step, index) {
+    if (!sessionById[id]) return;
+    try {
+      localStorage.setItem(POS_KEY, JSON.stringify({ id: id, step: step || 0, index: index || 0, t: Date.now() }));
+    } catch (e) { /* private mode */ }
+  }
+
+  function sessionIndex(id) {
+    for (var i = 0; i < C.sessions.length; i++) if (C.sessions[i].id === id) return i;
+    return -1;
+  }
+
+  function adjacentSession(id, delta) {
+    var i = sessionIndex(id);
+    if (i < 0) return null;
+    return C.sessions[i + delta] || null;
+  }
+
+  function positionHash(pos) {
+    if (!pos) return '#/today';
+    var h = '#/session/' + pos.id + '/' + STEP_SLUGS[pos.step || 0];
+    if ((pos.step || 0) === 1 && pos.index) h += '/' + (pos.index + 1);
+    return h;
+  }
+
+  /** The lesson the teacher is on: last opened, else the first not yet finished. */
+  function currentSession() {
+    var p = lastPosition();
+    return p ? sessionById[p.id] : nextSession();
+  }
+
   function sessionDoneCount() {
     return C.sessions.filter(function (s) { return isSessionDone(s.id); }).length;
   }
@@ -629,6 +675,14 @@ window.Salama = window.Salama || {};
     markSession: markSession,
     unmarkSession: unmarkSession,
     nextSession: nextSession,
+    currentSession: currentSession,
+    lastPosition: lastPosition,
+    setPosition: setPosition,
+    sessionIndex: sessionIndex,
+    adjacentSession: adjacentSession,
+    positionHash: positionHash,
+    STEP_SLUGS: STEP_SLUGS,
+    STEP_NAMES: STEP_NAMES,
     sessionDoneCount: sessionDoneCount,
     weekDoneCount: weekDoneCount,
     completedWeeks: completedWeeks,
