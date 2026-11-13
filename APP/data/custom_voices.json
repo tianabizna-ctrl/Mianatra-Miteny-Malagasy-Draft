@@ -633,8 +633,11 @@
   "dlg:dlg_theme_15e_2:7": "media/audio_custom/dlg_polite_words-2.wav",
   "dlg:dlg_rp_w12s1:7": "media/audio_custom/dlg_polite_words-2.wav",
   "dlg:dlg_rp_w12s3:7": "media/audio_custom/dlg_polite_words-2.wav",
-  "word:mofo": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/swap-dlg_rp_w5s1-3.wav?t=1794572947816",
+  "word:mofo": "media/audio_custom/mofo.wav",
   "phrase:mofo": "media/audio_custom/mofo.wav",
-  "phrase:wv_bread": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/swap-dlg_rp_w5s1-3.wav?t=1794572947816",
-  "word:wv_bread": "media/audio_custom/wv_bread.wav"
+  "phrase:wv_bread": "media/audio_custom/wv_bread.wav",
+  "word:wv_bread": "media/audio_custom/wv_bread.wav",
+  "dlg:dlg_rp_w5s1:6": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w5s1-6.wav?t=1794573079902",
+  "phrase:mila_rano_amin'ny_tavoahangy_aho": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w5s1-6.wav?t=1794573079902",
+  "word:mila_rano_amin'ny_tavoahangy_aho": "media/audio_custom/mila_rano_amin'ny_tavoahangy_aho.wav"
 }
