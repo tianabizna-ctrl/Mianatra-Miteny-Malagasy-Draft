@@ -23,7 +23,7 @@ window.Salama = window.Salama || {};
         autoplay: true,
         rate: 0.82,
         syllables: false,
-        showInlineEdit: true,
+        showInlineEdit: false,
         recordedVoice: 'abidi',
         voiceURI: '',
         direction: 'miteny',
@@ -71,11 +71,6 @@ window.Salama = window.Salama || {};
   state.quizzes = state.quizzes || [];
   state.streak = state.streak || { last: null, days: 0, visits: 0 };
   state.prefs = Object.assign(blank().prefs, state.prefs || {});
-  if (!state.prefs._inlineEditDefaultV459) {
-    state.prefs.showInlineEdit = true;
-    state.prefs._inlineEditDefaultV459 = true;
-    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
-  }
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); }

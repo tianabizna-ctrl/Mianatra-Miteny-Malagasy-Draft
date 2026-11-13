@@ -38,6 +38,7 @@
         var done = core.isSessionDone(session.id);
         var pos = core.lastPosition();
         var here = pos && pos.id === session.id;
+        var canEdit = Boolean(core.state && core.state.prefs && core.state.prefs.showInlineEdit);
         var img = ui.photoForIndex ? ui.photoForIndex((session.week - 1) * 3 + session.number - 1) : 'img/highlands.jpg';
         return '<div class="session-row-wrap">' +
           '<a class="session-row session-row-photo' + (here ? ' is-here' : '') + '" href="' + (here ? core.positionHash(pos) : '#/session/' + session.id + '/dialogue') + '">' +
@@ -49,7 +50,7 @@
             '</span>' +
             '<span class="state">' + (here ? 'Continue' : (done ? ui.icon('check', 'icon-sm') + ' Done' : 'Start')) +
             ui.icon('chevron-right', 'icon-sm') + '</span></a>' +
-          '<a class="course-session-edit-link" href="#/edit/session/' + ui.esc(session.id) + '" title="Manual edits (Malagasy &amp; phonetics) for Week ' + session.week + ' \u00b7 Session ' + session.number + '">\u270E Manual edits (W' + session.week + '\u00b7S' + session.number + ')</a>' +
+          (canEdit ? '<a class="course-session-edit-link" href="#/edit/session/' + ui.esc(session.id) + '" title="Manual edits (Malagasy &amp; phonetics) for Week ' + session.week + ' \u00b7 Session ' + session.number + '">\u270E Manual edits (W' + session.week + '\u00b7S' + session.number + ')</a>' : '') +
         '</div>';
       }).join('') +
       '</section>';
