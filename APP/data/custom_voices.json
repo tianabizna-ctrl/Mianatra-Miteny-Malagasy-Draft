@@ -623,6 +623,10 @@
   "phrase:mofo_gasy": "media/audio_custom/mofo_gasy.wav",
   "word:henomby": "media/audio_custom/henomby.wav",
   "phrase:henomby": "media/audio_custom/henomby.wav",
-  "word:akoho": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/akoho.wav?t=1794570771277",
-  "phrase:akoho": "media/audio_custom/akoho.wav"
+  "word:akoho": "media/audio_custom/akoho.wav",
+  "phrase:akoho": "media/audio_custom/akoho.wav",
+  "word:trondro": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/trondro.wav?t=1794570779226",
+  "phrase:trondro": "media/audio_custom/trondro.wav",
+  "phrase:wv_fish": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/trondro.wav?t=1794570779226",
+  "word:wv_fish": "media/audio_custom/wv_fish.wav"
 }
