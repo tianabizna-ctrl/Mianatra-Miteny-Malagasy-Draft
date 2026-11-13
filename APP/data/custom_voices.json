@@ -629,6 +629,8 @@
   "phrase:trondro": "media/audio_custom/trondro.wav",
   "phrase:wv_fish": "media/audio_custom/wv_fish.wav",
   "word:wv_fish": "media/audio_custom/wv_fish.wav",
-  "word:voanio": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/voanio.wav?t=1794570924403",
-  "phrase:voanio": "media/audio_custom/voanio.wav"
+  "word:voanio": "media/audio_custom/voanio.wav",
+  "phrase:voanio": "media/audio_custom/voanio.wav",
+  "word:fatana": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/fatana.wav?t=1794570982144",
+  "phrase:fatana": "media/audio_custom/fatana.wav"
 }
