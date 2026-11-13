@@ -267,7 +267,7 @@
 
     return '<nav class="lesson-compass" aria-label="Where you are in the course">' +
       '<div class="lc-crumbs">' +
-        '<a href="#/course">Syllabus &amp; Course</a><span class="lc-sep">\u203a</span>' +
+        '<a href="#/course">Course</a><span class="lc-sep">\u203a</span>' +
         '<a href="#/course/' + session.week + '">Week ' + session.week + ': ' + ui.esc(session.week_title || '') + '</a><span class="lc-sep">\u203a</span>' +
         '<strong>' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + '</strong><span class="lc-sep">\u203a</span>' +
         '<span class="lc-step">' + core.STEP_NAMES[step] + '</span>' +
@@ -297,12 +297,11 @@
         (prev
           ? '<a class="lc-nav lc-prev" href="#/session/' + prev.id + '/dialogue"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>' + shortName(prev) + '</span></a>'
           : '<span class="lc-nav lc-prev" aria-disabled="true"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>This is the first lesson</span></span>') +
-        '<label class="lc-jump"><small>Syllabus Curriculum Menu (36 Lessons)</small>' + jumpSelect(session) + '</label>' +
+        '<label class="lc-jump"><small>Jump to any lesson</small>' + jumpSelect(session) + '</label>' +
         (next
           ? '<a class="lc-nav lc-next" href="#/session/' + next.id + '/dialogue"><span><small>Next lesson</small>' + shortName(next) + '</span><span class="lc-arrow">\u2192</span></a>'
           : '<span class="lc-nav lc-next" aria-disabled="true"><span><small>Next lesson</small>Last lesson of the course</span><span class="lc-arrow">\u2192</span></span>') +
       '</div>' +
-      syllabusDrawer(session) +
     '</nav>';
   }
 
