@@ -56,7 +56,81 @@
     if (typeof view.mount === 'function') view.mount(main, parts);
     markNav(view);
     resumeChip(parts);
+    closeHeaderSyllabus();
     window.scrollTo(0, 0);
+  }
+
+  function renderHeaderSyllabusHtml() {
+    var pos = core.lastPosition ? core.lastPosition() : null;
+    var activeId = pos ? pos.id : '';
+    return '<div class="shell header-syllabus-inner">' +
+      '<div class="header-syllabus-head">' +
+        '<div>' +
+          '<p class="section-eyebrow" style="margin:0 0 2px">SYLLABUS &amp; CURRICULUM TITLE MENU</p>' +
+          '<strong>All 12 Weeks \u00b7 36 Sessions (Lessons 1\u201336)</strong>' +
+        '</div>' +
+        '<div style="display:flex;gap:8px;align-items:center">' +
+          '<a class="btn btn-secondary btn-sm" href="#/course">Open Full Course Page \u2192</a>' +
+          '<button class="btn btn-quiet btn-sm" type="button" id="closeSyllabusDrawerBtn">Close \u2715</button>' +
+        '</div>' +
+      '</div>' +
+      '<div class="lc-syllabus-grid">' +
+        core.data.curriculum.map(function (week) {
+          var list = core.data.sessions.filter(function (s) { return s.week === week.week; });
+          return '<div class="lc-syllabus-week">' +
+            '<a class="lc-syllabus-week-head" href="#/course/' + week.week + '" style="text-decoration:none;color:inherit">' +
+              '<span class="lc-sw-badge">Month ' + week.month + ' \u00b7 Week ' + week.week + '</span>' +
+              '<strong>' + ui.esc(week.title) + '</strong>' +
+            '</a>' +
+            '<div class="lc-syllabus-sessions">' +
+              list.map(function (s) {
+                var lno = (s.week - 1) * 3 + s.number;
+                var cur = s.id === activeId;
+                var done = core.isSessionDone(s.id);
+                return '<div class="lc-syllabus-item' + (cur ? ' is-cur' : '') + '">' +
+                  '<a class="lc-si-main" href="#/session/' + s.id + '/dialogue">' +
+                    '<span class="lc-si-num">L' + lno + (done ? ' \u2713' : '') + '</span>' +
+                    '<span class="lc-si-text"><strong>' + ui.esc(s.day.slice(0, 3)) + ' S' + s.number + ':</strong> ' + ui.esc(s.focus) + '</span>' +
+                  '</a>' +
+                  '<span class="lc-si-steps">' +
+                    '<a href="#/session/' + s.id + '/dialogue" title="Dialogue">Dlg</a>' +
+                    '<a href="#/session/' + s.id + '/words" title="New Words">Words</a>' +
+                    '<a href="#/session/' + s.id + '/roleplay" title="Roleplay">RP</a>' +
+                  '</span>' +
+                '</div>';
+              }).join('') +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+    '</div>';
+  }
+
+  function closeHeaderSyllabus() {
+    try {
+      var drawer = document.getElementById('headerSyllabusDrawer');
+      var btn = document.getElementById('syllabusMenuBtn');
+      if (drawer) drawer.hidden = true;
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    } catch (e) {}
+  }
+
+  function toggleHeaderSyllabus() {
+    try {
+      var drawer = document.getElementById('headerSyllabusDrawer');
+      var btn = document.getElementById('syllabusMenuBtn');
+      if (!drawer) return;
+      var willOpen = Boolean(drawer.hidden);
+      if (willOpen) {
+        drawer.innerHTML = renderHeaderSyllabusHtml();
+        drawer.hidden = false;
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+        var closeBtn = document.getElementById('closeSyllabusDrawerBtn');
+        if (closeBtn) closeBtn.addEventListener('click', closeHeaderSyllabus);
+      } else {
+        closeHeaderSyllabus();
+      }
+    } catch (e) {}
   }
 
   /* ---------------- floating "you are here" chip ---------------- */
@@ -124,6 +198,11 @@
   }
 
   function bindChrome() {
+    var syllabusBtn = document.getElementById('syllabusMenuBtn');
+    if (syllabusBtn) {
+      syllabusBtn.addEventListener('click', toggleHeaderSyllabus);
+    }
+
     var textBtn = document.getElementById('textSizeBtn');
     if (textBtn) {
       textBtn.addEventListener('click', function () {
