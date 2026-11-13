@@ -641,6 +641,8 @@
   "phrase:mila_rano_amin'ny_tavoahangy_aho": "media/audio_custom/mila_rano_amin'ny_tavoahangy_aho.wav",
   "word:mila_rano_amin'ny_tavoahangy_aho": "media/audio_custom/mila_rano_amin'ny_tavoahangy_aho.wav",
   "dlg:dlg_rp_w5s1:5": "media/audio_custom/dlg_rp_w5s1-5.wav",
-  "word:mila": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/mila.wav?t=1794573355322",
-  "phrase:mila": "media/audio_custom/mila.wav"
+  "word:mila": "media/audio_custom/mila.wav",
+  "phrase:mila": "media/audio_custom/mila.wav",
+  "word:te": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/te.wav?t=1794573370621",
+  "phrase:te": "media/audio_custom/te.wav"
 }
