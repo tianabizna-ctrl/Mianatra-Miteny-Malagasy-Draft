@@ -453,10 +453,10 @@
   "phrase:zanaka": "media/audio_custom/zanaka.wav",
   "dlg:dlg_basic_needs:0": "media/audio_custom/dlg_basic_needs-0.wav",
   "dlg:dlg_basic_needs:1": "media/audio_custom/dlg_basic_needs-1.wav",
-  "dlg:dlg_eating_ordering:0": "media/audio_custom/dlg_eating_ordering-0.wav",
-  "dlg:dlg_eating_ordering:1": "media/audio_custom/dlg_eating_ordering-1.wav",
-  "dlg:dlg_eating_ordering:2": "media/audio_custom/dlg_eating_ordering-2.wav",
-  "dlg:dlg_eating_ordering:3": "media/audio_custom/dlg_eating_ordering-3.wav",
+  "dlg:dlg_eating_ordering:0": "media/audio_custom/dlg_rp_w5s2-0.wav",
+  "dlg:dlg_eating_ordering:1": "media/audio_custom/dlg_rp_w5s2-1.wav",
+  "dlg:dlg_eating_ordering:2": "media/audio_custom/dlg_rp_w5s2-5.wav",
+  "dlg:dlg_eating_ordering:3": "media/audio_custom/dlg_rp_w5s2-6.wav",
   "dlg:dlg_eating_ordering:4": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794572525342",
   "dlg:dlg_intro_2_20:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794572525342",
   "dlg:dlg_rp_w10s1:0": "media/audio_custom/dlg_rp_w4s1-0.wav",
@@ -632,5 +632,9 @@
   "dlg:dlg_theme_15e_1:9": "media/audio_custom/dlg_polite_words-2.wav",
   "dlg:dlg_theme_15e_2:7": "media/audio_custom/dlg_polite_words-2.wav",
   "dlg:dlg_rp_w12s1:7": "media/audio_custom/dlg_polite_words-2.wav",
-  "dlg:dlg_rp_w12s3:7": "media/audio_custom/dlg_polite_words-2.wav"
+  "dlg:dlg_rp_w12s3:7": "media/audio_custom/dlg_polite_words-2.wav",
+  "word:mofo": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/swap-dlg_rp_w5s1-3.wav?t=1794572947816",
+  "phrase:mofo": "media/audio_custom/mofo.wav",
+  "phrase:wv_bread": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/swap-dlg_rp_w5s1-3.wav?t=1794572947816",
+  "word:wv_bread": "media/audio_custom/wv_bread.wav"
 }
