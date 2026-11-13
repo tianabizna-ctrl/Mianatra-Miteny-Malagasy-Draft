@@ -541,6 +541,8 @@
   "phrase:tsia": "media/audio_custom/tsia.wav",
   "phrase:wv_no": "media/audio_custom/wv_no.wav",
   "word:wv_no": "media/audio_custom/wv_no.wav",
-  "word:ve": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/ve.wav?t=1794569476620",
-  "phrase:ve": "media/audio_custom/ve.wav"
+  "word:ve": "media/audio_custom/ve.wav",
+  "phrase:ve": "media/audio_custom/ve.wav",
+  "word:hena": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/hena.wav?t=1794569488331",
+  "phrase:hena": "media/audio_custom/hena.wav"
 }
