@@ -3,7 +3,7 @@ window.CONTENT = {
     "app": "Salama! — Learn Malagasy Gently",
     "project": "Vahiny Mianatra Malagasy",
     "audience": "Elderly American absolute beginner",
-    "version": "4.5.3",
+    "version": "4.5.4",
     "dialect_note": "Official Malagasy (Tenim-pirenena ofisialy).",
     "counts": {
       "vocabulary": 2198,
@@ -47729,7 +47729,7 @@ window.CONTENT = {
         },
         {
           "day": "Friday",
-          "focus": "Market dialogue: Ohatrinona ity? Lafo be! Mora ve?",
+          "focus": "Market dialogue: Ohatrinona ity? Lafo be! Mba andatsao ny vidiny azafady",
           "audio": [],
           "themes": [
             "numbers",
@@ -48709,7 +48709,7 @@ window.CONTENT = {
     },
     {
       "day": "Friday",
-      "focus": "Market dialogue: Ohatrinona ity? Lafo be! Mora ve?",
+      "focus": "Market dialogue: Ohatrinona ity? Lafo be! Mba andatsao ny vidiny azafady",
       "audio": [],
       "themes": [
         "numbers",

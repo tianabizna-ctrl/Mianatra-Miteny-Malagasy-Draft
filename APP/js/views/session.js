@@ -206,16 +206,53 @@
   }
 
   function jumpSelect(session) {
-    return '<select class="lc-select" data-jump="true" aria-label="Jump to any lesson">' +
+    return '<select class="lc-select" data-jump="true" aria-label="Syllabus curriculum menu — jump to any lesson">' +
       core.data.curriculum.map(function (week) {
         var list = core.data.sessions.filter(function (s) { return s.week === week.week; });
-        return '<optgroup label="Week ' + week.week + ' \u2014 ' + ui.esc(week.title) + '">' +
+        return '<optgroup label="Month ' + week.month + ' \u00b7 Week ' + week.week + ' \u2014 ' + ui.esc(week.title) + '">' +
           list.map(function (s) {
+            var lno = (s.week - 1) * 3 + s.number;
             return '<option value="' + s.id + '"' + (s.id === session.id ? ' selected' : '') + '>' +
-              (core.isSessionDone(s.id) ? '\u2713 ' : '') + 'W' + s.week + ' \u00b7 ' + s.day.slice(0, 3) + ' S' + s.number + ' \u2014 ' + ui.esc(s.focus) +
+              (core.isSessionDone(s.id) ? '\u2713 ' : '') + 'Lesson ' + lno + ' (W' + s.week + ' \u00b7 ' + s.day.slice(0, 3) + ' S' + s.number + ') \u2014 ' + ui.esc(s.focus) +
               '</option>';
           }).join('') + '</optgroup>';
       }).join('') + '</select>';
+  }
+
+  function syllabusDrawer(session) {
+    return '<details class="lc-syllabus-drawer">' +
+      '<summary class="lc-syllabus-toggle">\u2630 Full Syllabus &amp; Curriculum Title Menu (All 12 Weeks \u00b7 36 Sessions)</summary>' +
+      '<div class="lc-syllabus-grid">' +
+        core.data.curriculum.map(function (week) {
+          var list = core.data.sessions.filter(function (s) { return s.week === week.week; });
+          var isCurWeek = week.week === session.week;
+          return '<div class="lc-syllabus-week' + (isCurWeek ? ' is-cur-week' : '') + '">' +
+            '<div class="lc-syllabus-week-head">' +
+              '<span class="lc-sw-badge">Month ' + week.month + ' \u00b7 Week ' + week.week + '</span>' +
+              '<strong>' + ui.esc(week.title) + '</strong>' +
+            '</div>' +
+            '<div class="lc-syllabus-sessions">' +
+              list.map(function (s) {
+                var lno = (s.week - 1) * 3 + s.number;
+                var cur = s.id === session.id;
+                var done = core.isSessionDone(s.id);
+                return '<div class="lc-syllabus-item' + (cur ? ' is-cur' : '') + '">' +
+                  '<a class="lc-si-main" href="#/session/' + s.id + '/dialogue">' +
+                    '<span class="lc-si-num">L' + lno + (done ? ' \u2713' : '') + '</span>' +
+                    '<span class="lc-si-text"><strong>' + ui.esc(s.day.slice(0, 3)) + ' S' + s.number + ':</strong> ' + ui.esc(s.focus) + '</span>' +
+                  '</a>' +
+                  '<span class="lc-si-steps">' +
+                    '<a href="#/session/' + s.id + '/dialogue" title="Dialogue">Dlg</a>' +
+                    '<a href="#/session/' + s.id + '/words" title="New Words">Words</a>' +
+                    '<a href="#/session/' + s.id + '/roleplay" title="Roleplay">RP</a>' +
+                  '</span>' +
+                '</div>';
+              }).join('') +
+            '</div>' +
+          '</div>';
+        }).join('') +
+      '</div>' +
+    '</details>';
   }
 
   function compass(session, step) {
@@ -228,7 +265,7 @@
 
     return '<nav class="lesson-compass" aria-label="Where you are in the course">' +
       '<div class="lc-crumbs">' +
-        '<a href="#/course">Course</a><span class="lc-sep">\u203a</span>' +
+        '<a href="#/course">Syllabus &amp; Course</a><span class="lc-sep">\u203a</span>' +
         '<a href="#/course/' + session.week + '">Week ' + session.week + ': ' + ui.esc(session.week_title || '') + '</a><span class="lc-sep">\u203a</span>' +
         '<strong>' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + '</strong><span class="lc-sep">\u203a</span>' +
         '<span class="lc-step">' + core.STEP_NAMES[step] + '</span>' +
@@ -250,11 +287,12 @@
         (prev
           ? '<a class="lc-nav lc-prev" href="#/session/' + prev.id + '/dialogue"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>' + shortName(prev) + '</span></a>'
           : '<span class="lc-nav lc-prev" aria-disabled="true"><span class="lc-arrow">\u2190</span><span><small>Previous lesson</small>This is the first lesson</span></span>') +
-        '<label class="lc-jump"><small>Jump to any lesson</small>' + jumpSelect(session) + '</label>' +
+        '<label class="lc-jump"><small>Syllabus Curriculum Menu (36 Lessons)</small>' + jumpSelect(session) + '</label>' +
         (next
           ? '<a class="lc-nav lc-next" href="#/session/' + next.id + '/dialogue"><span><small>Next lesson</small>' + shortName(next) + '</span><span class="lc-arrow">\u2192</span></a>'
           : '<span class="lc-nav lc-next" aria-disabled="true"><span><small>Next lesson</small>Last lesson of the course</span><span class="lc-arrow">\u2192</span></span>') +
       '</div>' +
+      syllabusDrawer(session) +
     '</nav>';
   }
 
