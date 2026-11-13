@@ -207,13 +207,13 @@
                 '<div class="h">When <strong>On</strong>, every word, dialogue, and roleplay card shows the direct <strong>\u270E Edit</strong> button and each course lesson shows the <strong>\u270E Manual edits (this lesson)</strong> drawer. Switch <strong>Off</strong> to hide all editing buttons from learners.</div>' +
               '</div>' +
               '<div class="editor-toggle-group" role="group" aria-label="Editor Mode On or Off">' +
-                '<button id="editorSwitchBtn" class="editor-switch' + (prefs.showInlineEdit ? ' is-on' : ' is-off') + '" type="button" role="switch" aria-checked="' + (prefs.showInlineEdit ? 'true' : 'false') + '" data-inline-edit="true" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'toggle\',event);}" title="Click to switch Editor Mode On or Off">' +
+                '<button id="editorSwitchBtn" class="editor-switch' + (prefs.showInlineEdit ? ' is-on' : ' is-off') + '" type="button" role="switch" aria-checked="' + (prefs.showInlineEdit ? 'true' : 'false') + '" data-inline-edit="true" title="Click to switch Editor Mode On or Off">' +
                   '<span class="editor-switch-track"><span class="editor-switch-thumb"></span></span>' +
                   '<span class="editor-switch-label">' + (prefs.showInlineEdit ? 'ON' : 'OFF') + '</span>' +
                 '</button>' +
                 '<div class="chips" style="margin:0">' +
-                  '<button id="editorOnBtn" class="chip" type="button" data-set-inline-edit="on" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'on\',event);}" aria-pressed="' + (prefs.showInlineEdit ? 'true' : 'false') + '">\u270E Edit: ON</button>' +
-                  '<button id="editorOffBtn" class="chip" type="button" data-set-inline-edit="off" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'off\',event);}" aria-pressed="' + (!prefs.showInlineEdit ? 'true' : 'false') + '">Edit: OFF</button>' +
+                  '<button id="editorOnBtn" class="chip" type="button" data-set-inline-edit="on" aria-pressed="' + (prefs.showInlineEdit ? 'true' : 'false') + '">\u270E Edit: ON</button>' +
+                  '<button id="editorOffBtn" class="chip" type="button" data-set-inline-edit="off" aria-pressed="' + (!prefs.showInlineEdit ? 'true' : 'false') + '">Edit: OFF</button>' +
                 '</div>' +
               '</div>' +
             '</div>' +
@@ -304,18 +304,9 @@
         advOpen = Boolean(edDetails.open);
       });
     }
-    var swBtn = scope.querySelector && scope.querySelector('#editorSwitchBtn');
-    if (swBtn && swBtn.addEventListener) {
-      swBtn.addEventListener('click', function (ev) { applyEditorModeState('toggle', ev); });
-    }
-    var onBtn = scope.querySelector && scope.querySelector('#editorOnBtn');
-    if (onBtn && onBtn.addEventListener) {
-      onBtn.addEventListener('click', function (ev) { applyEditorModeState('on', ev); });
-    }
-    var offBtn = scope.querySelector && scope.querySelector('#editorOffBtn');
-    if (offBtn && offBtn.addEventListener) {
-      offBtn.addEventListener('click', function (ev) { applyEditorModeState('off', ev); });
-    }
+    // Editor controls use the single delegated click handler below. Do not add
+    // inline or per-button handlers here: double dispatch can flip the state
+    // back immediately after rerendering.
 
     scope.addEventListener('change', function (event) {
       if (event.target.id === 'unlockResetEdits') {
