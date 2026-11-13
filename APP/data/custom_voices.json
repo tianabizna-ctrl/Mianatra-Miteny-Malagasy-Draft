@@ -607,6 +607,12 @@
   "dlg:dlg_rp_w5s2:1": "media/audio_custom/dlg_rp_w5s2-1.wav",
   "dlg:dlg_eating_ordering:2": "media/audio_custom/dlg_eating_ordering-2.wav",
   "dlg:dlg_rp_w5s2:5": "media/audio_custom/dlg_rp_w5s2-5.wav",
-  "dlg:dlg_eating_ordering:3": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-3.wav?t=1794570672191",
-  "dlg:dlg_rp_w5s2:6": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-3.wav?t=1794570672191"
+  "dlg:dlg_eating_ordering:3": "media/audio_custom/dlg_eating_ordering-3.wav",
+  "dlg:dlg_rp_w5s2:6": "media/audio_custom/dlg_rp_w5s2-6.wav",
+  "dlg:dlg_eating_ordering:4": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873",
+  "word:mazotoa": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873",
+  "phrase:mazotoa": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873",
+  "dlg:dlg_intro_2_20:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873",
+  "dlg:dlg_rp_w1s1:6": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873",
+  "dlg:dlg_rp_w5s2:7": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-4.wav?t=1794570686873"
 }
