@@ -601,6 +601,8 @@
   "dlg:dlg_rp_w4s3:6": "media/audio_custom/dlg_rp_w4s3-6.wav",
   "phrase:matoky_anao_aho": "media/audio_custom/matoky_anao_aho.wav",
   "word:matoky_anao_aho": "media/audio_custom/matoky_anao_aho.wav",
-  "dlg:dlg_eating_ordering:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-0.wav?t=1794570592848",
-  "dlg:dlg_rp_w5s2:0": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-0.wav?t=1794570592848"
+  "dlg:dlg_eating_ordering:0": "media/audio_custom/dlg_eating_ordering-0.wav",
+  "dlg:dlg_rp_w5s2:0": "media/audio_custom/dlg_rp_w5s2-0.wav",
+  "dlg:dlg_eating_ordering:1": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-1.wav?t=1794570617599",
+  "dlg:dlg_rp_w5s2:1": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_eating_ordering-1.wav?t=1794570617599"
 }
