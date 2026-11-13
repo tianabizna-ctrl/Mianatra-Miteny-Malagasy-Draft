@@ -139,16 +139,63 @@
   function syncHeaderCta() {
     try {
       var cta = document.querySelector && document.querySelector('.header-cta');
-      if (!cta) return;
+      var prevBtn = document.getElementById('headerPrevSession');
+      var nextBtn = document.getElementById('headerNextSession');
+      var sel = document.getElementById('headerSessionSelect');
       var pos = core.lastPosition ? core.lastPosition() : null;
-      var s = pos ? core.session(pos.id) : null;
-      if (s) {
-        cta.href = core.positionHash(pos);
-        cta.innerHTML = 'Continue W' + s.week + ' \u00b7 S' + s.number + ' &#9654;';
-        cta.title = 'Back to ' + s.focus + ' (' + core.STEP_NAMES[pos.step] + ')';
-      } else {
-        cta.href = '#/session/w1s1/dialogue';
-        cta.innerHTML = 'Start Lesson 1 &#9654;';
+      var s = (pos ? core.session(pos.id) : null) || core.currentSession() || core.session('w1s1');
+
+      if (cta && s) {
+        if (pos && pos.id === s.id) {
+          cta.href = core.positionHash(pos);
+          cta.innerHTML = 'Continue W' + s.week + ' \u00b7 S' + s.number + ' &#9654;';
+          cta.title = 'Back to ' + s.focus + ' (' + core.STEP_NAMES[pos.step] + ')';
+        } else {
+          cta.href = '#/session/' + s.id + '/dialogue';
+          cta.innerHTML = 'Start W' + s.week + ' \u00b7 S' + s.number + ' &#9654;';
+          cta.title = s.focus;
+        }
+      }
+
+      if (prevBtn && s) {
+        var prev = core.adjacentSession ? core.adjacentSession(s.id, -1) : null;
+        if (prev) {
+          prevBtn.hidden = false;
+          prevBtn.href = '#/session/' + prev.id + '/dialogue';
+          prevBtn.innerHTML = '&#9664; W' + prev.week + '\u00b7S' + prev.number;
+          prevBtn.title = 'Previous session: Week ' + prev.week + ' \u00b7 ' + prev.day + ' \u00b7 Session ' + prev.number + ' (' + prev.focus + ')';
+        } else {
+          prevBtn.hidden = true;
+        }
+      }
+
+      if (nextBtn && s) {
+        var next = core.adjacentSession ? core.adjacentSession(s.id, 1) : null;
+        if (next) {
+          nextBtn.hidden = false;
+          nextBtn.href = '#/session/' + next.id + '/dialogue';
+          nextBtn.innerHTML = 'W' + next.week + '\u00b7S' + next.number + ' &#9654;';
+          nextBtn.title = 'Next session: Week ' + next.week + ' \u00b7 ' + next.day + ' \u00b7 Session ' + next.number + ' (' + next.focus + ')';
+        } else {
+          nextBtn.hidden = true;
+        }
+      }
+
+      if (sel && s && core.data && core.data.curriculum) {
+        if (!sel.options || sel.options.length === 0) {
+          sel.innerHTML = core.data.curriculum.map(function (week) {
+            var list = core.data.sessions.filter(function (item) { return item.week === week.week; });
+            return '<optgroup label="Week ' + week.week + ' \u2014 ' + ui.esc(week.title) + '">' +
+              list.map(function (item) {
+                var lno = (item.week - 1) * 3 + item.number;
+                return '<option value="' + ui.esc(item.id) + '">' +
+                  'W' + item.week + '\u00b7S' + item.number + ' (L' + lno + ') \u2014 ' + ui.esc(item.focus) +
+                  '</option>';
+              }).join('') +
+            '</optgroup>';
+          }).join('');
+        }
+        sel.value = s.id;
       }
     } catch (e) { /* optional */ }
   }
@@ -162,15 +209,21 @@
       var s = pos ? core.session(pos.id) : null;
       if (!s || parts[0] === 'session') { if (chip) chip.hidden = true; return; }
       if (!chip) {
-        chip = document.createElement('a');
+        chip = document.createElement('div');
         chip.id = 'resumeChip';
-        chip.className = 'resume-chip';
+        chip.className = 'resume-chip-bar';
         document.body.appendChild(chip);
       }
+      var prev = core.adjacentSession ? core.adjacentSession(s.id, -1) : null;
+      var next = core.adjacentSession ? core.adjacentSession(s.id, 1) : null;
       chip.hidden = false;
-      chip.href = core.positionHash(pos);
-      chip.innerHTML = '<span class="rc-dot">\u25B6</span><span><small>Back to lesson</small>W' + s.week + ' \u00b7 ' +
-        ui.esc(s.day.slice(0, 3)) + ' S' + s.number + ' \u00b7 ' + core.STEP_NAMES[pos.step] + '</span>';
+      chip.innerHTML =
+        (prev ? '<a class="rc-adj" href="#/session/' + prev.id + '/dialogue" title="Previous: ' + ui.esc(prev.focus) + '">\u25C0 W' + prev.week + '\u00b7S' + prev.number + '</a>' : '') +
+        '<a class="resume-chip" href="' + core.positionHash(pos) + '">' +
+          '<span class="rc-dot">\u25B6</span><span><small>Back to lesson</small>W' + s.week + ' \u00b7 ' +
+          ui.esc(s.day.slice(0, 3)) + ' S' + s.number + ' \u00b7 ' + core.STEP_NAMES[pos.step] + '</span>' +
+        '</a>' +
+        (next ? '<a class="rc-adj" href="#/session/' + next.id + '/dialogue" title="Next: ' + ui.esc(next.focus) + '">W' + next.week + '\u00b7S' + next.number + ' \u25B6</a>' : '');
     } catch (e) { /* chip is a convenience only */ }
   }
 
@@ -201,6 +254,15 @@
     var syllabusBtn = document.getElementById('syllabusMenuBtn');
     if (syllabusBtn) {
       syllabusBtn.addEventListener('click', toggleHeaderSyllabus);
+    }
+
+    var headerSel = document.getElementById('headerSessionSelect');
+    if (headerSel) {
+      headerSel.addEventListener('change', function () {
+        if (headerSel.value) {
+          location.hash = '#/session/' + headerSel.value + '/dialogue';
+        }
+      });
     }
 
     var textBtn = document.getElementById('textSizeBtn');
