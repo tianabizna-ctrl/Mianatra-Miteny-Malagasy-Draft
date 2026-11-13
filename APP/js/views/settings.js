@@ -382,13 +382,16 @@
         rerender();
         return;
       }
-      var modeBtn = targetEl.closest('[data-mode]');
+      // The document root also has data-mode for the theme, so match only
+      // actual setting controls, never an attribute on an ancestor.
+      var modeBtn = targetEl.closest('button[data-mode]');
       if (modeBtn) {
         core.setPref('mode', modeBtn.getAttribute('data-mode'));
         rerender();
         return;
       }
-      var size = targetEl.closest('[data-textsize]');
+      // The document root also carries data-textsize; only match the setting buttons.
+      var size = targetEl.closest('button[data-textsize]');
       if (size) {
         core.setPref('textsize', Number(size.getAttribute('data-textsize')));
         rerender();
