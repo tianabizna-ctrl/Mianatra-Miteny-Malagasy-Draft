@@ -2738,3 +2738,144 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   .syllabus-week-grid { grid-template-columns: 1fr; }
 }
 
+/* ================= v4.5.5 — Header & Floating Previous/Next Session Switcher ================= */
+.header-lesson-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--paper-pure);
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 5px;
+  box-shadow: var(--shadow-sm);
+}
+.header-lesson-group .header-cta {
+  margin: 0;
+  padding: 7px 13px;
+  font-size: 0.82rem;
+}
+.header-adj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--green);
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.header-adj-btn:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold);
+  color: var(--green-2);
+}
+.header-adj-btn[hidden] { display: none; }
+.header-session-select {
+  max-width: 145px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.header-session-select:hover,
+.header-session-select:focus {
+  border-color: var(--green);
+}
+
+.resume-chip-bar {
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(18, 63, 43, 0.96);
+  padding: 5px 7px;
+  border-radius: 999px;
+  box-shadow: 0 10px 28px rgba(11, 45, 31, 0.32);
+  border: 1.5px solid rgba(242, 183, 5, 0.45);
+}
+.resume-chip-bar[hidden] { display: none; }
+.resume-chip-bar .resume-chip {
+  position: static;
+  box-shadow: none;
+  padding: 6px 12px 6px 8px;
+  background: transparent;
+}
+.rc-adj {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 11px;
+  border-radius: 999px;
+  background: rgba(255, 248, 236, 0.14);
+  color: #FFF8EC;
+  font-weight: 800;
+  font-size: 0.78rem;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 248, 236, 0.24);
+}
+.rc-adj:hover {
+  background: var(--gold);
+  color: var(--green-2);
+  border-color: var(--gold);
+}
+
+.lc-week-strip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+.lc-wk-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 0.76rem;
+  text-decoration: none;
+}
+.lc-wk-chip:hover {
+  border-color: var(--green);
+  background: var(--gold-pale);
+}
+.lc-wk-chip.is-cur {
+  background: var(--green);
+  color: #FFF8EC;
+  border-color: var(--green);
+}
+.lc-wk-adj {
+  background: var(--gold-pale);
+  color: var(--green-2);
+  border-color: var(--gold);
+}
+
+.resume-wrap {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+.resume-wrap .resume-card {
+  grid-column: span 2;
+}
+@media (max-width: 760px) {
+  .header-lesson-group .header-cta { display: inline-flex; }
+  .header-session-select { max-width: 115px; }
+  .resume-wrap .resume-card { grid-column: 1 / -1; }
+}
+
+

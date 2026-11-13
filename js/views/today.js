@@ -151,9 +151,11 @@
     var pos = core.lastPosition();
     var s = pos ? core.session(pos.id) : null;
     if (!s) return '';
+    var prev = core.adjacentSession(s.id, -1);
     var next = core.adjacentSession(s.id, 1);
     return '<div class="miteny-section" style="padding-bottom:0">' +
       '<div class="resume-wrap">' +
+        (prev ? '<a class="resume-side" href="#/session/' + prev.id + '/dialogue"><small>Previous lesson</small>\u2190 Week ' + prev.week + ' \u00b7 ' + ui.esc(prev.day.slice(0, 3)) + ' S' + prev.number + '</a>' : '') +
         '<a class="resume-card" href="' + core.positionHash(pos) + '">' +
           '<span class="resume-dot">\u25B6</span>' +
           '<span class="resume-text"><small>You are here \u2014 continue where you left off</small>' +
@@ -162,7 +164,7 @@
           '<span class="resume-go">Continue \u2192</span>' +
         '</a>' +
         (next ? '<a class="resume-side" href="#/session/' + next.id + '/dialogue"><small>Next lesson</small>Week ' + next.week + ' \u00b7 ' + ui.esc(next.day.slice(0, 3)) + ' S' + next.number + ' \u2192</a>' : '') +
-        '<a class="resume-side" href="#/course/' + s.week + '"><small>Overview</small>Week ' + s.week + ' outline</a>' +
+        '<a class="resume-side" href="#/course/' + s.week + '"><small>Syllabus</small>Week ' + s.week + ' &amp; all weeks</a>' +
       '</div>' +
     '</div>';
   }

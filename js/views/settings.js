@@ -156,39 +156,21 @@
       '<h2>Voice</h2>' +
       '<div class="panel">' +
         '<div class="setting">' +
-          '<div><div class="k">Primary Malagasy voice model</div>' +
-          '<div class="h">Choose between native Abidi neural recordings (22 kHz), OpenAI <code>gpt-4o-mini-tts</code> voices ("Coral", "Sage", "Ash") with Malagasy pronunciation instructions, or Meta MMS (16 kHz).</div></div>' +
-          '<div class="chips" style="margin:0">' + recordedVoiceChips() + '</div>' +
-        '</div>' +
-        '<div class="setting" style="align-items:flex-start">' +
-          '<div style="flex:1">' +
-            '<div class="k">OpenAI <code>gpt-4o-mini-tts</code> / Hercules AI Gateway (optional)</div>' +
-            '<div class="h">When "Coral", "Sage", or "Ash" is selected, each phrase is sent with Malagasy pronunciation instructions: say "o" like "oo", drop the final vowel softly, and stress the capitalized syllable in the phonetic guide (e.g. <code>mahn-DROO-soo-ah</code>, <code>mee-PEH-trah-peh-trah-hah</code>). You can also upload your own audio recordings per phrase in the Editor below.</div>' +
-            '<div class="inline-edit-fields" style="margin-top:10px">' +
-              '<label class="inline-edit-field">' +
-                '<span>Hercules AI Gateway or OpenAI TTS URL</span>' +
-                '<input type="url" id="ttsGatewayUrl" placeholder="https://api.openai.com/v1/audio/speech" value="' + ui.esc(prefs.ttsGatewayUrl || '') + '">' +
-              '</label>' +
-              '<label class="inline-edit-field">' +
-                '<span>API Key / Gateway Token (stored locally in browser)</span>' +
-                '<input type="password" id="ttsApiKey" placeholder="sk-... or gateway token" value="' + ui.esc(prefs.ttsApiKey || '') + '">' +
-              '</label>' +
-            '</div>' +
+          '<div>' +
+            '<div class="k">My Recorded Voice (Embedded Native Malagasy Audio)</div>' +
+            '<div class="h">This site uses your own recorded Malagasy voice embedded directly across lessons, words, phrases, dialogues, and roleplays. Whenever you record a word or sentence once, your voice is automatically propagated everywhere that word or phrase appears across all 12 weeks.</div>' +
+          '</div>' +
+          '<div class="chips" style="margin:0">' +
+            '<span class="chip active">\u2713 My Recorded Voice (Active)</span>' +
           '</div>' +
         '</div>' +
-        '<div class="setting">' +
-          '<div><div class="k">Fallback device voice</div>' +
-          '<div class="h">' + ui.esc(report.note) + '</div></div>' +
-          '<div class="setting select">' + voiceChooser() + '</div>' +
-        '</div>' +
-        '<p class="setting-note">' +
-          (clips
-            ? clips + ' authentic Malagasy voice recordings ship with Salama! and play automatically across all words, phrases, dialogues, and roleplays.'
-            : 'No recorded word clips ship with this build yet, so words use the device voice.') +
+        '<p class="setting-note" style="margin-top:12px">' +
+          'Your embedded voice recordings play automatically on every device without needing any external setup. You can record or update any word, phrase, or dialogue line directly on its card or in the Voice Recorder Studio.' +
         '</p>' +
         '<p class="setting-note">On an iPhone or iPad the side switch silences the device voice ' +
           'but not recorded audio. If a word is silent and a lesson recording is not, check that switch.</p>' +
         '<div class="btn-row" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:8px">' +
+          '<a class="btn" href="#/record/fahasalamana">\u25CF Open Voice Recorder Studio</a>' +
           '<button class="btn btn-secondary" type="button" data-test-voice="dlg">' +
             ui.icon('volume') + 'Hear sample (“Salama tompoko! Manao ahoana?”)</button>' +
           '<button class="btn btn-quiet" type="button" data-test-voice="salama">' +

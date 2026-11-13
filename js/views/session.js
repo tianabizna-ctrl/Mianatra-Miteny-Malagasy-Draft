@@ -262,6 +262,8 @@
     var next = core.adjacentSession(session.id, 1);
     var weekSessions = core.data.sessions.filter(function (s) { return s.week === session.week; });
     var pct = Math.round(((idx + (Math.min(step, 3) / 3)) / total) * 100);
+    var prevWeekNo = session.week > 1 ? session.week - 1 : 0;
+    var nextWeekNo = session.week < core.data.curriculum.length ? session.week + 1 : 0;
 
     return '<nav class="lesson-compass" aria-label="Where you are in the course">' +
       '<div class="lc-crumbs">' +
@@ -269,6 +271,14 @@
         '<a href="#/course/' + session.week + '">Week ' + session.week + ': ' + ui.esc(session.week_title || '') + '</a><span class="lc-sep">\u203a</span>' +
         '<strong>' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + '</strong><span class="lc-sep">\u203a</span>' +
         '<span class="lc-step">' + core.STEP_NAMES[step] + '</span>' +
+      '</div>' +
+      '<div class="lc-week-strip" role="navigation" aria-label="Switch week">' +
+        (prevWeekNo ? '<a class="lc-wk-chip lc-wk-adj" href="#/session/w' + prevWeekNo + 's1/dialogue" title="Go to Week ' + prevWeekNo + '">\u2190 W' + prevWeekNo + '</a>' : '') +
+        core.data.curriculum.map(function (w) {
+          var isCur = w.week === session.week;
+          return '<a class="lc-wk-chip' + (isCur ? ' is-cur' : '') + '" href="#/session/w' + w.week + 's1/dialogue" title="Week ' + w.week + ': ' + ui.esc(w.title) + '">W' + w.week + '</a>';
+        }).join('') +
+        (nextWeekNo ? '<a class="lc-wk-chip lc-wk-adj" href="#/session/w' + nextWeekNo + 's1/dialogue" title="Go to Week ' + nextWeekNo + '">W' + nextWeekNo + ' \u2192</a>' : '') +
       '</div>' +
       '<div class="lc-progress" title="Lesson ' + (idx + 1) + ' of ' + total + '">' +
         '<span class="lc-bar"><span style="width:' + pct + '%"></span></span>' +
@@ -278,7 +288,7 @@
         weekSessions.map(function (s) {
           var cur = s.id === session.id;
           return '<a class="lc-pill" href="#/session/' + s.id + '/dialogue"' + (cur ? ' aria-current="page"' : '') + '>' +
-            '<span class="lc-pill-day">' + ui.esc(s.day.slice(0, 3)) + ' \u00b7 S' + s.number + (core.isSessionDone(s.id) ? ' \u2713' : '') + '</span>' +
+            '<span class="lc-pill-day">W' + s.week + ' \u00b7 ' + ui.esc(s.day.slice(0, 3)) + ' \u00b7 S' + s.number + (core.isSessionDone(s.id) ? ' \u2713' : '') + '</span>' +
             '<span class="lc-pill-focus">' + ui.esc(s.focus) + '</span>' +
           '</a>';
         }).join('') +
