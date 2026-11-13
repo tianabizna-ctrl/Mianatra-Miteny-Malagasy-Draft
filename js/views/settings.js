@@ -207,13 +207,13 @@
                 '<div class="h">When <strong>On</strong>, every word, dialogue, and roleplay card shows the direct <strong>\u270E Edit</strong> button and each course lesson shows the <strong>\u270E Manual edits (this lesson)</strong> drawer. Switch <strong>Off</strong> to hide all editing buttons from learners.</div>' +
               '</div>' +
               '<div class="editor-toggle-group" role="group" aria-label="Editor Mode On or Off">' +
-                '<button id="editorSwitchBtn" class="editor-switch' + (prefs.showInlineEdit ? ' is-on' : ' is-off') + '" type="button" role="switch" aria-checked="' + (prefs.showInlineEdit ? 'true' : 'false') + '" data-inline-edit="true" title="Toggle Editor Mode On or Off">' +
+                '<button id="editorSwitchBtn" class="editor-switch' + (prefs.showInlineEdit ? ' is-on' : ' is-off') + '" type="button" role="switch" aria-checked="' + (prefs.showInlineEdit ? 'true' : 'false') + '" data-inline-edit="true" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'toggle\',event);}" title="Click to switch Editor Mode On or Off">' +
                   '<span class="editor-switch-track"><span class="editor-switch-thumb"></span></span>' +
                   '<span class="editor-switch-label">' + (prefs.showInlineEdit ? 'ON' : 'OFF') + '</span>' +
                 '</button>' +
                 '<div class="chips" style="margin:0">' +
-                  '<button id="editorOnBtn" class="chip" type="button" data-set-inline-edit="on" aria-pressed="' + (prefs.showInlineEdit ? 'true' : 'false') + '">\u270E Edit: ON</button>' +
-                  '<button id="editorOffBtn" class="chip" type="button" data-set-inline-edit="off" aria-pressed="' + (!prefs.showInlineEdit ? 'true' : 'false') + '">Edit: OFF</button>' +
+                  '<button id="editorOnBtn" class="chip" type="button" data-set-inline-edit="on" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'on\',event);}" aria-pressed="' + (prefs.showInlineEdit ? 'true' : 'false') + '">\u270E Edit: ON</button>' +
+                  '<button id="editorOffBtn" class="chip" type="button" data-set-inline-edit="off" onclick="if(window.Salama&&window.Salama.setEditorMode){window.Salama.setEditorMode(\'off\',event);}" aria-pressed="' + (!prefs.showInlineEdit ? 'true' : 'false') + '">Edit: OFF</button>' +
                 '</div>' +
               '</div>' +
             '</div>' +
@@ -222,30 +222,35 @@
                 ? '<span class="checked">\u2713 Editor Mode is ON \u2014 \u270E Edit buttons &amp; lesson editor are visible</span>'
                 : '<span>Editor Mode is OFF \u2014 All \u270E Edit buttons are hidden across the website</span>') +
               ' \u00b7 Saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
-            '<div class="btn-row" style="margin-top:8px">' +
-              (function () {
-                var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
-                return cs
-                  ? '<a class="btn btn-sm" href="#/edit/session/' + ui.esc(cs.id) + '">\u270E Edit Current Course Lesson (W' + cs.week + ' \u00b7 S' + cs.number + ')</a>'
-                  : '<a class="btn btn-sm" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>';
-              })() +
-              '<a class="btn btn-secondary btn-sm" href="#/record/fahasalamana">\u25CF Record My Voice</a>' +
-              '<a class="btn btn-secondary btn-sm" href="#/edit/words">\u270E Open Full Dictionary Editor</a>' +
-              '<a class="btn btn-secondary btn-sm" href="PROOFREAD.html">Open proofread sheet</a>' +
-              '<button class="btn btn-secondary btn-sm" type="button" data-export-edits="true">' +
-                ui.icon('download') + 'Export edits (.tsv)</button>' +
-            '</div>' +
-            '<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)">' +
-              '<label class="advanced-unlock-label">' +
-                '<input type="checkbox" id="unlockResetEdits"> ' +
-                '<span>Unlock manual-edits reset (protects custom Malagasy &amp; phonetic edits)</span>' +
-              '</label>' +
-              '<div style="margin-top:8px">' +
-                '<button class="btn btn-danger btn-sm" type="button" id="resetEditsBtn" data-reset-edits="true" disabled>' +
-                  '\uD83D\uDD12 Locked \u2014 Reset all manual edits</button>' +
-              '</div>' +
-              '<p class="meta" id="resetEditsNote" hidden style="margin-top:8px;color:#c93b2b;font-weight:700">Tap once more to permanently clear all manual edits on this device.</p>' +
-            '</div>' +
+            (prefs.showInlineEdit
+              ? '<div class="editor-only-tools">' +
+                  '<div class="btn-row" style="margin-top:8px">' +
+                    (function () {
+                      var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
+                      return cs
+                        ? '<a class="btn btn-sm" href="#/edit/session/' + ui.esc(cs.id) + '">\u270E Edit Current Course Lesson (W' + cs.week + ' \u00b7 S' + cs.number + ')</a>'
+                        : '<a class="btn btn-sm" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>';
+                    })() +
+                    '<a class="btn btn-secondary btn-sm" href="#/record/fahasalamana">\u25CF Record My Voice</a>' +
+                    '<a class="btn btn-secondary btn-sm" href="#/edit/words">\u270E Open Full Dictionary Editor</a>' +
+                    '<a class="btn btn-secondary btn-sm" href="PROOFREAD.html">Open proofread sheet</a>' +
+                    '<button class="btn btn-secondary btn-sm" type="button" data-export-edits="true">' +
+                      ui.icon('download') + 'Export edits (.tsv)</button>' +
+                  '</div>' +
+                  '<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)">' +
+                    '<label class="advanced-unlock-label">' +
+                      '<input type="checkbox" id="unlockResetEdits"> ' +
+                      '<span>Unlock manual-edits reset (protects custom Malagasy &amp; phonetic edits)</span>' +
+                    '</label>' +
+                    '<div style="margin-top:8px">' +
+                      '<button class="btn btn-danger btn-sm" type="button" id="resetEditsBtn" data-reset-edits="true" disabled>' +
+                        '\uD83D\uDD12 Locked \u2014 Reset all manual edits</button>' +
+                    '</div>' +
+                    '<p class="meta" id="resetEditsNote" hidden style="margin-top:8px;color:#c93b2b;font-weight:700">Tap once more to permanently clear all manual edits on this device.</p>' +
+                  '</div>' +
+                '</div>'
+              : '<p class="meta" style="margin:6px 0 0;padding:10px 12px;border-radius:10px;background:var(--surface-2)">Editor tools and inline <strong>\u270E Edit</strong> buttons are currently <strong>OFF</strong> and hidden across all lessons and cards. Click the switch or <strong>\u270E Edit: ON</strong> above to re-enable editing.</p>'
+            ) +
           '</div>' +
         '</details>' +
       '</div>' +
@@ -259,6 +264,36 @@
       '</div>';
   }
 
+  function applyEditorModeState(mode, evt) {
+    if (evt) {
+      if (typeof evt.preventDefault === 'function') evt.preventDefault();
+      if (typeof evt.stopPropagation === 'function') evt.stopPropagation();
+    }
+    advOpen = true;
+    var cur = Boolean(core.state.prefs.showInlineEdit);
+    var nextVal;
+    if (mode === 'on') {
+      // If already ON and user clicks "Edit: ON" expecting it to toggle off, toggle it off!
+      nextVal = cur ? false : true;
+    } else if (mode === 'off') {
+      nextVal = false;
+    } else if (typeof mode === 'boolean') {
+      nextVal = mode;
+    } else {
+      nextVal = !cur;
+    }
+    core.state.prefs.showInlineEdit = nextVal;
+    core.setPref('showInlineEdit', nextVal);
+    ui.toast(nextVal
+      ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.'
+      : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
+    rerender();
+    return nextVal;
+  }
+
+  S.setEditorMode = applyEditorModeState;
+  S.toggleEditorMode = function (evt) { return applyEditorModeState('toggle', evt); };
+
   function mount(root) {
     var scope = root.querySelector('.view-narrow') || root;
     var resetArmed = false;
@@ -268,6 +303,18 @@
       edDetails.addEventListener('toggle', function () {
         advOpen = Boolean(edDetails.open);
       });
+    }
+    var swBtn = scope.querySelector && scope.querySelector('#editorSwitchBtn');
+    if (swBtn && swBtn.addEventListener) {
+      swBtn.addEventListener('click', function (ev) { applyEditorModeState('toggle', ev); });
+    }
+    var onBtn = scope.querySelector && scope.querySelector('#editorOnBtn');
+    if (onBtn && onBtn.addEventListener) {
+      onBtn.addEventListener('click', function (ev) { applyEditorModeState('on', ev); });
+    }
+    var offBtn = scope.querySelector && scope.querySelector('#editorOffBtn');
+    if (offBtn && offBtn.addEventListener) {
+      offBtn.addEventListener('click', function (ev) { applyEditorModeState('off', ev); });
     }
 
     scope.addEventListener('change', function (event) {
@@ -374,21 +421,11 @@
       }
       var explicitEditBtn = targetEl.closest('[data-set-inline-edit]');
       if (explicitEditBtn) {
-        advOpen = true;
-        var wantOn = explicitEditBtn.getAttribute('data-set-inline-edit') === 'on';
-        core.state.prefs.showInlineEdit = wantOn;
-        core.setPref('showInlineEdit', wantOn);
-        ui.toast(wantOn ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.' : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
-        rerender();
+        applyEditorModeState(explicitEditBtn.getAttribute('data-set-inline-edit'), event);
         return;
       }
       if (targetEl.closest('[data-inline-edit]')) {
-        advOpen = true;
-        var nextEdit = !core.state.prefs.showInlineEdit;
-        core.state.prefs.showInlineEdit = nextEdit;
-        core.setPref('showInlineEdit', nextEdit);
-        ui.toast(nextEdit ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.' : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
-        rerender();
+        applyEditorModeState('toggle', event);
         return;
       }
       var test = targetEl.closest('[data-test-voice]');

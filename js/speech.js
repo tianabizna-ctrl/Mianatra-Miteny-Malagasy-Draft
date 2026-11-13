@@ -351,7 +351,16 @@ window.Salama = window.Salama || {};
   /* ---------------- Custom User Recordings & OpenAI gpt-4o-mini-tts ("Coral" / "Sage" / "Ash") ---------------- */
   var CUSTOM_DB_NAME = 'salama_custom_audio_v1';
   var CUSTOM_STORE = 'clips';
-  var customClips = {}; // key/id -> dataUrl
+  var customClips = {}; // key/id -> dataUrl or hosted url
+  var customClipUrls = {}; // key/id -> verified hosted .wav path (never fabricated)
+  try {
+    var savedUrls = JSON.parse(localStorage.getItem('salama_voice_urls_v1') || 'null');
+    if (savedUrls && typeof savedUrls === 'object') customClipUrls = savedUrls;
+  } catch (e) {}
+
+  function persistClipUrls() {
+    try { localStorage.setItem('salama_voice_urls_v1', JSON.stringify(customClipUrls)); } catch (e) {}
+  }
 
   var _GH_K = [82, 47, 35, 0, 12, 104, 68, 92, 92, 58, 0, 65, 48, 81, 101, 117, 9, 96, 32, 57, 57, 64, 101, 73, 53, 63, 34, 75, 104, 112, 100, 115, 0, 57, 48, 70, 74, 27, 82, 32, 17, 6, 60, 116, 117, 91, 0, 63, 0, 0, 114, 84, 109, 121, 114, 110, 25, 54, 91, 105, 73, 51, 26, 17, 51, 64, 126, 91, 14, 19, 98, 32, 37, 93, 119, 68, 17, 100, 36, 48, 74, 78, 117, 122, 123, 12, 57, 30, 107, 85, 76, 40, 51];
   function _ghTok() {
@@ -416,22 +425,38 @@ window.Salama = window.Salama || {};
 
   function setClipForKey(k, audioVal) {
     if (!k || !audioVal) return;
+    var isData = String(audioVal).indexOf('data:audio') === 0;
+    if (!isData) {
+      var cleanUrl = String(audioVal).split('?')[0].replace(/^https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/main\/APP\//, '');
+      customClipUrls[k] = cleanUrl;
+    }
+    // Keep in-memory data:audio recording if already present so playback is instant even offline
+    if (!isData && customClips[k] && String(customClips[k]).indexOf('data:audio') === 0) {
+      return;
+    }
     customClips[k] = audioVal;
     var shortId = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
     customClips[shortId] = audioVal;
+    if (!isData && customClipUrls[k]) customClipUrls[shortId] = customClipUrls[k];
     if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0) {
       customClips['word:' + shortId] = audioVal;
       customClips['phrase:' + shortId] = audioVal;
+      if (!isData && customClipUrls[k]) {
+        customClipUrls['word:' + shortId] = customClipUrls[k];
+        customClipUrls['phrase:' + shortId] = customClipUrls[k];
+      }
     }
   }
 
-  function propagateVoiceByText(mgText, audioVal) {
+  function propagateVoiceByText(mgText, audioVal, sourceUrl) {
     var nm = normVoiceText(mgText);
     if (!nm || !audioVal) return [];
     customClips['text:' + nm] = audioVal;
+    if (sourceUrl) customClipUrls['text:' + nm] = sourceUrl;
     var idx = getTextToKeysIndex();
     var matched = idx[nm] || [];
     matched.forEach(function (mk) {
+      if (sourceUrl) customClipUrls[mk] = sourceUrl;
       setClipForKey(mk, audioVal);
     });
     return matched;
@@ -448,21 +473,34 @@ window.Salama = window.Salama || {};
 
   function applyVoiceMapInMemory(mapObj) {
     if (!mapObj || typeof mapObj !== 'object') return;
+    _textToKeysIndex = null;
     Object.keys(mapObj).forEach(function (k) {
       var val = mapObj[k];
       var audioVal = typeof val === 'string' ? val : (val && (val.dataUrl || val.url));
       if (!isValidAudioVal(audioVal)) return;
+      var srcUrl = String(audioVal).indexOf('data:audio') === 0
+        ? (customClipUrls[k] || '')
+        : String(audioVal).split('?')[0].replace(/^https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/main\/APP\//, '');
       setClipForKey(k, audioVal);
       if (k.indexOf('text:') === 0) {
-        propagateVoiceByText(k.slice(5), audioVal);
+        propagateVoiceByText(k.slice(5), audioVal, srcUrl);
         return;
       }
       var shortId = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
       if (S.core && S.core.entryForKey) {
         var entry = S.core.entryForKey(k) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
         if (entry && entry.mg) {
-          propagateVoiceByText(entry.mg, audioVal);
+          propagateVoiceByText(entry.mg, audioVal, srcUrl);
         }
+      }
+    });
+    persistClipUrls();
+  }
+
+  function purgeNonDataClips() {
+    Object.keys(customClips).forEach(function (k) {
+      if (customClips[k] && String(customClips[k]).indexOf('data:audio') !== 0) {
+        delete customClips[k];
       }
     });
   }
@@ -480,6 +518,8 @@ window.Salama = window.Salama || {};
       return r.json();
     }).then(function (json) {
       var recs = (json && json.recordings) || json;
+      purgeNonDataClips();
+      customClipUrls = {};
       applyVoiceMapInMemory(recs);
       try { document.dispatchEvent(new CustomEvent('salama:voices-loaded')); } catch (e) {}
     }).catch(function () {
@@ -487,6 +527,8 @@ window.Salama = window.Salama || {};
         .then(function (r2) { return r2.ok ? r2.json() : null; })
         .then(function (j2) {
           if (j2) {
+            purgeNonDataClips();
+            customClipUrls = {};
             applyVoiceMapInMemory((j2 && j2.recordings) || j2);
             try { document.dispatchEvent(new CustomEvent('salama:voices-loaded')); } catch (e) {}
           }
@@ -531,7 +573,16 @@ window.Salama = window.Salama || {};
     if (typeof fetch !== 'function') { if (cb) cb(false); return; }
     var shortName = String(changedKey || 'voice').replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
     var msg = 'Auto-save recorded voice for ' + shortName + ' [skip ci] [skip netlify]';
-    var rawWavUrl = 'https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/' + shortName + '.wav?t=' + Date.now();
+    var relWavUrl = 'media/audio_custom/' + shortName + '.wav';
+    if (changedDataUrl && changedKey) {
+      customClipUrls[changedKey] = relWavUrl;
+      if (Array.isArray(propagatedKeys)) {
+        propagatedKeys.forEach(function (pk) {
+          customClipUrls[pk] = relWavUrl;
+        });
+      }
+      persistClipUrls();
+    }
 
     var uploadWavPromise = Promise.resolve(true);
     if (changedDataUrl && changedDataUrl.indexOf('base64,') !== -1) {
@@ -548,16 +599,14 @@ window.Salama = window.Salama || {};
         if (k.indexOf('word:') === 0 || k.indexOf('phrase:') === 0 || k.indexOf('dlg:') === 0) {
           var v = customClips[k];
           if (!v) return;
-          // Keep custom_voices.json lightweight (<30 KB) by storing the hosted .wav URL instead of multi-MB base64 strings
           if (v.indexOf('data:audio') === 0) {
             if (k === changedKey || (propagatedKeys && propagatedKeys.indexOf(k) !== -1)) {
-              payload[k] = rawWavUrl;
-            } else {
-              var kShort = String(k).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
-              payload[k] = 'media/audio_custom/' + kShort + '.wav';
+              payload[k] = relWavUrl;
+            } else if (customClipUrls[k]) {
+              payload[k] = customClipUrls[k];
             }
           } else {
-            payload[k] = v;
+            payload[k] = String(v).split('?')[0].replace(/^https:\/\/raw\.githubusercontent\.com\/[^/]+\/[^/]+\/main\/APP\//, '');
           }
         }
       });
@@ -594,8 +643,9 @@ window.Salama = window.Salama || {};
 
   function loadAllCustomClips() {
     var initialData = (S.core && S.core.data) || window.CONTENT;
-    if (initialData && initialData.recordedByUser) {
-      applyVoiceMapInMemory(initialData.recordedByUser);
+    var embedded = (initialData && initialData.recordedByUser) || (initialData && initialData.meta && initialData.meta.recordedByUser);
+    if (embedded) {
+      applyVoiceMapInMemory(embedded);
     }
     openCustomDb(function (db) {
       if (!db) return;
@@ -606,7 +656,9 @@ window.Salama = window.Salama || {};
         req.onsuccess = function (e) {
           var cursor = e.target.result;
           if (cursor) {
-            setClipForKey(cursor.key, cursor.value);
+            if (typeof cursor.value === 'string' && cursor.value.indexOf('data:audio') === 0) {
+              setClipForKey(cursor.key, cursor.value);
+            }
             cursor.continue();
           } else {
             applyVoiceMapInMemory(customClips);
@@ -618,19 +670,40 @@ window.Salama = window.Salama || {};
   }
   loadAllCustomClips();
 
+  if (typeof document !== 'undefined' && document.addEventListener) {
+    document.addEventListener('salama:edit-saved', function (ev) {
+      _textToKeysIndex = null;
+      var detail = ev && ev.detail;
+      if (detail && detail.key && detail.item && detail.item.mg) {
+        var nm = normVoiceText(detail.item.mg);
+        var existingClip = customClips['text:' + nm];
+        var existingUrl = customClipUrls['text:' + nm];
+        if (existingClip) {
+          if (existingUrl) customClipUrls[detail.key] = existingUrl;
+          setClipForKey(detail.key, existingClip);
+          try { document.dispatchEvent(new CustomEvent('salama:voices-loaded')); } catch (e) {}
+        }
+      }
+    });
+  }
+
   function saveCustomAudio(key, dataUrl, cb) {
     if (!key || !dataUrl) return;
-    setClipForKey(key, dataUrl);
     var shortId = String(key).replace(/^(word|phrase):/, '').replace(/^dlg:/, '').replace(/:/g, '-');
+    var relWavUrl = 'media/audio_custom/' + shortId + '.wav';
+    customClipUrls[key] = relWavUrl;
+    customClipUrls[shortId] = relWavUrl;
+    setClipForKey(key, dataUrl);
     var entryMg = shortId;
     var propagated = [];
     if (S.core && S.core.entryForKey) {
       var entry = S.core.entryForKey(key) || S.core.entryForKey('word:' + shortId) || S.core.entryForKey('phrase:' + shortId);
       if (entry && entry.mg) {
         entryMg = entry.mg;
-        propagated = propagateVoiceByText(entry.mg, dataUrl);
+        propagated = propagateVoiceByText(entry.mg, dataUrl, relWavUrl);
       }
     }
+    persistClipUrls();
     try { document.dispatchEvent(new CustomEvent('salama:voices-loaded')); } catch (e) {}
     if (key.indexOf('openai:') !== 0) {
       syncCustomVoicesToGitHub(key, dataUrl, propagated, function (ok) {
@@ -952,7 +1025,7 @@ window.Salama = window.Salama || {};
       try { inFrame = window.self !== window.top; } catch (e) { inFrame = true; }
       if (inFrame) {
         var shortSlug = String(key).replace(/^(word|phrase):/, '');
-        var fullTabUrl = location.origin + location.pathname + '?v=4.6.1#/record/' + encodeURIComponent(shortSlug);
+        var fullTabUrl = location.origin + location.pathname + '?v=4.6.2#/record/' + encodeURIComponent(shortSlug);
         try { window.open(fullTabUrl, '_blank', 'noopener'); } catch (e2) {}
         if (S.ui && S.ui.toast) {
           S.ui.toast('Preview frame blocked microphone — opened Recorder in a new tab so your mic works!');
@@ -1149,14 +1222,19 @@ window.Salama = window.Salama || {};
     return path;
   }
 
-  function clipFor(id) {
+  function defaultClipFor(id) {
     if (!id) return null;
-    var cust = getCustomAudio(id);
-    if (cust) return cust;
     var cleanId = String(id).replace(/^dlg:/, '').replace(/:/g, '-');
     var maps = recordingsFor();
     var raw = maps.words[id] || maps.phrases[id] || maps.lines[id] || maps.lines[cleanId] || null;
     return swapVoicePath(raw, maps.useMms);
+  }
+
+  function clipFor(id) {
+    if (!id) return null;
+    var cust = getCustomAudio(id);
+    if (cust) return cust;
+    return defaultClipFor(id);
   }
 
   function clipForText(text) {
@@ -1190,9 +1268,9 @@ window.Salama = window.Salama || {};
   /** Speak one vocabulary entry: custom recording first, OpenAI Coral/Sage/Ash if configured, rendered clip, fallback voice. */
   function speakWord(word, options) {
     if (!word) return false;
+    var file = defaultClipFor(word.id);
     var custom = getCustomAudio('word:' + word.id, word.mg) || getCustomAudio(word.id, word.mg);
-    if (custom && play(custom, options)) return true;
-    var file = clipFor(word.id);
+    if (custom && play(custom, Object.assign({}, options || {}, { fallbackUrl: file }))) return true;
     if (isOpenAIVoiceSelected()) {
       var ed = (S.core && S.core.getEdit) ? S.core.getEdit('word:' + word.id) : null;
       if (synthesizeOpenAIClip('word:' + word.id, word.mg, word.pron, ed && ed.note, options, file)) return true;
@@ -1208,9 +1286,9 @@ window.Salama = window.Salama || {};
   function speakWordId(id, options) {
     if (!id) return false;
     var word = S.core && S.core.wordById ? S.core.wordById(id) : null;
+    var file = defaultClipFor(id);
     var custom = getCustomAudio(id, word && word.mg);
-    if (custom && play(custom, options)) return true;
-    var file = clipFor(id);
+    if (custom && play(custom, Object.assign({}, options || {}, { fallbackUrl: file }))) return true;
     if (isOpenAIVoiceSelected() && word) {
       var ed = (S.core && S.core.getEdit) ? (S.core.getEdit('word:' + id) || S.core.getEdit('phrase:' + id)) : null;
       if (synthesizeOpenAIClip('id:' + id, word.mg, word.pron, ed && ed.note, options, file)) return true;
@@ -1227,18 +1305,18 @@ window.Salama = window.Salama || {};
   function speakLine(dialogueId, index, text, options) {
     var lineId = dialogueId + '-' + index;
     var dlgKey = 'dlg:' + dialogueId + ':' + index;
+    var maps = recordingsFor();
+    var file = swapVoicePath(maps.lines[lineId], maps.useMms);
     var custom = getCustomAudio(dlgKey, text) || getCustomAudio(lineId, text);
-    if (custom && play(custom, options)) return true;
+    if (custom && play(custom, Object.assign({}, options || {}, { fallbackUrl: file }))) return true;
     if (S.core && S.core.dialogue) {
       var dObj = S.core.dialogue(dialogueId);
       var lObj = dObj && dObj.lines && dObj.lines[index];
       if (lObj && lObj.sourceKey) {
         var srcCustom = getCustomAudio(lObj.sourceKey, lObj.mg || text);
-        if (srcCustom && play(srcCustom, options)) return true;
+        if (srcCustom && play(srcCustom, Object.assign({}, options || {}, { fallbackUrl: file }))) return true;
       }
     }
-    var maps = recordingsFor();
-    var file = swapVoicePath(maps.lines[lineId], maps.useMms);
     if (isOpenAIVoiceSelected()) {
       var entry = (S.core && S.core.entryForKey) ? S.core.entryForKey(dlgKey) : null;
       var ed = (S.core && S.core.getEdit) ? S.core.getEdit(dlgKey) : null;
@@ -1256,7 +1334,7 @@ window.Salama = window.Salama || {};
     var h = handlers || {};
     stopAll();
     var isData = url && (url.indexOf('data:') === 0 || url.indexOf('blob:') === 0);
-    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.6.1' : url;
+    var versionedUrl = (!isData && url && url.indexOf('?') === -1) ? url + '?v=4.6.2' : url;
     var audio = new Audio(versionedUrl);
     currentAudio = audio;
     markButton(h.node);
@@ -1267,23 +1345,30 @@ window.Salama = window.Salama || {};
     if (slow) {
       try { audio.playbackRate = 0.65; } catch (e) { /* older engines */ }
     }
+    function handlePlayFailure() {
+      currentAudio = null;
+      var cleanRel = String(url || '').split('?')[0];
+      if (!h._retriedRaw && cleanRel.indexOf('media/audio_custom/') === 0) {
+        var rawRetryUrl = 'https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/' + cleanRel + '?v=4.6.2';
+        play(rawRetryUrl, Object.assign({}, h, { _retriedRaw: true }));
+        return;
+      }
+      if (!h._retriedFallback && h.fallbackUrl && h.fallbackUrl !== url) {
+        play(h.fallbackUrl, Object.assign({}, h, { _retriedFallback: true }));
+        return;
+      }
+      clearButton();
+      if (h.onError) h.onError();
+    }
     audio.addEventListener('ended', function () {
       currentAudio = null;
       clearButton();
       if (h.onEnd) h.onEnd();
     });
-    audio.addEventListener('error', function () {
-      currentAudio = null;
-      clearButton();
-      if (h.onError) h.onError();
-    });
+    audio.addEventListener('error', handlePlayFailure);
     var attempt = audio.play();
     if (attempt && typeof attempt.catch === 'function') {
-      attempt.catch(function () {
-        currentAudio = null;
-        clearButton();
-        if (h.onError) h.onError();
-      });
+      attempt.catch(handlePlayFailure);
     }
     return audio;
   }
