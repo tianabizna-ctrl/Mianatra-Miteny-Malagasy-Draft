@@ -23,6 +23,7 @@ window.Salama = window.Salama || {};
         autoplay: true,
         rate: 0.82,
         syllables: false,
+        showInlineEdit: true,
         recordedVoice: 'abidi',
         voiceURI: '',
         direction: 'miteny',
@@ -70,6 +71,11 @@ window.Salama = window.Salama || {};
   state.quizzes = state.quizzes || [];
   state.streak = state.streak || { last: null, days: 0, visits: 0 };
   state.prefs = Object.assign(blank().prefs, state.prefs || {});
+  if (!state.prefs._inlineEditDefaultV459) {
+    state.prefs.showInlineEdit = true;
+    state.prefs._inlineEditDefaultV459 = true;
+    try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+  }
 
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); }
@@ -162,6 +168,7 @@ window.Salama = window.Salama || {};
   var entryByKey = {};
   var keyByMg = {};
   var keyByNormMg = {};
+  var keysByOrigLow = {};
 
   function normMg(text) {
     return String(text || '')
@@ -176,21 +183,38 @@ window.Salama = window.Salama || {};
       .trim();
   }
 
-  C.dialogues.forEach(function (d) {
-    (d.lines || []).forEach(function (line, idx) {
-      var k = 'dlg:' + d.id + ':' + idx;
-      entryByKey[k] = line;
-      if (line.mg) {
-        var low = line.mg.trim().toLowerCase();
-        var nm = normMg(line.mg);
+  function registerEntryKey(k, item, allowPrimary) {
+    entryByKey[k] = item;
+    if (item && item.mg) {
+      if (item._orig_mg === undefined) item._orig_mg = item.mg || '';
+      if (item._orig_pron === undefined) item._orig_pron = item.pron || '';
+      if (item._orig_en === undefined) item._orig_en = item.en || '';
+      if (item._orig_approx === undefined) item._orig_approx = Boolean(item.pron_approx);
+      if (item._orig_verified === undefined) item._orig_verified = Boolean(item.pron_verified);
+      var low = item.mg.trim().toLowerCase();
+      var nm = normMg(item.mg);
+      if (allowPrimary !== false) {
         if (!keyByMg[low]) keyByMg[low] = k;
         if (nm && !keyByNormMg[nm]) keyByNormMg[nm] = k;
       }
+      if (low && item.id !== 'eny_(visible)') {
+        if (!keysByOrigLow[low]) keysByOrigLow[low] = [];
+        if (keysByOrigLow[low].indexOf(k) === -1) keysByOrigLow[low].push(k);
+      }
+    }
+  }
+
+  C.dialogues.forEach(function (d) {
+    (d.lines || []).forEach(function (line, idx) {
+      registerEntryKey('dlg:' + d.id + ':' + idx, line, true);
+    });
+    (d.swapPrompts || []).forEach(function (sp, spIdx) {
+      registerEntryKey('swap:' + d.id + ':' + spIdx, sp, false);
     });
   });
   C.phrases.forEach(function (p) {
     var k = 'phrase:' + p.id;
-    entryByKey[k] = p;
+    registerEntryKey(k, p, true);
     if (p.mg) {
       var low = p.mg.trim().toLowerCase();
       var nm = normMg(p.mg);
@@ -200,7 +224,7 @@ window.Salama = window.Salama || {};
   });
   C.vocabulary.forEach(function (w) {
     var k = 'word:' + w.id;
-    entryByKey[k] = w;
+    registerEntryKey(k, w, w.id !== 'eny_(visible)');
     if (w.mg && w.id !== 'eny_(visible)') {
       var low = w.mg.trim().toLowerCase();
       var nm = normMg(w.mg);
@@ -211,8 +235,7 @@ window.Salama = window.Salama || {};
   C.grammar.forEach(function (g) {
     (g.rules || []).forEach(function (r, ri) {
       (r.examples || []).forEach(function (ex, ei) {
-        var k = 'gram:' + g.id + ':' + ri + ':' + ei;
-        entryByKey[k] = ex;
+        registerEntryKey('gram:' + g.id + ':' + ri + ':' + ei, ex, false);
       });
     });
   });
@@ -304,6 +327,15 @@ window.Salama = window.Salama || {};
 
   Object.keys(editsMap).forEach(function (k) {
     applyEditToEntry(k, editsMap[k]);
+    var item = entryByKey[k];
+    var origLow = item && item._orig_mg ? item._orig_mg.trim().toLowerCase() : '';
+    if (origLow && keysByOrigLow[origLow]) {
+      keysByOrigLow[origLow].forEach(function (sibKey) {
+        if (sibKey !== k && !editsMap[sibKey]) {
+          applyEditToEntry(sibKey, editsMap[k]);
+        }
+      });
+    }
   });
 
   function entryForKey(key) { return entryByKey[key] || null; }
@@ -343,6 +375,15 @@ window.Salama = window.Salama || {};
     }
     editsMap[key] = cur;
     applyEditToEntry(key, cur);
+    var origLow = item._orig_mg ? item._orig_mg.trim().toLowerCase() : '';
+    if (origLow && keysByOrigLow[origLow]) {
+      keysByOrigLow[origLow].forEach(function (sibKey) {
+        if (sibKey !== key) {
+          editsMap[sibKey] = Object.assign({}, editsMap[sibKey] || {}, cur);
+          applyEditToEntry(sibKey, editsMap[sibKey]);
+        }
+      });
+    }
     saveEditsMap();
     return true;
   }
@@ -350,15 +391,124 @@ window.Salama = window.Salama || {};
   function resetEdit(key) {
     var item = entryByKey[key];
     if (!item) return false;
-    if (editsMap[key]) {
-      delete editsMap[key].mg;
-      delete editsMap[key].pron;
-      delete editsMap[key].en;
-      if (!editsMap[key].verdict && !editsMap[key].note) delete editsMap[key];
-    }
-    applyEditToEntry(key, {});
+    var origLow = item._orig_mg ? item._orig_mg.trim().toLowerCase() : '';
+    var keysToReset = (origLow && keysByOrigLow[origLow]) ? keysByOrigLow[origLow] : [key];
+    if (keysToReset.indexOf(key) === -1) keysToReset.push(key);
+    keysToReset.forEach(function (rk) {
+      if (editsMap[rk]) {
+        delete editsMap[rk].mg;
+        delete editsMap[rk].pron;
+        delete editsMap[rk].en;
+        if (!editsMap[rk].verdict && !editsMap[rk].note) delete editsMap[rk];
+      }
+      applyEditToEntry(rk, {});
+    });
     saveEditsMap();
     return true;
+  }
+
+  /* ---------------- course lesson entries (for Manual edits at current course lesson) ---------------- */
+  var sessionMapByEntryKey = {};
+  C.sessions.forEach(function (s) {
+    var tag = 'W' + s.week + ' \u00b7 S' + s.number;
+    function markKey(k) {
+      if (!sessionMapByEntryKey[k]) sessionMapByEntryKey[k] = [];
+      if (sessionMapByEntryKey[k].indexOf(tag) === -1) sessionMapByEntryKey[k].push(tag);
+    }
+    var d1 = s.dialogue ? dialogueById[s.dialogue] : null;
+    if (d1 && d1.lines) {
+      d1.lines.forEach(function (_, idx) { markKey('dlg:' + d1.id + ':' + idx); });
+    }
+    (s.words || []).forEach(function (wid) { markKey('word:' + wid); });
+    var rpId = s.roleplay || ('dlg_rp_' + s.id);
+    var dRp = rpId ? dialogueById[rpId] : null;
+    if (dRp) {
+      (dRp.lines || []).forEach(function (_, idx) { markKey('dlg:' + dRp.id + ':' + idx); });
+      (dRp.swapPrompts || []).forEach(function (_, idx) { markKey('swap:' + dRp.id + ':' + idx); });
+    }
+  });
+
+  function sessionsForEntryKey(key) {
+    return sessionMapByEntryKey[key] || [];
+  }
+
+  function sessionEntries(sessionId) {
+    var s = sessionById[sessionId] || currentSession() || C.sessions[0];
+    if (!s) return [];
+    var rows = [];
+    var seenKeys = {};
+    var lessonPrefix = 'Week ' + s.week + ' \u00b7 ' + s.day.slice(0, 3) + ' \u00b7 Session ' + s.number;
+
+    var d1 = s.dialogue ? dialogueById[s.dialogue] : null;
+    if (d1 && d1.lines) {
+      d1.lines.forEach(function (line, idx) {
+        var key = 'dlg:' + d1.id + ':' + idx;
+        seenKeys[key] = true;
+        rows.push({
+          key: key,
+          step: 0,
+          stepLabel: 'Step 1 \u00b7 Dialogue',
+          kind: 'Step 1 \u00b7 Dialogue line ' + (idx + 1) + (line.speaker ? ' (' + line.speaker + ')' : ''),
+          where: lessonPrefix + ' \u00b7 ' + d1.title,
+          sessionId: s.id,
+          item: line,
+          speakOpts: { line: d1.id + ':' + idx, editKey: key }
+        });
+      });
+    }
+
+    var wordList = (s.words || []).map(function (wid) { return byId[wid]; }).filter(Boolean);
+    wordList.forEach(function (w, idx) {
+      var key = 'word:' + w.id;
+      seenKeys[key] = true;
+      rows.push({
+        key: key,
+        step: 1,
+        wordIndex: idx,
+        stepLabel: 'Step 2 \u00b7 New words',
+        kind: 'Step 2 \u00b7 New word ' + (idx + 1) + ' of ' + wordList.length,
+        where: lessonPrefix + ' \u00b7 New words',
+        sessionId: s.id,
+        item: w,
+        speakOpts: { wordId: w.id, editKey: key }
+      });
+    });
+
+    var rpId = s.roleplay || ('dlg_rp_' + s.id);
+    var dRp = rpId ? dialogueById[rpId] : null;
+    if (dRp) {
+      (dRp.lines || []).slice(0, 10).forEach(function (line, idx) {
+        var key = 'dlg:' + dRp.id + ':' + idx;
+        if (seenKeys[key]) return;
+        seenKeys[key] = true;
+        rows.push({
+          key: key,
+          step: 2,
+          stepLabel: 'Step 3 \u00b7 Roleplay',
+          kind: 'Step 3 \u00b7 Roleplay turn ' + (idx + 1) + (line.speaker ? ' (' + line.speaker + ')' : ''),
+          where: lessonPrefix + ' \u00b7 ' + (dRp.title || 'Roleplay'),
+          sessionId: s.id,
+          item: line,
+          speakOpts: { line: dRp.id + ':' + idx, editKey: key }
+        });
+      });
+      (dRp.swapPrompts || []).forEach(function (sp, spIdx) {
+        var key = 'swap:' + dRp.id + ':' + spIdx;
+        if (seenKeys[key]) return;
+        seenKeys[key] = true;
+        rows.push({
+          key: key,
+          step: 2,
+          stepLabel: 'Step 3 \u00b7 Roleplay',
+          kind: 'Step 3 \u00b7 Roleplay Swap ' + (spIdx + 1),
+          where: lessonPrefix + ' \u00b7 Round 2 Swap',
+          sessionId: s.id,
+          item: sp,
+          speakOpts: { wordId: sp.id, editKey: key }
+        });
+      });
+    }
+    return rows;
   }
 
   function editCount() {
@@ -709,6 +859,8 @@ window.Salama = window.Salama || {};
     resetAllEdits: resetAllEdits,
     editCount: editCount,
     exportEditsTSV: exportEditsTSV,
+    sessionEntries: sessionEntries,
+    sessionsForEntryKey: sessionsForEntryKey,
     reload: function (nextState) { state = nextState; }
   };
 })(window.Salama);

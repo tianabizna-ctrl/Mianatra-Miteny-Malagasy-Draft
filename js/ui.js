@@ -205,25 +205,37 @@ window.Salama = window.Salama || {};
 
   function findCardContainer(node) {
     if (!node || !node.closest) return null;
-    return node.closest('.entry, .turn, .word-focus, .review-card') || node.parentElement;
+    return node.closest('.entry, .turn, .word-focus, .review-card, .row-card') || node.parentElement;
   }
 
   function updateCardDOM(container, item) {
     if (!container || !item) return;
-    var mgNode = container.querySelector('.mg-line, .word, .line, .prompt[lang="mg"], .answer [lang="mg"]');
+    var mgNode = container.querySelector('.mg-line, .word, .line, .prompt[lang="mg"], .answer [lang="mg"], strong[lang="mg"]');
     if (mgNode) mgNode.textContent = item.mg || '';
     var sayNode = container.querySelector('.say');
+    var pronNode = container.querySelector('.pron');
     if (item.pron) {
-      if (!sayNode && mgNode && mgNode.parentElement) {
-        sayNode = document.createElement('p');
-        sayNode.className = 'say';
-        mgNode.insertAdjacentElement('afterend', sayNode);
+      if (pronNode) {
+        pronNode.innerHTML = '[' + esc(item.pron) + ']' + pronunciationTag(item);
+      } else {
+        if (!sayNode && mgNode && mgNode.parentElement) {
+          sayNode = document.createElement('p');
+          sayNode.className = 'say';
+          mgNode.insertAdjacentElement('afterend', sayNode);
+        }
+        if (sayNode) {
+          sayNode.innerHTML = '<span class="say-label">Phonetic:</span> ' + esc(item.pron) + pronunciationTag(item);
+        }
       }
-      if (sayNode) {
-        sayNode.innerHTML = '<span class="say-label">Phonetic:</span> ' + esc(item.pron) + pronunciationTag(item);
-      }
-    } else if (sayNode) {
-      sayNode.remove();
+    } else {
+      if (sayNode) sayNode.remove();
+      if (pronNode) pronNode.remove();
+    }
+    var curChip = container.querySelector && container.querySelector('.word-chip[aria-current="true"]');
+    if (curChip) {
+      var numSpan = curChip.querySelector('span');
+      var numHtml = numSpan ? numSpan.outerHTML + ' ' : '';
+      curChip.innerHTML = numHtml + esc(item.mg || '');
     }
     var speakNodes = container.querySelectorAll('[data-speak]');
     for (var i = 0; i < speakNodes.length; i++) {
@@ -303,6 +315,9 @@ window.Salama = window.Salama || {};
         var updatedItem = S.core.entryForKey(saveKey);
         updateCardDOM(saveContainer, updatedItem);
         saveBox.remove();
+        try {
+          document.dispatchEvent(new CustomEvent('salama:edit-saved', { detail: { key: saveKey, item: updatedItem } }));
+        } catch (e) {}
         toast('Saved Malagasy & phonetics.');
       }
       return true;
@@ -318,6 +333,9 @@ window.Salama = window.Salama || {};
         var origItem = S.core.entryForKey(resetKey);
         updateCardDOM(resetContainer, origItem);
         if (resetBox) resetBox.remove();
+        try {
+          document.dispatchEvent(new CustomEvent('salama:edit-saved', { detail: { key: resetKey, item: origItem } }));
+        } catch (e) {}
         toast('Restored original Malagasy & phonetics.');
       }
       return true;

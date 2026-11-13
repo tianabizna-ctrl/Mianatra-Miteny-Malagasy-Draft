@@ -2925,6 +2925,95 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   cursor: not-allowed;
 }
 
+.runner-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lesson-edit-jump-btn {
+  padding: 5px 12px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border-color: var(--accent, #123F2B);
+  color: var(--accent, #123F2B);
+  background: var(--accent-soft, #FFF0B8);
+}
+.lesson-edit-jump-btn:hover {
+  filter: brightness(0.97);
+}
+.lesson-manual-edits {
+  margin-top: 18px;
+  padding: 14px 18px;
+  border: 2px solid var(--line);
+}
+.lesson-manual-edits[open] {
+  border-color: var(--accent, #123F2B);
+}
+.lesson-manual-edits-summary {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 0.94rem;
+  color: var(--ink);
+  user-select: none;
+  list-style: none;
+}
+.lesson-manual-edits-summary::-webkit-details-marker {
+  display: none;
+}
+.lesson-manual-edits-pill {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft, #FFF0B8);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.lesson-edits-body {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.lesson-edits-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.lesson-edit-card.is-active-word {
+  border: 2px solid var(--accent, #123F2B);
+  background: var(--surface);
+}
+.session-row-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.session-row-wrap .session-row {
+  margin-bottom: 0;
+}
+.course-session-edit-link {
+  align-self: flex-end;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent, #123F2B);
+  text-decoration: none;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.course-session-edit-link:hover {
+  background: var(--accent-soft, #FFF0B8);
+}
+
+
 
 
 
