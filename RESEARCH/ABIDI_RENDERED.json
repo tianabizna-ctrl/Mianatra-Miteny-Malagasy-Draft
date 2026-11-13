@@ -2269,7 +2269,7 @@
  },
  "dlg-intro-1b-13-0": {
   "kind": "lines",
-  "text": "Mazotoa mihinana!",
+  "text": "Mazotoa homana",
   "seconds": 2.07,
   "voice": "abidi"
  },
@@ -9643,13 +9643,13 @@
  },
  "mazotoa-homana": {
   "kind": "words",
-  "text": "Mazotoa mihinana!",
+  "text": "Mazotoa homana",
   "seconds": 2.79,
   "voice": "abidi"
  },
  "mazotoa-homana-tsm-mihinana-off": {
   "kind": "words",
-  "text": "Mazotoa mihinana",
+  "text": "Mazotoa homana",
   "seconds": 2.49,
   "voice": "abidi"
  },
@@ -13813,7 +13813,7 @@
  },
  "rpb-mazotoa-homana": {
   "kind": "phrases",
-  "text": "Mazotoa mihinana!",
+  "text": "Mazotoa homana",
   "seconds": 2.37,
   "voice": "abidi"
  },

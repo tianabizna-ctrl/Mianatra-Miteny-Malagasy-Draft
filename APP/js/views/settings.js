@@ -188,11 +188,17 @@
           '<button class="btn ' + (prefs.showInlineEdit ? '' : 'btn-quiet') + '" type="button" data-inline-edit="true" aria-pressed="' +
             (prefs.showInlineEdit ? 'true' : 'false') + '">' + (prefs.showInlineEdit ? 'On' : 'Off') + '</button>' +
         '</div>' +
-        '<p style="margin-top:12px">Use the built-in Malagasy &amp; Phonetics Editor to search and edit any Official Malagasy sentence, phrase, word, or phonetic guide. ' +
+        '<p style="margin-top:12px">You can edit any Malagasy word, sentence, or phonetic guide directly inside each course lesson, or open the Course Lesson Editor below. ' +
           'Currently saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
         '<div class="btn-row">' +
-          '<a class="btn" href="#/record/fahasalamana">\u25CF Record My Voice (Fahasalamana, etc.)</a>' +
-          '<a class="btn btn-secondary" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>' +
+          (function () {
+            var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
+            return cs
+              ? '<a class="btn" href="#/edit/session/' + ui.esc(cs.id) + '">\u270E Edit Current Course Lesson (W' + cs.week + ' \u00b7 S' + cs.number + ')</a>'
+              : '<a class="btn" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>';
+          })() +
+          '<a class="btn btn-secondary" href="#/record/fahasalamana">\u25CF Record My Voice (Fahasalamana, etc.)</a>' +
+          '<a class="btn btn-secondary" href="#/edit/words">\u270E Open Full Dictionary Editor</a>' +
           '<a class="btn btn-secondary" href="PROOFREAD.html">Open full proofread &amp; edit sheet</a>' +
           '<button class="btn btn-secondary" type="button" data-export-edits="true">' +
             ui.icon('download') + 'Export edits (.tsv)</button>' +
