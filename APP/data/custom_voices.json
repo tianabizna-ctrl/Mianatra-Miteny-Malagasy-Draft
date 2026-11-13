@@ -582,7 +582,10 @@
   "dlg:dlg_rp_w4s3:0": "media/audio_custom/dlg_rp_w4s3-0.wav",
   "phrase:mihinana_vary_aho": "media/audio_custom/mihinana_vary_aho.wav",
   "word:mihinana_vary_aho": "media/audio_custom/mihinana_vary_aho.wav",
-  "dlg:dlg_rp_w4s3:1": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s3-1.wav?t=1794570427911",
-  "phrase:tsy_tia_hena_aho": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s3-1.wav?t=1794570427911",
-  "word:tsy_tia_hena_aho": "media/audio_custom/tsy_tia_hena_aho.wav"
+  "dlg:dlg_rp_w4s3:1": "media/audio_custom/dlg_rp_w4s3-1.wav",
+  "phrase:tsy_tia_hena_aho": "media/audio_custom/tsy_tia_hena_aho.wav",
+  "word:tsy_tia_hena_aho": "media/audio_custom/tsy_tia_hena_aho.wav",
+  "dlg:dlg_rp_w4s3:2": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s3-2.wav?t=1794570450668",
+  "phrase:rpb_tsy_tiako_ity_loko_ity": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w4s3-2.wav?t=1794570450668",
+  "word:rpb_tsy_tiako_ity_loko_ity": "media/audio_custom/rpb_tsy_tiako_ity_loko_ity.wav"
 }
