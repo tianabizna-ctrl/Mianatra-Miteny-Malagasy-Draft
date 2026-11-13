@@ -194,11 +194,16 @@ window.Salama = window.Salama || {};
     if (!speech || !S.core || !S.core.data) return false;
     var data = S.core.data;
     var wordId = node.getAttribute('data-word-id');
+    var lineStr = String(node.getAttribute('data-line') || '');
+    var text = node.getAttribute('data-speak') || node.getAttribute('data-slow') || '';
+    if (speech.hasCustomAudio) {
+      var rk = wordId ? ('word:' + wordId) : (lineStr ? ('dlg:' + lineStr) : '');
+      if (speech.hasCustomAudio(rk, text)) return true;
+    }
     if (wordId && ((data.wordAudio && data.wordAudio[wordId]) ||
                    (data.phraseAudio && data.phraseAudio[wordId]))) return true;
-    var line = String(node.getAttribute('data-line') || '').split(':');
+    var line = lineStr.split(':');
     if (line.length === 2 && data.lineAudio && data.lineAudio[line[0] + '-' + line[1]] !== undefined) return true;
-    var text = node.getAttribute('data-speak') || node.getAttribute('data-slow') || '';
     if (text && speech.clipForText && speech.clipForText(text)) return true;
     return false;
   }

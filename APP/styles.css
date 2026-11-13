@@ -3035,20 +3035,26 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   transition: background 0.18s ease, border-color 0.18s ease;
 }
 .editor-switch.is-on {
-  border-color: var(--accent, #123F2B);
-  background: var(--accent-soft, #FFF0B8);
+  border-color: #156A3F;
+  background: #E3F3EA;
+  color: #0B2D1F;
+}
+.editor-switch.is-off {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--muted);
 }
 .editor-switch-track {
   position: relative;
   width: 46px;
   height: 26px;
   border-radius: 999px;
-  background: #bfb6a2;
+  background: #8c8577;
   display: inline-block;
   transition: background 0.18s ease;
 }
 .editor-switch.is-on .editor-switch-track {
-  background: var(--accent, #123F2B);
+  background: #156A3F;
 }
 .editor-switch-thumb {
   position: absolute;
@@ -3068,6 +3074,13 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   min-width: 30px;
   text-align: left;
   letter-spacing: 0.04em;
+}
+html[data-editor-mode="off"] [data-edit-key],
+html[data-editor-mode="off"] .edit-btn,
+html[data-editor-mode="off"] .inline-edit-box,
+html[data-editor-mode="off"] #lessonEditsMount,
+html[data-editor-mode="off"] .editor-only-tools {
+  display: none !important;
 }
 main#main {
   padding-bottom: 96px;

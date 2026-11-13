@@ -728,6 +728,7 @@ window.Salama = window.Salama || {};
     var mode = rawMode === 'auto' ? (dir === 'dusk' ? 'dark' : 'light') : rawMode;
     root.setAttribute('data-dir', dir);
     root.setAttribute('data-mode', mode);
+    root.setAttribute('data-editor-mode', state.prefs.showInlineEdit ? 'on' : 'off');
     if (root.style && root.style.setProperty) {
       var pal = PALETTES[state.prefs.palette] || PALETTES.miteny;
       root.style.setProperty('--accent', pal.accent);
