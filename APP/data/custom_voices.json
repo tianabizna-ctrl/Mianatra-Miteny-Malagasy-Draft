@@ -533,8 +533,12 @@
   "dlg:dlg_rp_w4s1:5": "media/audio_custom/dlg_rp_w4s1-5.wav",
   "phrase:afaka_mahazo_vera_rano_ve_aho_azafady": "media/audio_custom/afaka_mahazo_vera_rano_ve_aho_azafady.wav",
   "word:afaka_mahazo_vera_rano_ve_aho_azafady": "media/audio_custom/afaka_mahazo_vera_rano_ve_aho_azafady.wav",
-  "word:tsy": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/tsy.wav?t=1794569449491",
+  "word:tsy": "media/audio_custom/tsy.wav",
   "phrase:tsy": "media/audio_custom/tsy.wav",
-  "phrase:wv_nothing": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/tsy.wav?t=1794569449491",
-  "word:wv_nothing": "media/audio_custom/wv_nothing.wav"
+  "phrase:wv_nothing": "media/audio_custom/wv_nothing.wav",
+  "word:wv_nothing": "media/audio_custom/wv_nothing.wav",
+  "word:tsia": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/tsia.wav?t=1794569460797",
+  "phrase:tsia": "media/audio_custom/tsia.wav",
+  "phrase:wv_no": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/tsia.wav?t=1794569460797",
+  "word:wv_no": "media/audio_custom/wv_no.wav"
 }
