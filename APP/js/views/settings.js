@@ -6,6 +6,7 @@
   var speech = S.speech;
 
   var RATES = [['0.62', 'Slow'], ['0.82', 'Normal'], ['1', 'Brisk']];
+  var advOpen = false;
   var DIRECTIONS = [['miteny', 'Miteny (forest & gold)'], ['laterite', 'Laterite (red earth)'], ['raffia', 'Raffia (woven warm)'], ['dusk', 'Baobab dusk (dark)']];
   var PALETTE_LIST = [['miteny', 'Miteny Forest'], ['laterite', 'Laterite'], ['vanilla', 'Vanilla'], ['ravinala', 'Ravinala'], ['lamba', 'Lamba']];
   var FONT_LIST = [['fraunces', 'Fraunces + Public Sans'], ['gloock', 'Gloock + Instrument'], ['young', 'Young Serif + Work'], ['bricolage', 'Bricolage']];
@@ -180,46 +181,6 @@
         '</div>' +
       '</div>' +
 
-      '<h2>Manual edits (Malagasy &amp; phonetics)</h2>' +
-      '<div class="panel">' +
-        '<div class="setting">' +
-          '<div><div class="k">Show inline \u270E Edit button on cards</div>' +
-          '<div class="h">When enabled, every word, phrase, and dialogue card displays an inline \u270E Edit button.</div></div>' +
-          '<button class="btn ' + (prefs.showInlineEdit ? '' : 'btn-quiet') + '" type="button" data-inline-edit="true" aria-pressed="' +
-            (prefs.showInlineEdit ? 'true' : 'false') + '">' + (prefs.showInlineEdit ? 'On' : 'Off') + '</button>' +
-        '</div>' +
-        '<p style="margin-top:12px">You can edit any Malagasy word, sentence, or phonetic guide directly inside each course lesson, or open the Course Lesson Editor below. ' +
-          'Currently saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
-        '<div class="btn-row">' +
-          (function () {
-            var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
-            return cs
-              ? '<a class="btn" href="#/edit/session/' + ui.esc(cs.id) + '">\u270E Edit Current Course Lesson (W' + cs.week + ' \u00b7 S' + cs.number + ')</a>'
-              : '<a class="btn" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>';
-          })() +
-          '<a class="btn btn-secondary" href="#/record/fahasalamana">\u25CF Record My Voice (Fahasalamana, etc.)</a>' +
-          '<a class="btn btn-secondary" href="#/edit/words">\u270E Open Full Dictionary Editor</a>' +
-          '<a class="btn btn-secondary" href="PROOFREAD.html">Open full proofread &amp; edit sheet</a>' +
-          '<button class="btn btn-secondary" type="button" data-export-edits="true">' +
-            ui.icon('download') + 'Export edits (.tsv)</button>' +
-        '</div>' +
-        '<details class="advanced-lock-details" style="margin-top:16px">' +
-          '<summary class="advanced-lock-summary">\uD83D\uDD12 Advanced options (Locked)</summary>' +
-          '<div class="advanced-lock-body">' +
-            '<p class="meta" style="margin:0 0 10px">Resetting manual edits is locked to protect your custom Malagasy &amp; phonetic edits from accidental deletion.</p>' +
-            '<label class="advanced-unlock-label">' +
-              '<input type="checkbox" id="unlockResetEdits"> ' +
-              '<span>Unlock manual-edits reset</span>' +
-            '</label>' +
-            '<div style="margin-top:10px">' +
-              '<button class="btn btn-danger btn-sm" type="button" id="resetEditsBtn" data-reset-edits="true" disabled>' +
-                '\uD83D\uDD12 Locked \u2014 Reset all manual edits</button>' +
-            '</div>' +
-            '<p class="meta" id="resetEditsNote" hidden style="margin-top:8px;color:#c93b2b;font-weight:700">Tap once more to permanently clear all manual edits on this device.</p>' +
-          '</div>' +
-        '</details>' +
-      '</div>' +
-
       '<h2>Your data</h2>' +
       '<div class="panel">' +
         '<p>Progress is stored in this browser only — ' +
@@ -236,6 +197,45 @@
             ui.icon('trash') + 'Reset everything</button>' +
         '</div>' +
         '<p class="meta" id="resetNote" hidden>Tap reset once more to erase all progress on this device.</p>' +
+
+        '<details class="advanced-lock-details" id="editorModeDetails" style="margin-top:18px"' + ((advOpen || prefs.showInlineEdit) ? ' open' : '') + '>' +
+          '<summary class="advanced-lock-summary">\uD83D\uDD12 Advanced options \u2014 Editor Mode (Malagasy &amp; phonetics)</summary>' +
+          '<div class="advanced-lock-body">' +
+            '<div class="setting" style="padding-top:0">' +
+              '<div>' +
+                '<div class="k">Editor Mode \u2014 Switch inline \u270E Edit &amp; course lesson editing On or Off</div>' +
+                '<div class="h">When <strong>On</strong>, every word, dialogue, and roleplay card shows the direct <strong>\u270E Edit</strong> button and each course lesson shows the <strong>\u270E Manual edits (this lesson)</strong> drawer. Keep <strong>Off</strong> so only you (the editor) see and trigger edits.</div>' +
+              '</div>' +
+              '<button class="btn ' + (prefs.showInlineEdit ? '' : 'btn-quiet') + '" type="button" data-inline-edit="true" aria-pressed="' +
+                (prefs.showInlineEdit ? 'true' : 'false') + '">' + (prefs.showInlineEdit ? '\u270E Edit Mode: On' : 'Edit Mode: Off') + '</button>' +
+            '</div>' +
+            '<p class="meta" style="margin:10px 0">Saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
+            '<div class="btn-row" style="margin-top:8px">' +
+              (function () {
+                var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
+                return cs
+                  ? '<a class="btn btn-sm" href="#/edit/session/' + ui.esc(cs.id) + '">\u270E Edit Current Course Lesson (W' + cs.week + ' \u00b7 S' + cs.number + ')</a>'
+                  : '<a class="btn btn-sm" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>';
+              })() +
+              '<a class="btn btn-secondary btn-sm" href="#/record/fahasalamana">\u25CF Record My Voice</a>' +
+              '<a class="btn btn-secondary btn-sm" href="#/edit/words">\u270E Open Full Dictionary Editor</a>' +
+              '<a class="btn btn-secondary btn-sm" href="PROOFREAD.html">Open proofread sheet</a>' +
+              '<button class="btn btn-secondary btn-sm" type="button" data-export-edits="true">' +
+                ui.icon('download') + 'Export edits (.tsv)</button>' +
+            '</div>' +
+            '<div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)">' +
+              '<label class="advanced-unlock-label">' +
+                '<input type="checkbox" id="unlockResetEdits"> ' +
+                '<span>Unlock manual-edits reset (protects custom Malagasy &amp; phonetic edits)</span>' +
+              '</label>' +
+              '<div style="margin-top:8px">' +
+                '<button class="btn btn-danger btn-sm" type="button" id="resetEditsBtn" data-reset-edits="true" disabled>' +
+                  '\uD83D\uDD12 Locked \u2014 Reset all manual edits</button>' +
+              '</div>' +
+              '<p class="meta" id="resetEditsNote" hidden style="margin-top:8px;color:#c93b2b;font-weight:700">Tap once more to permanently clear all manual edits on this device.</p>' +
+            '</div>' +
+          '</div>' +
+        '</details>' +
       '</div>' +
 
       '<h2>About</h2>' +
@@ -251,6 +251,12 @@
     var scope = root.querySelector('.view-narrow') || root;
     var resetArmed = false;
     var resetEditsArmed = false;
+    var edDetails = scope.querySelector && scope.querySelector('#editorModeDetails');
+    if (edDetails && edDetails.addEventListener) {
+      edDetails.addEventListener('toggle', function () {
+        advOpen = Boolean(edDetails.open);
+      });
+    }
 
     scope.addEventListener('change', function (event) {
       if (event.target.id === 'unlockResetEdits') {
@@ -353,7 +359,10 @@
         return;
       }
       if (event.target.closest('[data-inline-edit]')) {
-        core.setPref('showInlineEdit', !core.state.prefs.showInlineEdit);
+        advOpen = true;
+        var nextEdit = !core.state.prefs.showInlineEdit;
+        core.setPref('showInlineEdit', nextEdit);
+        ui.toast(nextEdit ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.' : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
         rerender();
         return;
       }

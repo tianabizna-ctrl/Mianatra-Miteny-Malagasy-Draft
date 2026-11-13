@@ -441,12 +441,13 @@
     else body = roleplayStep(session);
 
     var prev = core.adjacentSession(session.id, -1);
+    var canEdit = Boolean(core.state && core.state.prefs && core.state.prefs.showInlineEdit);
 
     return '<div class="view-narrow">' +
       '<div class="runner-head runner-head-compact">' +
         '<p class="meta" style="margin:0"><strong>Week ' + session.week + ' \u00b7 ' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + ' of 3</strong> \u2014 ' + ui.esc(session.focus) + '</p>' +
         '<div class="runner-head-actions">' +
-          '<button class="icon-btn lesson-edit-jump-btn" type="button" data-open-lesson-edits="true" title="Edit Malagasy &amp; phonetics for this lesson">\u270E<span>Manual edits (this lesson)</span></button>' +
+          (canEdit ? '<button class="icon-btn lesson-edit-jump-btn" type="button" data-open-lesson-edits="true" title="Edit Malagasy &amp; phonetics for this lesson">\u270E<span>Manual edits (this lesson)</span></button>' : '') +
           '<a class="cta-link" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
         '</div>' +
       '</div>' +
@@ -458,7 +459,7 @@
         '<span class="position">Step ' + (run.step + 1) + ' of 3 \u00b7 <kbd>\u2190</kbd> <kbd>\u2192</kbd> keys work too</span>' +
         '<button class="btn" type="button" data-next="true">' + nextLabel() + ui.icon('arrow-right') + '</button>' +
       '</div>' +
-      renderLessonEditsPanel(session) +
+      (canEdit ? renderLessonEditsPanel(session) : '') +
       '</div>';
   }
 
