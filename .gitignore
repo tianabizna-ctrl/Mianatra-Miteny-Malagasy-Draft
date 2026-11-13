@@ -3,5 +3,7 @@ RESEARCH/.abidi_cookies*
 __pycache__/
 *.pyc
 *.wav
+!APP/media/audio_custom/*.wav
+!media/audio_custom/*.wav
 salama-*-complete.zip
 PROOFREAD_AUDIO.html
