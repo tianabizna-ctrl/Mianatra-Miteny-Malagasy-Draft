@@ -865,5 +865,13 @@
   "wvm_roa_arivo_ariary": "media/audio_custom/wvm_roa_arivo_ariary.wav",
   "wvm_zato_ariary": "media/audio_custom/wvm_zato_ariary.wav",
   "zanaka": "media/audio_custom/zanaka.wav",
-  "zato": "media/audio_custom/zato.wav"
+  "zato": "media/audio_custom/zato.wav",
+  "word:mofo": "media/audio_custom/mofo.wav",
+  "phrase:mofo": "media/audio_custom/mofo.wav",
+  "phrase:wv_bread": "media/audio_custom/wv_bread.wav",
+  "word:wv_bread": "media/audio_custom/wv_bread.wav",
+  "dlg:dlg_rp_w5s1:6": "media/audio_custom/dlg_rp_w5s1-6.wav",
+  "phrase:mila_rano_amin'ny_tavoahangy_aho": "media/audio_custom/mila_rano_amin'ny_tavoahangy_aho.wav",
+  "word:mila_rano_amin'ny_tavoahangy_aho": "media/audio_custom/mila_rano_amin'ny_tavoahangy_aho.wav",
+  "dlg:dlg_rp_w5s1:5": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/dlg_rp_w5s1-5.wav?t=1794573097422"
 }
