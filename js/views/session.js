@@ -324,7 +324,7 @@
     core.setPosition(session.id, run.step, run.index);
 
     if (run.step === 3) {
-      return '<div class="view-narrow">' + compass(session, 3) + completionPanel(session) + '</div>';
+      return '<div class="view-narrow">' + completionPanel(session) + '</div>';
     }
 
     var body;
@@ -335,12 +335,8 @@
     var prev = core.adjacentSession(session.id, -1);
 
     return '<div class="view-narrow">' +
-      compass(session, run.step) +
-      '<div class="runner-head">' +
-        '<div>' +
-          '<p class="meta">Week ' + session.week + ' \u00b7 ' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + ' of 3</p>' +
-          '<h1>' + ui.esc(session.focus) + '</h1>' +
-        '</div>' +
+      '<div class="runner-head runner-head-compact">' +
+        '<p class="meta" style="margin:0"><strong>Week ' + session.week + ' \u00b7 ' + ui.esc(session.day) + ' \u00b7 Session ' + session.number + ' of 3</strong> \u2014 ' + ui.esc(session.focus) + '</p>' +
         '<a class="cta-link" href="#/course/' + session.week + '">Week ' + session.week + ' outline</a>' +
       '</div>' +
       stepList(run.step) +

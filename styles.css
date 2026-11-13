@@ -2878,4 +2878,14 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   .resume-wrap .resume-card { grid-column: 1 / -1; }
 }
 
+.runner-head-compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 2px 0 10px;
+}
+
+
 
