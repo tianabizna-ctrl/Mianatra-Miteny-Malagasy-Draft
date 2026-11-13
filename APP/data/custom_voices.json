@@ -551,6 +551,10 @@
   "phrase:kapoaka": "media/audio_custom/kapoaka.wav",
   "word:kilao": "media/audio_custom/kilao.wav",
   "phrase:kilao": "media/audio_custom/kilao.wav",
-  "word:toko": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/toko.wav?t=1794569739707",
-  "phrase:toko": "media/audio_custom/toko.wav"
+  "word:toko": "media/audio_custom/toko.wav",
+  "phrase:toko": "media/audio_custom/toko.wav",
+  "word:atody": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/atody.wav?t=1794569747110",
+  "phrase:atody": "media/audio_custom/atody.wav",
+  "phrase:wv_eggs": "https://raw.githubusercontent.com/tianabizna-ctrl/Mianatra-Miteny-Malagasy/main/APP/media/audio_custom/atody.wav?t=1794569747110",
+  "word:wv_eggs": "media/audio_custom/wv_eggs.wav"
 }
