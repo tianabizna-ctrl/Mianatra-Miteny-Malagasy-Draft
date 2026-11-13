@@ -189,16 +189,29 @@
             (prefs.showInlineEdit ? 'true' : 'false') + '">' + (prefs.showInlineEdit ? 'On' : 'Off') + '</button>' +
         '</div>' +
         '<p style="margin-top:12px">Use the built-in Malagasy &amp; Phonetics Editor to search and edit any Official Malagasy sentence, phrase, word, or phonetic guide. ' +
-          'Currently saved on this device: <strong>' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
+          'Currently saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
         '<div class="btn-row">' +
           '<a class="btn" href="#/record/fahasalamana">\u25CF Record My Voice (Fahasalamana, etc.)</a>' +
           '<a class="btn btn-secondary" href="#/edit">\u270E Open Malagasy &amp; Phonetics Editor</a>' +
           '<a class="btn btn-secondary" href="PROOFREAD.html">Open full proofread &amp; edit sheet</a>' +
           '<button class="btn btn-secondary" type="button" data-export-edits="true">' +
             ui.icon('download') + 'Export edits (.tsv)</button>' +
-          '<button class="btn btn-quiet" type="button" data-reset-edits="true">' +
-            ui.icon('trash') + 'Reset all manual edits</button>' +
         '</div>' +
+        '<details class="advanced-lock-details" style="margin-top:16px">' +
+          '<summary class="advanced-lock-summary">\uD83D\uDD12 Advanced options (Locked)</summary>' +
+          '<div class="advanced-lock-body">' +
+            '<p class="meta" style="margin:0 0 10px">Resetting manual edits is locked to protect your custom Malagasy &amp; phonetic edits from accidental deletion.</p>' +
+            '<label class="advanced-unlock-label">' +
+              '<input type="checkbox" id="unlockResetEdits"> ' +
+              '<span>Unlock manual-edits reset</span>' +
+            '</label>' +
+            '<div style="margin-top:10px">' +
+              '<button class="btn btn-danger btn-sm" type="button" id="resetEditsBtn" data-reset-edits="true" disabled>' +
+                '\uD83D\uDD12 Locked \u2014 Reset all manual edits</button>' +
+            '</div>' +
+            '<p class="meta" id="resetEditsNote" hidden style="margin-top:8px;color:#c93b2b;font-weight:700">Tap once more to permanently clear all manual edits on this device.</p>' +
+          '</div>' +
+        '</details>' +
       '</div>' +
 
       '<h2>Your data</h2>' +
@@ -231,8 +244,22 @@
   function mount(root) {
     var scope = root.querySelector('.view-narrow') || root;
     var resetArmed = false;
+    var resetEditsArmed = false;
 
     scope.addEventListener('change', function (event) {
+      if (event.target.id === 'unlockResetEdits') {
+        var btn = scope.querySelector('#resetEditsBtn');
+        var note = scope.querySelector('#resetEditsNote');
+        resetEditsArmed = false;
+        if (note) note.hidden = true;
+        if (btn) {
+          btn.disabled = !event.target.checked;
+          btn.textContent = event.target.checked
+            ? 'Reset all manual edits'
+            : '\uD83D\uDD12 Locked \u2014 Reset all manual edits';
+        }
+        return;
+      }
       if (event.target.id === 'voiceURI') {
         core.setPref('voiceURI', event.target.value);
         ui.toast(event.target.value ? 'Voice changed.' : 'Using the automatic voice.');
@@ -347,7 +374,20 @@
         else ui.toast('Exported ' + count + ' manual edit(s) to salama_corrections.tsv.');
         return;
       }
-      if (event.target.closest('[data-reset-edits]')) {
+      var resetEditsBtn = event.target.closest('[data-reset-edits]');
+      if (resetEditsBtn) {
+        var unlockBox = scope.querySelector('#unlockResetEdits');
+        if (!unlockBox || !unlockBox.checked || resetEditsBtn.disabled) {
+          ui.toast('Reset is locked under Advanced options.');
+          return;
+        }
+        if (!resetEditsArmed) {
+          resetEditsArmed = true;
+          var eNote = scope.querySelector('#resetEditsNote');
+          if (eNote) eNote.hidden = false;
+          resetEditsBtn.textContent = 'Confirm: Reset all manual edits';
+          return;
+        }
         if (core.resetAllEdits) core.resetAllEdits();
         ui.toast('All manual edits cleared.');
         rerender();

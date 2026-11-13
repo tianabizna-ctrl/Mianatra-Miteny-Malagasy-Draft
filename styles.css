@@ -2887,5 +2887,44 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   margin: 2px 0 10px;
 }
 
+.advanced-lock-details {
+  border-top: 1px dashed var(--line);
+  padding-top: 12px;
+}
+.advanced-lock-summary {
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--muted);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.advanced-lock-summary:hover {
+  color: var(--ink);
+}
+.advanced-lock-body {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.advanced-unlock-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+}
+#resetEditsBtn[disabled] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
 
 
