@@ -3,7 +3,7 @@ window.CONTENT = {
     "app": "Salama! — Learn Malagasy Gently",
     "project": "Vahiny Mianatra Malagasy",
     "audience": "Elderly American absolute beginner",
-    "version": "4.6.0",
+    "version": "4.6.1",
     "dialect_note": "Official Malagasy (Tenim-pirenena ofisialy).",
     "counts": {
       "vocabulary": 2198,

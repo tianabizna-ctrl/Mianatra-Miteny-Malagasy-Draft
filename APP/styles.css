@@ -3013,6 +3013,67 @@ html[data-mode="dark"] .stat-card .n { color: var(--gold); }
   background: var(--accent-soft, #FFF0B8);
 }
 
+.editor-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.editor-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  border: 2px solid var(--line);
+  background: var(--surface);
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--ink);
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.editor-switch.is-on {
+  border-color: var(--accent, #123F2B);
+  background: var(--accent-soft, #FFF0B8);
+}
+.editor-switch-track {
+  position: relative;
+  width: 46px;
+  height: 26px;
+  border-radius: 999px;
+  background: #bfb6a2;
+  display: inline-block;
+  transition: background 0.18s ease;
+}
+.editor-switch.is-on .editor-switch-track {
+  background: var(--accent, #123F2B);
+}
+.editor-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+  transition: transform 0.18s ease;
+}
+.editor-switch.is-on .editor-switch-thumb {
+  transform: translateX(20px);
+}
+.editor-switch-label {
+  min-width: 30px;
+  text-align: left;
+  letter-spacing: 0.04em;
+}
+main#main {
+  padding-bottom: 96px;
+}
+
+
 
 
 

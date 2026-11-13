@@ -201,15 +201,27 @@
         '<details class="advanced-lock-details" id="editorModeDetails" style="margin-top:18px"' + ((advOpen || prefs.showInlineEdit) ? ' open' : '') + '>' +
           '<summary class="advanced-lock-summary">\uD83D\uDD12 Advanced options \u2014 Editor Mode (Malagasy &amp; phonetics)</summary>' +
           '<div class="advanced-lock-body">' +
-            '<div class="setting" style="padding-top:0">' +
+            '<div class="setting" style="padding-top:0;align-items:center">' +
               '<div>' +
                 '<div class="k">Editor Mode \u2014 Switch inline \u270E Edit &amp; course lesson editing On or Off</div>' +
-                '<div class="h">When <strong>On</strong>, every word, dialogue, and roleplay card shows the direct <strong>\u270E Edit</strong> button and each course lesson shows the <strong>\u270E Manual edits (this lesson)</strong> drawer. Keep <strong>Off</strong> so only you (the editor) see and trigger edits.</div>' +
+                '<div class="h">When <strong>On</strong>, every word, dialogue, and roleplay card shows the direct <strong>\u270E Edit</strong> button and each course lesson shows the <strong>\u270E Manual edits (this lesson)</strong> drawer. Switch <strong>Off</strong> to hide all editing buttons from learners.</div>' +
               '</div>' +
-              '<button class="btn ' + (prefs.showInlineEdit ? '' : 'btn-quiet') + '" type="button" data-inline-edit="true" aria-pressed="' +
-                (prefs.showInlineEdit ? 'true' : 'false') + '">' + (prefs.showInlineEdit ? '\u270E Edit Mode: On' : 'Edit Mode: Off') + '</button>' +
+              '<div class="editor-toggle-group" role="group" aria-label="Editor Mode On or Off">' +
+                '<button id="editorSwitchBtn" class="editor-switch' + (prefs.showInlineEdit ? ' is-on' : ' is-off') + '" type="button" role="switch" aria-checked="' + (prefs.showInlineEdit ? 'true' : 'false') + '" data-inline-edit="true" title="Toggle Editor Mode On or Off">' +
+                  '<span class="editor-switch-track"><span class="editor-switch-thumb"></span></span>' +
+                  '<span class="editor-switch-label">' + (prefs.showInlineEdit ? 'ON' : 'OFF') + '</span>' +
+                '</button>' +
+                '<div class="chips" style="margin:0">' +
+                  '<button id="editorOnBtn" class="chip" type="button" data-set-inline-edit="on" aria-pressed="' + (prefs.showInlineEdit ? 'true' : 'false') + '">\u270E Edit: ON</button>' +
+                  '<button id="editorOffBtn" class="chip" type="button" data-set-inline-edit="off" aria-pressed="' + (!prefs.showInlineEdit ? 'true' : 'false') + '">Edit: OFF</button>' +
+                '</div>' +
+              '</div>' +
             '</div>' +
-            '<p class="meta" style="margin:10px 0">Saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
+            '<p class="meta" style="margin:10px 0"><strong>Current status:</strong> ' +
+              (prefs.showInlineEdit
+                ? '<span class="checked">\u2713 Editor Mode is ON \u2014 \u270E Edit buttons &amp; lesson editor are visible</span>'
+                : '<span>Editor Mode is OFF \u2014 All \u270E Edit buttons are hidden across the website</span>') +
+              ' \u00b7 Saved on this device: <strong>' + (core.editCount ? core.editCount() : 0) + ' ' + ui.plural(core.editCount ? core.editCount() : 0, 'manual edit') + '</strong>.</p>' +
             '<div class="btn-row" style="margin-top:8px">' +
               (function () {
                 var cs = (core.currentSession && core.currentSession()) || core.session('w1s1');
@@ -304,7 +316,9 @@
     });
 
     scope.addEventListener('click', function (event) {
-      var recBtn = event.target.closest('[data-recorded-voice]');
+      var targetEl = (event.target && event.target.closest) ? event.target : (event.target && event.target.parentElement);
+      if (!targetEl || !targetEl.closest) return;
+      var recBtn = targetEl.closest('[data-recorded-voice]');
       if (recBtn) {
         var v = recBtn.getAttribute('data-recorded-voice');
         core.setPref('recordedVoice', v);
@@ -312,61 +326,72 @@
         rerender();
         return;
       }
-      var dirBtn = event.target.closest('[data-direction]');
+      var dirBtn = targetEl.closest('[data-direction]');
       if (dirBtn) {
         core.setPref('direction', dirBtn.getAttribute('data-direction'));
         rerender();
         return;
       }
-      var palBtn = event.target.closest('[data-palette]');
+      var palBtn = targetEl.closest('[data-palette]');
       if (palBtn) {
         core.setPref('palette', palBtn.getAttribute('data-palette'));
         rerender();
         return;
       }
-      var fontBtn = event.target.closest('[data-font]');
+      var fontBtn = targetEl.closest('[data-font]');
       if (fontBtn) {
         core.setPref('font', fontBtn.getAttribute('data-font'));
         rerender();
         return;
       }
-      var modeBtn = event.target.closest('[data-mode]');
+      var modeBtn = targetEl.closest('[data-mode]');
       if (modeBtn) {
         core.setPref('mode', modeBtn.getAttribute('data-mode'));
         rerender();
         return;
       }
-      var size = event.target.closest('[data-textsize]');
+      var size = targetEl.closest('[data-textsize]');
       if (size) {
         core.setPref('textsize', Number(size.getAttribute('data-textsize')));
         rerender();
         return;
       }
-      var rate = event.target.closest('[data-rate]');
+      var rate = targetEl.closest('[data-rate]');
       if (rate) {
         core.setPref('rate', Number(rate.getAttribute('data-rate')));
         rerender();
         return;
       }
-      if (event.target.closest('[data-autoplay]')) {
+      if (targetEl.closest('[data-autoplay]')) {
         core.setPref('autoplay', !core.state.prefs.autoplay);
         rerender();
         return;
       }
-      if (event.target.closest('[data-syllables]')) {
+      if (targetEl.closest('[data-syllables]')) {
         core.setPref('syllables', !core.state.prefs.syllables);
         rerender();
         return;
       }
-      if (event.target.closest('[data-inline-edit]')) {
+      var explicitEditBtn = targetEl.closest('[data-set-inline-edit]');
+      if (explicitEditBtn) {
+        advOpen = true;
+        var wantOn = explicitEditBtn.getAttribute('data-set-inline-edit') === 'on';
+        core.state.prefs.showInlineEdit = wantOn;
+        core.setPref('showInlineEdit', wantOn);
+        ui.toast(wantOn ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.' : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
+        rerender();
+        return;
+      }
+      if (targetEl.closest('[data-inline-edit]')) {
         advOpen = true;
         var nextEdit = !core.state.prefs.showInlineEdit;
+        core.state.prefs.showInlineEdit = nextEdit;
         core.setPref('showInlineEdit', nextEdit);
         ui.toast(nextEdit ? 'Editor Mode ON \u2014 \u270E Edit buttons are now visible on cards & lessons.' : 'Editor Mode OFF \u2014 \u270E Edit buttons are now hidden.');
         rerender();
         return;
       }
-      var test = event.target.closest('[data-test-voice]');
+      var test = targetEl.closest('[data-test-voice]');
       if (test) {
         var which = test.getAttribute('data-test-voice');
         if (which === 'salama') {
@@ -378,18 +403,18 @@
         }
         return;
       }
-      if (event.target.closest('[data-export]')) {
+      if (targetEl.closest('[data-export]')) {
         core.exportData();
         ui.toast('Progress file downloaded.');
         return;
       }
-      if (event.target.closest('[data-export-edits]')) {
+      if (targetEl.closest('[data-export-edits]')) {
         var count = core.exportEditsTSV ? core.exportEditsTSV() : 0;
         if (!count) ui.toast('No manual edits to export yet.');
         else ui.toast('Exported ' + count + ' manual edit(s) to salama_corrections.tsv.');
         return;
       }
-      var resetEditsBtn = event.target.closest('[data-reset-edits]');
+      var resetEditsBtn = targetEl.closest('[data-reset-edits]');
       if (resetEditsBtn) {
         var unlockBox = scope.querySelector('#unlockResetEdits');
         if (!unlockBox || !unlockBox.checked || resetEditsBtn.disabled) {
@@ -408,7 +433,7 @@
         rerender();
         return;
       }
-      var reset = event.target.closest('[data-reset]');
+      var reset = targetEl.closest('[data-reset]');
       if (reset) {
         if (!resetArmed) {
           resetArmed = true;
